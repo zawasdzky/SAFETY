@@ -183,54 +183,42 @@
                             <div class="span6 span-8">
                                 <div class="sports">
                                     <h2 class="h-style">SST</h2>
-                                    <?php foreach ($SST-> result() as $item) { ?>
+                                    <?php $item_SST = $SST->row(); ?>
                                         <div class="sports-event">
                                             <div class="thumb hover-style">
-                                                <a href="#"><img src="images/sports.png" alt=""></a>
+                                                <a href="<?php echo base_url();?>SST/detalle_SST/<?php echo $item_SST-> url_amigable_SST;?>"><img src="<?php echo base_url();?>fotos_SST/<?php echo $item_SST-> foto1;?>" alt="<?php echo $item_SST-> foto1;?>"></a>
                                             </div>
                                             <div class="text">
-                                                <h4><?php echo $item -> titulo_SST ?>/h4>
-                                                <p>Integer ornare libero nisi. Duis ac magna urna. Nulla facilisi. iaculis, ligula arcu ultrices metus, ac venenatis dui leo ut odio. Phasellus a augue congue, faucibus dolor eu, auctor dolor...</p>
-                                                <a href="#" class="color pull-right">Continue Reading</a>
+                                                <h4><?php echo $item_SST-> titulo_SST ?></h4>
+                                                <p><?php echo $item_SST-> descripcion_SST?></p>
+                                                <a href="<?php echo base_url();?>SST/detalle_SST/<?php echo $item_SST-> url_amigable_SST;?>" class="color pull-right">Ver más</a>
                                                 <ul class="post-comments">
-                                                    <li><a href="#"><i class="fa fa-user"></i>M-Elgendy</a></li>
-                                                    <li><a href="#"><i class="fa fa-heart-o"></i>1205</a></li>
-                                                    <li><a href="#"><i class="fa fa-comment-o"></i>125</a></li>
                                                 </ul>
                                             </div>
                                         </div>
-                                    <?php } ?>
                                     <!--SPORTS THUMBS START-->
                                     <div class="sports-thumbs-list">
                                         <ul>
-                                            <li>
-                                                <div class="sports-thumbs">
-                                                    <figure>
-                                                        <a href="#"><img src="images/sports-thumb.png" alt=""></a>
-                                                    </figure>
-                                                    <div class="text">
-                                                        <a href="#">Speaker Boehner Fails </a>
-                                                        <p>12 december 2014</p>
-                                                        <div class="rating">
-                                                            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                                        <?php $i=1; foreach ($SST-> result() as $item) { ?>
+                                            <?php if ($i!=1) { //omitiendo el primer articulo ?>
+                                                <li>
+                                                    <div class="sports-thumbs">
+                                                        <figure>
+                                                            <a href="<?php echo base_url();?>SST/detalle_SST/<?php echo $item-> url_amigable_SST;?>">
+                                                                <img src="<?php echo base_url();?>fotos_SST/<?php echo $item-> foto0;?>" alt="<?php echo $item-> foto0;?>" width="79px">
+                                                            </a>
+                                                        </figure>
+                                                        <div class="text">
+                                                            <a href="<?php echo base_url();?>SST/detalle_SST/<?php echo $item-> url_amigable_SST;?>"><?php echo $item-> titulo_SST;?></a>
+                                                            <p><?php echo $item-> fecha_publicacion_SST;?></p>
+                                                            <div class="rating">
+                                                                    <!-- <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span> -->
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="sports-thumbs">
-                                                    <figure>
-                                                        <a href="#"><img src="images/sports-thumb4.png" alt=""></a>
-                                                    </figure>
-                                                    <div class="text">
-                                                        <a href="#">Speaker Boehner Fails </a>
-                                                        <p>12 december 2014</p>
-                                                        <div class="rating">
-                                                            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
+                                                </li>
+                                            <?php } ?>
+                                        <?php $i++; } ?>
                                         </ul>
                                     </div>
                                     <!--SPORTS THUMBS END-->
@@ -248,62 +236,55 @@
                             <h2 class="h-style">Salud y Bienestar</h2>
                             <article class="travel">
                                 <!--TRAVEL SECTION THUMB START-->
+                                <?php $salud_bienestar_item = $salud_bienestar->row(); ?>
                                 <div class="treval-thumb">
                                     <figure class="hover-style">
-                                        <a href="#"><img alt="" src="images/travel.png"></a>
+                                        <a href="<?php echo base_url();?>Salud_bienestar/detalle_salud_bienestar//<?php echo $salud_bienestar_item-> url_amigable_salud;?>">
+                                            <img alt="<?php echo $salud_bienestar_item-> foto1;?>" src="<?php echo base_url();?>fotos_salud_bienestar/<?php echo $salud_bienestar_item-> foto1;?>" style="width: 355px;">
+                                        </a>
                                     </figure>
                                     <div class="text">
-                                        <h2>Fresh apricot with huge sale</h2>
+                                        <h2><?php echo $salud_bienestar_item-> titulo_salud;?></h2>
                                         <ul class="post-comments">
-                                            <li><a href="#"><i class="fa fa-user"></i>M-Elgendy</a></li>
-                                            <li><a href="#"><i class="fa fa-heart-o"></i>1205</a></li>
-                                            <li><a href="#"><i class="fa fa-comment-o"></i>125</a></li>
+                                            <!-- <li><a href="#"><i class="fa fa-user"></i>M-Elgendy</a></li> -->
+                                            <!-- <li><a href="#"><i class="fa fa-heart-o"></i>1205</a></li> -->
+                                            <!-- <li><a href="#"><i class="fa fa-comment-o"></i>125</a></li> -->
                                         </ul>
-                                        <p>Integer ornare libero nisi. Duis ac magna urna. Nulla facilisi. Phasellus at ante magna. Quisque nec porta nulla. Suspendisse nec orci vel elit aliquet blandit in non orci. Vivamus posuere dui eget lacinia rutrum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus...</p>
-                                        <a class="read-more" href="#">Find Out More</a>
+                                        <p><?php echo $salud_bienestar_item-> descripcion_salud;?></p>
+                                        <a class="read-more" href="<?php echo base_url();?>Salud_bienestar/<?php echo $salud_bienestar_item-> url_amigable_salud;?>">Ver más</a>
                                     </div>
                                 </div>
                                 <!--TRAVEL SECTION THUMB END-->
                                 <div class="travel-listing">
                                     <ul>
-                                        <li>
-                                            <figure>
-                                                <a href="#"><img alt="" src="images/travel-listing.png"></a>
-                                            </figure>
-                                            <div class="text">
-                                                <h2><a href="#">Speaker Boehner Fails Upwards</a></h2>
-                                                <p>Vestibulum nec venenatis erat, et adipiscing ipsumvamus posue eget lacinia rutrum..</p>
-                                                <ul class="post-comments">
-                                                    <li><a href="#">14th January 2013</a></li>
-                                                    <li><a href="#">32 Comments</a></li>
-                                                    <li>
-                                                        <div class="rating">
-                                                            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                                                        </div>                                                
-                                                        124 Votes
-                                                     </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <a href="#"><img alt="" src="images/travel-listing2.png"></a>
-                                            </figure>
-                                            <div class="text">
-                                                <h2><a href="#">Speaker Boehner Fails Upwards</a></h2>
-                                                <p>Vestibulum nec venenatis erat, et adipiscing ipsumvamus posue eget lacinia rutrum..</p>
-                                                <ul class="post-comments">
-                                                    <li><a href="#">14th January 2013</a></li>
-                                                    <li><a href="#">32 Comments</a></li>
-                                                    <li>
-                                                        <div class="rating">
-                                                            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                                                        </div>                                                
-                                                        124 Votes
-                                                     </li>
-                                                </ul>
-                                            </div>
-                                        </li>
+                                        <?php $i=1; foreach ($salud_bienestar-> result() as $item_salud) { ?>
+                                            <?php if ($i!=1) { //omitiendo el primer articulo ?>
+                                                <li>
+                                                    <figure>
+                                                        <a href="<?php echo base_url();?>Salud_bienestar/detalle_salud_bienestar/<?php echo $item_salud-> url_amigable_salud;?>">
+                                                            <img alt="<?php echo $item_salud-> foto0;?>" src="<?php echo base_url();?>fotos_salud_bienestar/<?php echo $item_salud-> foto0;?>" style="width: 120px;">
+                                                        </a>
+                                                    </figure>
+                                                    <div class="text">
+                                                        <h2>
+                                                            <a href="<?php echo base_url();?>Salud_bienestar/detalle_salud_bienestar/<?php echo $item_salud-> url_amigable_salud;?>">
+                                                                <?php echo $item_salud-> titulo_salud; ?>
+                                                            </a>
+                                                        </h2>
+                                                        <p><?php echo $item_salud-> descripcion_salud; ?></p>
+                                                        <ul class="post-comments">
+                                                            <li><?php echo $item_salud->fecha_publicacion_salud; ?></li>
+                                                            <li><a href="<?php echo base_url();?>Salud_bienestar/detalle_salud_bienestar/<?php echo $item_salud-> url_amigable_salud;?>">Ver más</a></li>
+                                                            <li>
+                                                                <div class="rating">
+                                                                    <!-- <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span> -->
+                                                                </div>                                                
+                                                             </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                            <?php } ?>
+                                        <?php $i++; } ?>
                                     </ul>
                                 </div>
                                 <div>
