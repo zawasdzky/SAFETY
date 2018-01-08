@@ -33,7 +33,12 @@ class Safety_work_model extends CI_Model {
 	function get_vida_estilo_home(){
 		return  $this->db->query("SELECT *  FROM  `sw_vida_estilo_safety`  ORDER BY  `sw_vida_estilo_safety`.`id_vida_estilo` DESC  LIMIT 0 , 5"); 
 	}
-
+	function get_seguros_home(){
+		return  $this->db->query("SELECT *  FROM  `sw_seguros_safety`  ORDER BY  `sw_seguros_safety`.`id_seguro` DESC  LIMIT 0 , 3"); 
+	}
+	function get_infografias_home(){
+		return  $this->db->query("SELECT *  FROM  `sw_infografias_safety`  ORDER BY  `sw_infografias_safety`.`id_infografia` DESC  LIMIT 0 , 5"); 
+	}
 	function get_publicidad(){
 		return  $this->db->query("SELECT * FROM `sw_publicitarios_solutions` WHERE `sitio_publicitario` = 'Safetywork' ORDER BY  `sw_publicitarios_solutions`.`orden_publicitario` ASC "); 
 	}

@@ -68,16 +68,13 @@
                                 <img src="images/Nueva_pauta_Home_1.jpg" class="img-responsive">
                             </div>
                             <ul class="mycarousel jcarousel-skin-tango">
-                                <li><img src="images/slide-img.png" alt="" ></li>
-                                <li><img src="images/slide-img2.png" alt="" ></li>
-                                <li><img src="images/slide-img3.png" alt="" ></li>
-                                <li><img src="images/slide-img4.png" alt="" ></li>
-                                <li><img src="images/slide-img5.png" alt="" ></li>
-                                <li><img src="images/slide-img.png"  alt="" ></li>
-                                <li><img src="images/slide-img2.png" alt="" ></li>
-                                <li><img src="images/slide-img3.png" alt="" ></li>
-                                <li><img src="images/slide-img4.png" alt="" ></li>
-                                <li><img src="images/slide-img5.png" alt="" ></li>
+                                <?php foreach ($infografias -> result() as $infografia) { ?>
+                                    <li>
+                                        <a href="<?php echo base_url();?>Infografias">
+                                            <img src="<?php echo base_url()."fotos_infografias/". $infografia-> foto0 ?>" alt="<?php echo $infografia -> foto0; ?>" style="width: 90px;"/>
+                                        </a>
+                                    </li>
+                                <?php } ?>    
                            </ul>
                            <a href="#" class="read-more">Infografías</a>
                         </div>
@@ -239,7 +236,7 @@
                                 <?php $salud_bienestar_item = $salud_bienestar->row(); ?>
                                 <div class="treval-thumb">
                                     <figure class="hover-style">
-                                        <a href="<?php echo base_url();?>Salud_bienestar/detalle_salud_bienestar//<?php echo $salud_bienestar_item-> url_amigable_salud;?>">
+                                        <a href="<?php echo base_url();?>Salud_bienestar/detalle_salud_bienestar/<?php echo $salud_bienestar_item-> url_amigable_salud;?>">
                                             <img alt="<?php echo $salud_bienestar_item-> foto1;?>" src="<?php echo base_url();?>fotos_salud_bienestar/<?php echo $salud_bienestar_item-> foto1;?>" style="width: 355px;">
                                         </a>
                                     </figure>
@@ -309,86 +306,55 @@
                                     <div class="entertainment-sec">
                                         <div class="row">
                                             <div class="span3">
+                                                <?php $sociales_item = $sociales->row(); ?>
                                                 <div class="business">
                                                     <figure class="hover-style">
-                                                        <a href="#"><img src="images/entertainment.png" alt=""></a>
-                                                        <div class="like-icon"><i class="fa fa-heart-o"></i></div>
+                                                        <a href="<?php echo base_url();?>Sociales/detalle_social/<?php echo $sociales_item-> url_amigable_social;?>">
+                                                            <img alt="<?php echo $sociales_item-> foto0;?>" src="<?php echo base_url();?>fotos_sociales/<?php echo $sociales_item-> foto0;?>" style="width: 267px;">
+                                                        </a>
+                                                        <div class="like-icon"><i class="fa fa-heart-o"></i>
+                                                        </div>
                                                     </figure>
                                                     <div class="text">
-                                                        <h4>Pricey fashion staples</h4>
+                                                        <h4><?php echo $sociales_item-> titulo_social;?></h4>
                                                         <div class="rating">
-                                                            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                                                        </div>
+                                                            <!-- <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+ -->                                                        </div>
                                                         <ul class="post-comments">
-                                                            <li><a href="#"><i class="fa fa-user"></i>M-Elgendy</a></li>
-                                                            <li><a href="#"><i class="fa fa-heart-o"></i>1205</a></li>
-                                                            <li><a href="#"><i class="fa fa-comment-o"></i>125</a></li>
+                                                            <!-- <li><a href="#"><i class="fa fa-user"></i>M-Elgendy</a></li> -->
+                                                            <!-- <li><a href="#"><i class="fa fa-heart-o"></i>1205</a></li> -->
+                                                            <!-- <li><a href="#"><i class="fa fa-comment-o"></i>125</a></li> -->
                                                         </ul>
-                                                        <p>Integer ornare libero nisi.  Suspendisse nec orci vel elit aliquet blandit in non orci. Vivamus posuere dui eget iaculis, ligula arcu ultrices metus, ac venenatis dui leo ut odio. Phasellus a augue congue...</p>
-                                                        <a href="#" class="read-more">Find Out More</a>
+                                                        <p><?php echo $sociales_item-> descripcion_social;?></p>
+                                                        <a href="<?php echo base_url();?>Sociales/detalle_social/<?php echo $sociales_item-> url_amigable_social;?>" class="read-more">Ver más</a>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="span3">
                                                 <div class="sports-thumbs-list">
                                                     <ul>
+                                                    <?php $i=1; foreach ($sociales-> result() as $item_social) { ?>
+                                                        <?php if ($i!=1) { //omitiendo el primer articulo ?>
                                                         <li>
                                                             <div class="sports-thumbs">
                                                                 <figure>
-                                                                    <a href="#"><img src="images/sports-thumb.png" alt=""></a>
+                                                                    <a href="<?php echo base_url();?>Sociales/detalle_social/<?php echo $item_social-> url_amigable_social;?>">
+                                                                        <img alt="<?php echo $item_social-> foto0;?>" src="<?php echo base_url();?>fotos_sociales/<?php echo $item_social-> foto0;?>" style="width: 79px;">
+                                                                    </a>
                                                                 </figure>
                                                                 <div class="text">
-                                                                    <a href="#">Speaker Boehner Fails </a>
-                                                                    <p>12 december 2014</p>
+                                                                    <a href="<?php echo base_url();?>Sociales/detalle_social/<?php echo $item_social-> url_amigable_social;?>">
+                                                                        <?php echo $item_social-> titulo_social;?>
+                                                                    </a>
+                                                                    <p><?php echo $item_social-> fecha_publicacion_social;?></p>
                                                                     <div class="rating">
-                                                                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                                                                        <!-- <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span> -->
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </li>
-                                                        <li>
-                                                            <div class="sports-thumbs">
-                                                                <figure>
-                                                                    <a href="#"><img src="images/sports-thumb4.png" alt=""></a>
-                                                                </figure>
-                                                                <div class="text">
-                                                                    <a href="#">Speaker Boehner Fails </a>
-                                                                    <p>12 december 2014</p>
-                                                                    <div class="rating">
-                                                                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="sports-thumbs">
-                                                                <figure>
-                                                                    <a href="#"><img src="images/sports-thumb2.png" alt=""></a>
-                                                                </figure>
-                                                                <div class="text">
-                                                                    <a href="#">Speaker Boehner Fails </a>
-                                                                    <p>12 december 2014</p>
-                                                                    <div class="rating">
-                                                                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="sports-thumbs">
-                                                                <figure>
-                                                                    <a href="#"><img src="images/sports-thumb3.png" alt=""></a>
-                                                                </figure>
-                                                                <div class="text">
-                                                                    <a href="#">Speaker Boehner Fails </a>
-                                                                    <p>12 december 2014</p>
-                                                                    <div class="rating">
-                                                                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        
+                                                        <?php } ?>
+                                                    <?php $i++; } ?>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -397,42 +363,30 @@
                                  </div>
                                 <!--ENTERTAINMENT END-->
                                 <div class="life">
-                                <h2 class="h-style">Life Style</h2>
-                                <div class="life-style">
-                                    <h3>This week special</h3>
-                                    <p class="color"><strong>Philip Seymour expected soon</strong></p>
-                                    <ul class="post-comments">
-                                        <li><a href="#"><i class="fa fa-user"></i>M-Elgendy</a></li>
-                                        <li><a href="#"><i class="fa fa-heart-o"></i>1205</a></li>
-                                        <li><a href="#"><i class="fa fa-comment-o"></i>125</a></li>
-                                    </ul>
-                                    <div class="row-fluid">
-                                        <div class="span4">
-                                            <div class="life-style-thums">
-                                                <a href="#"><img src="images/life-style1.png" alt=""></a>
-                                                <div class="caption">
-                                                    <p>Quisque libero sem, dignissim, dignissim sit amet nulla</p>
+                                    <h2 class="h-style">Seguros</h2>
+                                    <div class="life-style">
+                                        <!-- <h3>This week special</h3> -->
+                                        <!-- <p class="color"><strong>Philip Seymour expected soon</strong></p> -->
+                                        <ul class="post-comments">
+                                            <!-- <li><a href="#"><i class="fa fa-user"></i>M-Elgendy</a></li> -->
+                                            <!-- <li><a href="#"><i class="fa fa-heart-o"></i>1205</a></li> -->
+                                            <!-- <li><a href="#"><i class="fa fa-comment-o"></i>125</a></li> -->
+                                        </ul>
+                                        <div class="row-fluid">
+                                            <?php foreach ($seguros-> result() as $item_seguro) { ?>
+                                            <div class="span4">
+                                                <div class="life-style-thums">
+                                                    <img alt="<?php echo $item_seguro-> foto0;?>" src="<?php echo base_url();?>fotos_seguros/<?php echo $item_seguro-> foto0;?>" style="width: 170px;">
+                                                    <a href="<?php echo base_url();?>seguros/detalle_seguro/<?php echo $item_seguro-> url_amigable_seguro;?>"> 
+                                                    <div class="caption">
+                                                        <p><strong><?php echo $item_seguro-> titulo_seguro;?></strong></p>
+                                                    </div>
+                                                    </a>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="span4">
-                                            <div class="life-style-thums">
-                                                <a href="#"><img src="images/life-style2.png" alt=""></a>
-                                                <div class="caption">
-                                                    <p>Quisque libero sem, dignissim, dignissim sit amet nulla</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="span4">
-                                            <div class="life-style-thums">
-                                                <a href="#"><img src="images/life-style3.png" alt=""></a>
-                                                <div class="caption">
-                                                    <p>Quisque libero sem, dignissim, dignissim sit amet nulla</p>
-                                                </div>
-                                            </div>
+                                            <?php } ?>
                                         </div>
                                     </div>
-                                </div>
                                 </div>
                                 </div>
                             </div>
@@ -514,7 +468,7 @@
             <div class="container">
                 <div class="row">
                         <figure>
-                            <img alt="" src="images/mega_banner_publicidad2.jpg">
+                            <!-- <img alt="" src="images/mega_banner_publicidad2.jpg"> -->
                         </figure>
                         <br>
                 </div>

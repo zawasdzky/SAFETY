@@ -23,6 +23,8 @@ class Welcome extends CI_Controller {
 		$data['SST'] = $this->Safety_work_model->get_SST_home(); 
 		$data['legislaciones'] = $this->Safety_work_model->get_legislaciones_home(); 
 		$data['sociales'] = $this->Safety_work_model->get_sociales_home(); 
+		$data['seguros'] = $this->Safety_work_model->get_seguros_home(); 
+		$data['infografias'] = $this->Safety_work_model->get_infografias_home(); 
 		$data['publicidad'] = $this->Safety_work_model->get_publicidad(); 
 		$this->load->view('includes/header');
 		$this->load->view('index',$data);
