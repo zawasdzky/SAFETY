@@ -6,8 +6,8 @@
                     <div class="news-slider">
                         <div class="flexslider">
                           <ul class="slides">
-                            <?php foreach ($talento_humano  -> result() as $item) { ?>
-                                <?php  $i=1; if ($i++ < 2 ) {  ?>
+                            <?php $i=1; foreach ($talento_humano  -> result() as $item) { ?>
+                                <?php if ($i<5) { ?>
                                     <li>
                                         <div class="thumb">
                                             <a href="<?php echo base_url()."talento_humano/detalle_articulo_talento/".$item-> url_amigable_talento; ?>">
@@ -19,7 +19,7 @@
                                         </div>
                                     </li>
                                 <?php } ?>
-                             <?php } ?>
+                             <?php  $i++;  } ?>
                           </ul>
                         </div>
                     </div>
@@ -28,21 +28,23 @@
                 	<section>
                     	<div class="health-news sports-news">
                             <h2 class="h-style">Talento Humano</h2>
-                            <ul>
+                            <ul id="paginar">
                                 <!--LIST ITEM START-->
-                                <?php foreach ($talento_humano -> result() as $item) { ?>
-                                <li>
-                                    <figure>
-                                        <a href="<?php echo base_url()."talento_humano/detalle_articulo_talento/".$item-> url_amigable_talento; ?>"><img src="<?php echo base_url()."fotos_talento_humano/".$item -> foto0;?>" alt="<?php echo $item -> foto0; ?>" width="250"></a>
-                                    </figure>
-                                    <div class="text">
-                                        <h2><a href="<?php echo base_url()."talento_humano/detalle_articulo_talento/".$item-> url_amigable_talento; ?>">
-                                            <span style="font-size: 20px"><?php echo $item -> titulo_talento; ?></span>
-                                            </a></h2>
-                                        <p><?php echo $item -> descripcion_talento; ?></p>
-                                    </div>
-                                </li>
-                                <?php } ?>
+                                <?php  $i=1;  foreach ($talento_humano -> result() as $item) { ?>
+                                    <?php if ($i>5) { // Mostrar los 5 resultados siguientes ?>
+                                        <li>
+                                            <figure>
+                                                <a href="<?php echo base_url()."talento_humano/detalle_articulo_talento/".$item-> url_amigable_talento; ?>"><img src="<?php echo base_url()."fotos_talento_humano/".$item -> foto0;?>" alt="<?php echo $item -> foto0; ?>" width="250"></a>
+                                            </figure>
+                                            <div class="text">
+                                                <h2><a href="<?php echo base_url()."talento_humano/detalle_articulo_talento/".$item-> url_amigable_talento; ?>">
+                                                    <span style="font-size: 20px"><?php echo $item -> titulo_talento; ?></span>
+                                                    </a></h2>
+                                                <p><?php echo $item -> descripcion_talento; ?></p>
+                                            </div>
+                                        </li>
+                                    <?php } ?>
+                                <?php $i++; } ?>
                                 <!--LIST ITEM END-->
                             </ul>
                         </div>
