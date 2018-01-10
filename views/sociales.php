@@ -39,7 +39,7 @@
             <!--GALLERY DETAIL END-->
             <!--RECENT WORK START-->
             <section class="recent-work">
-                <h2 class="h-style2">Artículos Recientes</h2>
+                <h2 class="h-style2">Eventos Recientes</h2>
                 <ul class="row">
                 <?php foreach ($sociales -> result() as $item) { ?>
                     <li class="span3 hover-style"><a href="#">

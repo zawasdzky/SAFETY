@@ -113,7 +113,7 @@ class Safety_work_model extends CI_Model {
 	}
 
 	function get_legislaciones(){
-		return  $this->db->query("SELECT * FROM `sw_legislaciones_safety`   ORDER BY  `id_legislacion` DESC "); 
+		return  $this->db->query("SELECT * FROM `sw_legislaciones_safety`   ORDER BY  `sw_legislaciones_safety`.`fecha_publicacion` DESC "); 
 	}
 
 	function get_legislaciones_tipo($tipo_legislacion){

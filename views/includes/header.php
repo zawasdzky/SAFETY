@@ -73,12 +73,12 @@
         <div class="container">
             <div class="row">
             <div class="span8">
-                <!-- <h3>Breaking News</h3> -->
+                <h3>Breaking News</h3>
                 <div id="b-news">
                   <ul>
-<!--                     <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</li>
                     <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut</li>
-                    <li>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</li> -->
+                    <li>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</li>
                   </ul>
                 </div>
             </div>

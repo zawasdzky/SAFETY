@@ -156,10 +156,10 @@
                 <div class="span8">
                     <section>
                         <div class="health-news sports-news">
-                            <h2 class="h-style"> <?php if (isset($detalle -> tipo_legislacion)) { echo "Legislación ". $detalle -> tipo_legislacion ; } ?> </h2>
+                            <h2 class="h-style"> <?php if (isset($titulo)) { echo $titulo; }else{ echo "Legislación ". $detalle -> tipo_legislacion ; } ?> </h2>
                            <h3> 
                             <?php 
-                                    if ( isset($detalle -> categoria_legislacion )) {
+                                      if ( !isset($titulo)) {
                                       if ( $detalle -> categoria_legislacion == "Ley") { echo "Leyes";}
                                       if ( $detalle -> categoria_legislacion == "Decreto") { echo "Decretos";}
                                       if ( $detalle -> categoria_legislacion == "Circular") { echo "Circulares";}
@@ -169,7 +169,7 @@
                                     }
                             ?>
                            </h3>
-                            <ul>
+                            <ul id="paginar">
                                 <?php foreach ($legislaciones -> result() as $item) { ?>
                                 <!--LIST ITEM START-->
                                 <li>

@@ -49,7 +49,7 @@
                             <h2><?php echo $i; ?></h2>
                             <h4><?php echo $noticia -> titulo_noticia; ?></h4>
                         </div>
-                        <a href="<?php echo base_url()."Noticias/detalle_noticia/".$noticia -> url_amigable_noticia; ?>"><font color="white">Ver más</font></a>
+                        <a href="<?php echo base_url()."Noticias/detalle_noticia/".$noticia -> url_amigable_noticia; ?>"><font color="white"> <i class="fa fa-eye"></i>  Ver más</font></a>
                     </div>
                 </div>
             <?php $i++; } ?>
@@ -71,7 +71,7 @@
                                 <?php foreach ($infografias -> result() as $infografia) { ?>
                                     <li>
                                         <a href="<?php echo base_url();?>Infografias">
-                                            <img src="<?php echo base_url()."fotos_infografias/". $infografia-> foto0 ?>" alt="<?php echo $infografia -> foto0; ?>" style="width: 90px;"/>
+                                            <img src="<?php echo base_url()."fotos_infografias/". $infografia-> foto0 ?>" alt="<?php echo $infografia -> foto0; ?>" style="width: 200px; max-width: 200px; margin-right: 30px;"/>
                                         </a>
                                     </li>
                                 <?php } ?>    
@@ -188,7 +188,7 @@
                                             <div class="text">
                                                 <h4><?php echo $item_SST-> titulo_SST ?></h4>
                                                 <p><?php echo $item_SST-> descripcion_SST?></p>
-                                                <a href="<?php echo base_url();?>SST/detalle_SST/<?php echo $item_SST-> url_amigable_SST;?>" class="color pull-right">Ver más</a>
+                                                <a href="<?php echo base_url();?>SST/detalle_SST/<?php echo $item_SST-> url_amigable_SST;?>" class="color pull-right"> <i class="fa fa-eye"></i>  Ver más</a>
                                                 <ul class="post-comments">
                                                 </ul>
                                             </div>
@@ -207,7 +207,7 @@
                                                         </figure>
                                                         <div class="text">
                                                             <a href="<?php echo base_url();?>SST/detalle_SST/<?php echo $item-> url_amigable_SST;?>"><?php echo $item-> titulo_SST;?></a>
-                                                            <p><?php echo $item-> fecha_publicacion_SST;?></p>
+                                                            <p><?php // echo $item-> fecha_publicacion_SST;?></p>
                                                             <div class="rating">
                                                                     <!-- <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span> -->
                                                             </div>
@@ -248,7 +248,9 @@
                                             <!-- <li><a href="#"><i class="fa fa-comment-o"></i>125</a></li> -->
                                         </ul>
                                         <p><?php echo $salud_bienestar_item-> descripcion_salud;?></p>
-                                        <a class="read-more" href="<?php echo base_url();?>Salud_bienestar/<?php echo $salud_bienestar_item-> url_amigable_salud;?>">Ver más</a>
+                                        <div class="headline-review text-right">
+                                            <a href="<?php echo base_url();?>Salud_bienestar/<?php echo $salud_bienestar_item-> url_amigable_salud;?>"> <i class="fa fa-eye"></i>  Ver más</a>
+                                        </div>
                                     </div>
                                 </div>
                                 <!--TRAVEL SECTION THUMB END-->
@@ -269,20 +271,17 @@
                                                             </a>
                                                         </h2>
                                                         <p><?php echo $item_salud-> descripcion_salud; ?></p>
-                                                        <ul class="post-comments">
-                                                            <li><?php echo $item_salud->fecha_publicacion_salud; ?></li>
-                                                            <li><a href="<?php echo base_url();?>Salud_bienestar/detalle_salud_bienestar/<?php echo $item_salud-> url_amigable_salud;?>">Ver más</a></li>
-                                                            <li>
-                                                                <div class="rating">
-                                                                    <!-- <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span> -->
-                                                                </div>                                                
-                                                             </li>
-                                                        </ul>
+                                                        <div class="post-comments">
+                                                            <div class="headline-review text-right">
+                                                                <a href="<?php echo base_url();?>Salud_bienestar/detalle_salud_bienestar/<?php echo $item_salud-> url_amigable_salud;?>"> <i class="fa fa-eye"></i> Ver más</a>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </li>
                                             <?php } ?>
                                         <?php $i++; } ?>
                                     </ul>
+                                    <hr>
                                 </div>
                                 <div>
                                     <img alt="" src="images/pauta_750_200.jpg">
@@ -326,7 +325,7 @@
                                                             <!-- <li><a href="#"><i class="fa fa-comment-o"></i>125</a></li> -->
                                                         </ul>
                                                         <p><?php echo $sociales_item-> descripcion_social;?></p>
-                                                        <a href="<?php echo base_url();?>Sociales/detalle_social/<?php echo $sociales_item-> url_amigable_social;?>" class="read-more">Ver más</a>
+                                                        <a href="<?php echo base_url();?>Sociales/detalle_social/<?php echo $sociales_item-> url_amigable_social;?>" class="read-more"> <i class="fa fa-eye"></i>  Ver más</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -346,7 +345,7 @@
                                                                     <a href="<?php echo base_url();?>Sociales/detalle_social/<?php echo $item_social-> url_amigable_social;?>">
                                                                         <?php echo $item_social-> titulo_social;?>
                                                                     </a>
-                                                                    <p><?php echo $item_social-> fecha_publicacion_social;?></p>
+                                                                    <p><?php //echo $item_social-> fecha_publicacion_social;?></p>
                                                                     <div class="rating">
                                                                         <!-- <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span> -->
                                                                     </div>

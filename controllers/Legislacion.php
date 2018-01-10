@@ -31,12 +31,14 @@ class Legislacion extends CI_Controller {
 		}
 		if ($tipo_legislacion == NULL && $categoria_legislacion == NULL) {
 			$data['legislaciones'] = $this->Safety_work_model->get_legislaciones(); 
+			$data['titulo'] = "LEGISLACIONES";
 		}
 		if ($tipo_legislacion != NULL && $categoria_legislacion != NULL) {
 			$data['legislaciones'] = $this->Safety_work_model->get_legislaciones_filtro($tipo_legislacion,$categoria_legislacion); 
+
 		}
 		
-		$data['color'] ="yellow";  // enviando al header el texto que cambia el color desde un css 
+		$data['color'] ="yellow";  
 		$this->load->view('includes/head',$data);
 		$this->load->view('includes/header');
 		$data['publicidad'] = $this->Safety_work_model->get_publicidad(); 
