@@ -37,19 +37,22 @@
         </div>
             <div class="row">
             <?php $i=1; foreach ($noticias -> result() as $noticia) { ?>
+
                 <div class="span4">
                     <figure>
                         <a href="<?php echo base_url()."Noticias/detalle_noticia/".$noticia -> url_amigable_noticia; ?>">
-                            <img src="<?php echo base_url()."fotos_noticias/". $noticia-> foto1 ?>" alt="<?php echo $noticia -> titulo_noticia; ?>" width=168/>
+                            <img src="<?php echo base_url()."fotos_noticias/". $noticia-> foto0 ?>" alt="<?php echo $noticia -> titulo_noticia; ?>" style="width: 168px"/>
                         </a>
                     </figure>
-                    <div style="color:#fff">
-                        <div class="heading" >
-                            <br />
+                    <div class="text">
+                        <div class="heading">
                             <h2><?php echo $i; ?></h2>
                             <h4><?php echo $noticia -> titulo_noticia; ?></h4>
                         </div>
-                        <a href="<?php echo base_url()."Noticias/detalle_noticia/".$noticia -> url_amigable_noticia; ?>"><font color="white"> <i class="fa fa-eye"></i>  Ver más</font></a>
+                        <p><?php //echo $noticia -> descripcion_noticia; ?>                        
+                            <a href="<?php echo base_url()."Noticias/detalle_noticia/".$noticia -> url_amigable_noticia; ?>">
+                            <!-- <font color="white"> <i class="fa fa-eye"></i>  Ver más</font> -->
+                        </a></p>
                     </div>
                 </div>
             <?php $i++; } ?>

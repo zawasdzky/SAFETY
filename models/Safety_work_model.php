@@ -117,15 +117,15 @@ class Safety_work_model extends CI_Model {
 	}
 
 	function get_legislaciones_tipo($tipo_legislacion){
-		return  $this->db->query("SELECT * FROM `sw_legislaciones_safety`  WHERE `tipo_legislacion` = '$tipo_legislacion' ORDER BY  `id_legislacion` DESC "); 
+		return  $this->db->query("SELECT * FROM `sw_legislaciones_safety`  WHERE `tipo_legislacion` = '$tipo_legislacion' ORDER BY  `sw_legislaciones_safety`.`fecha_publicacion` DESC "); 
 	}
 
 	function get_legislaciones_limit(){
-		return  $this->db->query("SELECT * FROM `sw_legislaciones_safety`   ORDER BY  `id_legislacion` DESC LIMIT 0 , 5"); 
+		return  $this->db->query("SELECT * FROM `sw_legislaciones_safety`   ORDER BY  `fecha_publicacion` DESC LIMIT 0 , 5"); 
 	}
 	
 	function get_legislaciones_filtro($tipo_legislacion,$categoria_legislacion){
-		return  $this->db->query("SELECT * FROM `sw_legislaciones_safety` WHERE `tipo_legislacion` = '$tipo_legislacion' AND `categoria_legislacion` ='$categoria_legislacion'   ORDER BY  `id_legislacion` DESC "); 
+		return  $this->db->query("SELECT * FROM `sw_legislaciones_safety` WHERE `tipo_legislacion` = '$tipo_legislacion' AND `categoria_legislacion` ='$categoria_legislacion'   ORDER BY  `sw_legislaciones_safety`.`fecha_publicacion` DESC "); 
 	}
 
 	function get_detalle_legislacion($url_amigable_legislacion){
@@ -144,7 +144,7 @@ class Safety_work_model extends CI_Model {
 	}
 
 	function get_eventos_solutions(){
-		return  $this->db->query("SELECT * FROM `sw_eventos_solutions`  ORDER BY  `sw_eventos_solutions`.`orden_evento` ASC "); 
+		return  $this->db->query("SELECT * FROM `sw_eventos_solutions`  ORDER BY  `sw_eventos_solutions`.`orden_evento` ASC LIMIT 0,5;"); 
 	}
 
 	function get_detalle_articulo($url_amigable){

@@ -19,7 +19,7 @@ class Seguros extends CI_Controller {
 		$data['publicidad'] = $this->Safety_work_model->get_publicidad(); 
 		$data['productos_solutions_limit'] = $this->Safety_solutions_model->get_productos_limit(); 
 		$data['legislaciones'] = $this->Safety_work_model->get_legislaciones_limit(); 
-		$data['eventos_solutions'] = $this->Safety_solutions_model->get_eventos_solutions(); 
+		$data['eventos_solutions'] = $this->Safety_work_model->get_eventos_solutions(); 
 		$data['seguros'] = $this->Safety_work_model->get_seguros(); 
 		$this->load->view('seguros',$data);
 		$this->load->view('includes/scripts');
