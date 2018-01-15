@@ -14,6 +14,8 @@ class SST extends CI_Controller {
 	public function index()
 	{
 		$data['color'] ="carrot";  // enviando al header el texto que cambia el color desde un css 
+		$data['frases'] = $this->Safety_work_model->get_frases_widget(); 
+		$data['videos'] = $this->Safety_work_model->get_videos_widget();  
 		$this->load->view('includes/head',$data);
 		$this->load->view('includes/header');
 		$data['publicidad'] = $this->Safety_work_model->get_publicidad(); 

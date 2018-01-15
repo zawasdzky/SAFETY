@@ -10,6 +10,18 @@ class Safety_work_model extends CI_Model {
 		return  $this->db->query("SELECT *  FROM  `sw_noticias_safety`  ORDER BY  `sw_noticias_safety`.`id_noticia` DESC  LIMIT 0 , 3"); 
 	}
 
+	function get_frases_widget(){
+		return  $this->db->query("SELECT *  FROM  `sw_varios_safety`  WHERE  `sw_varios_safety`.`tipo_varios` = 'frase' ORDER BY  `sw_varios_safety`.`orden_varios` DESC  LIMIT 0 , 3"); 
+	}
+
+	function get_eventos_widget(){
+		return  $this->db->query("SELECT *  FROM  `sw_eventos_solutions` LIMIT 0 , 5"); 
+	}
+
+	function get_videos_widget(){
+		return  $this->db->query("SELECT *  FROM  `sw_varios_safety`  WHERE  `sw_varios_safety`.`tipo_varios` = 'video' ORDER BY `sw_varios_safety`.`orden_varios` DESC  LIMIT 0 , 5"); 
+	}
+
 	function get_talento_humano_home(){
 		return  $this->db->query("SELECT *  FROM  `sw_talento_humano_safety`  ORDER BY  `sw_talento_humano_safety`.`id_talento` DESC  LIMIT 0 , 5"); 
 	}	

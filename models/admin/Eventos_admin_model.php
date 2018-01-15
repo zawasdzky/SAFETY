@@ -23,10 +23,12 @@ class eventos_admin_model extends CI_Model {
 		$this->db->where('id_evento', $id_evento);
 		$this->db->update('eventos_solutions', $data);
 	}
-	function delete_foto($id_evento)
+
+	function delete_foto($id_evento, $foto)
 	{
-		$this->db->query("UPDATE `sw_eventos_solutions` SET `foto_evento` = NULL WHERE `sw_eventos_solutions`.`id_evento` = '$id_evento';");
+		$this->db->query("UPDATE `sw_eventos_solutions` SET $foto = NULL WHERE `sw_eventos_solutions`.`id_evento` = '$id_evento';");
 	}
+
 	function delete_evento($id_evento)
 	{
 		$this->db->delete('eventos_solutions', array('id_evento' => $id_evento));

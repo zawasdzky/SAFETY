@@ -9,6 +9,14 @@
           <li class="sidebar-label pt20">MENU WEB ADMIN</li>
 
               <li>
+                <a href="<?php echo base_url();?>admin/Varios">
+                  <span class="glyphicon glyphicon-home"></span>
+                  <span class="sidebar-title">Varios</span>
+                  <span class="caret"></span>
+                </a>
+              </li>
+
+              <li>
                 <a href="<?php echo base_url();?>admin/Infografias">
                   <span class="glyphicon glyphicon-stats"></span>
                   <span class="sidebar-title">Infografias</span>

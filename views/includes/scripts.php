@@ -11,6 +11,7 @@
 <script src="<?php echo base_url();?>assets/js/jquery.easy-pie-chart.js"></script>
 <script src="<?php echo base_url();?>assets/js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
 <script src="<?php echo base_url();?>assets/js/functions.js"></script>
+<script src="<?php echo base_url();?>assets/js/jquery.countdown.js"></script>
 <script src="<?php echo base_url();?>assets/js/jquery.paginate.js"></script>
 <script type="text/javascript">
    $('#paginar').paginate({

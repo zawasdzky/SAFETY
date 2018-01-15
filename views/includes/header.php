@@ -72,17 +72,17 @@
     <div class="breaking-news">
         <div class="container">
             <div class="row">
-            <div class="span8">
-                <h3>Breaking News</h3>
+            <div class="span9">
+                <h3>Frases</h3>
                 <div id="b-news">
                   <ul>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</li>
-                    <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut</li>
-                    <li>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</li>
+                     <?php $i=1; foreach ($frases -> result() as $frase) { ?>
+                        <li> <?php echo $frase -> texto_varios; ?></li>
+                    <?php } ?>
                   </ul>
                 </div>
             </div>
-            <div class="span4">
+            <div class="span3">
                 <div class="search">
                     <input type="text" class="input-block-level">
                     <button>Buscar</button>

@@ -14,13 +14,15 @@ class Talento_humano extends CI_Controller {
 	public function index()
 	{
 		$data['color'] ="yellow";  // enviando al header el texto que cambia el color desde un css 
+		$data['frases'] = $this->Safety_work_model->get_frases_widget(); 
+		$data['videos'] = $this->Safety_work_model->get_videos_widget();  		
 		$this->load->view('includes/head',$data);
 		$this->load->view('includes/header');
 		$data['publicidad'] = $this->Safety_work_model->get_publicidad(); 
 		$data['talento_humano'] = $this->Safety_work_model->get_talento_humano(); 
 		$data['productos_solutions_limit'] = $this->Safety_solutions_model->get_productos_limit(); 
 		$data['legislaciones'] = $this->Safety_work_model->get_legislaciones_limit(); 
-		$data['eventos_solutions'] = $this->Safety_solutions_model->get_eventos_solutions(); 
+		$data['eventos_widget'] = $this->Safety_work_model->get_eventos_widget(); 
 		$this->load->view('talento_humano',$data);
 		$this->load->view('includes/scripts');
 	}

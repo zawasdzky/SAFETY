@@ -7,7 +7,7 @@
                                     <?php  
 
                                     $i=1; $clase="active"; $estilo="";
-                                    foreach ($eventos_solutions -> result() as $item) { 
+                                    foreach ($eventos_widget -> result() as $item) { 
                                     if($i != 1){$clase="";}
                                     if($i == 2){$estilo="background-color: #52c206;";}
                                     if($i == 3){$estilo="background-color: #c40001;";}
@@ -22,17 +22,17 @@
                                 </ul>
                                 <!-- Tab panes -->
                                 <div class="tab-content">
-                                    <?php $i=1;  foreach ($eventos_solutions ->result() as $item) { 
+                                    <?php $i=1;  foreach ($eventos_widget ->result() as $item) { 
                                     if($i == 1){$clase="tab-pane fade active in";}else{$clase="tab-pane fade";}
                                     ?>
                                         <div class="<?php echo $clase; ?>" id="<?php echo "tab".$i; ?>">
                                             <div class="special-offer">
                                                 <div class="thumb">
-                                                    <img src="<?php echo base_url()."fotos_productos/". $item->foto_evento ?>" alt="foto_evento" width="200" >
+                                                    <img src="<?php echo base_url().'fotos_eventos/'. $item-> foto0 ;?>" alt="<?php echo $item-> nombre_evento; ?>"  width="200" >
                                                 </div>
                                                 <div class="text">
-                                                    <p><b><?php echo $item-> ciudad_evento ?> 
-                                                    - <?php echo $item-> fecha_inicio_evento ?></b></p>
+                                                    <p><b><?php echo $item-> ciudad_evento; ?> 
+                                                    - <?php echo $item-> fecha_inicio_evento ;?></b></p>
                                                     <h2 class="color"><?php echo $item-> nombre_evento; ?></h2>
                                                     <br>
                                                     <hr>

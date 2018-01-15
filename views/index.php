@@ -84,21 +84,18 @@
                     </div>
                     <div class="span8">
                         <!--SLIDER DERECHO  START-->
-                        <h2 class="h-style">De Interés</h2>
+                        <h2 class="h-style">Eventos</h2>
                         <div class="page-slider">
                         <div class=" slider flexslider">
                           <ul class="slides">
-                            <?php foreach ($talento_humano-> result() as $talento) { ?>
+                            <?php foreach ($eventos-> result() as $evento) { ?>
                             <li>
                                 <figure>
-                                    <a href="<?php echo base_url()."talento_humano/detalle_articulo_talento/".$talento-> url_amigable_talento; ?>">
-                                        <img src="<?php echo base_url()."fotos_talento_humano/". $talento-> foto1 ?>" alt="<?php echo $talento -> foto1; ?>">
+                                    <a href="<?php echo base_url()."eventos/detalle_evento/".$evento-> url_amigable_evento; ?>">
+                                        <img src="<?php echo base_url()."fotos_eventos". $evento-> foto1 ?>" alt="<?php echo $evento -> foto1; ?>">
                                     </a>
                                     <div class="caption">
-<!--                                         <div class="reviews">
-                                            <p class="color">/ REVIEWS /</p>
-                                        </div> -->
-                                        <p class="text"><?php echo $talento -> titulo_talento; ?></p>
+                                        <p class="text"><?php echo $evento -> titulo_evento; ?></p>
                                     </div>
                                 </figure>
                             </li>
@@ -107,8 +104,8 @@
                         </div>
                         <div id="carousel" class="flexslider">
                           <ul class="slides">
-                            <?php foreach ($talento_humano-> result() as $talento) { ?>
-                                <li><img src="<?php echo base_url()."fotos_talento_humano/". $talento-> foto1 ?>" alt="<?php echo $talento -> foto0; ?>"></li>
+                            <?php foreach ($eventos-> result() as $evento) { ?>
+                                <li><img src="<?php echo base_url()."fotos_eventos/". $evento-> foto1 ?>" alt="<?php echo $evento -> foto0; ?>"></li>
                             <?php } ?>
                           </ul>
                         </div>

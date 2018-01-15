@@ -15,6 +15,7 @@
 <link href='<?php echo base_url();?>assets/css/fullcalendar.css' rel='stylesheet'/>
 <link href="<?php echo base_url();?>assets/css/skin.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo base_url();?>assets/css/weather.css" rel="stylesheet" type="text/css"  />
+<link href="<?php echo base_url();?>assets/css/jquery.countdown.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo base_url();?>assets/css/prettyPhoto.css" rel="stylesheet"  type="text/css" media="screen">
 <link href="<?php echo base_url();?>assets/css/jquery.paginate.css" rel="stylesheet"  type="text/css" media="screen">
 

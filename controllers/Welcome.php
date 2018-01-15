@@ -13,7 +13,9 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
-		$data['color'] ="carrot"; 
+		$data['color'] ="carrot"; 		
+		$data['frases'] = $this->Safety_work_model->get_frases_widget(); 
+		$data['videos'] = $this->Safety_work_model->get_videos_widget(); 
 		$this->load->view('includes/head',$data);
 
 		$data['noticias'] = $this->Safety_work_model->get_noticias_home();
