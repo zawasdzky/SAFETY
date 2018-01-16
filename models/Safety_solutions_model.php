@@ -6,6 +6,10 @@ class Safety_solutions_model extends CI_Model {
 		parent:: __construct();
 		$this->load->database();
 	}
+	function get_eventos_widget(){
+		return  $this->db->query("SELECT *  FROM  `sw_eventos_solutions` LIMIT 0 , 5"); 
+	}
+
 	function get_slider_novedades_solutions()
 	{
 		return  $this->db->query("SELECT * FROM `sw_publicitarios_solutions` WHERE `tipo_publicitario` = 'Slider Novedades' AND `sitio_publicitario`= 'Safety_solutions' ORDER BY  `sw_publicitarios_solutions`.`orden_publicitario` ASC "); 
