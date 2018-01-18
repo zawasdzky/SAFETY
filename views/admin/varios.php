@@ -24,7 +24,6 @@
       <section id="content" class="animated fadeIn">
             <!-- INICIO TAB PANEL -->
             <div class="panel mb25 mt5">
-
               <div class="panel-heading ">
                 <span class="panel-title hidden-xs"> <i class="fa fa-cubes text-danger"></i> CREAR CONTENIDO<span>
                 <ul class="nav panel-tabs-border panel-tabs">
@@ -32,7 +31,6 @@
                   <li><a href="#tab1_2" data-toggle="tab">Videos</a></li>
                 </ul>
               </div>
-
               <div class="panel-body p20 pb10">
                 <div class="tab-content pn br-n admin-form">
                   <div id="tab1_1" class="tab-pane active">
@@ -43,16 +41,29 @@
                       <div class="section row mbn">
                         <div class="col-md-12 pl15">
                           <input type="hidden" name="tipo_varios" value="frase" />
-                          <div class="col-md-2 mb10">
+                          <div class="col-md-1 mb10">
                             <label>Orden</label>
                             <input type="number" name="orden_varios" id="orden_varios" class="event-name gui-input br-light light" required/>
                           </div>
-
-                          <div class="col-md-10 mb10"> 
+                          <div class="col-md-8 mb10">
                             <label>Frase Completa</label>
                                 <textarea name="texto_varios" class="form-control">Frase..</textarea>
-                          </div>                  
-                        </div> 
+                          </div>
+                          <div class="col-md-3 mb10">
+                            <label>Seccion a mostrar</label>
+                              <select   class="form-control" name="seccion_varios" class="form-control">
+                                <option value="Home">Home</option>
+                                <option value="Talento_humano">Talento Humano</option>
+                                <option value="Salud_bienestar">Salud y Bienestar</option>
+                                <option value="Vida_estilo">Vida y Estilo</option>
+                                <option value="Seguros">Seguros</option>
+                                <option value="SST">SST</option>
+                                <option value="Legislacion">Legislación</option>
+                                <option value="Infografias">Infografías</option>
+                                <option value="Noticias">Noticias</option>
+                              </select>
+                          </div>
+                        </div>
                       </div>
                       <div class="row text-center">
                        <input type="submit" name="crear_Frase" class="btn btn-danger" value="Subir Frase">
@@ -69,18 +80,20 @@
                           <tr>
                             <th>Orden</th>
                             <th>Frase</th>
+                            <th>Sección</th>
                             <th>Editar</th>
                           </tr>
                         </thead>
                         <tbody>
                             <?php foreach ($frases -> result() as $frase) { ?>
                             <tr>
-                              <td><?php echo $frase -> orden_varios ?></td> 
-                              <td><?php echo $frase -> texto_varios ?></td> 
-                              <td>  
-                                <a href="<?php echo base_url();?>admin/varios/varios_edit/<?php echo $frase -> id_varios ?>" type="button" class="btn btn-warning" > 
+                              <td><?php echo $frase -> orden_varios ?></td>
+                              <td><?php echo $frase -> texto_varios ?></td>
+                              <td><?php echo $frase -> seccion_varios ?></td>
+                              <td>
+                                <a href="<?php echo base_url();?>admin/varios/varios_edit/<?php echo $frase -> id_varios ?>" type="button" class="btn btn-warning" >
                                 <span class="fa fa-pencil"></span> </a>
-                                <a href="<?php echo base_url();?>admin/varios/borrar_varios/<?php echo $frase-> id_varios ?>" type="button" class="btn btn-danger confirmation" > 
+                                <a href="<?php echo base_url();?>admin/varios/borrar_varios/<?php echo $frase-> id_varios ?>" type="button" class="btn btn-danger confirmation" >
                                 <span class="fa fa-trash-o"></span> </a>
                               </td>
                             </tr>
@@ -91,42 +104,35 @@
                   <!-- FIN LISTADO FRASES -->
                 </div>
                 <!--FIN TAB FRASES-->
-
                 <!-- INICIO TAB 2 -->
                 <div id="tab1_2" class="tab-pane">
-                  <div class="col-md-12">  
+                  <div class="col-md-12">
                     <div class="alert alert-danger">
                       <strong>CREAR VIDEO</strong>
-                    </div>   
+                    </div>
                     <form action="<?php echo base_url();?>admin/varios/insertar_varios" enctype="multipart/form-data"  method="post" accept-charset="utf-8">    <!-- FORMULARIO INSERTAR -->
                       <div class="col-md-2 mb10">
                         <label>Orden</label>
                         <input type="number" name="orden_varios" id="orden_varios" class="event-name gui-input br-light light" required>
                       </div>
-
                       <input type="hidden" name="tipo_varios" value="video"/>
-
                       <div class="col-md-6 mb10">
                         <label>Titulo Video</label>
                         <input type="titulo_varios" name="titulo_varios" id="titulo_varios" class="form-control" required>
                       </div>
-
                       <div class="col-md-12 mb10">
                         <label>Enlace Video</label>
                         <input type="enlace_varios" name="enlace_varios" id="enlace_varios" class="form-control" required placeholder="Enlace completo">
-                      </div> 
-
+                      </div>
                       <div class="col-md-12 mb10">
                         <label>Descripción Corta</label>
                         <input type="descripcion_corta" name="descripcion_corta" id="descripcion_corta" class="form-control" required placeholder="Enlace completo">
-                      </div> 
-
+                      </div>
                       <div class="col-md-6 text-right">
                        <input type="submit" name="crear_video" class="btn btn-danger" value="Subir Video">
                       </div>
                     </form>
-                  </div>  
-                  
+                  </div>
                 <!-- LISTADO VIDEOS -->
                   <div class="col-md-12">
                     <div class="alert alert-warning">
@@ -144,13 +150,13 @@
                         <tbody>
                             <?php foreach ($videos -> result() as $frase) { ?>
                             <tr>
-                              <td><?php echo $frase -> orden_varios ;?></td> 
-                              <td><?php echo $frase -> enlace_varios ;?></td> 
+                              <td><?php echo $frase -> orden_varios ;?></td>
+                              <td><?php echo $frase -> enlace_varios ;?></td>
                               <td><?php echo $frase -> titulo_varios ;?></td>
-                              <td>  
-                                <a href="<?php echo base_url();?>admin/varios/varios_edit/<?php echo $frase -> id_varios ?>" type="button" class="btn btn-warning" > 
+                              <td>
+                                <a href="<?php echo base_url();?>admin/varios/varios_edit/<?php echo $frase -> id_varios ?>" type="button" class="btn btn-warning" >
                                 <span class="fa fa-pencil"></span> </a>
-                                <a href="<?php echo base_url();?>admin/varios/borrar_varios/<?php echo $frase-> id_varios ?>" type="button" class="btn btn-danger confirmation" > 
+                                <a href="<?php echo base_url();?>admin/varios/borrar_varios/<?php echo $frase-> id_varios ?>" type="button" class="btn btn-danger confirmation" >
                                 <span class="fa fa-trash-o"></span> </a>
                               </td>
                             </tr>
@@ -162,15 +168,13 @@
                 </div>
                 <!-- FIN TAB 2 -->
                 </div>
-              </div> 
+              </div>
             <!-- FIN  TAB PANEL -->
         </section>
         <!-- End: Content -->
   </div>
   <!-- End: Main -->
-
   <!-- BEGIN: PAGE SCRIPTS -->
-
   <!-- jQuery -->
   <script src="<?php echo base_url();?>assets_admin/vendor/jquery/jquery-1.11.1.min.js"></script>
   <script src="<?php echo base_url();?>assets_admin/vendor/jquery/jquery_ui/jquery-ui.min.js"></script>
@@ -195,15 +199,12 @@
   <script src="https://cdn.ckeditor.com/4.6.1/full-all/ckeditor.js"></script>
   <script type="text/javascript">
   jQuery(document).ready(function() {
-
     $(".confirmation").click(function(){
       return confirm('¿Está seguro de borrar?');
     });
-
     "use strict";
-    // Init Theme Core    
+    // Init Theme Core
     Core.init();
-    
     // Init DataTables
         $('#datatable2').dataTable({
       "aoColumnDefs": [{
@@ -228,7 +229,6 @@
     });
     // Add Placeholder text to datatables filter bar
     $('.dataTables_filter input').attr("placeholder", "Buscar");
-
 // Init Ckeditor
     CKEDITOR.replace('contenido_varios', {
       height: 210,

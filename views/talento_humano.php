@@ -6,7 +6,7 @@
                     <div class="news-slider">
                         <div class="flexslider">
                           <ul class="slides">
-                            <?php $i=1; foreach ($talento_humano  -> result() as $item) { ?>
+                            <?php $i=1; foreach ($talento_humano -> result() as $item) { ?>
                                 <?php if ($i<5) { ?>
                                     <li>
                                         <div class="thumb">
@@ -50,48 +50,7 @@
                         </div>
                     </section>
                     <section>
-                        <div class="multimedia">
-                            <header>
-                                <h2 class="h-style">Mutimedia</h2>
-<!--                                 <div class="rating">
-                                    <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                                </div>
-                                <ul class="post-comments">
-                                    <li><a href="#"><i class="fa fa-user"></i>M-Elgendy</a></li>
-                                    <li><a href="#"><i class="fa fa-heart-o"></i>1205</a></li>
-                                    <li><a href="#"><i class="fa fa-comment-o"></i>125</a></li>
-                                </ul> -->
-                            </header>
-                            <div class="multimedia-thumb">
-                                <figure>
-                                    <img src="images/multimedia.png" alt="">
-<!--                                     <div class="multimedia-tabs">
-                                        <ul>
-                                            <li class="pink"><a href="#"><i class="fa fa-camera"></i>Photos</a></li>
-                                            <li class="green"><a href="#"><i class="fa fa-video-camera"></i>Videos</a></li>
-                                            <li class="orange"><a href="#"><i class="fa fa-music"></i>Audio</a></li>
-                                            <li class="blue"><a href="#"><i class="fa fa-picture-o"></i>Gallery</a></li>
-                                        </ul>
-                                    </div> -->
-                                </figure>
-                                <div class="text">
-                                    <h3>Shin</h3>
-                                    <h3 class="border">Street dance pereormance</h3>
-                                </div>
-                            </div>
-                            <div class="image-thumbs">
-                                <ul>
-                                    <li><a href="#"><img src="images/multimedia-thumb1.png" alt=""></a></li>
-                                    <li><a href="#"><img src="images/multimedia-thumb2.png" alt=""></a></li>
-                                    <li><a href="#"><img src="images/multimedia-thumb3.png" alt=""></a></li>
-                                    <li><a href="#"><img src="images/multimedia-thumb4.png" alt=""></a></li>
-                                    <li><a href="#"><img src="images/multimedia-thumb5.png" alt=""></a></li>
-                                    <li><a href="#"><img src="images/multimedia-thumb1.png" alt=""></a></li>
-                                    <li><a href="#"><img src="images/multimedia-thumb2.png" alt=""></a></li>
-                                    <li><a href="#"><img src="images/multimedia-thumb3.png" alt=""></a></li>
-                                </ul>
-                            </div>
-                        </div>
+                        <?php $this->load->view('includes/videos');  ?>
                     </section>
                     <!-- INICIO WIDGET EVENTOS -->
                     <section>

@@ -69,26 +69,35 @@
     </header>
     <!--HEADER END-->
         <!--NEWS START-->
+    <?php $seccion = $this->uri->segment(1); if ($seccion=="") {$seccion="Home";}?>
+    <?php $visible = "hidden";
+    foreach ($frases -> result() as $frase) { 
+        if ($frase-> seccion_varios == $seccion){ 
+             $visible="visible"; 
+            } 
+        } ?>
     <div class="breaking-news">
         <div class="container">
             <div class="row">
-            <div class="span9">
-                <h3>Frases</h3>
-                <div id="b-news">
-                  <ul>
-                     <?php $i=1; foreach ($frases -> result() as $frase) { ?>
-                        <li> <?php echo $frase -> texto_varios; ?></li>
-                    <?php } ?>
-                  </ul>
+                <div class="span9" style="visibility: <?php echo $visible; ?>;">
+                    <h3>Frases</h3>
+                    <div id="b-news">
+                      <ul>
+                         <?php $i=0; foreach ($frases -> result() as $frase) { ?>
+                            <?php if ($frase-> seccion_varios == $seccion){ ?>
+                                <li> <?php echo $frase -> texto_varios; $i++;?></li>
+                            <?php } ?>
+                        <?php } ?>
+                      </ul>
+                    </div>
+                </div>
+                <div class="span3">
+                    <div class="search">
+                        <input type="text" class="input-block-level">
+                        <button>Buscar</button>
+                    </div>
                 </div>
             </div>
-            <div class="span3">
-                <div class="search">
-                    <input type="text" class="input-block-level">
-                    <button>Buscar</button>
-                </div>
-            </div>
-        </div>
         </div>
     </div>
     <!--NEWS END-->
