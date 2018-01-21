@@ -14,7 +14,7 @@
             <iframe width="100" height="56" src="https://www.youtube.com/embed/<?php echo $video-> enlace_varios; ?>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             <div class="text">
                 <p><?php echo $video-> titulo_varios; ?></p>
-                <p class="date"><?php echo $video-> fecha_creacion_varios; ?></p> 
+                <!-- <p class="date"><?php echo $video-> fecha_creacion_varios; ?></p>  -->
             </div>  
           </a>
         <?php $i++; } ?>

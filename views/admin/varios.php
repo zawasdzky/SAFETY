@@ -8,14 +8,14 @@
               <a href="dashboard.html">Gestor Safety Solutions</a>
             </li>
             <li class="crumb-icon">
-              <a href="dashboard.html">
+              <a href="<?php echo base_url();?>admin/">
                 <span class="glyphicon glyphicon-home"></span>
               </a>
             </li>
             <li class="crumb-link">
-              <a href="#">Gestión de varios</a>
+              Gestión de varios
             </li>
-            <li class="crumb-trail">varios</li>
+            <li class="crumb-trail">Varios</li>
           </ol>
         </div>
       </header>
@@ -51,7 +51,7 @@
                           </div>
                           <div class="col-md-3 mb10">
                             <label>Seccion a mostrar</label>
-                              <select   class="form-control" name="seccion_varios" class="form-control">
+                              <select  class="form-control" name="seccion_varios" class="form-control">
                                 <option value="Home">Home</option>
                                 <option value="Talento_humano">Talento Humano</option>
                                 <option value="Salud_bienestar">Salud y Bienestar</option>
@@ -80,7 +80,7 @@
                           <tr>
                             <th>Orden</th>
                             <th>Frase</th>
-                            <th>Sección</th>
+                            <th>Seccion</th>
                             <th>Editar</th>
                           </tr>
                         </thead>

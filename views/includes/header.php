@@ -69,13 +69,16 @@
     </header>
     <!--HEADER END-->
         <!--NEWS START-->
-    <?php $seccion = $this->uri->segment(1); if ($seccion=="") {$seccion="Home";}?>
-    <?php $visible = "hidden";
-    foreach ($frases -> result() as $frase) { 
-        if ($frase-> seccion_varios == $seccion){ 
-             $visible="visible"; 
+    <?php 
+        $seccion = $this->uri->segment(1); if ($seccion=="") {$seccion="Home";} // se determina si está en la seccion home
+        $visible = "hidden";
+        foreach ($frases -> result() as $frase) { 
+            if ($frase-> seccion_varios == $seccion){ 
+                 $visible="visible"; 
+                } 
             } 
-        } ?>
+    ?>
+
     <div class="breaking-news">
         <div class="container">
             <div class="row">
@@ -83,9 +86,9 @@
                     <h3>Frases</h3>
                     <div id="b-news">
                       <ul>
-                         <?php $i=0; foreach ($frases -> result() as $frase) { ?>
+                         <?php  foreach ($frases -> result() as $frase) { ?>
                             <?php if ($frase-> seccion_varios == $seccion){ ?>
-                                <li> <?php echo $frase -> texto_varios; $i++;?></li>
+                                <li> <?php echo $frase -> texto_varios; ?></li>
                             <?php } ?>
                         <?php } ?>
                       </ul>

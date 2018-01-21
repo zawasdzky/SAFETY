@@ -11,7 +11,7 @@ class Safety_work_model extends CI_Model {
 	}
 
 	function get_frases_widget(){
-		return  $this->db->query("SELECT *  FROM  `sw_varios_safety`  WHERE  `sw_varios_safety`.`tipo_varios` = 'frase' ORDER BY  `sw_varios_safety`.`orden_varios` DESC  LIMIT 0 , 3"); 
+		return  $this->db->query("SELECT *  FROM  `sw_varios_safety`  WHERE  `sw_varios_safety`.`tipo_varios` = 'frase' ORDER BY  `sw_varios_safety`.`orden_varios` DESC "); 
 	}
 
 	function get_eventos_widget(){
@@ -19,7 +19,7 @@ class Safety_work_model extends CI_Model {
 	}
 
 	function get_videos_widget(){
-		return  $this->db->query("SELECT *  FROM  `sw_varios_safety`  WHERE  `sw_varios_safety`.`tipo_varios` = 'video' ORDER BY `sw_varios_safety`.`orden_varios` DESC  LIMIT 0 , 5"); 
+		return  $this->db->query("SELECT *  FROM  `sw_varios_safety`  WHERE  `sw_varios_safety`.`tipo_varios` = 'video' ORDER BY `sw_varios_safety`.`orden_varios` DESC  LIMIT 0 , 4"); 
 	}
 
 	function get_talento_humano_home(){

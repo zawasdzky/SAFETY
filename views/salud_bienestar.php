@@ -137,7 +137,9 @@
             </div>
         </div>
     </div>
-
+    <section>
+        <?php $this->load->view('includes/footer');  ?>
+    </section>
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {

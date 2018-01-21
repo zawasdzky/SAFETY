@@ -13,7 +13,7 @@
             </a>
           </li>
           <li class="crumb-link">
-            <a href="#">Gestión de varios</a>
+              <a href="<?php echo base_url();?>admin/varios/">Gestión de varios</a>
           </li>
           <li class="crumb-trail">varios</li>
         </ol>

@@ -8,14 +8,14 @@ class Vida_estilo extends CI_Controller {
 		parent::__construct();
 		$this->load->helper('url');
 		$this->load->model('Safety_work_model');
-		$this->load->model('Safety_solutions_model');;
+		$this->load->model('Safety_solutions_model');
+
 	}
 
 	public function index()
 	{
-		$data['color'] ="blue2";  // enviando al header el texto que cambia el color desde un css 
 		$data['frases'] = $this->Safety_work_model->get_frases_widget(); 
-		$data['videos'] = $this->Safety_work_model->get_videos_widget();  
+		$data['color'] ="blue2";  // enviando al header el texto que cambia el color desde un css 
 		$this->load->view('includes/head',$data);
 		$this->load->view('includes/header');
 		$data['publicidad'] = $this->Safety_work_model->get_publicidad(); 
@@ -34,7 +34,7 @@ class Vida_estilo extends CI_Controller {
 		if ($tipo == NULL) {
 			$data['articulos_vida_estilo'] = $this->Safety_work_model->get_articulos_vida_estilo();
 		}
-
+		$data['frases'] = $this->Safety_work_model->get_frases_widget(); 
 		$data['color'] ="blue2"; 
 		$this->load->view('includes/head',$data);
 		$this->load->view('includes/header');
@@ -47,6 +47,7 @@ class Vida_estilo extends CI_Controller {
 
 	public function detalle_articulo_vida_estilo($url_amigable_vida_estilo)
 	{
+		$data['frases'] = $this->Safety_work_model->get_frases_widget(); 
 		$data['detalle_articulo_vida_estilo'] = $this->Safety_work_model->get_detalle_articulo_vida_estilo($url_amigable_vida_estilo); 
 		$data['color'] ="blue2"; 
 		$this->load->view('includes/head',$data);
