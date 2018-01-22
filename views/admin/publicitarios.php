@@ -79,6 +79,7 @@
                       <div class="col-md-6 mb10">
                         <select name="tipo_publicitario" class="form-control">
                           <option value="">Tipo / Ubicación  </option>
+                          <option value="Slider Home">Slider Home (1200 x 400) </option>
                           <option value="Slider Novedades">Slider Novedades</option>
                           <option value="Slider Salud y Bienestar">Salud y Bienestar</option>
                           <option value="Slider Vida y Estilo">Slider Vida y Estilo</option>
@@ -86,6 +87,13 @@
                           <option value="Slider Noticias">Slider Noticias</option>
                           <option value="Slider Noticias">Slider Seguros</option>
                           <option value="Slider Noticias">Slider SST</option>
+                          <option value="Header">Header (456 x 47)</option>
+                          <option value="Home1">Home 1 Superior Izquierdo (340 x 768)</option>
+                          <option value="Home2">Home 2 Superior Derecho (170 x 200)</option>
+                          <option value="Home3">Home 3 Central Vertical (153 x 695)</option>
+                          <option value="Home4">Home 4 Central Inferior (750 x 200)</option>
+                          <option value="Home Columna Derecha">Home Columna Derecha(300 x 250)</option>
+                          <option value="footer central">Footer Central (352 x 193)</option>
                           <option value="Pauta Novedades">Pauta Novedades</option>
                           <option value="Slider Talento Humano">Slider Talento Humano</option>
                           <option value="Pauta Noticias">Pauta Noticias</option>
@@ -94,7 +102,7 @@
                           <option value="Columna Central">Columna Central</option>
                         </select>
                       </div>
-                      <div class="col-md-6 mb10">Noticias
+                      <div class="col-md-6 mb10">
                         <select name="sitio_publicitario" class="form-control">
                           <option value="">Sitio </option>
                           <option value="Safety_solutions">Safety Solutions</option>

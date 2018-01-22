@@ -14,9 +14,9 @@ class publicitarios extends CI_Controller {
 		//libreria y paranetros para cargar  fotos
         $config['upload_path']          = './fotos_productos/';
         $config['allowed_types']        = 'gif|jpg|png|pdf';
-        $config['max_size']        = 1000;
-        $config['max_width']       = 5000;
-        $config['max_height']      = 5000;
+        $config['max_size']        = 2000;
+        $config['max_width']       = 2000;
+        $config['max_height']      = 2000;
         $config['overwrite'] 	   = TRUE;
         $this->load->library('upload', $config);	
 	}

@@ -17,7 +17,8 @@ class Welcome extends CI_Controller {
 		$data['frases'] = $this->Safety_work_model->get_frases_widget(); 
 		$data['videos'] = $this->Safety_work_model->get_videos_widget(); 
 		$this->load->view('includes/head',$data);
-
+		$data['eventos_widget'] = $this->Safety_work_model->get_eventos_widget(); 
+		$data['publicidad'] = $this->Safety_work_model->get_publicidad(); 
 		$data['noticias'] = $this->Safety_work_model->get_noticias_home();
         $data['vida_estilo'] = $this->Safety_work_model->get_vida_estilo_home();
 		$data['talento_humano'] = $this->Safety_work_model->get_talento_humano_home(); 
@@ -27,7 +28,6 @@ class Welcome extends CI_Controller {
 		$data['sociales'] = $this->Safety_work_model->get_sociales_home(); 
 		$data['seguros'] = $this->Safety_work_model->get_seguros_home(); 
 		$data['infografias'] = $this->Safety_work_model->get_infografias_home(); 
-		$data['publicidad'] = $this->Safety_work_model->get_publicidad(); 
 		$this->load->view('includes/header');
 		$this->load->view('index',$data);
 	}

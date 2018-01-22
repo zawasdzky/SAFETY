@@ -3,30 +3,26 @@
     <!--BANNER START-->
     <div class="banner">
         <ul class="bxslider">
-          <li>
+<!--           <li>
             <img src="images/slider_1.jpg">
             <div class="banner-caps">
-<!--                <h2>Silent Beauty...</h2>
-                <p>quis nostrud exercitation ullamco laboris nisi ut</p> -->
+               <h2>Silent Beauty...</h2>
+                <p>quis nostrud exercitation ullamco laboris nisi ut</p>
             </div>
-          </li>
-          <li>
-            <img src="images/slider_2.jpg">
-            <div class="banner-caps">
-
-            </div>
-          </li>
-          <li>
-            <img src="images/slider_3.jpg" >
-            <div class="banner-caps">
-
-            </div>
-          </li>
-          <li>
-            <img src="images/slider_4.jpg">
-            <div class="banner-caps">
-            </div>
-          </li>
+          </li> -->
+        <?php foreach ($publicidad -> result() as $item) { ?>  
+            <?php if ($item -> tipo_publicitario == "Slider Home") { ?>     
+                  <li>
+                    <a href="<?php echo $item->enlace_publicitario;?>">
+                        <img src="<?php echo base_url();?>fotos_productos/<?php echo $item->foto_publicitario;?>">
+                    </a>
+                    <div class="banner-caps">
+                        <h2><?php echo $item -> nombre_publicitario; ?></h2>
+                        <p><?php echo $item -> titulo_publicitario; ?></p>
+                    </div>
+                  </li>
+            <?php } ?>
+        <?php } ?>
         </ul>
     </div>
     <!--BANNER END-->
@@ -68,7 +64,13 @@
                     <div class="span4">
                         <div class="tabs">
                             <div class="tabs-widget">
-                                <img src="images/Nueva_pauta_Home_1.jpg" class="img-responsive">
+                            <?php foreach ($publicidad -> result() as $item) { ?>  
+                                <?php if ($item -> tipo_publicitario == "Home1") { ?>   
+                                    <a href="<?php echo $item->enlace_publicitario;?>">
+                                        <img src="<?php echo base_url();?>fotos_productos/<?php echo $item->foto_publicitario;?>" class="img-responsive" alt="<?php echo $item->titulo_publicitario;?>">
+                                    </a>  
+                                <?php } ?>
+                            <?php } ?>
                             </div>
                             <ul class="mycarousel jcarousel-skin-tango">
                                 <?php foreach ($infografias -> result() as $infografia) { ?>
@@ -88,7 +90,7 @@
                         <div class="page-slider">
                         <div class=" slider flexslider">
                           <ul class="slides">
-                            <?php foreach ($eventos-> result() as $evento) { ?>
+                            <?php foreach ($eventos_widget-> result() as $evento) { ?>
                             <li>
                                 <figure>
                                     <a href="<?php echo base_url()."eventos/detalle_evento/".$evento-> url_amigable_evento; ?>">
@@ -104,7 +106,7 @@
                         </div>
                         <div id="carousel" class="flexslider">
                           <ul class="slides">
-                            <?php foreach ($eventos-> result() as $evento) { ?>
+                            <?php foreach ($eventos_widget-> result() as $evento) { ?>
                                 <li><img src="<?php echo base_url()."fotos_eventos/". $evento-> foto1 ?>" alt="<?php echo $evento -> foto0; ?>"></li>
                             <?php } ?>
                           </ul>
@@ -139,12 +141,14 @@
                                     </div>
                                 </div>
                                 <div class="span2 visible-desktop">
-                                    <div class="new-ad">
-                                        <img src="images/new-ad1.jpg" alt="">
-                                    </div>
-                                    <div class="new-ad">
-                                        <img src="images/new-ad1.jpg" alt="">
-                                    </div>
+
+                                    <?php foreach ($publicidad -> result() as $item) { ?>  
+                                        <?php if ($item -> tipo_publicitario == "Home2") { ?>   
+                                            <a href="<?php echo $item->enlace_publicitario;?>">
+                                                <img src="<?php echo base_url();?>fotos_productos/<?php echo $item->foto_publicitario;?>" class="img-responsive" alt="<?php echo $item->titulo_publicitario;?>">
+                                            </a>  
+                                        <?php } ?>
+                                    <?php } ?>
                                 </div>
                             </div>
                         </article>
@@ -223,7 +227,13 @@
                             </div>
                             <div class="span2 visible-desktop">
                                 <div class="add2">
-                                    <img alt="" src="images/Nueva_pauta_Home_2.jpg">
+                                    <?php foreach ($publicidad -> result() as $item) { ?>  
+                                        <?php if ($item -> tipo_publicitario == "Home3") { ?>   
+                                            <a href="<?php echo $item->enlace_publicitario;?>">
+                                                <img src="<?php echo base_url();?>fotos_productos/<?php echo $item->foto_publicitario;?>" class="img-responsive" alt="<?php echo $item->titulo_publicitario;?>">
+                                            </a>  
+                                        <?php } ?>
+                                    <?php } ?>
                                 </div>
                             </div>
                         </div>
@@ -284,7 +294,13 @@
                                     <hr>
                                 </div>
                                 <div>
-                                    <img alt="" src="images/pauta_750_200.jpg">
+                                    <?php foreach ($publicidad -> result() as $item) { ?>  
+                                        <?php if ($item -> tipo_publicitario == "Home4") { ?>   
+                                            <a href="<?php echo $item->enlace_publicitario;?>">
+                                                <img src="<?php echo base_url();?>fotos_productos/<?php echo $item->foto_publicitario;?>" class="img-responsive" alt="<?php echo $item->titulo_publicitario;?>">
+                                            </a>  
+                                        <?php } ?>
+                                    <?php } ?>
                                 </div>
                             </article>
                         </div>
@@ -396,11 +412,23 @@
                         <div class="sidebar">
                             <!--SIDE BAR AD WIDGET START-->
                             <div class="widget widget-new-ad">
-                                <img src="images/pauta_300_250.jpg" alt="">
+                            <?php foreach ($publicidad -> result() as $item) { ?>  
+                                <?php if (($item -> tipo_publicitario == "Home Columna Derecha") && ($item -> orden_publicitario) == 1) { ?>   
+                                    <a href="<?php echo $item->enlace_publicitario;?>">
+                                        <img src="<?php echo base_url();?>fotos_productos/<?php echo $item->foto_publicitario;?>" class="img-responsive" alt="<?php echo $item->titulo_publicitario;?>">
+                                    </a>  
+                                <?php } ?>
+                            <?php } ?>
                             </div>
                             <div class="widget widget-new-ad">
-                                <img src="images/Nueva_pauta_rotativa_Home.jpg" alt="">
-                            </div>                            
+                            <?php foreach ($publicidad -> result() as $item) { ?>  
+                                <?php if (($item -> tipo_publicitario == "Home Columna Derecha") && ($item -> orden_publicitario) == 2) { ?>   
+                                    <a href="<?php echo $item->enlace_publicitario;?>">
+                                        <img src="<?php echo base_url();?>fotos_productos/<?php echo $item->foto_publicitario;?>" class="img-responsive" alt="<?php echo $item->titulo_publicitario;?>">
+                                    </a>  
+                                <?php } ?>
+                            <?php } ?>
+                            </div>
                             <!--SIDE BAR AD WIDGET END-->
                             <!--HOT NEW WIDGET START-->
                             <div class=" widget hot-news">
@@ -413,10 +441,15 @@
                                     <a href="#" class="color">Leer...</a>
                                 </div>
                             </div>
-                           <div class="widget widget-new-ad">
-                                <img src="images/pauta_300_250.jpg" alt="">
-                            </div> 
-
+                            <div class="widget widget-new-ad">
+                            <?php foreach ($publicidad -> result() as $item) { ?>  
+                                <?php if (($item -> tipo_publicitario == "Home Columna Derecha") && ($item -> orden_publicitario) == 3) { ?>   
+                                    <a href="<?php echo $item->enlace_publicitario;?>">
+                                        <img src="<?php echo base_url();?>fotos_productos/<?php echo $item->foto_publicitario;?>" class="img-responsive" alt="<?php echo $item->titulo_publicitario;?>">
+                                    </a>  
+                                <?php } ?>
+                            <?php } ?>
+                            </div>
                             <!--HOT NEW WIDGET END-->
                             <!--POLL WIDGET START-->
                             <div class="widget poll-widget">
@@ -438,7 +471,13 @@
                             </div>
                             <!--POLL WIDGET END-->
                            <div class="widget widget-new-ad">
-                                <img src="images/pauta_300_250.jpg" alt="">
+                            <?php foreach ($publicidad -> result() as $item) { ?>  
+                                <?php if (($item -> tipo_publicitario == "Home Columna Derecha") && ($item -> orden_publicitario) == 4) { ?>   
+                                    <a href="<?php echo $item->enlace_publicitario;?>">
+                                        <img src="<?php echo base_url();?>fotos_productos/<?php echo $item->foto_publicitario;?>" class="img-responsive" alt="<?php echo $item->titulo_publicitario;?>">
+                                    </a>  
+                                <?php } ?>
+                            <?php } ?>
                             </div>
                             <!-- REVISTA EN LINEA  -->
                             <div class="widget widget-newsletter">
