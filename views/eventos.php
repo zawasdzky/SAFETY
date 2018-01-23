@@ -38,7 +38,6 @@
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in scelerisque sem. Nam auctor malesuada tortor consectetur sollicitudin. Aliquam ante quam, imperdiet vitae neque condimentum, eleifend auctor nunc. Nam mollis fermentum tempor. Quisque vitae erat fermentum, volutpat nisl eget, mattis sapien. Suspendisse potenti. Morbi suscipit massa ut aliquam commodo. Nulla augue erat, elementum sed convallis id, pellentesque eget nulla. Maecenas gravida, dolor at congue egestas, metus arcu hendrerit elit, ac porttitor velit neque eget arcu. Morbi tristique sapien nec augue dignissim lobortis. </p>
                                 <!-- <a href="#" class="btn-style">Buy Ticket</a> -->
                                 <a href="#" class="btn-style">Ver más</a>
-                            </div>
                         </article>
                         <!--EVENT LIST END-->
                         <?php } ?>
