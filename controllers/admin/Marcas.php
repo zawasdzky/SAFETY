@@ -1,8 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 class Marcas extends CI_Controller {
-
 		public function __construct()
 	{
 		parent::__construct();
@@ -19,29 +17,23 @@ class Marcas extends CI_Controller {
         $config['max_height']      = 5000;
         $config['overwrite'] 	   = TRUE;
         $this->load->library('upload', $config);
-
 	}
-
 	public function index()
 	{
 		$data['marcas'] = $this->marcas_admin_model->get_marcas();
 		$data['categorias'] = $this->marcas_admin_model->get_categorias();
 		$this->load->view('admin/marcas',$data);
 	}
-
 	public function insertar_marca()
 	{
-
         if (!empty($_FILES['foto_marca']['name'])) {
 			$foto_marca = $_FILES['foto_marca']['name'];
 	        $this->upload->do_upload('foto_marca');
 			}else{$foto_marca = NULL;}
-
         if (!empty($_FILES['logo_marca']['name'])) {
 			$logo_marca = $_FILES['logo_marca']['name'];
 	        $this->upload->do_upload('logo_marca');
 			}else{$logo_marca = NULL;}
-
 		$data = array(
 					'id_categoria' => $this->input->post('id_categoria'),
 					'nombre_marca' => $this->input->post('nombre_marca'),
@@ -54,40 +46,32 @@ class Marcas extends CI_Controller {
 					'telefonos_marca' => $this->input->post('telefonos_marca'),
 					'direccion_marca' => $this->input->post('direccion_marca'),
 					'ciudad_marca' => $this->input->post('ciudad_marca'),
-
 					'telefonos2_marca' => $this->input->post('telefonos2_marca'),
 					'direccion2_marca' => $this->input->post('direccion2_marca'),
 					'ciudad2_marca' => $this->input->post('ciudad2_marca'),
-
 					'telefonos3_marca' => $this->input->post('telefonos3_marca'),
 					'direccion3_marca' => $this->input->post('direccion3_marca'),
 					'ciudad3_marca' => $this->input->post('ciudad3_marca'),
-
 					'contacto_marca' => $this->input->post('contacto_marca'),
 					'cargo_contacto_marca' => $this->input->post('cargo_contacto_marca'),
 					'email_marca' => $this->input->post('email_marca')
 					  );
-		
 		$this->marcas_admin_model->insert_marca($data);
 		redirect('/admin/Marcas');
 	}
-
 	public function update_marca()
 	{
 		$id_marca =  $this->input->post('id_marca');// recibiendo el Id via post
-
         if (!empty($_FILES['foto_marca']['name'])) {		
 	        $this->upload->do_upload('foto_marca');
 	        $file_info = $this->upload->data();   
 			$foto_marca = $file_info['file_name'];
 		}else{$foto_marca =  $this->input->post('foto_marca');}
-
         if (!empty($_FILES['logo_marca']['name'])) {		
 	        $this->upload->do_upload('logo_marca');
 	        $file_info = $this->upload->data();   
 			$logo_marca = $file_info['file_name'];
 		}else{$logo_marca =  $this->input->post('logo_marca');}
-
 		$data = array(
 					'id_categoria' => $this->input->post('id_categoria'),
 					'nombre_marca' => $this->input->post('nombre_marca'),
@@ -100,24 +84,19 @@ class Marcas extends CI_Controller {
 					'telefonos_marca' => $this->input->post('telefonos_marca'),
 					'direccion_marca' => $this->input->post('direccion_marca'),
 					'ciudad_marca' => $this->input->post('ciudad_marca'),
-
 					'telefonos2_marca' => $this->input->post('telefonos2_marca'),
 					'direccion2_marca' => $this->input->post('direccion2_marca'),
 					'ciudad2_marca' => $this->input->post('ciudad2_marca'),
-
 					'telefonos3_marca' => $this->input->post('telefonos3_marca'),
 					'direccion3_marca' => $this->input->post('direccion3_marca'),
 					'ciudad3_marca' => $this->input->post('ciudad3_marca'),
-
 					'contacto_marca' => $this->input->post('contacto_marca'),
 					'cargo_contacto_marca' => $this->input->post('cargo_contacto_marca'),
 					'email_marca' => $this->input->post('email_marca')
 					  );
-
 		$this->marcas_admin_model->update_marca($id_marca,$data);
 		redirect('/admin/Marcas/marca_edit/'.$id_marca);
 	}
-
 	public function marca_edit($id_marca)
 	{
 		$data['detalle_marca'] = $this->marcas_admin_model->get_detalle_marca($id_marca);
@@ -141,7 +120,4 @@ class Marcas extends CI_Controller {
 		$this->marcas_admin_model->delete_marca($id_marca);
 		redirect('/admin/marcas');
 	}
-	
 }
-
-

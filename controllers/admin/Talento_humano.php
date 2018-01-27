@@ -1,8 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 class Talento_humano extends CI_Controller {
-
 		public function __construct()
 	{
 		parent::__construct();
@@ -20,7 +18,6 @@ class Talento_humano extends CI_Controller {
         $config['overwrite'] 	   = TRUE;
         $this->load->library('upload', $config);
 	}
-
 	public function index()
 	{
 		$data['talento_humano'] = $this->talento_humano_admin_model->get_talento_humano();
@@ -36,9 +33,9 @@ class Talento_humano extends CI_Controller {
     if (!empty($_FILES['foto4']['name'])) {	$this->upload->do_upload('foto4'); $foto4_info = $this->upload->data(); $foto4 = $foto4_info['file_name']; }else{ $foto4 = NULL;}
     if (!empty($_FILES['foto5']['name'])) {	$this->upload->do_upload('foto5'); $foto5_info = $this->upload->data(); $foto5 = $foto5_info['file_name']; }else{ $foto5 = NULL;}
     if (!empty($_FILES['foto6']['name'])) {	$this->upload->do_upload('foto6'); $foto6_info = $this->upload->data(); $foto6 = $foto6_info['file_name']; }else{ $foto6 = NULL;}
-    
     if (!empty($_FILES['ficha_talento']['name'])) { $this->upload->do_upload('ficha_talento'); $ficha_info= $this->upload->data(); $ficha_talento = $ficha_info['file_name']; }else{ $ficha_talento = NULL;}
 		$data = array(
+					'orden_talento' => $this->input->post('orden_talento'),
 					'nombre_talento' => $this->input->post('nombre_talento'),
 					'titulo_talento' => $this->input->post('titulo_talento'),
 					'tipo_talento' => $this->input->post('tipo_talento'),
@@ -61,11 +58,9 @@ class Talento_humano extends CI_Controller {
 					'foto5' => $foto5,
 					'foto6' => $foto6
 					 );
-
 		$this->talento_humano_admin_model->insert_talento($data);
 		redirect('/admin/talento_humano');
 	}
-
 	public function update_talento($id_talento)
 	{
 		if (!empty($_FILES['icono_talento']['name'])) {	$this->upload->do_upload('icono_talento'); $icono_talento_info = $this->upload->data(); $icono_talento = $icono_talento_info['file_name']; }else{ $icono_talento = $this->input->post('icono_talento');}
@@ -84,8 +79,8 @@ class Talento_humano extends CI_Controller {
         if (!empty($_FILES['foto6']['name'])) {	$this->upload->do_upload('foto6'); $foto6_info = $this->upload->data(); $foto6 = $foto6_info['file_name']; }
         else{ $foto6 = $this->input->post('foto6');}
         if (!empty($_FILES['ficha_talento']['name'])) { $this->upload->do_upload('ficha_talento'); $ficha_info= $this->upload->data(); $ficha_talento = $ficha_info['file_name']; }else{ $ficha_talento =  $this->input->post('ficha_talento');}
-                           
 		$data = array(
+					'orden_talento' => $this->input->post('orden_talento'),
 					'nombre_talento' => $this->input->post('nombre_talento'),
 					'titulo_talento' => $this->input->post('titulo_talento'),
 					'tipo_talento' => $this->input->post('tipo_talento'),
@@ -111,7 +106,6 @@ class Talento_humano extends CI_Controller {
 		$this->talento_humano_admin_model->update_talento($id_talento,$data);
 		redirect('/admin/talento_humano/talento_edit/'.$id_talento);
 	}
-
 	public function talento_edit($id_talento)
 	{
 		$data['detalle_talento'] = $this->talento_humano_admin_model->get_detalle_talento($id_talento);
@@ -132,6 +126,4 @@ class Talento_humano extends CI_Controller {
 		$this->talento_humano_admin_model->delete_foto($id_talento,$foto);
 		redirect('/admin/talento_humano/talento_edit/'.$id_talento);
 	}
-	
 }
-

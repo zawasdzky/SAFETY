@@ -5,15 +5,15 @@
         <div class="topbar-left">
           <ol class="breadcrumb">
             <li class="crumb-active">
-              <a href="dashboard.html">Gestor Safety Solutions</a>
+              <a href="./">Gestor Safety Solutions</a>
             </li>
             <li class="crumb-icon">
-              <a href="dashboard.html">
+              <a href="./">
                 <span class="glyphicon glyphicon-home"></span>
               </a>
             </li>
             <li class="crumb-link">
-              <a href="#">Gestión de infografias</a>
+              <a href="./">Gestión de infografias</a>
             </li>
             <li class="crumb-trail">infografias</li>
           </ol>
@@ -28,7 +28,6 @@
                 <span class="panel-title hidden-xs"> <i class="fa fa-cubes text-danger"></i> Agregar un nueva infografía</span>
                 <ul class="nav panel-tabs-border panel-tabs">
                   <li class="active"><a href="#tab1_1" data-toggle="tab">General</a></li>
-
                 </ul>
               </div>
               <form action="<?php echo base_url();?>admin/infografias/insertar_infografia" enctype="multipart/form-data"  method="post" accept-charset="utf-8">    <!-- FORMULARIO INSERTAR -->
@@ -36,9 +35,7 @@
                 <div class="tab-content pn br-n admin-form">
                   <div id="tab1_1" class="tab-pane active">
                     <div class="section row mbn">
-
                       <div class="col-md-12 pl15">
-
                           <div class="col-md-2">
                             <div class="fileupload fileupload-new admin-form" data-provides="fileupload">
                               <div class="fileupload-preview thumbnail mb20">
@@ -55,7 +52,6 @@
                               </div>
                             </div>
                           </div>
-
                           <div class="col-md-2">
                             <div class="fileupload fileupload-new admin-form" data-provides="fileupload">
                               <div class="fileupload-preview thumbnail mb20">
@@ -72,8 +68,6 @@
                               </div>
                             </div>
                           </div>
-
-
                         <div class="col-md-3 mb10">
                           <label for="titulo_infografia" class="field prepend-icon">
                           <input type="text" name="titulo_infografia" id="titulo_infografia" class="event-name gui-input br-light light" placeholder="Titulo Artículo" required>
@@ -82,7 +76,6 @@
                           </label>
                           </label>
                         </div>
-
                         <div class="col-md-3 mb10">
                           <label for="keywords_infografia" class="field prepend-icon">
                           <input type="text" name="keywords_infografia" id="keywords_infografia" class="event-name gui-input br-light light" placeholder="Palabras clave" required>
@@ -91,7 +84,6 @@
                           </label>
                           </label>
                         </div>
-
                         <div class="col-md-2 mb10">
                           <label for="estado_infografia" class="field select">
                           <select id="estado_infografia" name="estado_infografia" required="">
@@ -102,7 +94,6 @@
                           <i class="arrow double"></i>
                           </label>
                         </div>
-
                         <div class="col-md-3 mb10">
                           <label for="url_amigable" class="field prepend-icon">
                           <input type="text" name="url_amigable_infografia" id="url_amigable_infografia" class="event-name gui-input br-light light" placeholder="url amigable" required>
@@ -111,7 +102,6 @@
                           </label>
                           </label>
                         </div>
-
                         <div class="col-md-3 mb10">
                           <label for="fecha_publicacion_infografia" class="field prepend-icon">
                           <input type="date" name="fecha_publicacion_infografia" id="fecha_publicacion_infografia" class="event-name gui-input br-light light" required>
@@ -120,16 +110,20 @@
                           </label>
                           </label>
                         </div>
-
+                        <div class="col-md-2 mb10">
+                          <label for="orden_infografia" class="field prepend-icon">
+                          <input type="number" name="orden_infografia" id="orden_infografia" class="event-name gui-input br-light light"  placeholder ="orden" required>
+                          <label for="orden_infografia" class="field-icon">
+                            <i class="fa fa-arrows-v"></i>
+                          </label>
+                          </label>
+                        </div>
                       </div> <!-- ENd col 12 -->
-
                       <div class="col-md-12 mb10"> 
                             <textarea name="descripcion_infografia" class="form-control">Descripción</textarea>
                       </div>      
                     </div> <!-- end seccion -->
-
                 </div><!-- end tab-->
-
                 <div id="tab1_3" class="tab-pane">
                   <div class="section row">
                     <div class="col-md-12">
@@ -142,7 +136,6 @@
             </div> <!-- end panel-heading -->
             <div class="col-md-12 pl15">
                 <hr class="short alt">
-
                 <div class="col-md-6 text-left">
                   <div class="switch switch-danger round switch-inline">
                   Destacado en Listado
@@ -157,7 +150,6 @@
           </form>
         </div> <!-- End panel mb25 mt5 -->
             <!-- FIN  TAB PANEL -->
-
             <!-- DATA TABLE -->
               <div class="panel panel-visible" id="spy2">
                 <div class="panel-heading">
@@ -168,7 +160,7 @@
                   <table class="table table-striped table-hover" id="datatable2" cellspacing="0" width="100%">
                     <thead>
                       <tr>
-                        <th>ID</th>
+                        <th>Orden</th>
                         <th>Foto</th>
                         <th>Titulo</th>
                         <th>Autor</th>
@@ -180,7 +172,7 @@
                     <tbody>
                         <?php foreach ($infografias ->result() as $infografia) { ?>
                         <tr>
-                          <td><?php echo $infografia -> id_infografia ?></td>
+                          <td align="center"><?php echo $infografia -> orden_infografia ?></td>
                           <td><img src="<?php echo base_url()."fotos_infografias/".$infografia -> foto0 ?>" width=50 ></td>
                           <td><?php echo $infografia -> titulo_infografia ?></td>
                           <td><?php echo $infografia -> nombre_infografia?></td>
@@ -201,12 +193,9 @@
             <!-- FIN DATA TABLE -->
         </section>
         <!-- End: Content -->
-
   </div>
   <!-- End: Main -->
-
   <!-- BEGIN: PAGE SCRIPTS -->
-
   <!-- jQuery -->
   <script src="<?php echo base_url();?>assets_admin/vendor/jquery/jquery-1.11.1.min.js"></script>
   <script src="<?php echo base_url();?>assets_admin/vendor/jquery/jquery_ui/jquery-ui.min.js"></script>
@@ -231,17 +220,13 @@
   <script src="https://cdn.ckeditor.com/4.6.1/full-all/ckeditor.js"></script>
   <script type="text/javascript">
   jQuery(document).ready(function() {
-
     $(".confirmation").click(function(){
       return confirm('¿Está seguro de borrar este infografia?');
     });
-
     "use strict";
     // Init Theme Core    
     Core.init();
     // Init Demo JS  
-    Demo.init();
-    // Init DataTables
         $('#datatable2').dataTable({
       "aoColumnDefs": [{
         'bSortable': false,
@@ -253,6 +238,7 @@
           "sNext": ""
         }
       },
+      "order": [[ 0, "desc" ]],
       "iDisplayLength": 100,
       "aLengthMenu": [
         [5, 10, 25, 50, -1],
@@ -265,7 +251,6 @@
     });
     // Add Placeholder text to datatables filter bar
     $('.dataTables_filter input').attr("placeholder", "Buscar");
-
 // Init Ckeditor
     CKEDITOR.replace('contenido_infografia', {
       height: 210,

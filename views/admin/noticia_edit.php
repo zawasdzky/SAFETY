@@ -5,15 +5,15 @@
         <div class="topbar-left">
           <ol class="breadcrumb">
             <li class="crumb-active">
-              <a href="dashboard.html">Gestor Safety Solutions</a>
+              <a href="../">Gestor Safety Solutions</a>
             </li>
             <li class="crumb-icon">
-              <a href="dashboard.html">
+              <a href="../">
                 <span class="glyphicon glyphicon-home"></span>
               </a>
             </li>
             <li class="crumb-link">
-              <a href="#">Gestión de noticias</a>
+              <a href="../">Gestión de noticias</a>
             </li>
             <li class="crumb-trail">noticias</li>
           </ol>
@@ -30,39 +30,31 @@
              <span class="panel-icon"></span>
              <span class="panel-title"> Informacion General</span>
           </div>    
-
           <div class="panel-body border">
-
             <div class="col-md-3 mb10">
               <label for="titulo_noticia" class="field prepend-icon">Titulo del noticia</label>
               <input type="text" name="titulo_noticia" id="titulo_noticia" class="form-control" value="<?php echo $detalle-> titulo_noticia; ?>" required>
             </div>
-            
             <div class="col-md-3 mb10">
               <label for="nombre_noticia" class="field prepend-icon">Subtitulo / Autor / Fuente</label>
               <input type="text" name="nombre_noticia" id="nombre_noticia" class="form-control" value="<?php echo $detalle-> nombre_noticia; ?>" >
             </div>
-
             <div class="col-md-3 mb10">
               <label for="keywords_noticia" class="field prepend-icon"> Palabras Clave </label>
               <input type="text" name="keywords_noticia" id="keywords_noticia" class="form-control" value="<?php echo $detalle-> keywords_noticia; ?>">
             </div>
-
             <div class="col-md-3 mb10">
               <label for="video_noticia" class="field prepend-icon"> Video </label>
               <input type="text" name="video_noticia" id="video_noticia" class="form-control" value="<?php echo $detalle-> video_noticia; ?>">
             </div>
-
             <div class="col-md-3 mb10">
               <label for="url_amigable" class="field prepend-icon"> URL Amigable (sin espacios...) </label>
               <input type="text" name="url_amigable_noticia" id="url_amigable_noticia" class="form-control" value="<?php echo $detalle-> url_amigable_noticia; ?>">
             </div>
-
             <div class="col-md-2 mb10">
               <label for="fecha_publicacion_noticia"> Fecha publicación </label>
               <input type="date" name="fecha_publicacion_noticia" class="form-control"  id="fecha_publicacion_noticia" value="<?php echo $detalle-> fecha_publicacion_noticia; ?>">
             </div>
-
             <div class="col-md-2 mb10">          
               <label for="estado_noticia"> Estado </label>
               <select id="estado_noticia" name="estado_noticia" class="form-control">
@@ -87,13 +79,15 @@
                   <option value="woman">Woman</option>
                 </select>
             </div>
- 
+            <div class="col-md-2 mb10">
+              <label for="orden_noticia" class="field prepend-icon">Orden</label>
+              <input type="number" class="form-control" name="orden_noticia" id="orden_noticia"  value="<?php echo $detalle-> orden_noticia;?>" required>
+            </div>
             <div class="col-md-12 mb10"> 
               <label>Descripción para listados</label>
                   <textarea name="descripcion_noticia" class="form-control"><?php echo $detalle-> descripcion_noticia; ?></textarea>
             </div> 
             <div class="col-md-12 mb10""> <hr> </div> 
-
             <div class="col-md-12 mb10">
                 <div class="col-md-6 mb10">
                 <?php if ($detalle-> ficha_noticia) {  ?>
@@ -135,7 +129,6 @@
                         </div>
                 <?php } ?>
                 </div> 
-
                 <div class="col-md-2">
                 <?php if ($detalle-> icono_noticia) { ?>
                   <input type="hidden" name="icono_noticia" value="<?php echo $detalle->icono_noticia; ?>">
@@ -158,16 +151,13 @@
                 <?php } ?>
                 </div> 
             </div>
-
             <div class="mb10 row"> <br> </div>
-
             <div class="panel panel-alert">
               <div class="panel-heading">
                  <span class="panel-icon"></span>
                  <span class="panel-title"> Fotos del noticia</span>
               </div>    
               <div class="panel-body border">
-
                 <div class="col-md-2">
                 <?php if ($detalle-> foto1) { ?>
                   <input type="hidden" name="foto1" value="<?php echo $detalle->foto1; ?>">
@@ -316,7 +306,6 @@
         </form> <!-- FIN FORMULARIO -->
       </section>
         <!-- End: Content -->
-
   <!-- End: Main -->
   <!-- BEGIN: PAGE SCRIPTS -->
   <!-- jQuery -->
@@ -343,7 +332,6 @@
   <script src="https://cdn.ckeditor.com/4.6.1/full-all/ckeditor.js"></script>
   <script type="text/javascript">
   jQuery(document).ready(function() {
-
       $( "#agregar_categoria" ).click(function(){
         var id_categoria = $( "select#id_categoria option:checked" ).val();
         var id_noticia = <?php echo $id_noticia;?>;
@@ -357,11 +345,9 @@
             }
       });
     });
-
     $(".confirmation").click(function(){
       return confirm('¿Está seguro de borrar esto?');
     });
-
     "use strict";
     // Init Theme Core    
     Core.init();
@@ -391,7 +377,6 @@
     });
     // Add Placeholder text to datatables filter bar
     $('.dataTables_filter input').attr("placeholder", "Buscar");
-
     // Init Ckeditor
     CKEDITOR.replace('contenido_noticia', {
       height: 210,
@@ -401,10 +386,7 @@
         }
       },
     });
-
   });
-
-
 </script>  
   <!-- END: PAGE SCRIPTS -->
 </body>

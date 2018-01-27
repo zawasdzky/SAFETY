@@ -1,8 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 class Profesionales extends CI_Controller {
-
 	public function __construct()
 	{
 		parent::__construct();
@@ -20,24 +18,18 @@ class Profesionales extends CI_Controller {
         $config['overwrite'] 	   = TRUE;
         $this->load->library('upload', $config);	
 	}
-
 	public function index()
 	{
 		$data['profesionales'] = $this->profesionales_admin_model->get_profesionales();
 		$data['categorias_profesionales'] = $this->profesionales_admin_model->get_categorias_profesionales();
 		$this->load->view('admin/profesionales',$data);
 	}
-
 	public function insertar_profesional()
 	{
-
 		if (!empty($_FILES['foto_profesional']['name'])) {$this->upload->do_upload('foto_profesional'); $foto_profesional_info = $this->upload->data();
 			$foto_profesional = $foto_profesional_info['file_name']; }else{ $foto_profesional = NULL;}
-
 		if (!empty($_FILES['cv_profesional']['name'])) {$this->upload->do_upload('cv_profesional'); $cv_profesional_info = $this->upload->data();
 			$cv_profesional = $cv_profesional_info['file_name']; }else{ $cv_profesional = NULL;}
-
-
 		$data = array(
 					'id_categoria' => $this->input->post('categoria_profesional'),
 					'nombre_profesional' => $this->input->post('nombre_profesional'),
@@ -50,24 +42,18 @@ class Profesionales extends CI_Controller {
 					'telefono_profesional' =>  $this->input->post('telefono_profesional'),
 					'correo_profesional' => $this->input->post('correo_profesional')
 					  );
-
 		$this->profesionales_admin_model->insert_profesional($data);
 		redirect('/admin/profesionales');
 	}
-
 	public function update_profesional($id_profesional)
 	{
 		//$id_profesional =  $this->input->post('id_profesional');// recibiendo el Id via post
-
 		if (!empty($_FILES['foto_profesional']['name'])) { $this->upload->do_upload('foto_profesional'); $foto_profesional_info = $this->upload->data(); 
 		$foto_profesional = $foto_profesional_info['file_name']; }
         else{ $foto_profesional = $this->input->post('foto_profesional');}
-
-
 		if (!empty($_FILES['cv_profesional']['name'])) { $this->upload->do_upload('cv_profesional'); $cv_profesional_info = $this->upload->data(); 
 		$cv_profesional = $cv_profesional_info['file_name']; }
         else{ $cv_profesional = $this->input->post('cv_profesional');}
-
 		$data = array(
 					'id_categoria' => $this->input->post('categoria_profesional'),
 					'nombre_profesional' => $this->input->post('nombre_profesional'),
@@ -80,12 +66,9 @@ class Profesionales extends CI_Controller {
 					'telefono_profesional' =>  $this->input->post('telefono_profesional'),
 					'correo_profesional' => $this->input->post('correo_profesional')
 					  );
-
 		$this->profesionales_admin_model->update_profesional($id_profesional,$data);
 		redirect('/admin/profesionales/profesional_edit/'.$id_profesional);
 	}
-
-
 	public function profesional_edit($id_profesional)
 	{
 		$data['detalle_profesional'] = $this->profesionales_admin_model->get_detalle_profesional($id_profesional);
@@ -109,7 +92,4 @@ class Profesionales extends CI_Controller {
 		$this->profesionales_admin_model->delete_profesional($id_profesional);
 		redirect('/admin/profesionales');
 	}
-	
 }
-
-

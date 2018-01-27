@@ -13,7 +13,7 @@
               </a>
             </li>
             <li class="crumb-link">
-              <a href="#">Gestión de infografias</a>
+              <a href="<?php echo base_url();?>admin/infografias/">Gestión de infografias</a>
             </li>
             <li class="crumb-trail">infografias</li>
           </ol>
@@ -63,7 +63,12 @@
                 <option value="inactivo">inactivo</option>
               </select>
             </div>
- 
+
+             <div class="col-md-2 mb10">
+              <label for="orden_infografia" class="field prepend-icon">Orden</label>
+              <input type="number" class="form-control" name="orden_infografia" id="orden_infografia" value="<?php echo $detalle-> orden_infografia; ?>" required>
+            </div>
+
             <div class="col-md-12 mb10"> 
               <label>Descripción </label>
                   <textarea name="descripcion_infografia" class="form-control"><?php echo $detalle-> descripcion_infografia; ?></textarea>

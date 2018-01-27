@@ -1,8 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 class Noticias extends CI_Controller {
-
 		public function __construct()
 	{
 		parent::__construct();
@@ -20,7 +18,6 @@ class Noticias extends CI_Controller {
         $config['overwrite'] 	   = TRUE;
         $this->load->library('upload', $config);
 	}
-
 	public function index()
 	{
 		$data['noticias'] = $this->noticias_admin_model->get_noticias();
@@ -36,9 +33,9 @@ class Noticias extends CI_Controller {
     if (!empty($_FILES['foto4']['name'])) {	$this->upload->do_upload('foto4'); $foto4_info = $this->upload->data(); $foto4 = $foto4_info['file_name']; }else{ $foto4 = NULL;}
     if (!empty($_FILES['foto5']['name'])) {	$this->upload->do_upload('foto5'); $foto5_info = $this->upload->data(); $foto5 = $foto5_info['file_name']; }else{ $foto5 = NULL;}
     if (!empty($_FILES['foto6']['name'])) {	$this->upload->do_upload('foto6'); $foto6_info = $this->upload->data(); $foto6 = $foto6_info['file_name']; }else{ $foto6 = NULL;}
-    
     if (!empty($_FILES['ficha_noticia']['name'])) { $this->upload->do_upload('ficha_noticia'); $ficha_info= $this->upload->data(); $ficha_noticia = $ficha_info['file_name']; }else{ $ficha_noticia = NULL;}
 		$data = array(
+					'orden_noticia' => $this->input->post('orden_noticia'),
 					'nombre_noticia' => $this->input->post('nombre_noticia'),
 					'titulo_noticia' => $this->input->post('titulo_noticia'),
 					'tipo_noticia' => $this->input->post('tipo_noticia'),
@@ -61,11 +58,9 @@ class Noticias extends CI_Controller {
 					'foto5' => $foto5,
 					'foto6' => $foto6
 					 );
-
 		$this->noticias_admin_model->insert_noticia($data);
 		redirect('/admin/noticias');
 	}
-
 	public function update_noticia($id_noticia)
 	{
 		if (!empty($_FILES['icono_noticia']['name'])) {	$this->upload->do_upload('icono_noticia'); $icono_noticia_info = $this->upload->data(); $icono_noticia = $icono_noticia_info['file_name']; }else{ $icono_noticia = $this->input->post('icono_noticia');}
@@ -84,8 +79,8 @@ class Noticias extends CI_Controller {
         if (!empty($_FILES['foto6']['name'])) {	$this->upload->do_upload('foto6'); $foto6_info = $this->upload->data(); $foto6 = $foto6_info['file_name']; }
         else{ $foto6 = $this->input->post('foto6');}
         if (!empty($_FILES['ficha_noticia']['name'])) { $this->upload->do_upload('ficha_noticia'); $ficha_info= $this->upload->data(); $ficha_noticia = $ficha_info['file_name']; }else{ $ficha_noticia =  $this->input->post('ficha_noticia');}
-                           
 		$data = array(
+					'orden_noticia' => $this->input->post('orden_noticia'),
 					'nombre_noticia' => $this->input->post('nombre_noticia'),
 					'titulo_noticia' => $this->input->post('titulo_noticia'),
 					'tipo_noticia' => $this->input->post('tipo_noticia'),
@@ -109,9 +104,8 @@ class Noticias extends CI_Controller {
 					'foto6' => $foto6
 					 );
 		$this->noticias_admin_model->update_noticia($id_noticia,$data);
-		redirect('/admin/noticias/noticia_edit/'.$id_noticia);
+		redirect('/admin/noticias/');
 	}
-
 	public function noticia_edit($id_noticia)
 	{
 		$data['detalle_noticia'] = $this->noticias_admin_model->get_detalle_noticia($id_noticia);
@@ -132,6 +126,4 @@ class Noticias extends CI_Controller {
 		$this->noticias_admin_model->delete_foto($id_noticia,$foto);
 		redirect('/admin/noticias/noticia_edit/'.$id_noticia);
 	}
-	
 }
-

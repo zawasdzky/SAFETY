@@ -5,15 +5,15 @@
         <div class="topbar-left">
           <ol class="breadcrumb">
             <li class="crumb-active">
-              <a href="dashboard.html">Gestor Safety Solutions</a>
+              <a href="../">Gestor Safety Solutions</a>
             </li>
             <li class="crumb-icon">
-              <a href="dashboard.html">
+              <a href="../">
                 <span class="glyphicon glyphicon-home"></span>
               </a>
             </li>
             <li class="crumb-link">
-              <a href="#">Gestión SST</a>
+              <a href="../">Gestión SST</a>
             </li>
             <li class="crumb-trail">SST</li>
           </ol>
@@ -96,6 +96,14 @@
                           <input type="date" name="fecha_publicacion_SST" id="fecha_publicacion_SST" class="event-name gui-input br-light light" required>
                           <label for="fecha_publicacion_SST" class="field-icon">
                             <i class="fa fa-calendar"></i>
+                          </label>
+                          </label>
+                        </div>
+                        <div class="col-md-2 mb10">
+                          <label for="orden_SST" class="field prepend-icon">
+                          <input type="number" name="orden_SST" id="orden_SST" class="event-name gui-input br-light light"  placeholder ="orden" required>
+                          <label for="orden_SST" class="field-icon">
+                            <i class="fa fa-arrows-v"></i>
                           </label>
                           </label>
                         </div>
@@ -295,7 +303,7 @@
                   <table class="table table-striped table-hover" id="datatable2" cellspacing="0" width="100%">
                     <thead>
                       <tr>
-                        <th>ID</th>
+                        <th>Orden</th>
                         <th>Foto</th>
                         <th>Titulo</th>
                         <th>Autor</th>
@@ -307,7 +315,7 @@
                     <tbody>
                         <?php foreach ($SST ->result() as $SST) { ?>
                         <tr>
-                          <td><?php echo $SST -> id_SST ?></td>
+                          <td align="center"><?php echo $SST -> orden_SST ?></td>
                           <td><img src="<?php echo base_url()."fotos_SST/".$SST -> foto0 ?>" width=50 ></td>
                           <td><?php echo $SST -> titulo_SST ?></td>
                           <td><?php echo $SST -> subtitulo_SST?></td>
@@ -380,6 +388,7 @@
           "sNext": ""
         }
       },
+      "order": [[ 0, "desc" ]],
       "iDisplayLength": 100,
       "aLengthMenu": [
         [5, 10, 25, 50, -1],

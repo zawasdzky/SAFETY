@@ -30,40 +30,32 @@
              <span class="panel-icon"></span>
              <span class="panel-title"> Informacion General</span>
           </div>    
-
           <div class="panel-body border">
-
             <div class="col-md-3 mb10">
               <label for="titulo_seguro" class="field prepend-icon">Titulo</label>
               <input type="text" name="titulo_seguro" id="titulo_seguro" class="form-control" value="<?php echo $detalle-> titulo_seguro; ?>" required>
             </div>
-            
             <div class="col-md-3 mb10">
               <label for="subtitulo_seguro" class="field prepend-icon">Subtítulo </label>
               <input type="text" name="subtitulo_seguro" id="subtitulo_seguro" class="form-control" value="<?php echo $detalle-> subtitulo_seguro; ?>" >
             </div>
-
             <div class="col-md-3 mb10">
               <label for="keywords_seguro" class="field prepend-icon"> Palabras Clave </label>
               <input type="text" name="keywords_seguro" id="keywords_seguro" class="form-control" value="<?php echo $detalle-> keywords_seguro; ?>">
             </div>
-
             <div class="col-md-3 mb10">
               <label for="video_seguro" class="field prepend-icon"> Video </label>
               <input type="text" name="video_seguro" id="video_seguro" class="form-control" value="<?php echo $detalle-> video_seguro; ?>">
             </div>
-
             <div class="col-md-3 mb10">
               <label for="url_amigable" class="field prepend-icon"> URL Amigable (sin espacios...) </label>
               <input type="text" name="url_amigable_seguro" id="url_amigable_seguro" class="form-control" value="<?php echo $detalle-> url_amigable_seguro; ?>">
             </div>
-
-            <div class="col-md-2 mb10">
+            <div class="col-md-3 mb10">
               <label for="fecha_publicacion_seguro"> Fecha publicación </label>
               <input type="date" name="fecha_publicacion_seguro" class="form-control"  id="fecha_publicacion_seguro" value="<?php echo $detalle-> fecha_publicacion_seguro; ?>">
             </div>
-
-            <div class="col-md-2 mb10">          
+            <div class="col-md-3 mb10">          
               <label for="estado_seguro"> Estado </label>
               <select id="estado_seguro" name="estado_seguro" class="form-control">
                 <option value="<?php echo $detalle->estado_seguro; ?>" selected="selected"> <?php echo $detalle-> estado_seguro; ?></option>
@@ -71,13 +63,15 @@
                 <option value="inactivo">inactivo</option>
               </select>
             </div>
- 
+             <div class="col-md-2 mb10">
+              <label for="orden_seguro" class="field prepend-icon">Orden</label>
+              <input type="number" class="form-control" name="orden_seguro" id="orden_seguro" value="<?php echo $detalle-> orden_seguro; ?>" required>
+            </div>
             <div class="col-md-12 mb10"> 
               <label>Descripción para listados</label>
                   <textarea name="descripcion_seguro" class="form-control"><?php echo $detalle-> descripcion_seguro; ?></textarea>
             </div> 
             <div class="col-md-12 mb10""> <hr> </div> 
-
             <div class="col-md-12 mb10">
                 <div class="col-md-6 mb10">
                 <?php if ($detalle-> ficha_seguro) {  ?>
@@ -119,7 +113,6 @@
                         </div>
                 <?php } ?>
                 </div> 
-
                 <div class="col-md-2">
                 <?php if ($detalle-> icono_seguro) { ?>
                   <input type="hidden" name="icono_seguro" value="<?php echo $detalle->icono_seguro; ?>">
@@ -142,16 +135,13 @@
                 <?php } ?>
                 </div> 
             </div>
-
             <div class="mb10 row"> <br> </div>
-
             <div class="panel panel-alert">
               <div class="panel-heading">
                  <span class="panel-icon"></span>
                  <span class="panel-title"> Fotos</span>
               </div>    
               <div class="panel-body border">
-
                 <div class="col-md-2">
                 <?php if ($detalle-> foto1) { ?>
                   <input type="hidden" name="foto1" value="<?php echo $detalle->foto1; ?>">
@@ -300,7 +290,6 @@
         </form> <!-- FIN FORMULARIO -->
       </section>
         <!-- End: Content -->
-
   <!-- End: Main -->
   <!-- BEGIN: PAGE SCRIPTS -->
   <!-- jQuery -->
@@ -327,55 +316,6 @@
   <script src="https://cdn.ckeditor.com/4.6.1/full-all/ckeditor.js"></script>
   <script type="text/javascript">
   jQuery(document).ready(function() {
-
-      $( "#agregar_categoria" ).click(function(){
-        var id_categoria = $( "select#id_categoria option:checked" ).val();
-        var id_seguro = <?php echo $id_seguro;?>;
-        $.ajax({
-        type: "POST",
-        url: "<?php echo base_url();?>admin/seguros/agregar_categoria_seguro/",
-        data: {"id_seguro" : id_seguro, "id_categoria":id_categoria},
-         success: function()
-            {
-                location.reload();
-            }
-      });
-    });
-
-    $(".confirmation").click(function(){
-      return confirm('¿Está seguro de borrar esto?');
-    });
-
-    "use strict";
-    // Init Theme Core    
-    Core.init();
-    // Init Demo JS  
-    Demo.init();
-    // Init DataTables
-        $('#datatable2').dataTable({
-      "aoColumnDefs": [{
-        'bSortable': false,
-        'aTargets': [-1]
-      }],
-      "oLanguage": {
-        "oPaginate": {
-          "sPrevious": "",
-          "sNext": ""
-        }
-      },
-      "iDisplayLength": 5,
-      "aLengthMenu": [
-        [5, 10, 25, 50, -1],
-        [5, 10, 25, 50, "All"]
-      ],
-      "sDom": '<"dt-panelmenu clearfix"lfr>t<"dt-panelfooter clearfix"ip>',
-      "oTableTools": {
-        "sSwfPath": "vendor/plugins/datatables/extensions/TableTools/swf/copy_csv_xls_pdf.swf"
-      }
-    });
-    // Add Placeholder text to datatables filter bar
-    $('.dataTables_filter input').attr("placeholder", "Buscar");
-
     // Init Ckeditor
     CKEDITOR.replace('contenido_seguro', {
       height: 210,
@@ -385,10 +325,7 @@
         }
       },
     });
-
   });
-
-
 </script>  
   <!-- END: PAGE SCRIPTS -->
 </body>

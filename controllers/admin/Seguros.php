@@ -1,8 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 class Seguros extends CI_Controller {
-
 		public function __construct()
 	{
 		parent::__construct();
@@ -20,7 +18,6 @@ class Seguros extends CI_Controller {
         $config['overwrite'] 	   = TRUE;
         $this->load->library('upload', $config);
 	}
-
 	public function index()
 	{
 		$data['seguros'] = $this->seguros_admin_model->get_seguros();
@@ -36,9 +33,9 @@ class Seguros extends CI_Controller {
     if (!empty($_FILES['foto4']['name'])) {	$this->upload->do_upload('foto4'); $foto4_info = $this->upload->data(); $foto4 = $foto4_info['file_name']; }else{ $foto4 = NULL;}
     if (!empty($_FILES['foto5']['name'])) {	$this->upload->do_upload('foto5'); $foto5_info = $this->upload->data(); $foto5 = $foto5_info['file_name']; }else{ $foto5 = NULL;}
     if (!empty($_FILES['foto6']['name'])) {	$this->upload->do_upload('foto6'); $foto6_info = $this->upload->data(); $foto6 = $foto6_info['file_name']; }else{ $foto6 = NULL;}
-    
     if (!empty($_FILES['ficha_seguro']['name'])) { $this->upload->do_upload('ficha_seguro'); $ficha_info= $this->upload->data(); $ficha_seguro = $ficha_info['file_name']; }else{ $ficha_seguro = NULL;}
 		$data = array(
+					'orden_seguro' => $this->input->post('orden_seguro'),
 					'titulo_seguro' => $this->input->post('titulo_seguro'),
 					'subtitulo_seguro' => $this->input->post('subtitulo_seguro'),
 					'tipo_seguro' => $this->input->post('tipo_seguro'),
@@ -61,11 +58,9 @@ class Seguros extends CI_Controller {
 					'foto5' => $foto5,
 					'foto6' => $foto6
 					 );
-
 		$this->seguros_admin_model->insert_seguro($data);
 		redirect('/admin/seguros');
 	}
-
 	public function update_seguro($id_seguro)
 	{
 		if (!empty($_FILES['icono_seguro']['name'])) {	$this->upload->do_upload('icono_seguro'); $icono_seguro_info = $this->upload->data(); $icono_seguro = $icono_seguro_info['file_name']; }else{ $icono_seguro = $this->input->post('icono_seguro');}
@@ -84,8 +79,8 @@ class Seguros extends CI_Controller {
         if (!empty($_FILES['foto6']['name'])) {	$this->upload->do_upload('foto6'); $foto6_info = $this->upload->data(); $foto6 = $foto6_info['file_name']; }
         else{ $foto6 = $this->input->post('foto6');}
         if (!empty($_FILES['ficha_seguro']['name'])) { $this->upload->do_upload('ficha_seguro'); $ficha_info= $this->upload->data(); $ficha_seguro = $ficha_info['file_name']; }else{ $ficha_seguro =  $this->input->post('ficha_seguro');}
-                           
 		$data = array(
+					'orden_seguro' => $this->input->post('orden_seguro'),
 					'titulo_seguro' => $this->input->post('titulo_seguro'),
 					'subtitulo_seguro' => $this->input->post('subtitulo_seguro'),
 					'tipo_seguro' => $this->input->post('tipo_seguro'),
@@ -109,9 +104,8 @@ class Seguros extends CI_Controller {
 					'foto6' => $foto6
 					 );
 		$this->seguros_admin_model->update_seguro($id_seguro,$data);
-		redirect('/admin/seguros/seguro_edit/'.$id_seguro);
+		redirect('/admin/seguros/');
 	}
-
 	public function seguro_edit($id_seguro)
 	{
 		$data['detalle_seguro'] = $this->seguros_admin_model->get_detalle_seguro($id_seguro);
@@ -132,6 +126,4 @@ class Seguros extends CI_Controller {
 		$this->seguros_admin_model->delete_foto($id_seguro,$foto);
 		redirect('/admin/seguros/seguro_edit/'.$id_seguro);
 	}
-	
 }
-

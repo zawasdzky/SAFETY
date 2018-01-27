@@ -1,8 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 class Infografias extends CI_Controller {
-
 		public function __construct()
 	{
 		parent::__construct();
@@ -11,7 +9,6 @@ class Infografias extends CI_Controller {
 		$this->load->view('admin/includes/sidebar');
 		$this->load->model('admin/infografias_admin_model');
 		$this->load->helper('url');
-
         $config['upload_path']     = './fotos_infografias/';
         $config['allowed_types']   = 'gif|jpg|png|pdf';
         $config['max_size']        = 2000;
@@ -20,7 +17,6 @@ class Infografias extends CI_Controller {
         $config['overwrite'] 	   = TRUE;
         $this->load->library('upload', $config);
 	}
-
 	public function index()
 	{
 		$data['infografias'] = $this->infografias_admin_model->get_infografias();
@@ -30,9 +26,9 @@ class Infografias extends CI_Controller {
 	{
 	if (!empty($_FILES['foto0']['name'])) {	$this->upload->do_upload('foto0'); $foto0_info = $this->upload->data(); $foto0 = $foto0_info['file_name']; }else{ $foto0 = NULL;}
     if (!empty($_FILES['foto1']['name'])) {	$this->upload->do_upload('foto1'); $foto1_info = $this->upload->data(); $foto1 = $foto1_info['file_name']; }else{ $foto1 = NULL;}
-
 		$data = array(
 					'titulo_infografia' => $this->input->post('titulo_infografia'),
+					'orden_infografia' => $this->input->post('orden_infografia'),
 					'descripcion_infografia' => $this->input->post('descripcion_infografia'),
 					'enlace_infografia' => $this->input->post('enlace_infografia'),
 					'estado_infografia' => $this->input->post('estado_infografia'),
@@ -44,19 +40,16 @@ class Infografias extends CI_Controller {
 					'foto0' => $foto0,
 					'foto1' => $foto1
 					 );
-
 		$this->infografias_admin_model->insert_infografia($data);
 		redirect('/admin/infografias');
 	}
-
 	public function update_infografia($id_infografia)
 	{
-
 		if (!empty($_FILES['foto0']['name'])) {	$this->upload->do_upload('foto0'); $foto0_info = $this->upload->data(); $foto0 = $foto0_info['file_name']; } else{ $foto0 = $this->input->post('foto0');}
         if (!empty($_FILES['foto1']['name'])) {	$this->upload->do_upload('foto1'); $foto1_info = $this->upload->data(); $foto1 = $foto1_info['file_name']; } else{ $foto1 = $this->input->post('foto1');}
-                           
 		$data = array(
 					'titulo_infografia' => $this->input->post('titulo_infografia'),
+					'orden_infografia' => $this->input->post('orden_infografia'),
 					'descripcion_infografia' => $this->input->post('descripcion_infografia'),
 					'enlace_infografia' => $this->input->post('enlace_infografia'),
 					'estado_infografia' => $this->input->post('estado_infografia'),
@@ -68,11 +61,9 @@ class Infografias extends CI_Controller {
 					'foto0' => $foto0,
 					'foto1' => $foto1
 					 );
-
 		$this->infografias_admin_model->update_infografia($id_infografia,$data);
-		redirect('/admin/infografias/infografia_edit/'.$id_infografia);
+		redirect('/admin/infografias/');
 	}
-
 	public function infografia_edit($id_infografia)
 	{
 		$data['detalle_infografia'] = $this->infografias_admin_model->get_detalle_infografia($id_infografia);
@@ -93,6 +84,4 @@ class Infografias extends CI_Controller {
 		$this->infografias_admin_model->delete_foto($id_infografia,$foto);
 		redirect('/admin/infografias/infografia_edit/'.$id_infografia);
 	}
-	
 }
-

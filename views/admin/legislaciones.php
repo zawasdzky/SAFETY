@@ -37,7 +37,6 @@
                   <div id="tab1_1" class="tab-pane active">
                     <div class="section row mbn">
                       <div class="col-md-12 pl15">
-
                        <div class="col-md-3 mb10">
                           <label for="titulo_legislacion" class="field prepend-icon">
                           <input type="text" name="titulo_legislacion" id="titulo_legislacion" class="event-name gui-input br-light light" placeholder="Titulo Legislación" required>
@@ -46,7 +45,6 @@
                           </label>
                           </label>
                         </div>
-
                         <div class="col-md-3 mb10">
                           <label for="id_tipo" class="field select">
                             <select id="id_tipo" name="tipo_legislacion" required>
@@ -62,7 +60,6 @@
                             <i class="arrow double"></i>
                           </label>
                         </div>
-
                         <div class="col-md-3 mb10">
                           <label for="id_categoria" class="field select">
                             <select id="id_categoria" name="categoria_legislacion" required>
@@ -78,7 +75,6 @@
                             <i class="arrow double"></i>
                           </label>
                         </div>
-
                         <div class="col-md-3 mb10">
                           <label for="keywords_legislacion" class="field prepend-icon">
                           <input type="text" name="keywords_legislacion" id="keywords_legislacion" class="event-name gui-input br-light light" placeholder="Palabras clave" required>
@@ -125,7 +121,6 @@
                 </div><!-- end tab-->
                   <!-- INICIO TAB 2 -->
                 <div id="tab1_2" class="tab-pane">
-
                   <div class="col-md-4">
                     <div class="fileupload fileupload-new admin-form" data-provides="fileupload">
                       <div class="fileupload-preview thumbnail mb20">
@@ -142,7 +137,6 @@
                       </div>
                     </div>
                   </div>
-
                   <div class="col-md-4">
                     <div class="fileupload fileupload-new admin-form" data-provides="fileupload">
                       <div class="fileupload-preview thumbnail mb20">
@@ -159,13 +153,10 @@
                       </div>
                     </div>
                   </div>
-                  
-
                 </div><!-- FIN TAB 2 -->
             </div> <!-- end panel-heading -->
             <div class="col-md-12 pl15">
                 <hr class="short alt">
-
                   <div class="col-md-6 text-right">
                      <input type="submit" name="crear_legislacion" class="btn btn-danger" value="Crear legislacion">
                   </div>
@@ -173,7 +164,6 @@
           </form>
         </div> <!-- End panel mb25 mt5 -->
             <!-- FIN  TAB PANEL -->
-
             <!-- DATA TABLE -->
               <div class="panel panel-visible" id="spy2">
                 <div class="panel-heading">
@@ -217,12 +207,9 @@
             <!-- FIN DATA TABLE -->
         </section>
         <!-- End: Content -->
-
   </div>
   <!-- End: Main -->
-
   <!-- BEGIN: PAGE SCRIPTS -->
-
   <!-- jQuery -->
   <script src="<?php echo base_url();?>assets_admin/vendor/jquery/jquery-1.11.1.min.js"></script>
   <script src="<?php echo base_url();?>assets_admin/vendor/jquery/jquery_ui/jquery-ui.min.js"></script>
@@ -247,11 +234,9 @@
   <script src="https://cdn.ckeditor.com/4.6.1/full-all/ckeditor.js"></script>
   <script type="text/javascript">
   jQuery(document).ready(function() {
-
     $(".confirmation").click(function(){
       return confirm('¿Está seguro de borrar este legislacion?');
     });
-
     "use strict";
     // Init Theme Core    
     Core.init();
@@ -281,7 +266,6 @@
     });
     // Add Placeholder text to datatables filter bar
     $('.dataTables_filter input').attr("placeholder", "Buscar");
-
 // Init Ckeditor
     CKEDITOR.replace('contenido_legislacion', {
       height: 210,

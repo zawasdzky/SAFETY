@@ -58,12 +58,12 @@
               <input type="text" name="url_amigable_salud" id="url_amigable_salud" class="form-control" value="<?php echo $detalle-> url_amigable_salud; ?>">
             </div>
 
-            <div class="col-md-2 mb10">
+            <div class="col-md-3 mb10">
               <label for="fecha_publicacion_salud"> Fecha publicación </label>
               <input type="date" name="fecha_publicacion_salud" class="form-control"  id="fecha_publicacion_salud" value="<?php echo $detalle-> fecha_publicacion_salud; ?>">
             </div>
 
-            <div class="col-md-2 mb10">          
+            <div class="col-md-3 mb10">          
               <label for="estado_salud"> Estado </label>
               <select id="estado_salud" name="estado_salud" class="form-control">
                 <option value="<?php echo $detalle->estado_salud; ?>" selected="selected"> <?php echo $detalle-> estado_salud; ?></option>
@@ -71,7 +71,12 @@
                 <option value="inactivo">inactivo</option>
               </select>
             </div>
- 
+
+            <div class="col-md-2 mb10">
+              <label for="orden_salud" class="field prepend-icon">Orden</label>
+              <input type="number" class="form-control" name="orden_salud" id="orden_salud" value="<?php echo $detalle-> orden_salud; ?>" required>
+            </div>
+
             <div class="col-md-12 mb10"> 
               <label>Descripción para listados</label>
                   <textarea name="descripcion_salud" class="form-control"><?php echo $detalle-> descripcion_salud; ?></textarea>

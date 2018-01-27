@@ -1,8 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 class publicitarios extends CI_Controller {
-
 	public function __construct()
 	{
 		parent::__construct();
@@ -25,7 +23,6 @@ class publicitarios extends CI_Controller {
 		$data['publicitarios'] = $this->publicitarios_admin_model->get_publicitarios();
 		$this->load->view('admin/publicitarios',$data);
 	}
-
 	public function insertar_publicitario()
 	{
         if (!empty($_FILES['foto_publicitario']['name'])) {
@@ -46,7 +43,6 @@ class publicitarios extends CI_Controller {
 		$this->publicitarios_admin_model->insert_publicitario($data);
 		redirect('/admin/publicitarios');
 	}
-
 	public function update_publicitario()
 	{
 		$id_publicitario =  $this->input->post('id_publicitario');
@@ -65,11 +61,9 @@ class publicitarios extends CI_Controller {
 					'orden_publicitario' => $this->input->post('orden_publicitario'),
 					'foto_publicitario' =>  $foto_publicitario				
 					  );
-
 		$this->publicitarios_admin_model->update_publicitario($id_publicitario,$data);
 		redirect('/admin/publicitarios/publicitario_edit/'.$id_publicitario);
 	}
-
 	public function publicitario_edit($id_publicitario)
 	{
 		$data['detalle_publicitario'] = $this->publicitarios_admin_model->detalle_publicitario($id_publicitario);
@@ -92,7 +86,4 @@ class publicitarios extends CI_Controller {
 		$this->publicitarios_admin_model->delete_publicitario($id_publicitario);
 		redirect('/admin/publicitarios');
 	}
-	
 }
-
-

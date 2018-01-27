@@ -1,8 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 class sociales extends CI_Controller {
-
 		public function __construct()
 	{
 		parent::__construct();
@@ -20,7 +18,6 @@ class sociales extends CI_Controller {
         $config['overwrite'] 	   = TRUE;
         $this->load->library('upload', $config);
 	}
-
 	public function index()
 	{
 		$data['sociales'] = $this->sociales_admin_model->get_sociales();
@@ -36,9 +33,9 @@ class sociales extends CI_Controller {
     if (!empty($_FILES['foto4']['name'])) {	$this->upload->do_upload('foto4'); $foto4_info = $this->upload->data(); $foto4 = $foto4_info['file_name']; }else{ $foto4 = NULL;}
     if (!empty($_FILES['foto5']['name'])) {	$this->upload->do_upload('foto5'); $foto5_info = $this->upload->data(); $foto5 = $foto5_info['file_name']; }else{ $foto5 = NULL;}
     if (!empty($_FILES['foto6']['name'])) {	$this->upload->do_upload('foto6'); $foto6_info = $this->upload->data(); $foto6 = $foto6_info['file_name']; }else{ $foto6 = NULL;}
-    
     if (!empty($_FILES['ficha_social']['name'])) { $this->upload->do_upload('ficha_social'); $ficha_info= $this->upload->data(); $ficha_social = $ficha_info['file_name']; }else{ $ficha_social = NULL;}
 		$data = array(
+					'orden_social' => $this->input->post('orden_social'),
 					'nombre_social' => $this->input->post('nombre_social'),
 					'titulo_social' => $this->input->post('titulo_social'),
 					'tipo_social' => $this->input->post('tipo_social'),
@@ -61,11 +58,9 @@ class sociales extends CI_Controller {
 					'foto5' => $foto5,
 					'foto6' => $foto6
 					 );
-
 		$this->sociales_admin_model->insert_social($data);
 		redirect('/admin/sociales');
 	}
-
 	public function update_social($id_social)
 	{
 		if (!empty($_FILES['icono_social']['name'])) {	$this->upload->do_upload('icono_social'); $icono_social_info = $this->upload->data(); $icono_social = $icono_social_info['file_name']; }else{ $icono_social = $this->input->post('icono_social');}
@@ -84,8 +79,8 @@ class sociales extends CI_Controller {
         if (!empty($_FILES['foto6']['name'])) {	$this->upload->do_upload('foto6'); $foto6_info = $this->upload->data(); $foto6 = $foto6_info['file_name']; }
         else{ $foto6 = $this->input->post('foto6');}
         if (!empty($_FILES['ficha_social']['name'])) { $this->upload->do_upload('ficha_social'); $ficha_info= $this->upload->data(); $ficha_social = $ficha_info['file_name']; }else{ $ficha_social =  $this->input->post('ficha_social');}
-                           
 		$data = array(
+					'orden_social' => $this->input->post('orden_social'),
 					'nombre_social' => $this->input->post('nombre_social'),
 					'titulo_social' => $this->input->post('titulo_social'),
 					'tipo_social' => $this->input->post('tipo_social'),
@@ -109,9 +104,8 @@ class sociales extends CI_Controller {
 					'foto6' => $foto6
 					 );
 		$this->sociales_admin_model->update_social($id_social,$data);
-		redirect('/admin/sociales/social_edit/'.$id_social);
+		redirect('/admin/sociales/');
 	}
-
 	public function social_edit($id_social)
 	{
 		$data['detalle_social'] = $this->sociales_admin_model->get_detalle_social($id_social);
@@ -132,6 +126,4 @@ class sociales extends CI_Controller {
 		$this->sociales_admin_model->delete_foto($id_social,$foto);
 		redirect('/admin/sociales/social_edit/'.$id_social);
 	}
-	
 }
-

@@ -1,8 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 class Articulos extends CI_Controller {
-
 	public function __construct()
 	{
 		parent::__construct();
@@ -20,7 +18,6 @@ class Articulos extends CI_Controller {
         $config['overwrite'] 	   = TRUE;
         $this->load->library('upload', $config);
 	}
-
 	public function index()
 	{
 		$data['articulos'] = $this->articulos_admin_model->get_articulos();
@@ -36,7 +33,6 @@ class Articulos extends CI_Controller {
     if (!empty($_FILES['foto4']['name'])) {	$this->upload->do_upload('foto4'); $foto4_info = $this->upload->data(); $foto4 = $foto4_info['file_name']; }else{ $foto4 = NULL;}
     if (!empty($_FILES['foto5']['name'])) {	$this->upload->do_upload('foto5'); $foto5_info = $this->upload->data(); $foto5 = $foto5_info['file_name']; }else{ $foto5 = NULL;}
     if (!empty($_FILES['foto6']['name'])) {	$this->upload->do_upload('foto6'); $foto6_info = $this->upload->data(); $foto6 = $foto6_info['file_name']; }else{ $foto6 = NULL;}
-    
     if (!empty($_FILES['ficha_articulo']['name'])) { $this->upload->do_upload('ficha_articulo'); $ficha_info= $this->upload->data(); $ficha_articulo = $ficha_info['file_name']; }else{ $ficha_articulo = NULL;}
 		$data = array(
 					'nombre_articulo' => $this->input->post('nombre_articulo'),
@@ -61,11 +57,9 @@ class Articulos extends CI_Controller {
 					'foto5' => $foto5,
 					'foto6' => $foto6
 					 );
-
 		$this->articulos_admin_model->insert_articulo($data);
 		redirect('/admin/articulos');
 	}
-
 	public function update_articulo($id_articulo)
 	{
 		if (!empty($_FILES['icono_articulo']['name'])) {	$this->upload->do_upload('icono_articulo'); $icono_articulo_info = $this->upload->data(); $icono_articulo = $icono_articulo_info['file_name']; }else{ $icono_articulo = $this->input->post('icono_articulo');}
@@ -84,7 +78,6 @@ class Articulos extends CI_Controller {
         if (!empty($_FILES['foto6']['name'])) {	$this->upload->do_upload('foto6'); $foto6_info = $this->upload->data(); $foto6 = $foto6_info['file_name']; }
         else{ $foto6 = $this->input->post('foto6');}
         if (!empty($_FILES['ficha_articulo']['name'])) { $this->upload->do_upload('ficha_articulo'); $ficha_info= $this->upload->data(); $ficha_articulo = $ficha_info['file_name']; }else{ $ficha_articulo =  $this->input->post('ficha_articulo');}
-                           
 		$data = array(
 					'nombre_articulo' => $this->input->post('nombre_articulo'),
 					'titulo_articulo' => $this->input->post('titulo_articulo'),
@@ -111,7 +104,6 @@ class Articulos extends CI_Controller {
 		$this->articulos_admin_model->update_articulo($id_articulo,$data);
 		redirect('/admin/articulos/articulo_edit/'.$id_articulo);
 	}
-
 	public function articulo_edit($id_articulo)
 	{
 		$data['detalle_articulo'] = $this->articulos_admin_model->get_detalle_articulo($id_articulo);
@@ -132,6 +124,4 @@ class Articulos extends CI_Controller {
 		$this->articulos_admin_model->delete_foto($id_articulo,$foto);
 		redirect('/admin/articulos/articulo_edit/'.$id_articulo);
 	}
-	
 }
-

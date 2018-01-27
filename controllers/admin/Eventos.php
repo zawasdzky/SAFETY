@@ -1,8 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 class eventos extends CI_Controller {
-
 	public function __construct()
 	{
 		parent::__construct();
@@ -25,7 +23,6 @@ class eventos extends CI_Controller {
 		$data['eventos_solutions'] = $this->eventos_admin_model->get_eventos_solutions();
 		$this->load->view('admin/eventos',$data);
 	}
-
 	public function insertar_evento()
 	{
 		if (!empty($_FILES['foto0']['name'])) {	$this->upload->do_upload('foto0'); $foto0_info = $this->upload->data(); $foto0 = $foto0_info['file_name']; }else{ $foto0 = NULL;}
@@ -54,16 +51,12 @@ class eventos extends CI_Controller {
 					'foto4' =>  $foto4,
 					'foto5' =>  $foto6
 					  );
-
 		$this->eventos_admin_model->insert_evento($data);
 		redirect('/admin/eventos');
 	}
-
 	public function update_evento()
 	{
 		$id_evento =  $this->input->post('id_evento');
-
-
 		if (!empty($_FILES['foto0']['name'])) {	$this->upload->do_upload('foto0'); $foto0_info = $this->upload->data(); $foto0 = $foto0_info['file_name']; }
         else{ $foto0 = $this->input->post('foto0');}
         if (!empty($_FILES['foto1']['name'])) {	$this->upload->do_upload('foto1'); $foto1_info = $this->upload->data(); $foto1 = $foto1_info['file_name']; }
@@ -76,7 +69,6 @@ class eventos extends CI_Controller {
         else{ $foto4 = $this->input->post('foto4');}
         if (!empty($_FILES['foto5']['name'])) {	$this->upload->do_upload('foto5'); $foto5_info = $this->upload->data(); $foto5 = $foto5_info['file_name']; }
         else{ $foto5 = $this->input->post('foto5');}
-
 		$data = array(
 					'nombre_evento' => $this->input->post('nombre_evento'),
 					'descripcion_corta_evento' => $this->input->post('descripcion_corta_evento'),
@@ -97,17 +89,14 @@ class eventos extends CI_Controller {
 					'foto4' =>  $foto4,
 					'foto5' =>  $foto5
 					  );
-
 			$this->eventos_admin_model->update_evento($id_evento,$data);
 			redirect('/admin/eventos/evento_edit/'.$id_evento);
 	}
-
 	public function evento_edit($id_evento)
 	{
 		$data['detalle_evento'] = $this->eventos_admin_model->detalle_evento($id_evento);
 		$this->load->view('admin/evento_edit', $data);
 	}
-
 	public function borrar_foto($id_evento,$foto)
 	{
 		$this->eventos_admin_model->delete_foto($id_evento,$foto);
@@ -118,7 +107,4 @@ class eventos extends CI_Controller {
 		$this->eventos_admin_model->delete_evento($id_evento);
 		redirect('/admin/eventos');
 	}
-	
 }
-
-

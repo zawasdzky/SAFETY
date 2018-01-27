@@ -30,24 +30,19 @@
              <span class="panel-icon"></span>
              <span class="panel-title"> Informacion General</span>
           </div>    
-
           <div class="panel-body border">
-
             <div class="col-md-3 mb10">
               <label for="titulo_legislacion" class="field prepend-icon">Título del legislacion</label>
               <input type="text" name="titulo_legislacion" id="titulo_legislacion" class="form-control" value="<?php echo $detalle-> titulo_legislacion; ?>" required>
             </div>
-
             <div class="col-md-3 mb10">
               <label for="keywords_legislacion" class="field prepend-icon">Palabras Clave </label>
               <input type="text" name="keywords_legislacion" id="keywords_legislacion" class="form-control" value="<?php echo $detalle-> keywords_legislacion; ?>">
             </div>
-
             <div class="col-md-3 mb10">
               <label for="url_amigable" class="field prepend-icon"> URL Amigable (sin espacios...) </label>
               <input type="text" name="url_amigable_legislacion" id="url_amigable_legislacion" class="form-control" value="<?php echo $detalle-> url_amigable_legislacion; ?>">
             </div>
-
             <div class="col-md-2 mb10">          
               <label for="estado_legislacion"> Estado </label>
               <select id="estado_legislacion" name="estado_legislacion" class="form-control">
@@ -56,7 +51,6 @@
                 <option value="inactivo">inactivo</option>
               </select>
             </div>
-
             <div class="col-md-3 mb10">
               <label for="estado_legislacion"> Tipo Legislación </label>
                 <select id="tipo" name="tipo_legislacion" class="form-control">
@@ -72,7 +66,6 @@
                   <option value="Otros">Otros</option>
                 </select>
             </div>
-
             <div class="col-md-3 mb10">
               <label for="estado_legislacion"> Categoría Legislación </label>
                 <select id="tipo" name="tipo_legislacion" class="form-control">
@@ -87,13 +80,11 @@
                   <option value="Oficio">Oficio</option>
                 </select>
             </div>
-
             <div class="col-md-12 mb10"> 
               <label>Descripción</label>
                   <textarea name="descripcion_legislacion" class="form-control"><?php echo $detalle-> descripcion_legislacion; ?></textarea>
             </div> 
             <div class="col-md-12 mb10""> <hr> </div> 
-
             <div class="col-md-12 mb10">
                 <div class="col-md-2 mb10">
                   <label for="fecha_legislacion"> Fecha Expedición </label>
@@ -110,7 +101,6 @@
                     <input type="file" name="ficha_legislacion"> 
                   <?php } ?>
                 </div> 
- 
                 <div class="col-md-2">
                 <?php if ($detalle-> foto0) { ?>
                   <input type="hidden" name="foto0" value="<?php echo $detalle->foto0; ?>">
@@ -132,7 +122,6 @@
                         </div>
                 <?php } ?>
                 </div> 
-
                 <div class="col-md-2">
                 <?php if ($detalle-> icono_legislacion) { ?>
                   <input type="hidden" name="icono_legislacion" value="<?php echo $detalle->icono_legislacion; ?>">
@@ -155,9 +144,7 @@
                 <?php } ?>
                 </div> 
             </div>
-
             <div class="mb10 row"> <br> </div>
-
             <div class="col-md-12 pl15 text-right">
               <hr class="short alt">
              <input type="submit" name="actualizar_legislacion" class="btn btn-danger" value="Actualizar legislacion">
@@ -167,7 +154,6 @@
         </form> <!-- FIN FORMULARIO -->
       </section>
         <!-- End: Content -->
-
   <!-- End: Main -->
   <!-- BEGIN: PAGE SCRIPTS -->
   <!-- jQuery -->
@@ -190,10 +176,8 @@
   <script src="<?php echo base_url();?>assets_admin/assets/js/utility/utility.js"></script>
   <script src="<?php echo base_url();?>assets_admin/assets/js/demo/demo.js"></script>
   <script src="<?php echo base_url();?>assets_admin/assets/js/main.js"></script>
-
   <script type="text/javascript">
   jQuery(document).ready(function() {
-
       $( "#agregar_categoria" ).click(function(){
         var id_categoria = $( "select#id_categoria option:checked" ).val();
         var id_legislacion = <?php echo $id_legislacion;?>;
@@ -207,11 +191,9 @@
             }
       });
     });
-
     $(".confirmation").click(function(){
       return confirm('¿Está seguro de borrar esto?');
     });
-
     "use strict";
     // Init Theme Core    
     Core.init();
@@ -241,11 +223,7 @@
     });
     // Add Placeholder text to datatables filter bar
     $('.dataTables_filter input').attr("placeholder", "Buscar");
-
-
   });
-
-
 </script>  
   <!-- END: PAGE SCRIPTS -->
 </body>

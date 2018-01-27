@@ -1,8 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 class Vida_estilo extends CI_Controller {
-
 		public function __construct()
 	{
 		parent::__construct();
@@ -20,7 +18,6 @@ class Vida_estilo extends CI_Controller {
         $config['overwrite'] 	   = TRUE;
         $this->load->library('upload', $config);
 	}
-
 	public function index()
 	{
 		$data['articulos_vida_estilo'] = $this->Vida_estilo_admin_model->get_articulos_vida_estilo();
@@ -36,9 +33,9 @@ class Vida_estilo extends CI_Controller {
     if (!empty($_FILES['foto4']['name'])) {	$this->upload->do_upload('foto4'); $foto4_info = $this->upload->data(); $foto4 = $foto4_info['file_name']; }else{ $foto4 = NULL;}
     if (!empty($_FILES['foto5']['name'])) {	$this->upload->do_upload('foto5'); $foto5_info = $this->upload->data(); $foto5 = $foto5_info['file_name']; }else{ $foto5 = NULL;}
     if (!empty($_FILES['foto6']['name'])) {	$this->upload->do_upload('foto6'); $foto6_info = $this->upload->data(); $foto6 = $foto6_info['file_name']; }else{ $foto6 = NULL;}
-    
     if (!empty($_FILES['ficha_vida_estilo']['name'])) { $this->upload->do_upload('ficha_vida_estilo'); $ficha_info= $this->upload->data(); $ficha_vida_estilo = $ficha_info['file_name']; }else{ $ficha_vida_estilo = NULL;}
 		$data = array(
+					'orden_vida_estilo' => $this->input->post('orden_vida_estilo'),
 					'titulo_vida_estilo' => $this->input->post('titulo_vida_estilo'),
 					'subtitulo_vida_estilo' => $this->input->post('subtitulo_vida_estilo'),
 					'tipo_vida_estilo' => $this->input->post('tipo_vida_estilo'),
@@ -61,11 +58,9 @@ class Vida_estilo extends CI_Controller {
 					'foto5' => $foto5,
 					'foto6' => $foto6
 					 );
-
 		$this->Vida_estilo_admin_model->insert_vida_estilo($data);
 		redirect('/admin/Vida_estilo');
 	}
-
 	public function update_vida_estilo($id_vida_estilo)
 	{
 		if (!empty($_FILES['icono_vida_estilo']['name'])) {	$this->upload->do_upload('icono_vida_estilo'); $icono_vida_estilo_info = $this->upload->data(); $icono_vida_estilo = $icono_vida_estilo_info['file_name']; }else{ $icono_vida_estilo = $this->input->post('icono_vida_estilo');}
@@ -84,8 +79,8 @@ class Vida_estilo extends CI_Controller {
         if (!empty($_FILES['foto6']['name'])) {	$this->upload->do_upload('foto6'); $foto6_info = $this->upload->data(); $foto6 = $foto6_info['file_name']; }
         else{ $foto6 = $this->input->post('foto6');}
         if (!empty($_FILES['ficha_vida_estilo']['name'])) { $this->upload->do_upload('ficha_vida_estilo'); $ficha_info= $this->upload->data(); $ficha_vida_estilo = $ficha_info['file_name']; }else{ $ficha_vida_estilo =  $this->input->post('ficha_vida_estilo');}
-                           
 		$data = array(
+					'orden_vida_estilo' => $this->input->post('orden_vida_estilo'),
 					'titulo_vida_estilo' => $this->input->post('titulo_vida_estilo'),
 					'subtitulo_vida_estilo' => $this->input->post('subtitulo_vida_estilo'),
 					'tipo_vida_estilo' => $this->input->post('tipo_vida_estilo'),
@@ -109,9 +104,8 @@ class Vida_estilo extends CI_Controller {
 					'foto6' => $foto6
 					 );
 		$this->Vida_estilo_admin_model->update_vida_estilo($id_vida_estilo,$data);
-		redirect('/admin/Vida_estilo/vida_estilo_edit/'.$id_vida_estilo);
+		redirect('/admin/Vida_estilo/');
 	}
-
 	public function vida_estilo_edit($id_vida_estilo)
 	{
 		$data['detalle_vida_estilo'] = $this->Vida_estilo_admin_model->get_detalle_vida_estilo($id_vida_estilo);
@@ -132,6 +126,4 @@ class Vida_estilo extends CI_Controller {
 		$this->Vida_estilo_admin_model->delete_foto($id_vida_estilo,$foto);
 		redirect('/admin/vida_estilo/vida_estilo_edit/'.$id_vida_estilo);
 	}
-	
 }
-

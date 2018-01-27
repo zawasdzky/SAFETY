@@ -112,6 +112,14 @@
                           </label>
                           </label>
                         </div>
+                        <div class="col-md-2 mb10">
+                          <label for="orden_vida_estilo" class="field prepend-icon">
+                          <input type="number" name="orden_vida_estilo" id="orden_vida_estilo" class="event-name gui-input br-light light"  placeholder ="orden" required>
+                          <label for="orden_vida_estilo" class="field-icon">
+                            <i class="fa fa-arrows-v"></i>
+                          </label>
+                          </label>
+                        </div>
                         <div class="col-md-3 mb10">
                           <label> PDF Descargable</label>
                           <input type="file" name="ficha_vida_estilo">                          
@@ -308,7 +316,7 @@
                   <table class="table table-striped table-hover" id="datatable2" cellspacing="0" width="100%">
                     <thead>
                       <tr>
-                        <th>ID</th>
+                        <th>Orden</th>
                         <th>Foto</th>
                         <th>Titulo</th>
                         <th>Estado</th>
@@ -319,7 +327,7 @@
                     <tbody>
                         <?php foreach ($articulos_vida_estilo ->result() as $vida_estilo) { ?>
                         <tr>
-                          <td><?php echo $vida_estilo -> id_vida_estilo ?></td>
+                          <td align="center"><?php echo $vida_estilo -> orden_vida_estilo ?></td>
                           <td><img src="<?php echo base_url()."fotos_vida_estilo/".$vida_estilo -> foto0 ?>" width=50 ></td>
                           <td><?php echo $vida_estilo -> titulo_vida_estilo ?></td>
                           <td><?php echo $vida_estilo -> estado_vida_estilo ?></td>
@@ -391,6 +399,7 @@
           "sNext": ""
         }
       },
+      "order": [[ 0, "desc" ]],      
       "iDisplayLength": 100,
       "aLengthMenu": [
         [5, 10, 25, 50, -1],

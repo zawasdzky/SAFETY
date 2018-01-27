@@ -1,8 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 class SST extends CI_Controller {
-
 		public function __construct()
 	{
 		parent::__construct();
@@ -20,7 +18,6 @@ class SST extends CI_Controller {
         $config['overwrite'] 	   = TRUE;
         $this->load->library('upload', $config);
 	}
-
 	public function index()
 	{
 		$data['SST'] = $this->SST_admin_model->get_SST();
@@ -36,9 +33,9 @@ class SST extends CI_Controller {
     if (!empty($_FILES['foto4']['name'])) {	$this->upload->do_upload('foto4'); $foto4_info = $this->upload->data(); $foto4 = $foto4_info['file_name']; }else{ $foto4 = NULL;}
     if (!empty($_FILES['foto5']['name'])) {	$this->upload->do_upload('foto5'); $foto5_info = $this->upload->data(); $foto5 = $foto5_info['file_name']; }else{ $foto5 = NULL;}
     if (!empty($_FILES['foto6']['name'])) {	$this->upload->do_upload('foto6'); $foto6_info = $this->upload->data(); $foto6 = $foto6_info['file_name']; }else{ $foto6 = NULL;}
-    
     if (!empty($_FILES['ficha_SST']['name'])) { $this->upload->do_upload('ficha_SST'); $ficha_info= $this->upload->data(); $ficha_SST = $ficha_info['file_name']; }else{ $ficha_SST = NULL;}
 		$data = array(
+					'orden_SST' => $this->input->post('orden_SST'),
 					'titulo_SST' => $this->input->post('titulo_SST'),
 					'subtitulo_SST' => $this->input->post('subtitulo_SST'),
 					'tipo_SST' => $this->input->post('tipo_SST'),
@@ -61,11 +58,9 @@ class SST extends CI_Controller {
 					'foto5' => $foto5,
 					'foto6' => $foto6
 					 );
-
 		$this->SST_admin_model->insert_SST($data);
 		redirect('/admin/SST');
 	}
-
 	public function update_SST($id_SST)
 	{
 		if (!empty($_FILES['icono_SST']['name'])) {	$this->upload->do_upload('icono_SST'); $icono_SST_info = $this->upload->data(); $icono_SST = $icono_SST_info['file_name']; }else{ $icono_SST = $this->input->post('icono_SST');}
@@ -84,8 +79,8 @@ class SST extends CI_Controller {
         if (!empty($_FILES['foto6']['name'])) {	$this->upload->do_upload('foto6'); $foto6_info = $this->upload->data(); $foto6 = $foto6_info['file_name']; }
         else{ $foto6 = $this->input->post('foto6');}
         if (!empty($_FILES['ficha_SST']['name'])) { $this->upload->do_upload('ficha_SST'); $ficha_info= $this->upload->data(); $ficha_SST = $ficha_info['file_name']; }else{ $ficha_SST =  $this->input->post('ficha_SST');}
-                           
 		$data = array(
+					'orden_SST' => $this->input->post('orden_SST'),
 					'titulo_SST' => $this->input->post('titulo_SST'),
 					'subtitulo_SST' => $this->input->post('subtitulo_SST'),
 					'tipo_SST' => $this->input->post('tipo_SST'),
@@ -109,9 +104,8 @@ class SST extends CI_Controller {
 					'foto6' => $foto6
 					 );
 		$this->SST_admin_model->update_SST($id_SST,$data);
-		redirect('/admin/SST/SST_edit/'.$id_SST);
+		redirect('/admin/SST/');
 	}
-
 	public function SST_edit($id_SST)
 	{
 		$data['detalle_SST'] = $this->SST_admin_model->get_detalle_SST($id_SST);
@@ -132,6 +126,4 @@ class SST extends CI_Controller {
 		$this->SST_admin_model->delete_foto($id_SST,$foto);
 		redirect('/admin/SST/SST_edit/'.$id_SST);
 	}
-	
 }
-

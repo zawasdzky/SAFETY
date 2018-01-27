@@ -5,15 +5,15 @@
         <div class="topbar-left">
           <ol class="breadcrumb">
             <li class="crumb-active">
-              <a href="dashboard.html">Gestor Safety Solutions</a>
+              <a href="../">Gestor Safety Solutions</a>
             </li>
             <li class="crumb-icon">
-              <a href="dashboard.html">
+              <a href="../">
                 <span class="glyphicon glyphicon-home"></span>
               </a>
             </li>
             <li class="crumb-link">
-              <a href="#">Gestión SST</a>
+              <a href="../">Gestión SST</a>
             </li>
             <li class="crumb-trail">Listado</li>
           </ol>
@@ -30,40 +30,32 @@
              <span class="panel-icon"></span>
              <span class="panel-title"> Informacion General</span>
           </div>    
-
           <div class="panel-body border">
-
             <div class="col-md-3 mb10">
               <label for="titulo_SST" class="field prepend-icon">Titulo</label>
               <input type="text" name="titulo_SST" id="titulo_SST" class="form-control" value="<?php echo $detalle-> titulo_SST; ?>" required>
             </div>
-            
             <div class="col-md-3 mb10">
               <label for="subtitulo_SST" class="field prepend-icon">Subtítulo </label>
               <input type="text" name="subtitulo_SST" id="subtitulo_SST" class="form-control" value="<?php echo $detalle-> subtitulo_SST; ?>" >
             </div>
-
             <div class="col-md-3 mb10">
               <label for="keywords_SST" class="field prepend-icon"> Palabras Clave </label>
               <input type="text" name="keywords_SST" id="keywords_SST" class="form-control" value="<?php echo $detalle-> keywords_SST; ?>">
             </div>
-
             <div class="col-md-3 mb10">
               <label for="video_SST" class="field prepend-icon"> Video </label>
               <input type="text" name="video_SST" id="video_SST" class="form-control" value="<?php echo $detalle-> video_SST; ?>">
             </div>
-
             <div class="col-md-3 mb10">
               <label for="url_amigable" class="field prepend-icon"> URL Amigable (sin espacios...) </label>
               <input type="text" name="url_amigable_SST" id="url_amigable_SST" class="form-control" value="<?php echo $detalle-> url_amigable_SST; ?>">
             </div>
-
-            <div class="col-md-2 mb10">
+            <div class="col-md-3 mb10">
               <label for="fecha_publicacion_SST"> Fecha publicación </label>
               <input type="date" name="fecha_publicacion_SST" class="form-control"  id="fecha_publicacion_SST" value="<?php echo $detalle-> fecha_publicacion_SST; ?>">
             </div>
-
-            <div class="col-md-2 mb10">          
+            <div class="col-md-3 mb10">          
               <label for="estado_SST"> Estado </label>
               <select id="estado_SST" name="estado_SST" class="form-control">
                 <option value="<?php echo $detalle->estado_SST; ?>" selected="selected"> <?php echo $detalle-> estado_SST; ?></option>
@@ -71,13 +63,15 @@
                 <option value="inactivo">inactivo</option>
               </select>
             </div>
- 
+              <div class="col-md-2 mb10">
+              <label for="orden_SST" class="field prepend-icon">Orden</label>
+              <input type="number" class="form-control" name="orden_SST" id="orden_SST" value="<?php echo $detalle-> orden_SST; ?>" required>
+            </div>
             <div class="col-md-12 mb10"> 
               <label>Descripción para listados</label>
                   <textarea name="descripcion_SST" class="form-control"><?php echo $detalle-> descripcion_SST; ?></textarea>
             </div> 
             <div class="col-md-12 mb10""> <hr> </div> 
-
             <div class="col-md-12 mb10">
                 <div class="col-md-6 mb10">
                 <?php if ($detalle-> ficha_SST) {  ?>
@@ -119,7 +113,6 @@
                         </div>
                 <?php } ?>
                 </div> 
-
                 <div class="col-md-2">
                 <?php if ($detalle-> icono_SST) { ?>
                   <input type="hidden" name="icono_SST" value="<?php echo $detalle->icono_SST; ?>">
@@ -142,16 +135,13 @@
                 <?php } ?>
                 </div> 
             </div>
-
             <div class="mb10 row"> <br> </div>
-
             <div class="panel panel-alert">
               <div class="panel-heading">
                  <span class="panel-icon"></span>
                  <span class="panel-title"> Fotos del SST</span>
               </div>    
               <div class="panel-body border">
-
                 <div class="col-md-2">
                 <?php if ($detalle-> foto1) { ?>
                   <input type="hidden" name="foto1" value="<?php echo $detalle->foto1; ?>">
@@ -300,7 +290,6 @@
         </form> <!-- FIN FORMULARIO -->
       </section>
         <!-- End: Content -->
-
   <!-- End: Main -->
   <!-- BEGIN: PAGE SCRIPTS -->
   <!-- jQuery -->
@@ -327,55 +316,6 @@
   <script src="https://cdn.ckeditor.com/4.6.1/full-all/ckeditor.js"></script>
   <script type="text/javascript">
   jQuery(document).ready(function() {
-
-      $( "#agregar_categoria" ).click(function(){
-        var id_categoria = $( "select#id_categoria option:checked" ).val();
-        var id_SST = <?php echo $id_SST;?>;
-        $.ajax({
-        type: "POST",
-        url: "<?php echo base_url();?>admin/SST/agregar_categoria_SST/",
-        data: {"id_SST" : id_SST, "id_categoria":id_categoria},
-         success: function()
-            {
-                location.reload();
-            }
-      });
-    });
-
-    $(".confirmation").click(function(){
-      return confirm('¿Está seguro de borrar esto?');
-    });
-
-    "use strict";
-    // Init Theme Core    
-    Core.init();
-    // Init Demo JS  
-    Demo.init();
-    // Init DataTables
-        $('#datatable2').dataTable({
-      "aoColumnDefs": [{
-        'bSortable': false,
-        'aTargets': [-1]
-      }],
-      "oLanguage": {
-        "oPaginate": {
-          "sPrevious": "",
-          "sNext": ""
-        }
-      },
-      "iDisplayLength": 5,
-      "aLengthMenu": [
-        [5, 10, 25, 50, -1],
-        [5, 10, 25, 50, "All"]
-      ],
-      "sDom": '<"dt-panelmenu clearfix"lfr>t<"dt-panelfooter clearfix"ip>',
-      "oTableTools": {
-        "sSwfPath": "vendor/plugins/datatables/extensions/TableTools/swf/copy_csv_xls_pdf.swf"
-      }
-    });
-    // Add Placeholder text to datatables filter bar
-    $('.dataTables_filter input').attr("placeholder", "Buscar");
-
     // Init Ckeditor
     CKEDITOR.replace('contenido_SST', {
       height: 210,
@@ -385,10 +325,7 @@
         }
       },
     });
-
   });
-
-
 </script>  
   <!-- END: PAGE SCRIPTS -->
 </body>

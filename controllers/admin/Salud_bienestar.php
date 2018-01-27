@@ -1,8 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 class Salud_bienestar extends CI_Controller {
-
     public function __construct()
   {
     parent::__construct();
@@ -20,7 +18,6 @@ class Salud_bienestar extends CI_Controller {
         $config['overwrite']     = TRUE;
         $this->load->library('upload', $config);
   }
-
   public function index()
   {
     $data['salud_bienestar'] = $this->salud_bienestar_admin_model->get_salud_bienestar();
@@ -36,9 +33,9 @@ class Salud_bienestar extends CI_Controller {
     if (!empty($_FILES['foto4']['name'])) { $this->upload->do_upload('foto4'); $foto4_info = $this->upload->data(); $foto4 = $foto4_info['file_name']; }else{ $foto4 = NULL;}
     if (!empty($_FILES['foto5']['name'])) { $this->upload->do_upload('foto5'); $foto5_info = $this->upload->data(); $foto5 = $foto5_info['file_name']; }else{ $foto5 = NULL;}
     if (!empty($_FILES['foto6']['name'])) { $this->upload->do_upload('foto6'); $foto6_info = $this->upload->data(); $foto6 = $foto6_info['file_name']; }else{ $foto6 = NULL;}
-    
     if (!empty($_FILES['ficha_salud']['name'])) { $this->upload->do_upload('ficha_salud'); $ficha_info= $this->upload->data(); $ficha_salud = $ficha_info['file_name']; }else{ $ficha_salud = NULL;}
     $data = array(
+          'orden_salud' => $this->input->post('orden_salud'),
           'titulo_salud' => $this->input->post('titulo_salud'),
           'subtitulo_salud' => $this->input->post('subtitulo_salud'),          
           'descripcion_salud' => $this->input->post('descripcion_salud'),
@@ -60,11 +57,9 @@ class Salud_bienestar extends CI_Controller {
           'foto5' => $foto5,
           'foto6' => $foto6
            );
-
     $this->salud_bienestar_admin_model->insert_salud($data);
     redirect('/admin/salud_bienestar');
   }
-
   public function update_salud($id_salud)
   {
     if (!empty($_FILES['icono_salud']['name'])) { $this->upload->do_upload('icono_salud'); $icono_salud_info = $this->upload->data(); $icono_salud = $icono_salud_info['file_name']; }else{ $icono_salud = $this->input->post('icono_salud');}
@@ -83,8 +78,8 @@ class Salud_bienestar extends CI_Controller {
         if (!empty($_FILES['foto6']['name'])) { $this->upload->do_upload('foto6'); $foto6_info = $this->upload->data(); $foto6 = $foto6_info['file_name']; }
         else{ $foto6 = $this->input->post('foto6');}
         if (!empty($_FILES['ficha_salud']['name'])) { $this->upload->do_upload('ficha_salud'); $ficha_info= $this->upload->data(); $ficha_salud = $ficha_info['file_name']; }else{ $ficha_salud =  $this->input->post('ficha_salud');}
-                           
     $data = array(
+          'orden_salud' => $this->input->post('orden_salud'),
           'titulo_salud' => $this->input->post('titulo_salud'),
           'subtitulo_salud' => $this->input->post('subtitulo_salud'),          
           'descripcion_salud' => $this->input->post('descripcion_salud'),
@@ -107,9 +102,8 @@ class Salud_bienestar extends CI_Controller {
           'foto6' => $foto6
            );
     $this->salud_bienestar_admin_model->update_salud($id_salud,$data);
-    redirect('/admin/salud_bienestar/salud_edit/'.$id_salud);
+    redirect('/admin/salud_bienestar/');
   }
-
   public function salud_edit($id_salud)
   {
     $data['detalle_salud'] = $this->salud_bienestar_admin_model->get_detalle_salud($id_salud);
@@ -130,6 +124,4 @@ class Salud_bienestar extends CI_Controller {
     $this->salud_bienestar_admin_model->delete_foto($id_salud,$foto);
     redirect('/admin/salud_bienestar/salud_edit/'.$id_salud);
   }
-  
 }
-

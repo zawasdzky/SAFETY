@@ -5,15 +5,15 @@
         <div class="topbar-left">
           <ol class="breadcrumb">
             <li class="crumb-active">
-              <a href="dashboard.html">Gestor Safety Solutions</a>
+              <a href="../">Gestor Safety Solutions</a>
             </li>
             <li class="crumb-icon">
-              <a href="dashboard.html">
+              <a href="../">
                 <span class="glyphicon glyphicon-home"></span>
               </a>
             </li>
             <li class="crumb-link">
-              <a href="#">Gestión de sociales</a>
+              <a href="../">Gestión de sociales</a>
             </li>
             <li class="crumb-trail">sociales</li>
           </ol>
@@ -111,6 +111,14 @@
                           <input type="date" name="fecha_publicacion_social" id="fecha_publicacion_social" class="event-name gui-input br-light light" required>
                           <label for="fecha_publicacion_social" class="field-icon">
                             <i class="fa fa-calendar"></i>
+                          </label>
+                          </label>
+                        </div>
+                        <div class="col-md-2 mb10">
+                          <label for="orden_social" class="field prepend-icon">
+                          <input type="number" name="orden_social" id="orden_social" class="event-name gui-input br-light light"  placeholder ="orden" required>
+                          <label for="orden_social" class="field-icon">
+                            <i class="fa fa-arrows-v"></i>
                           </label>
                           </label>
                         </div>
@@ -310,7 +318,7 @@
                   <table class="table table-striped table-hover" id="datatable2" cellspacing="0" width="100%">
                     <thead>
                       <tr>
-                        <th>ID</th>
+                        <th>Orden</th>
                         <th>Foto</th>
                         <th>Titulo</th>
                         <th>Autor</th>
@@ -322,7 +330,7 @@
                     <tbody>
                         <?php foreach ($sociales ->result() as $social) { ?>
                         <tr>
-                          <td><?php echo $social -> id_social ?></td>
+                          <td align="center"><?php echo $social -> orden_social ?></td>
                           <td><img src="<?php echo base_url()."fotos_sociales/".$social -> foto0 ?>" width=50 ></td>
                           <td><?php echo $social -> titulo_social ?></td>
                           <td><?php echo $social -> nombre_social?></td>
@@ -395,6 +403,7 @@
           "sNext": ""
         }
       },
+      "order": [[ 0, "desc" ]],
       "iDisplayLength": 100,
       "aLengthMenu": [
         [5, 10, 25, 50, -1],

@@ -26,8 +26,6 @@ class Varios extends CI_Controller {
 	}
 	public function insertar_varios()
 	{
-		//	if (!empty($_FILES['foto0']['name'])) {	$this->upload->do_upload('foto0'); $foto0_info = $this->upload->data(); $foto0 = $foto0_info['file_name']; }else{ $foto0 = NULL;}
-    	//	if (!empty($_FILES['foto1']['name'])) {	$this->upload->do_upload('foto1'); $foto1_info = $this->upload->data(); $foto1 = $foto1_info['file_name']; }else{ $foto1 = NULL;}
 		$data = array(
 					'titulo_varios' => $this->input->post('titulo_varios'),
 					'orden_varios' => $this->input->post('orden_varios'),
@@ -43,8 +41,6 @@ class Varios extends CI_Controller {
 	}
 	public function update_varios($id_varios)
 	{
-			//if (!empty($_FILES['foto0']['name'])) {	$this->upload->do_upload('foto0'); $foto0_info = $this->upload->data(); $foto0 = $foto0_info['file_name']; }else{ $foto0 = NULL;}
-    		//if (!empty($_FILES['foto1']['name'])) {	$this->upload->do_upload('foto1'); $foto1_info = $this->upload->data(); $foto1 = $foto1_info['file_name']; }else{ $foto1 = NULL;}
 		$data = array(
 					'titulo_varios' => $this->input->post('titulo_varios'),
 					'orden_varios' => $this->input->post('orden_varios'),

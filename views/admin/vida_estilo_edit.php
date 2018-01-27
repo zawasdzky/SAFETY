@@ -5,15 +5,15 @@
         <div class="topbar-left">
           <ol class="breadcrumb">
             <li class="crumb-active">
-              <a href="dashboard.html">Gestor Safety Solutions</a>
+              <a href="../">Gestor Safety Solutions</a>
             </li>
             <li class="crumb-icon">
-              <a href="dashboard.html">
+              <a href="../">
                 <span class="glyphicon glyphicon-home"></span>
               </a>
             </li>
             <li class="crumb-link">
-              <a href="#">Gestión de vida_estilo</a>
+              <a href="../">Gestión de vida_estilo</a>
             </li>
             <li class="crumb-trail">Vida y Estilo</li>
           </ol>
@@ -30,39 +30,31 @@
              <span class="panel-icon"></span>
              <span class="panel-title"> Informacion General</span>
           </div>    
-
           <div class="panel-body border">
-
             <div class="col-md-4 mb10">
               <label for="titulo_vida_estilo" class="field prepend-icon">Titulo del Artículo</label>
               <input type="text" name="titulo_vida_estilo" id="titulo_vida_estilo" class="form-control" value="<?php echo $detalle-> titulo_vida_estilo; ?>" required>
             </div>
-            
             <div class="col-md-4 mb10">
               <label for="subtitulo_vida_estilo" class="field prepend-icon">Subtitulo </label>
               <input type="text" name="subtitulo_vida_estilo" id="subtitulo_vida_estilo" class="form-control" value="<?php echo $detalle-> subtitulo_vida_estilo; ?>" >
             </div>
-
             <div class="col-md-4 mb10">
               <label for="keywords_vida_estilo" class="field prepend-icon"> Palabras Clave </label>
               <input type="text" name="keywords_vida_estilo" id="keywords_vida_estilo" class="form-control" value="<?php echo $detalle-> keywords_vida_estilo; ?>">
             </div>
-
             <div class="col-md-4 mb10">
               <label for="video_vida_estilo" class="field prepend-icon"> Video </label>
               <input type="text" name="video_vida_estilo" id="video_vida_estilo" class="form-control" value="<?php echo $detalle-> video_vida_estilo; ?>">
             </div>
-
             <div class="col-md-4 mb10">
               <label for="url_amigable" class="field prepend-icon"> URL Amigable (sin espacios...) </label>
               <input type="text" name="url_amigable_vida_estilo" id="url_amigable_vida_estilo" class="form-control" value="<?php echo $detalle-> url_amigable_vida_estilo; ?>">
             </div>
-
             <div class="col-md-4 mb10">
               <label for="fecha_publica_vida_estilo"> Fecha publicación </label>
               <input type="date" name="fecha_publica_vida_estilo" class="form-control"  id="fecha_publica_vida_estilo" value="<?php echo $detalle-> fecha_publica_vida_estilo; ?>">
             </div>
-
             <div class="col-md-4 mb10">          
               <label for="estado_vida_estilo"> Estado </label>
               <select id="estado_vida_estilo" name="estado_vida_estilo" class="form-control">
@@ -83,13 +75,15 @@
                   <option value="Reflexionemos">Reflexionemos</option>
                 </select>
             </div>
- 
+            <div class="col-md-2 mb10">
+              <label for="orden_vida_estilo" class="field prepend-icon">Orden</label>
+              <input type="number" class="form-control" name="orden_vida_estilo" id="orden_vida_estilo" value="<?php echo $detalle-> orden_vida_estilo; ?>" required>
+            </div>
             <div class="col-md-12 mb10"> 
               <label>Descripción para listados</label>
                   <textarea name="descripcion_vida_estilo" class="form-control"><?php echo $detalle-> descripcion_vida_estilo; ?></textarea>
             </div> 
             <div class="col-md-12 mb10""> <hr> </div> 
-
             <div class="col-md-12 mb10">
                 <div class="col-md-6 mb10">
                 <?php if ($detalle-> ficha_vida_estilo) {  ?>
@@ -131,7 +125,6 @@
                         </div>
                 <?php } ?>
                 </div> 
-
                 <div class="col-md-2">
                 <?php if ($detalle-> icono_vida_estilo) { ?>
                   <input type="hidden" name="icono_vida_estilo" value="<?php echo $detalle->icono_vida_estilo; ?>">
@@ -154,16 +147,13 @@
                 <?php } ?>
                 </div> 
             </div>
-
             <div class="mb10 row"> <br> </div>
-
             <div class="panel panel-alert">
               <div class="panel-heading">
                  <span class="panel-icon"></span>
                  <span class="panel-title"> Fotos del vida_estilo</span>
               </div>    
               <div class="panel-body border">
-
                 <div class="col-md-2">
                 <?php if ($detalle-> foto1) { ?>
                   <input type="hidden" name="foto1" value="<?php echo $detalle->foto1; ?>">
@@ -312,7 +302,6 @@
         </form> <!-- FIN FORMULARIO -->
       </section>
         <!-- End: Content -->
-
   <!-- End: Main -->
   <!-- BEGIN: PAGE SCRIPTS -->
   <!-- jQuery -->
@@ -339,55 +328,6 @@
   <script src="https://cdn.ckeditor.com/4.6.1/full-all/ckeditor.js"></script>
   <script type="text/javascript">
   jQuery(document).ready(function() {
-
-      $( "#agregar_categoria" ).click(function(){
-        var id_categoria = $( "select#id_categoria option:checked" ).val();
-        var id_vida_estilo = <?php echo $id_vida_estilo;?>;
-        $.ajax({
-        type: "POST",
-        url: "<?php echo base_url();?>admin/vida_estilo/agregar_categoria_vida_estilo/",
-        data: {"id_vida_estilo" : id_vida_estilo, "id_categoria":id_categoria},
-         success: function()
-            {
-                location.reload();
-            }
-      });
-    });
-
-    $(".confirmation").click(function(){
-      return confirm('¿Está seguro de borrar esto?');
-    });
-
-    "use strict";
-    // Init Theme Core    
-    Core.init();
-    // Init Demo JS  
-    Demo.init();
-    // Init DataTables
-        $('#datatable2').dataTable({
-      "aoColumnDefs": [{
-        'bSortable': false,
-        'aTargets': [-1]
-      }],
-      "oLanguage": {
-        "oPaginate": {
-          "sPrevious": "",
-          "sNext": ""
-        }
-      },
-      "iDisplayLength": 5,
-      "aLengthMenu": [
-        [5, 10, 25, 50, -1],
-        [5, 10, 25, 50, "All"]
-      ],
-      "sDom": '<"dt-panelmenu clearfix"lfr>t<"dt-panelfooter clearfix"ip>',
-      "oTableTools": {
-        "sSwfPath": "vendor/plugins/datatables/extensions/TableTools/swf/copy_csv_xls_pdf.swf"
-      }
-    });
-    // Add Placeholder text to datatables filter bar
-    $('.dataTables_filter input').attr("placeholder", "Buscar");
-
     // Init Ckeditor
     CKEDITOR.replace('contenido_vida_estilo', {
       height: 210,
@@ -397,10 +337,7 @@
         }
       },
     });
-
   });
-
-
 </script>  
   <!-- END: PAGE SCRIPTS -->
 </body>
