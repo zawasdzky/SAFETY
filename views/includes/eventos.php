@@ -32,13 +32,14 @@
                                                 </div>
                                                 <div class="text">
                                                     <p><b><?php echo $item-> ciudad_evento; ?> 
-                                                    - <?php echo $item-> fecha_inicio_evento ;?></b></p>
+                                                    - <?php echo $item-> fecha_inicio_evento ;?> / <?php echo $item -> hora_inicio_evento; ?></b></p>
                                                     <h2 class="color"><?php echo $item-> nombre_evento; ?></h2>
                                                     <br>
-                                                    <hr>
-                                                </div>
-                                                <div class="span4">
-                                                <p class="text-justify"><?php echo $item->descripcion_evento; ?></p>
+                                                    <div class="span4" style="margin-left: 5px;">
+                                                        <p class="text-justify"><?php echo $item->descripcion_corta_evento; ?></p>
+                                                        <b></b>
+                                                        <hr>
+                                                    </div>
                                                 </div>
                                                 <div class="span1 pull-right">
                                                     <div class="text-center">
@@ -47,7 +48,41 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>                                  
+                                            <div class="event-listing">
+                                                <div class="caption">
+                                                    <div class="row-fluid">
+                                                        <div class="span6">
+                                                            <h2><?php echo $item-> ciudad_evento; ?></h2>
+                                                        </div>
+                                                        <?php $fecha = $item->fecha_inicio_evento;
+                                                            setlocale(LC_ALL,"es_ES");
+                                                            date_default_timezone_set('America/Bogota');
+                                                            $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+                                                            $mes = date('m', strtotime($fecha));
+                                                            $mes_evento = intval($mes);
+                                                            $dia_evento = date('d', strtotime($fecha)); 
+                                                            $hora_inicio = date('h', strtotime($item -> hora_inicio_evento)); 
+                                                            $minutos_inicio = date('i', strtotime($item -> hora_inicio_evento)); 
+                                                            $hora_hoy = date("h"); 
+                                                            $dia_hoy = date("d"); 
+                                                            $mes_hoy = date("m");
+                                                            $meses_restantes =  $mes_evento - $mes_hoy; 
+                                                            $dias_restantes =  $dia_evento; 
+                                                            $Horas_restantes =  (12 + $hora_inicio);
+                                                        ?>
+
+                                                        <div class="span4">
+                                                            <div class="defaultCountdown hasCountdown"><span class="countdown_row countdown_show3"><span class="countdown_section"><span class="countdown_amount">  <?php echo $meses_restantes; ?></span><br>Meses</span><span class="countdown_section"><span class="countdown_amount">
+                                                                <?php echo $dias_restantes; ?></span><br>Días</span><span class="countdown_section"><span class="countdown_amount"> <?php echo $Horas_restantes; ?></span><br>Horas</span></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="span2">
+                                                            <p class="event-date"><?php echo $dia_evento;?><br><?php echo  $meses[$mes_evento-1];?></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> 
                                     <?php  $i++;} ?>    
                                 </div>
                             </div>

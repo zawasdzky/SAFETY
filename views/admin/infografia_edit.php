@@ -30,31 +30,23 @@
              <span class="panel-icon"></span>
              <span class="panel-title"> Informacion General</span>
           </div>    
-
           <div class="panel-body border">
-
             <div class="col-md-3 mb10">
               <label for="titulo_infografia" class="field prepend-icon">Titulo del Infografia</label>
               <input type="text" name="titulo_infografia" id="titulo_infografia" class="form-control" value="<?php echo $detalle-> titulo_infografia; ?>" required>
             </div>
-
-
             <div class="col-md-3 mb10">
               <label for="keywords_infografia" class="field prepend-icon"> Palabras Clave </label>
               <input type="text" name="keywords_infografia" id="keywords_infografia" class="form-control" value="<?php echo $detalle-> keywords_infografia; ?>">
             </div>
-
-
             <div class="col-md-3 mb10">
               <label for="url_amigable" class="field prepend-icon"> URL Amigable (sin espacios...) </label>
               <input type="text" name="url_amigable_infografia" id="url_amigable_infografia" class="form-control" value="<?php echo $detalle-> url_amigable_infografia; ?>">
             </div>
-
             <div class="col-md-2 mb10">
               <label for="fecha_publicacion_infografia"> Fecha publicación </label>
               <input type="date" name="fecha_publicacion_infografia" class="form-control"  id="fecha_publicacion_infografia" value="<?php echo $detalle-> fecha_publicacion_infografia; ?>">
             </div>
-
             <div class="col-md-2 mb10">          
               <label for="estado_infografia"> Estado </label>
               <select id="estado_infografia" name="estado_infografia" class="form-control">
@@ -63,21 +55,17 @@
                 <option value="inactivo">inactivo</option>
               </select>
             </div>
-
              <div class="col-md-2 mb10">
               <label for="orden_infografia" class="field prepend-icon">Orden</label>
               <input type="number" class="form-control" name="orden_infografia" id="orden_infografia" value="<?php echo $detalle-> orden_infografia; ?>" required>
             </div>
-
             <div class="col-md-12 mb10"> 
               <label>Descripción </label>
                   <textarea name="descripcion_infografia" class="form-control"><?php echo $detalle-> descripcion_infografia; ?></textarea>
             </div> 
             <div class="col-md-12 mb10""> <hr> </div> 
-
             <div class="col-md-12 mb10">
                 <div class="col-md-2">
-
                 <?php if ($detalle-> foto0) { ?>
                   <input type="hidden" name="foto0" value="<?php echo $detalle->foto0; ?>">
                   <label>Foto Listados</label>
@@ -98,7 +86,6 @@
                         </div>
                 <?php } ?>
                 </div> 
-
                 <div class="col-md-2">
                 <?php if ($detalle-> foto1) { ?>
                   <input type="hidden" name="foto1" value="<?php echo $detalle->foto1; ?>">
@@ -121,9 +108,7 @@
                 <?php } ?>
                 </div> 
             </div>
-
             <div class="mb10 row"> <br> </div>
-
             <div class="col-md-12 pl15 text-right">
               <hr class="short alt">
               <input type="submit" name="actualizar_infografia" class="btn btn-danger" value="Actualizar infografia">
@@ -133,13 +118,11 @@
         </form> <!-- FIN FORMULARIO -->
       </section>
         <!-- End: Content -->
-
   <!-- End: Main -->
   <!-- BEGIN: PAGE SCRIPTS -->
   <!-- jQuery -->
   <script src="<?php echo base_url();?>assets_admin/vendor/jquery/jquery-1.11.1.min.js"></script>
   <script src="<?php echo base_url();?>assets_admin/vendor/jquery/jquery_ui/jquery-ui.min.js"></script>
-
   <!-- FileUpload JS -->
   <script src="<?php echo base_url();?>assets_admin/vendor/plugins/fileupload/fileupload.js"></script>
   <script src="<?php echo base_url();?>assets_admin/vendor/plugins/holder/holder.min.js"></script>
@@ -150,8 +133,6 @@
   <script src="<?php echo base_url();?>assets_admin/assets/js/demo/demo.js"></script>
   <script src="<?php echo base_url();?>assets_admin/assets/js/main.js"></script>
     <!-- Ckeditor JS -->
-
-
   <!-- END: PAGE SCRIPTS -->
 </body>
 </html>

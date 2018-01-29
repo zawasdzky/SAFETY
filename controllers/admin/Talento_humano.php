@@ -104,7 +104,7 @@ class Talento_humano extends CI_Controller {
 					'foto6' => $foto6
 					 );
 		$this->talento_humano_admin_model->update_talento($id_talento,$data);
-		redirect('/admin/talento_humano/talento_edit/'.$id_talento);
+		redirect('/admin/talento_humano/');
 	}
 	public function talento_edit($id_talento)
 	{

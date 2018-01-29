@@ -30,6 +30,7 @@ class Welcome extends CI_Controller {
 		$data['infografias'] = $this->Safety_work_model->get_infografias_home(); 
 		$this->load->view('includes/header');
 		$this->load->view('index',$data);
+		$this->load->view('includes/scripts');
 	}
 
 }

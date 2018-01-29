@@ -58,12 +58,12 @@
               <input type="text" name="url_amigable_talento" id="url_amigable_talento" class="form-control" value="<?php echo $detalle-> url_amigable_talento; ?>">
             </div>
 
-            <div class="col-md-2 mb10">
+            <div class="col-md-3 mb10">
               <label for="fecha_publicacion_talento"> Fecha publicación </label>
               <input type="date" name="fecha_publicacion_talento" class="form-control"  id="fecha_publicacion_talento" value="<?php echo $detalle-> fecha_publicacion_talento; ?>">
             </div>
 
-            <div class="col-md-2 mb10">          
+            <div class="col-md-3 mb10">          
               <label for="estado_talento"> Estado </label>
               <select id="estado_talento" name="estado_talento" class="form-control">
                 <option value="<?php echo $detalle->estado_talento; ?>" selected="selected"> <?php echo $detalle-> estado_talento; ?></option>
@@ -71,7 +71,10 @@
                 <option value="inactivo">inactivo</option>
               </select>
             </div>
- 
+             <div class="col-md-2 mb10">
+              <label for="orden_talento" class="field prepend-icon">Orden</label>
+              <input type="number" class="form-control" name="orden_talento" id="orden_talento" value="<?php echo $detalle-> orden_talento; ?>" required>
+            </div>
             <div class="col-md-12 mb10"> 
               <label>Descripción para listados</label>
                   <textarea name="descripcion_talento" class="form-control"><?php echo $detalle-> descripcion_talento; ?></textarea>
@@ -327,55 +330,6 @@
   <script src="https://cdn.ckeditor.com/4.6.1/full-all/ckeditor.js"></script>
   <script type="text/javascript">
   jQuery(document).ready(function() {
-
-      $( "#agregar_categoria" ).click(function(){
-        var id_categoria = $( "select#id_categoria option:checked" ).val();
-        var id_talento = <?php echo $id_talento;?>;
-        $.ajax({
-        type: "POST",
-        url: "<?php echo base_url();?>admin/talentos/agregar_categoria_talento/",
-        data: {"id_talento" : id_talento, "id_categoria":id_categoria},
-         success: function()
-            {
-                location.reload();
-            }
-      });
-    });
-
-    $(".confirmation").click(function(){
-      return confirm('¿Está seguro de borrar esto?');
-    });
-
-    "use strict";
-    // Init Theme Core    
-    Core.init();
-    // Init Demo JS  
-    Demo.init();
-    // Init DataTables
-        $('#datatable2').dataTable({
-      "aoColumnDefs": [{
-        'bSortable': false,
-        'aTargets': [-1]
-      }],
-      "oLanguage": {
-        "oPaginate": {
-          "sPrevious": "",
-          "sNext": ""
-        }
-      },
-      "iDisplayLength": 5,
-      "aLengthMenu": [
-        [5, 10, 25, 50, -1],
-        [5, 10, 25, 50, "All"]
-      ],
-      "sDom": '<"dt-panelmenu clearfix"lfr>t<"dt-panelfooter clearfix"ip>',
-      "oTableTools": {
-        "sSwfPath": "vendor/plugins/datatables/extensions/TableTools/swf/copy_csv_xls_pdf.swf"
-      }
-    });
-    // Add Placeholder text to datatables filter bar
-    $('.dataTables_filter input').attr("placeholder", "Buscar");
-
     // Init Ckeditor
     CKEDITOR.replace('contenido_talento', {
       height: 210,
@@ -387,8 +341,6 @@
     });
 
   });
-
-
 </script>  
   <!-- END: PAGE SCRIPTS -->
 </body>

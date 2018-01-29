@@ -28,9 +28,7 @@
              <span class="panel-icon"></span>
              <span class="panel-title"> Informacion General</span>
           </div>    
-
           <div class="panel-body border">
-
             <input type="hidden" name="id_evento" id="id_evento" class="form-control" value="<?php echo $detalle->id_evento;?>" >
             <div class="col-md-6 mb10">
                 <label>Nombre evento</label>
@@ -40,59 +38,51 @@
                 <label>Tipo de evento</label>
                 <input type="text" name="tipo_evento" id="tipo_evento" class="form-control" value="<?php echo $detalle->tipo_evento;?>">
             </div>
-
             <div class="col-md-2 mb10">
                 <label>Orden / Posición </label>
                 <input type="number" name="orden_evento"  id="orden_evento" class="form-control" value="<?php echo $detalle->orden_evento;?>">
             </div>
-
             <div class="col-md-6 mb10">
                 <label>Enlace</label>
                 <input type="text" name="enlace_evento" id="enlace_evento" class="form-control" value="<?php echo $detalle->enlace_evento;?>">
             </div>
-
             <div class="col-md-4 mb10">
                 <label>Ciudad del Evento</label>
                 <input type="text" name="ciudad_evento" id="ciudad_evento" class="form-control" value="<?php echo $detalle->ciudad_evento;?>">
             </div>
-
             <div class="col-md-12 mb10">
                 <label>Dirección del Evento</label>
                 <input type="text" name="direccion_evento" id="direccion_evento" class="form-control" value="<?php echo $detalle->direccion_evento;?>">
             </div>
-
             <div class="col-md-3 mb10">
                 <label>Fecha de inicio del Evento</label>
                 <input type="date" name="fecha_inicio_evento" id="fecha_inicio_evento" class="form-control" value="<?php echo $detalle->fecha_inicio_evento;?>">
             </div>
-
             <div class="col-md-3 mb10">
                 <label>Fecha de fin del Evento</label>
                 <input type="date" name="fecha_fin_evento" id="fecha_fin_evento" class="form-control" value="<?php echo $detalle->fecha_fin_evento;?>">
             </div>
-
             <div class="col-md-3 mb10">
                 <label>Hora Inicio del Evento</label>
                 <input type="text" name="hora_inicio_evento" id="hora_inicio_evento" class="form-control" value="<?php echo $detalle->hora_inicio_evento;?>">
             </div>
-
             <div class="col-md-3 mb10">
                 <label>Hora de fin del Evento</label>
                 <input type="text" name="hora_fin_evento" id="hora_fin_evento" class="form-control" value="<?php echo $detalle->hora_fin_evento;?>">
             </div>
+            <div class="col-md-12 mb10"> 
+                   <label>Descripción Corta para Wigets</label>
+                  <textarea name="descripcion_corta_evento" class="form-control"><?php echo $detalle->descripcion_corta_evento;?></textarea>
+            </div> 
           </div>
-
 <!-- FOTOS -->
-
             <div class="mb10 row"> <br> </div>
-
             <div class="panel panel-alert">
               <div class="panel-heading">
                  <span class="panel-icon"></span>
                  <span class="panel-title"> Fotos del evento</span>
               </div>    
               <div class="panel-body border">
-
               <div class="col-md-2">
                 <?php if ($detalle-> foto0) { ?>
                   <input type="hidden" name="foto0" value="<?php echo $detalle-> foto0; ?>">
@@ -114,8 +104,6 @@
                         </div>
                 <?php } ?>
               </div> 
-
-
                 <div class="col-md-2">
                 <?php if ($detalle-> foto1) { ?>
                   <input type="hidden" name="foto1" value="<?php echo $detalle->foto1; ?>">
@@ -221,7 +209,6 @@
                         </div>
                   <?php } ?>
                 </div> 
-
               </div>
             </div>
             <div class="panel panel-dark">
@@ -229,12 +216,6 @@
                    <span class="panel-icon"></span>
                    <span class="panel-title"> Descripcion</span>
                 </div>    
-                <div class="col-md-12">
-                  <label>Descripción Corta widgets</label>
-                  <textarea name="descripcion_corta_evento" id="descripcion_corta_evento"  rows="20">
-                     <?php echo $detalle-> descripcion_corta_evento; ?>
-                  </textarea>
-                </div>
                 <div class="col-md-12">
                   <label>Descripción Completa</label>
                   <textarea name="descripcion_evento" id="descripcion_evento"  rows="20">
@@ -257,9 +238,7 @@
     <!-- End: Content-Wrapper -->
   </div>
   <!-- End: Main -->
-
   <!-- BEGIN: PAGE SCRIPTS -->
-
   <!-- jQuery -->
   <script src="<?php echo base_url();?>assets_admin/vendor/jquery/jquery-1.11.1.min.js"></script>
   <script src="<?php echo base_url();?>assets_admin/vendor/jquery/jquery_ui/jquery-ui.min.js"></script>
@@ -298,17 +277,6 @@
         }
       },
     });
-
-    CKEDITOR.replace('descripcion_corta_evento', {
-      height: 100,
-      on: {
-        instanceReady: function(evt) {
-          $('.cke').addClass('admin-skin cke-hide-bottom');
-        }
-      },
-    });
-//END CKEDITOR
-
   });
   </script>
   <!-- END: PAGE SCRIPTS -->

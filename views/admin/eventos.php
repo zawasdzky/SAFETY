@@ -19,7 +19,6 @@
       <!-- End: Topbar -->
       <!-- Begin: Content -->
       <section id="content" class="animated fadeIn">
-
             <!-- INICIO TAB PANEL -->
             <div class="panel mb25 mt5">
               <div class="panel-heading">
@@ -36,37 +35,30 @@
                   <div id="tab1_1" class="tab-pane active">
                     <div class="section row mbn">
                       <div class="col-md-12 pl15">
-
                          <div class="col-md-6 mb10">
                           <label>Nombre evento</label>
                           <input type="text" name="nombre_evento" id="nombre_evento" class="form-control" placeholder="Nombre o titulo">
                           </div>
-
                           <div class="col-md-6 mb10">
                               <label>Tipo de evento</label>
                               <input type="text" name="tipo_evento" id="tipo_evento" class="form-control" placeholder="Congreso/Capacitación/feria...">
                           </div>
-
                           <div class="col-md-6 mb10">
                               <label>Enlace</label>
                               <input type="text" name="enlace_evento" id="enlace_evento" class="form-control" placeholder="www...">
                           </div>
-
                           <div class="col-md-3 mb10">
                               <label>Ciudad del Evento</label>
                               <input type="text" name="ciudad_evento" id="ciudad_evento" class="form-control" placeholder="Ciudad">
                           </div>
-
                           <div class="col-md-3 mb10">
                               <label>Orden (para widget)</label>
                               <input type="number" name="orden_evento" id="orden_evento" class="form-control">
                           </div>
-
                           <div class="col-md-12 mb10">
                               <label>Dirección del Evento</label>
                               <input type="text" name="direccion_evento" id="direccion_evento" class="form-control" placeholder="Dirección">
                           </div>
-
                           <div class="col-md-3 mb10">
                               <label>Hora Inicio </label>
                               <input type="text" name="hora_inicio_evento" id="hora_inicio_evento" class="form-control" placeholder="12:00 am">
@@ -83,13 +75,15 @@
                               <label>Fecha de finalización</label>
                               <input type="date" name="fecha_fin_evento" id="fecha_fin_evento" class="form-control">
                           </div>
+                          <div class="col-md-12 mb10"> 
+                                <textarea name="descripcion_corta_evento" class="form-control">Descripción Corta para Wigets</textarea>
+                          </div> 
                       </div> 
                     </div>
                   </div>
                   <!-- end tab-->
                   <!-- INICIO TAB 2 -->
                 <div id="tab1_2" class="tab-pane">
-
                   <div class="col-md-4">
                     <div class="fileupload fileupload-new admin-form" data-provides="fileupload">
                       <div class="fileupload-preview thumbnail mb20">
@@ -106,8 +100,6 @@
                       </div>
                     </div>
                   </div>
-
-                  
                   <div class="col-md-12">
                     <hr class="short alt">
                     <br>
@@ -128,7 +120,6 @@
                       </div>
                     </div>
                   </div>
-
                    <div class="col-md-4">
                     <div class="fileupload fileupload-new admin-form" data-provides="fileupload">
                       <div class="fileupload-preview thumbnail mb20">
@@ -145,7 +136,6 @@
                       </div>
                     </div>
                   </div>
-
                   <div class="col-md-4">
                     <div class="fileupload fileupload-new admin-form" data-provides="fileupload">
                       <div class="fileupload-preview thumbnail mb20">
@@ -182,7 +172,6 @@
                       </div>
                     </div>
                   </div>
-                  
                   <div class="col-md-4">
                     <div class="fileupload fileupload-new admin-form" data-provides="fileupload">
                       <div class="fileupload-preview thumbnail mb20">
@@ -199,16 +188,10 @@
                       </div>
                     </div>
                   </div>
-
                 </div><!-- FIN TAB 2 -->
                   <!-- INICIO TAB 2 -->
                 <div id="tab1_3" class="tab-pane">
                   <div class="section row">
-                    <div class="col-md-12">
-                        <textarea name="descripcion_corta_evento" id="descripcion_corta_evento" >
-                             Descripción Corta o de listados / Widget
-                        </textarea>
-                    </div>
                     <div class="col-md-12">
                         <textarea name="descripcion_evento" id="descripcion_evento"  >
                             Descripción Completa / detallada
@@ -219,7 +202,6 @@
             </div> <!-- end panel-heading -->
             <div class="col-md-12 pl15">
                 <hr class="short alt">
-
                   <div class="col-md-6 text-right">
                      <input type="submit" name="crear_evento" class="btn btn-danger" value="Crear evento">
                   </div>
@@ -227,7 +209,6 @@
           </form>
         </div> <!-- End panel mb25 mt5 -->
             <!-- FIN  TAB PANEL -->
-
         <!-- INICIO DATA TABLE -->
         <div class="row">
           <div class="panel panel-visible" id="spy2">
@@ -276,9 +257,7 @@
     <!-- End: Content-Wrapper -->
   </div>
   <!-- End: Main -->
-
   <!-- BEGIN: PAGE SCRIPTS -->
-
   <!-- jQuery -->
   <script src="<?php echo base_url();?>assets_admin/vendor/jquery/jquery-1.11.1.min.js"></script>
   <script src="<?php echo base_url();?>assets_admin/vendor/jquery/jquery_ui/jquery-ui.min.js"></script>
@@ -302,11 +281,9 @@
   <script src="<?php echo base_url();?>assets_admin/vendor/plugins/ckeditor/ckeditor.js"></script>
   <script type="text/javascript">
   jQuery(document).ready(function() {
-
     $(".confirmation").click(function(){
       return confirm('¿Está seguro de borrar este Producto?');
     });
-
     "use strict";
     // Init Theme Core    
     Core.init();
@@ -343,19 +320,8 @@
         }
       },
     });
-
-    CKEDITOR.replace('descripcion_corta_evento', {
-      height: 100,
-      on: {
-        instanceReady: function(evt) {
-          $('.cke').addClass('admin-skin cke-hide-bottom');
-        }
-      },
-    });
-//END CKEDITOR
     // Add Placeholder text to datatables filter bar
     $('.dataTables_filter input').attr("placeholder", "Buscar");
-
   });
   </script>
   <!-- END: PAGE SCRIPTS -->

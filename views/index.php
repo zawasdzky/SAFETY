@@ -33,7 +33,6 @@
         </div>
             <div class="row">
             <?php $i=1; foreach ($noticias -> result() as $noticia) { ?>
-
                 <div class="span4">
                     <figure>
                         <a href="<?php echo base_url()."Noticias/detalle_noticia/".$noticia -> url_amigable_noticia; ?>">
@@ -85,34 +84,11 @@
                         </div>
                     </div>
                     <div class="span8">
-                        <!--SLIDER DERECHO  START-->
-                        <h2 class="h-style">Eventos</h2>
-                        <div class="page-slider">
-                        <div class=" slider flexslider">
-                          <ul class="slides">
-                            <?php foreach ($eventos_widget-> result() as $evento) { ?>
-                            <li>
-                                <figure>
-                                    <a href="<?php echo base_url()."eventos/detalle_evento/".$evento-> url_amigable_evento; ?>">
-                                        <img src="<?php echo base_url()."fotos_eventos". $evento-> foto1 ?>" alt="<?php echo $evento -> foto1; ?>">
-                                    </a>
-                                    <div class="caption">
-                                        <p class="text"><?php echo $evento -> titulo_evento; ?></p>
-                                    </div>
-                                </figure>
-                            </li>
-                            <?php } ?>
-                          </ul>
-                        </div>
-                        <div id="carousel" class="flexslider">
-                          <ul class="slides">
-                            <?php foreach ($eventos_widget-> result() as $evento) { ?>
-                                <li><img src="<?php echo base_url()."fotos_eventos/". $evento-> foto1 ?>" alt="<?php echo $evento -> foto0; ?>"></li>
-                            <?php } ?>
-                          </ul>
-                        </div>
-                        </div>
-                        <!--SLIDER END-->
+                    <!-- INICIO WIDGET EVENTOS -->
+                    <section>
+                        <?php $this->load->view('includes/eventos');  ?>
+                    </section>
+                    <!-- FIN WIDGET EVENTOS -->
                         <article>
                             <div class="row">
                                 <div class="span6 span-8">
@@ -141,7 +117,6 @@
                                     </div>
                                 </div>
                                 <div class="span2 visible-desktop">
-
                                     <?php foreach ($publicidad -> result() as $item) { ?>  
                                         <?php if ($item -> tipo_publicitario == "Home2") { ?>   
                                             <a href="<?php echo $item->enlace_publicitario;?>">
@@ -237,7 +212,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <!--TREVAL START-->
                         <div class="travel-section">
                             <h2 class="h-style">Salud y Bienestar</h2>
@@ -305,7 +279,6 @@
                             </article>
                         </div>
                         <!--TREVAL END-->
-
                         <!--TECH AND TREVAL START-->
                         <div class="tech">
                             <div class="row">
@@ -458,11 +431,8 @@
                                     <p>Pregunta de la encuesta</p>
                                     <input id="demo_box_1" class="css-checkbox" type="radio" checked="checked" name="poll" />
                                     <label for="demo_box_1" class="css-label">Si</label>
-                                    
                                     <input id="demo_box_2" class="css-checkbox" type="radio" name="poll" />
                                     <label for="demo_box_2" class="css-label">No</label>
-                                    
-                                    
                                     <input id="demo_box_3" class="css-checkbox" type="radio" name="poll" />
                                     <label for="demo_box_3" class="css-label">No sé</label>
                                     <a href="#" class="pull-left">Ver resultado</a>
@@ -499,7 +469,6 @@
         </div>
     </div>
     <!--MAIN CONTATN END-->
-
     <!--FOOTER START-->
     <footer>
         <!--FOOTER TOP AREA STAT-->
@@ -512,7 +481,6 @@
                 </div>
             </div>
         <!--FOOTER TOP AREA END-->
-
         <div class="bottom-widgets">
             <div class="container">
                 <div class="row">
@@ -561,18 +529,5 @@
     </footer>
     <!--FOOTER END-->
 </div>
-<!--WRAPPER END-->
-<script src="assets/js/jquery-1.10.1.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/jquery.vticker.min.js" type="text/javascript"></script>
-<script src="assets/js/jquery.flexslider.js"></script>
-<script src="assets/js/jquery.bxslider.min.js"></script>
-<script src="assets/js/jquery.jcarousel.min.js"></script>
-<script src='assets/js/fullcalendar.min.js'></script>
-<script src="assets/js/weather.js"></script>
-<script src="assets/js/Chart.js"></script>
-<script src="assets/js/jquery.easy-pie-chart.js"></script>
-<script src="assets/js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
-<script src="assets/js/functions.js"></script>
 </body>
 </html>
