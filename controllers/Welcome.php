@@ -13,10 +13,11 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
-		$data['color'] ="carrot"; 		
+	
+		$this->load->view('includes/scripts');
 		$data['frases'] = $this->Safety_work_model->get_frases_widget(); 
-		$data['videos'] = $this->Safety_work_model->get_videos_widget(); 
-		$this->load->view('includes/head',$data);
+		$data['color'] ="carrot";
+		$this->load->view('includes/head',$data); 	
 		$data['eventos_widget'] = $this->Safety_work_model->get_eventos_widget(); 
 		$data['publicidad'] = $this->Safety_work_model->get_publicidad(); 
 		$data['noticias'] = $this->Safety_work_model->get_noticias_home();
@@ -30,7 +31,6 @@ class Welcome extends CI_Controller {
 		$data['infografias'] = $this->Safety_work_model->get_infografias_home(); 
 		$this->load->view('includes/header');
 		$this->load->view('index',$data);
-		$this->load->view('includes/scripts');
 	}
 
 }

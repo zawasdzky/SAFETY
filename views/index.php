@@ -306,23 +306,33 @@
                                                     <div class="text">
                                                         <h4><?php echo $sociales_item-> titulo_social;?></h4>
                                                         <div class="rating">
-                                                            <!-- <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
- -->                                                        </div>
+                                                            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                                                        </div>
                                                         <ul class="post-comments">
-                                                            <!-- <li><a href="#"><i class="fa fa-user"></i>M-Elgendy</a></li> -->
-                                                            <!-- <li><a href="#"><i class="fa fa-heart-o"></i>1205</a></li> -->
-                                                            <!-- <li><a href="#"><i class="fa fa-comment-o"></i>125</a></li> -->
+                                                            <li><a href="<?php echo base_url();?>Sociales/detalle_social/<?php echo $sociales_item-> url_amigable_social;?>"><i class="fa fa-eye"></i>Ver más</a></li>
+                                                            <li><a href="#"><i class="fa fa-heart-o"></i>1205</a></li>
+                                                            <li><a href="#"><i class="fa fa-comment-o"></i>125</a></li>
                                                         </ul>
                                                         <p><?php echo $sociales_item-> descripcion_social;?></p>
-                                                        <a href="<?php echo base_url();?>Sociales/detalle_social/<?php echo $sociales_item-> url_amigable_social;?>" class="read-more"> <i class="fa fa-eye"></i>  Ver más</a>
+                                                        <a href="<?php echo base_url();?>Sociales" class="read-more">Ver Todos</a>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="span3">
                                                 <div class="sports-thumbs-list">
                                                     <ul>
-                                                    <?php $i=1; foreach ($sociales-> result() as $item_social) { ?>
-                                                        <?php if ($i!=1) { //omitiendo el primer articulo ?>
+                                                    <?php 
+                                                        $i=1; foreach ($sociales-> result() as $item_social) { 
+                                                        $fecha = $item_social-> fecha_publicacion_social;
+                                                        setlocale(LC_ALL,"es_ES");
+                                                        date_default_timezone_set('America/Bogota');
+                                                        $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+                                                        $mes = date('m', strtotime($fecha));
+                                                        $dia = date('d', strtotime($fecha));
+                                                        $anio = date('Y', strtotime($fecha));
+
+                                                         if ($i!=1) { //omitiendo el primer articulo 
+                                                    ?>
                                                         <li>
                                                             <div class="sports-thumbs">
                                                                 <figure>
@@ -334,9 +344,9 @@
                                                                     <a href="<?php echo base_url();?>Sociales/detalle_social/<?php echo $item_social-> url_amigable_social;?>">
                                                                         <?php echo $item_social-> titulo_social;?>
                                                                     </a>
-                                                                    <p><?php //echo $item_social-> fecha_publicacion_social;?></p>
+                                                                    <p><?php echo  $meses[$mes-1]." ". $dia." de ".$anio; ?></p>
                                                                     <div class="rating">
-                                                                        <!-- <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span> -->
+                                                                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
                                                                     </div>
                                                                 </div>
                                                             </div>

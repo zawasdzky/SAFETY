@@ -17,7 +17,6 @@ class Salud_bienestar extends CI_Controller {
 	{
 		$data['color'] ="blue2";  // enviando al header el texto que cambia el color desde un css 
 		$data['frases'] = $this->Safety_work_model->get_frases_widget(); 
-		$data['videos'] = $this->Safety_work_model->get_videos_widget();  
 		$this->load->view('includes/head',$data);
 		$this->load->view('includes/header');
 		$data['salud_bienestar'] = $this->Safety_work_model->get_salud_bienestar(); 
@@ -33,6 +32,7 @@ class Salud_bienestar extends CI_Controller {
 	{
 
 		$data['color'] ="blue2"; 
+		$data['frases'] = $this->Safety_work_model->get_frases_widget(); 
 		$this->load->view('includes/head',$data);
 		$this->load->view('includes/header');
 		$data['detalle_articulo_salud_bienestar'] = $this->Safety_work_model->get_detalle_salud_bienestar($url_amigable_salud); 

@@ -30,6 +30,7 @@ class Seguros extends CI_Controller {
 	public function detalle_seguro($url_amigable_seguro)
 	{
 		$data['color'] ="yellow";  // enviando al header el texto que cambia el color desde un css 
+		$data['frases'] = $this->Safety_work_model->get_frases_widget(); 
 		$this->load->view('includes/head',$data);
 		$this->load->view('includes/header');
 		$data['publicidad'] = $this->Safety_work_model->get_publicidad(); 

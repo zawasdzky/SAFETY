@@ -14,11 +14,30 @@
             <img src="http://img.youtube.com/vi/<?php echo $video-> enlace_varios; ?>/default.jpg" width="87px"  style="float: left; margin-right: 10px;">
             <div class="text">
                 <p><?php echo $video-> titulo_varios; ?></p>
-                <!-- <p class="date"><?php echo $video-> fecha_creacion_varios; ?></p>  -->
+                <p class="date">
+                  <?php  
+                    $fecha = $video-> fecha_creacion_varios;
+                    setlocale(LC_ALL,"es_ES");
+                    date_default_timezone_set('America/Bogota');
+                    $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+                    $mes = date('m', strtotime($fecha));
+                    $dia = date('d', strtotime($fecha));
+                    $anio = date('Y', strtotime($fecha));
+                    echo  $meses[$mes-1]." ". $dia." de ".$anio;  
+                  ?>                                        
+                </p> 
             </div>  
           </a>
         <?php $i++; } ?>
     </div>
 </div>
 
+<script type="text/javascript">
+  $( ".stop" ).click(function() {
+    $("iframe").each(function() { 
+        var src= $(this).attr('src');
+        $(this).attr('src',src);  
+    });
+  });
+</script>
 

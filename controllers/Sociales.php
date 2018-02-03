@@ -30,6 +30,7 @@ class Sociales extends CI_Controller {
 	public function detalle_social($url_amigable_social)
 	{
 		$data['color'] ="purple";  // enviando al header el texto que cambia el color desde un css 
+		$data['frases'] = $this->Safety_work_model->get_frases_widget(); 
 		$this->load->view('includes/head',$data);
 		$this->load->view('includes/header');
 		$data['publicidad'] = $this->Safety_work_model->get_publicidad(); 
