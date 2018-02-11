@@ -199,7 +199,7 @@
                                 <?php endif ?>
                                     </div>
                                 <?php  } ?>  
-                                                         
+                                 </li>                        
                             </ul>
                         </div>
                     </section>

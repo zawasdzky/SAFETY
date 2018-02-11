@@ -139,12 +139,51 @@ class Safety_work_model extends CI_Model {
 	function get_categorias_articulos(){
 		return $this->db->query("SELECT * FROM `sw_categorias_solutions` WHERE `id_categoria` !='0' AND `tipo_categoria` = 'articulos' ORDER BY `nombre_categoria`");
 	}
+
+
 //BUSCADOR
-	function get_resultados_articulos($keyword){
-		return $this->db->query("SELECT * FROM `sw_articulos_safety` WHERE keywords_articulo LIKE '%' '$keyword' '%' OR nombre_articulo LIKE '%' '$keyword' '%' LIMIT 0 , 30 ");
-		// SELECT * FROM `sw_articulos_safety`, `sw_profesionales_solutions` WHERE `sw_articulos_safety`.`keywords_articulo` LIKE '%TAPONES%'
+
+	function get_resultados_talento($keyword){
+
+		return $this->db->query("SELECT * FROM `sw_talento_humano_safety` WHERE `keywords_talento` LIKE '%' '$keyword' '%'  OR `titulo_talento`  LIKE '%' '$keyword' '%'  ");
 	}
+
+	function get_resultados_eventos($keyword){
+		return $this->db->query("SELECT * FROM `sw_eventos_solutions` WHERE `nombre_evento`  LIKE '%' '$keyword' '%'  ");
+	}
+
+	function get_resultados_salud($keyword){
+		return $this->db->query("SELECT * FROM `sw_salud_bienestar_safety` WHERE `keywords_salud` LIKE '%' '$keyword' '%'   OR `titulo_salud`  LIKE '%' '$keyword' '%'  ");
+	}
+
+	function get_resultados_seguros($keyword){
+		return $this->db->query("SELECT * FROM `sw_seguros_safety` WHERE `keywords_seguro` LIKE '%' '$keyword' '%'   OR `titulo_seguro`  LIKE '%' '$keyword' '%'  ");
+	}
+
+	function get_resultados_SST($keyword){
+		return $this->db->query("SELECT * FROM `sw_SST_safety` WHERE `keywords_SST` LIKE '%' '$keyword' '%'   OR `titulo_SST`  LIKE '%' '$keyword' '%'  ");
+	}
+
+	function get_resultados_legislacion($keyword){
+		return $this->db->query("SELECT * FROM `sw_legislaciones_safety` WHERE `keywords_legislacion` LIKE '%' '$keyword' '%'   OR `titulo_legislacion`  LIKE '%' '$keyword' '%'  ");
+	}
+
+	function get_resultados_infografias($keyword){
+		return $this->db->query("SELECT * FROM `sw_infografias_safety` WHERE `keywords_infografia` LIKE '%' '$keyword' '%'   OR `titulo_infografia`  LIKE '%' '$keyword' '%'  ");
+	}
+
+	function get_resultados_noticias($keyword){
+		return $this->db->query("SELECT * FROM `sw_noticias_safety` WHERE `keywords_noticia` LIKE '%' '$keyword' '%'   OR `titulo_noticia`  LIKE '%' '$keyword' '%'  ");
+	}
+
+	function get_resultados_sociales($keyword){
+		return $this->db->query("SELECT * FROM `sw_sociales_safety` WHERE `keywords_social` LIKE '%' '$keyword' '%'   OR `titulo_social`  LIKE '%' '$keyword' '%'  ");
+	}
+
 	function get_resultados_profesionales($keyword){
-		return $this->db->query("SELECT * FROM `sw_profesionales_solutions` WHERE keywords_profesional LIKE '%' '$keyword' '%' OR nombre_profesional LIKE '%' '$keyword' '%' LIMIT 0 , 30 ");
+		return $this->db->query("SELECT * FROM `sw_profesionales_solutions` WHERE keywords_profesional LIKE '%' '$keyword' '%' OR nombre_profesional LIKE '%' '$keyword' '%'  ");
+	}
+	function get_resultados_productos($keyword){
+		return $this->db->query("SELECT * FROM `sw_productos_solutions` WHERE keywords_producto LIKE '%' '$keyword' '%' OR nombre_producto LIKE '%' '$keyword' '%'  ");
 	}
 }

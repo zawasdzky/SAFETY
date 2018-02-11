@@ -96,8 +96,10 @@
                 </div>
                 <div class="span3">
                     <div class="search">
-                        <input type="text" class="input-block-level">
-                        <button>Buscar</button>
+                        <form action="<?php echo base_url();?>Resultado_busqueda/" method="POST">
+                            <input type="text" class="input-block-level" name="keyword">
+                            <button type="submit">Buscar</button>
+                        </form>
                     </div>
                 </div>
             </div>

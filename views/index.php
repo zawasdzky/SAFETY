@@ -42,7 +42,7 @@
                     <div class="text">
                         <div class="heading">
                             <h2><?php echo $i; ?></h2>
-                            <h4><?php echo $noticia -> titulo_noticia; ?></h4>
+                            <h4 style="    line-height: 23px;"><?php echo $noticia -> titulo_noticia; ?></h4>
                         </div>
                         <p><?php //echo $noticia -> descripcion_noticia; ?>                        
                             <a href="<?php echo base_url()."Noticias/detalle_noticia/".$noticia -> url_amigable_noticia; ?>">

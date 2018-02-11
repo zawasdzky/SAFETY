@@ -37,20 +37,24 @@
                 </div>
             </section>
             <!--GALLERY DETAIL END-->
-            <!--RECENT WORK START-->
-            <section class="recent-work">
-                <h2 class="h-style2">Eventos Recientes</h2>
-                <ul class="row">
-                <?php foreach ($sociales -> result() as $item) { ?>
-                    <li class="span3 hover-style"><a href="#">
-                        <a href="<?php echo base_url()."Sociales/detalle_social/".$item-> url_amigable_social; ?>">
-                            <img src="<?php echo base_url()."fotos_sociales/". $item-> foto0 ?>">
-                        </a>
-                    </li>
-                <?php } ?>
-                </ul>
+
+            <section>
+                <div class="image-gallery">
+                    <h2 class="h-style">Otros Articulos</h2>
+                    <ul class="mycarousel jcarousel-skin-tango gallery">
+                        <?php foreach ($sociales-> result() as $item) { ?>
+                            <li>
+                                 <img src="<?php echo base_url()."fotos_sociales/". $item-> foto0 ?>">
+                                <div class="caption" style="">
+                                    <a href="<?php echo base_url()."Sociales/detalle_social/".$item-> url_amigable_social; ?>"><i class="fa fa-link"></i></a>
+                                    <h4><?php echo $item-> titulo_social; ?></h4>
+                                </div>
+                            </li>
+                        <?php } ?>
+                   </ul>
+                </div>          
             </section>
-            <!--RECENT WORK END-->
+
         </div>
         <!--CONTAINER END-->
 

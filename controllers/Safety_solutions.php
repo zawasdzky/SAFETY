@@ -103,13 +103,13 @@ class Safety_solutions extends CI_Controller {
 
 	public function resultado_busqueda()
 	{
+		$this->load->view('includes/scripts');
 		$keyword =  $this->input->post('keyword');
 		$data['resultado_productos'] = $this->Safety_solutions_model->get_resultados_productos($keyword);
 		$data['resultado_profesionales'] = $this->Safety_solutions_model->get_resultados_profesionales($keyword); 
 		$data['eventos_widget'] = $this->Safety_solutions_model->get_eventos_widget(); 
 		$data['publicidad_col_der'] = $this->Safety_solutions_model->get_publicidad_col_der_solutions();
-		$this->load->view('resultado_busqueda',$data);
-		$this->load->view('includes/scripts');
+		$this->load->view('resultado_busqueda_solutions.php',$data);
 		$this->load->view('includes/pop_up_pauta');
 		$this->load->view('includes/footer');
 	}
