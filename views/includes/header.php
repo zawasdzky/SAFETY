@@ -6,11 +6,11 @@
         <div class="logo-container">
             <div class="container">
                 <div class="logo">
-                <a href="<?php echo base_url();?>"><img src="images/logo.png" alt=""></a>
+                <a href="<?php echo base_url();?>"><img src="<?php echo base_url();?>images/logo.png" alt=""></a>
                 </div>
-                <div class="add">
+<!--                 <div class="add">
                 <a href="#"><img src="images/add.png" alt=""></a>
-                </div>
+                </div> -->
             </div>
         </div>
         <!--LOGO END-->
@@ -26,9 +26,10 @@
                   </button>
                   <div class="nav-collapse collapse">
                     <ul class="nav">
-                        <li class="yellow first"><a href="<?php echo base_url();?>Talento_humano">Talento<br>Humano</a></li>
-                        <li class="blue2"><a href="<?php echo base_url();?>Salud_bienestar">Salud y <br> Bienestar</a></li>
-                        <li class="red"><a href="<?php echo base_url();?>Vida_estilo">Vida y estilo<br>&nbsp;&nbsp;</a>
+                        <li style="width: 5%; line-height: 26px" class="purple first"><a href="<?php echo base_url();?>"><i class="fa fa-home"></i>Inicio</a></li>
+                        <li class="yellow"><a href="<?php echo base_url();?>Talento_humano">Talento<br />Humano</a></li>
+                        <li class="blue2"><a href="<?php echo base_url();?>Salud_bienestar">Salud y <br /> Bienestar</a></li>
+                        <li class="red"><a href="<?php echo base_url();?>Vida_estilo">Vida y estilo<br />&nbsp;&nbsp;</a>
                             <ul class="carrot">
                                     <li><a href="<?php echo base_url();?>Vida_estilo/articulos_vida_estilo/Kids">Safety Kids</a></li>
                                     <li><a href="<?php echo base_url();?>Vida_estilo/articulos_vida_estilo/Men">Safety Men</a></li>
@@ -36,10 +37,10 @@
                                     <li><a href="<?php echo base_url();?>Vida_estilo/articulos_vida_estilo/Reflexionemos">Reflexionemos</a></li>
                             </ul>
                         </li>
-                        <li class="yellow"><a href="<?php echo base_url();?>Seguros">Seguros<br>&nbsp;&nbsp;</a></li>
-                        <li class="carrot"><a href="<?php echo base_url();?>SST">SST<br>&nbsp;&nbsp;</a></li>
-                            <li class="blue"><a href="<?php echo base_url();?>Legislacion">Legislación<br>&nbsp;&nbsp;</a>
-                                <ul class="blue">
+                        <li class="yellow"><a href="<?php echo base_url();?>Seguros">Seguros<br />&nbsp;&nbsp;</a></li>
+                        <li style="width: 5%;" class="carrot"><a href="<?php echo base_url();?>SST">SST<br />&nbsp;&nbsp;</a></li>
+                        <li class="blue"><a href="<?php echo base_url();?>Legislacion">Legislación<br />&nbsp;&nbsp;</a>
+                            <ul class="blue">
                                     <li><a href="<?php echo base_url();?>legislacion/legislaciones/Ambiental">Ambiental</a></li>
                                     <li><a href="<?php echo base_url();?>legislacion/legislaciones/Laboral">Laboral</a></li>
                                     <li><a href="<?php echo base_url();?>legislacion/legislaciones/Minera">Minera</a></li>
@@ -47,12 +48,12 @@
                                     <li><a href="<?php echo base_url();?>legislacion/legislaciones/Salud">Salud</a></li>
                                     <li><a href="<?php echo base_url();?>legislacion/legislaciones/Transporte">Transporte</a></li>
                                     <li><a href="<?php echo base_url();?>legislacion/legislaciones/Otros">Otros</a></li>
-                                </ul>
-                            </li>
-                        <li class="green"><a href="<?php echo base_url();?>Infografias">Infografías<br>&nbsp;&nbsp;</a></li>
-                        <li class="pink"><a href="<?php echo base_url();?>Noticias">Ultima Hora<br>&nbsp;&nbsp;</a></li>
-                        <li class="purple"><a href="<?php echo base_url();?>Sociales">Sociales<br>&nbsp;&nbsp;</a></li>
-                        <li class="yellow last"><a href="<?php echo base_url();?>safety_solutions">Safety<br> Solutions</a>
+                            </ul>
+                        </li>
+                        <li class="green"><a href="<?php echo base_url();?>Infografias">Infografías<br />&nbsp;&nbsp;</a></li>
+                        <li class="pink"><a href="<?php echo base_url();?>Noticias">Ultima Hora<br />&nbsp;&nbsp;</a></li>
+                        <li class="purple"><a href="<?php echo base_url();?>Sociales">Sociales<br />&nbsp;&nbsp;</a></li>
+                        <li class="yellow last"><a href="<?php echo base_url();?>safety_solutions">Safety<br /> Solutions</a>
                             <ul class="yellow">
                                 <li><a href="<?php echo base_url();?>safety_solutions/productos">Productos</a></li>
                                 <li><a href="<?php echo base_url();?>safety_solutions">Servicios</a></li>
