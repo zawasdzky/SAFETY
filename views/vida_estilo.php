@@ -109,7 +109,13 @@
                                     </ul>
                                 </div>
                                 <div class="add2">
-                                    <a href="<?php echo base_url()."Vida_estilo/detalle_articulo_vida_estilo/".$articulo-> url_amigable_vida_estilo; ?>"><img src="images/add7.png" alt=""></a>
+                                    <?php foreach ($publicidad -> result() as $item) { ?>
+                                        <?php if ($item -> tipo_publicitario == "Pauta Vertical Central Vida y Estilo") { ?>
+                                            <a href="<?php echo $item-> enlace_publicitario ?>">
+                                                <img src="<?php echo base_url()."fotos_productos/".$item -> foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario; ?>">
+                                            </a>
+                                        <?php } ?>
+                                    <?php } ?>
                                 </div>
                             </div>
                         </div>
@@ -134,12 +140,36 @@
                         <!--PHOTOS WIDGET START-->
                         <div class="widget photos-widget gallery">
                             <ul>
-                                <li><a href="images/m1.png" data-rel="prettyPhoto[gallery1]"><img src="images/m1.png" alt=""></a></li>
-                                <li><a href="images/m2.png" data-rel="prettyPhoto[gallery1]"><img src="images/m2.png" alt=""></a></li>
-                                <li><a href="images/m3.png" data-rel="prettyPhoto[gallery1]"><img src="images/m3.png" alt=""></a></li>
-                                <li><a href="images/m4.png" data-rel="prettyPhoto[gallery1]"><img src="images/m4.png" alt=""></a></li>
+                            <?php foreach ($publicidad -> result() as $item) { ?>
+                                <?php if ($item -> tipo_publicitario == "Pauta Superior Derecha Vida y Estilo") { ?>
+                                    <?php if (($item -> orden_publicitario < 4)) { ?>
+                                        <div class="widget">
+                                            <li>
+                                                <a href="<?php echo $item-> enlace_publicitario ?>">
+                                                    <img src="<?php echo base_url()."fotos_productos/".$item -> foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario; ?>">
+                                                </a>
+                                            </li>
+                                        </div>
+                                    <?php } ?>
+                                <?php } ?>
+                            <?php } ?>
                             </ul>
                         </div>
+
+                        <div class="widget widget-new-ad">
+                            <?php foreach ($publicidad -> result() as $item) { ?>
+                                <?php if ($item -> tipo_publicitario == "Pauta Columna Derecha Vida y Estilo") { ?>
+                                    <?php if (($item -> orden_publicitario == 1) || ($item -> orden_publicitario == 2)) { ?>
+                                        <div class="widget">
+                                            <a href="<?php echo $item-> enlace_publicitario ?>">
+                                                <img src="<?php echo base_url()."fotos_productos/".$item -> foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario; ?>">
+                                            </a>
+                                        </div>
+                                    <?php } ?>
+                                <?php } ?>
+                            <?php } ?>
+                        </div>
+
                         <!--PHOTOS WIDGET END-->
                         <!--TWITTER FEEDS WIDGET START-->
                         <div class="widget widget-twitter">

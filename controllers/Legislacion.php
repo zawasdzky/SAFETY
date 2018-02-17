@@ -14,9 +14,9 @@ class Legislacion extends CI_Controller {
 	{
 		$data['color'] ="yellow";  // enviando al header el texto que cambia el color desde un css
 		$data['frases'] = $this->Safety_work_model->get_frases_widget();  
+		$data['publicidad'] = $this->Safety_work_model->get_publicidad(); 
 		$this->load->view('includes/head',$data);
 		$this->load->view('includes/header');
-		$data['publicidad'] = $this->Safety_work_model->get_publicidad(); 
 		$data['legislaciones'] = $this->Safety_work_model->get_legislaciones(); 
 		$this->load->view('legislaciones',$data);
 		$this->load->view('includes/scripts');
@@ -39,9 +39,9 @@ class Legislacion extends CI_Controller {
 		}
 		$data['frases'] = $this->Safety_work_model->get_frases_widget(); 
 		$data['color'] ="yellow";  
-		$this->load->view('includes/head',$data);
-		$this->load->view('includes/header');
 		$data['publicidad'] = $this->Safety_work_model->get_publicidad(); 
+		$this->load->view('includes/head',$data);
+		$this->load->view('includes/header'); 
 		$this->load->view('legislaciones',$data);
 		$this->load->view('includes/scripts');
 	}

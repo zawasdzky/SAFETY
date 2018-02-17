@@ -81,7 +81,15 @@
                             </div>
                             <div class="span2 visible-desktop">
                                 <div class="add2">
-                                    <a href="#"><img src="images/Nueva_pauta_Home_2.jpg" alt=""></a>
+                             <!-- PAUTAS PUBLICITARIA CENTRAL -->
+                                <?php foreach ($publicidad -> result() as $item) { ?>
+                                    <?php if ($item -> tipo_publicitario == "Pauta Vertical Central Salud y Bienestar") { ?>
+                                            <a href="<?php echo $item-> enlace_publicitario ?>">
+                                                <img src="<?php echo base_url()."fotos_productos/".$item -> foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario; ?>">
+                                            </a>
+                                    <?php } ?>
+                                <?php } ?>
+                             <!-- FIN PAUTAS PUBLICITARIA CENTRAL -->
                                 </div>
                             </div>
                         </div>
@@ -91,15 +99,21 @@
 <!-- INICIO BLOQUE DERECHO-->                
                 <div class="span4">
                     <div class="sidebar">
-                        <div class="widget">
-                            <img src="images/pauta.jpg" class="img-responsive">
+                    <!-- PAUTAS PUBLICITARIAS -->
+                        <div class="widget widget-new-ad">
+                            <?php foreach ($publicidad -> result() as $item) { ?>
+                                <?php if ($item -> tipo_publicitario == "Pauta Columna Derecha Salud y Bienestar") { ?>
+                                    <?php if ( ($item -> orden_publicitario < 4)) { ?>
+                                        <div class="widget">
+                                            <a href="<?php echo $item-> enlace_publicitario ?>">
+                                                <img src="<?php echo base_url()."fotos_productos/".$item -> foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario; ?>">
+                                            </a>
+                                        </div>
+                                    <?php } ?>
+                                <?php } ?>
+                            <?php } ?>
                         </div>
-                        <div class="widget">
-                            <img src="images/pauta.jpg" class="img-responsive">
-                        </div>
-                        <div class="widget">
-                            <img src="images/pauta.jpg" class="img-responsive">
-                        </div>
+                    <!-- FIN PAUTAS PUBLICITARIAS -->
                          <!--LEGISLACIONES START-->
                         <div class="widget widget-related-post">
                             <h2>Últimas Legislaciones</h2>
@@ -113,9 +127,21 @@
                             </ul>
                         </div>
                         <!--LEGISLACIONES END-->
-                        <div class="widget">
-                            <img src="images/pauta.jpg" class="img-responsive">
+                    <!-- PAUTAS PUBLICITARIAS -->
+                        <div class="widget widget-new-ad">
+                            <?php foreach ($publicidad -> result() as $item) { ?>
+                                <?php if ($item -> tipo_publicitario == "Pauta Columna Derecha Salud y Bienestar") { ?>
+                                    <?php if ( ($item -> orden_publicitario == 4)) { ?>
+                                        <div class="widget">
+                                            <a href="<?php echo $item-> enlace_publicitario ?>">
+                                                <img src="<?php echo base_url()."fotos_productos/".$item -> foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario; ?>">
+                                            </a>
+                                        </div>
+                                    <?php } ?>
+                                <?php } ?>
+                            <?php } ?>
                         </div>
+                    <!-- FIN PAUTAS PUBLICITARIAS -->
                         <!--NEWLETTER WIDGET START-->
                         <div class="widget widget-newsletter">
                             <h2>SUSCRIBASE</h2>

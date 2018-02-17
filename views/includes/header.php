@@ -1,4 +1,3 @@
-
 <div class="wrapper">
     <!--HEADER START-->
     <header>
@@ -8,9 +7,15 @@
                 <div class="logo">
                 <a href="<?php echo base_url();?>"><img src="<?php echo base_url();?>images/logo.png" alt=""></a>
                 </div>
-<!--                 <div class="add">
-                <a href="#"><img src="images/add.png" alt=""></a>
-                </div> -->
+                <div class="add">
+                    <?php foreach ($publicidad -> result() as $item) { ?>  
+                        <?php if ($item -> tipo_publicitario == "Header Superior Derecho") { ?>   
+                            <a href="<?php echo $item->enlace_publicitario;?>" target="_blank">
+                                <img src="<?php echo base_url();?>fotos_productos/<?php echo $item->foto_publicitario;?>" class="img-responsive" alt="<?php echo $item->titulo_publicitario;?>">
+                            </a>  
+                        <?php } ?>
+                    <?php } ?>
+                </div>
             </div>
         </div>
         <!--LOGO END-->
@@ -26,7 +31,7 @@
                   </button>
                   <div class="nav-collapse collapse">
                     <ul class="nav">
-                        <li style="width: 5%; line-height: 26px" class="purple first"><a href="<?php echo base_url();?>"><i class="fa fa-home"></i>Inicio</a></li>
+                        <li style="width: 5%;" class="purple first"><a href="<?php echo base_url();?>">Inicio<br />&nbsp;&nbsp;</a></li>
                         <li class="yellow"><a href="<?php echo base_url();?>Talento_humano">Talento<br />Humano</a></li>
                         <li class="blue2"><a href="<?php echo base_url();?>Salud_bienestar">Salud y <br /> Bienestar</a></li>
                         <li class="red"><a href="<?php echo base_url();?>Vida_estilo">Vida y estilo<br />&nbsp;&nbsp;</a>

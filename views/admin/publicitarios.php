@@ -79,27 +79,36 @@
                       <div class="col-md-6 mb10">
                         <select name="tipo_publicitario" class="form-control">
                           <option value="">Tipo / Ubicación  </option>
+                          <option value="Header Superior Derecho">Header Superior Derecho (456 x 47)</option>
                           <option value="Slider Home">Slider Home (1200 x 400) </option>
-                          <option value="Slider Novedades">Slider Novedades</option>
-                          <option value="Slider Salud y Bienestar">Salud y Bienestar</option>
-                          <option value="Slider Vida y Estilo">Slider Vida y Estilo</option>
-                          <option value="Slider Sociales">Slider Sociales</option>
-                          <option value="Slider Noticias">Slider Noticias</option>
-                          <option value="Slider Noticias">Slider Seguros</option>
-                          <option value="Slider Noticias">Slider SST</option>
-                          <option value="Header">Header (456 x 47)</option>
-                          <option value="Home1">Home 1 Superior Izquierdo (340 x 768)</option>
-                          <option value="Home2">Home 2 Superior Derecho (170 x 200)</option>
-                          <option value="Home3">Home 3 Central Vertical (153 x 695)</option>
-                          <option value="Home4">Home 4 Central Inferior (750 x 200)</option>
+                          <option value="Home Superior Izquierdo">Home Superior Izquierdo (340 x 768)</option>
+                          <option value="Home Superior Derecho">Home Superior Derecho (170 x 200)</option>
+                          <option value="Home Central Vertical">Home Central Vertical (153 x 695)</option>
+                          <option value="Home Central Inferior">Home Central Inferior (750 x 200)</option>
+                          <option value="Home Vertical Inferior">Home Vertical Inferior (170 x 600)</option>
                           <option value="Home Columna Derecha">Home Columna Derecha(300 x 250)</option>
-                          <option value="footer central">Footer Central (352 x 193)</option>
-                          <option value="Pauta Novedades">Pauta Novedades</option>
-                          <option value="Slider Talento Humano">Slider Talento Humano</option>
-                          <option value="Pauta Noticias">Pauta Noticias</option>
-                          <option value="Columna Derecha">Columna Derecha</option>
-                          <option value="Columna Izquierda">Columna Izquierda</option>
-                          <option value="Columna Central">Columna Central</option>
+                          <option value="Home Footer central">Footer Central (352 x 193)</option>
+                          <option value="Pauta Columna Derecha Talento Humano">Pauta Columna Derecha Talento Humano (350 x 250)</option>
+                          <option value="Pauta Columna Derecha Salud y Bienestar">Pauta Columna Derecha Salud y Bienestar (350 x 250)</option>
+                          <option value="Pauta Vertical Central Salud y Bienestar">Pauta Vertical Central Salud y Bienestar (153 x 695)</option>
+                          <option value="Pauta Superior Derecha Vida y Estilo">Pauta Superior Derecha Vida y Estilo (152 x 152)</option>
+                          <option value="Pauta Vertical Central Vida y Estilo">Pauta Vertical Central Vida y Estilo (153 x 695)</option>
+                          <option value="Pauta Columna Derecha Vida y Estilo">Pauta Columna Derecha Vida y Estilo (350 x 250)</option>
+                          <option value="Pauta Columna Derecha Seguros">Pauta Superior Derecha Seguros (350 x 250)</option>
+                          <option value="Pauta Columna Derecha SST">Pauta Columna Derecha SST (350 x 250)</option>
+                          <option value="Pauta Columna Izquierda SST">Pauta Columna Izquierda SST (350 x 250)</option>
+                          <option value="Pauta Columna Izquierda SST">Pauta Superior Derecha SST (350 x 250)</option>
+                          <option value="Pauta Columna Izquierda Legislacion">Pauta Columna Izquierda Legislación (350 x 250)</option>
+                          <option value="Pauta Superior Derecha Noticias">Pauta Superior Derecha Noticias (270 x 180)</option>
+                          <option value="Pauta Columna Izquierda Noticias">Pauta Columna Izquierda Noticias (350 x 250)</option>
+                          <option value="Pauta Columna Derecha Noticias">Pauta Columna Derecha Noticias (350 x 250)</option>
+                          <option value="Pauta Superior Derecha Sociales">Pauta Superior Derecha Sociales (270 x 180)</option>
+                          <option value="Pauta Novedades">Pauta Superior derecha Novedades Solutions (270 x 180)</option>                          
+                          <option value="Slider Novedades">Slider Novedades Solutions (770 x 373)</option>
+                          <option value="Pauta Novedades">Pauta Superior derecha Novedades Solutions (270 x 180)</option>
+                          <option value="Columna Derecha">Columna Derecha Solutions</option>
+                          <option value="Columna Izquierda">Columna Izquierda Solutions</option>
+                          <option value="Columna Central">Columna Central Solutions</option>
                         </select>
                       </div>
                       <div class="col-md-6 mb10">
@@ -209,15 +218,15 @@
   <script type="text/javascript">
   jQuery(document).ready(function() {
 
+
     $(".confirmation").click(function(){
-      return confirm('¿Está seguro de borrar este Producto?');
+      return confirm('¿Está seguro de borrar este social?');
     });
 
     "use strict";
     // Init Theme Core    
     Core.init();
-    // Init Demo JS  
-    //Demo.init();
+
     // Init DataTables
         $('#datatable2').dataTable({
       "aoColumnDefs": [{
@@ -230,7 +239,8 @@
           "sNext": ""
         }
       },
-      "iDisplayLength": 50,
+      "order": [[ 0, "desc" ]],
+      "iDisplayLength": 100,
       "aLengthMenu": [
         [5, 10, 25, 50, -1],
         [5, 10, 25, 50, "All"]

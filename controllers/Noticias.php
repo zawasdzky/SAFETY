@@ -13,35 +13,36 @@ class Noticias extends CI_Controller {
 
 	public function index()
 	{
-		$data['color'] ="carrot";		
+		$data['color'] ="carrot";
+		$this->load->view('includes/scripts');
 		$data['frases'] = $this->Safety_work_model->get_frases_widget(); 
-		$data['videos'] = $this->Safety_work_model->get_videos_widget();  
-		$data['publicidad'] = $this->Safety_work_model->get_publicidad();
+		$data['videos'] = $this->Safety_work_model->get_videos_widget();
+		$data['publicidad'] = $this->Safety_work_model->get_publicidad();		
+		$this->load->view('includes/head',$data);
+		$this->load->view('includes/header');  
 		$data['noticias'] = $this->Safety_work_model->get_noticias(); 
 		$data['eventos_solutions'] = $this->Safety_solutions_model->get_eventos_solutions(); 
 		$data['productos_solutions_limit'] = $this->Safety_solutions_model->get_productos_limit();
 		$data['legislaciones'] = $this->Safety_work_model->get_legislaciones_limit(); 
-		$data['publicidad'] = $this->Safety_work_model->get_publicidad(); 
-		$data['eventos_widget'] = $this->Safety_work_model->get_eventos_widget(); 		$this->load->view('includes/head',$data);
-		$this->load->view('includes/header');
+		$data['eventos_widget'] = $this->Safety_work_model->get_eventos_widget(); 		
 		$this->load->view('noticias',$data);
-		$this->load->view('includes/scripts');
+		
 	}
 
 	public function detalle_noticia($url_amigable_noticia)
 	{
-		$data['color'] ="carrot";  // enviando al header el texto que cambia el color desde un css 
+		$data['color'] ="carrot";
+		$this->load->view('includes/scripts');
+		$data['publicidad'] = $this->Safety_work_model->get_publicidad();	
 		$data['frases'] = $this->Safety_work_model->get_frases_widget(); 
-		$data['videos'] = $this->Safety_work_model->get_videos_widget();  
+		$data['videos'] = $this->Safety_work_model->get_videos_widget();
 		$this->load->view('includes/head',$data);
 		$this->load->view('includes/header');
 		$data['detalle_noticia'] = $this->Safety_work_model->get_detalle_noticia($url_amigable_noticia); 
 		$data['productos_solutions_limit'] = $this->Safety_solutions_model->get_productos_limit();
 		$data['legislaciones'] = $this->Safety_work_model->get_legislaciones_limit(); 
-		$data['publicidad'] = $this->Safety_work_model->get_publicidad(); 
 		$data['eventos_widget'] = $this->Safety_work_model->get_eventos_widget(); 
 		$this->load->view('detalle_noticia',$data);
-		$this->load->view('includes/scripts');
 	}
 
 }		

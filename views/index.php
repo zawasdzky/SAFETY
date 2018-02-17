@@ -13,7 +13,7 @@
         <?php foreach ($publicidad -> result() as $item) { ?>  
             <?php if ($item -> tipo_publicitario == "Slider Home") { ?>     
                   <li>
-                    <a href="<?php echo $item->enlace_publicitario;?>">
+                    <a href="<?php echo $item->enlace_publicitario;?>" target="_blank">
                         <img src="<?php echo base_url();?>fotos_productos/<?php echo $item->foto_publicitario;?>">
                     </a>
                     <div class="banner-caps">
@@ -42,7 +42,7 @@
                     <div class="text">
                         <div class="heading">
                             <h2><?php echo $i; ?></h2>
-                            <h4 style="    line-height: 23px;"><?php echo $noticia -> titulo_noticia; ?></h4>
+                            <h4 style="line-height: 23px;"><?php echo $noticia -> titulo_noticia; ?></h4>
                         </div>
                         <p><?php //echo $noticia -> descripcion_noticia; ?>                        
                             <a href="<?php echo base_url()."Noticias/detalle_noticia/".$noticia -> url_amigable_noticia; ?>">
@@ -64,8 +64,8 @@
                         <div class="tabs">
                             <div class="tabs-widget">
                             <?php foreach ($publicidad -> result() as $item) { ?>  
-                                <?php if ($item -> tipo_publicitario == "Home1") { ?>   
-                                    <a href="<?php echo $item->enlace_publicitario;?>">
+                                <?php if ($item -> tipo_publicitario == "Home Superior Izquierdo") { ?>   
+                                    <a href="<?php echo $item->enlace_publicitario;?>" target="_blank">
                                         <img src="<?php echo base_url();?>fotos_productos/<?php echo $item->foto_publicitario;?>" class="img-responsive" alt="<?php echo $item->titulo_publicitario;?>">
                                     </a>  
                                 <?php } ?>
@@ -74,7 +74,7 @@
                             <ul class="mycarousel jcarousel-skin-tango">
                                 <?php foreach ($infografias -> result() as $infografia) { ?>
                                     <li>
-                                        <a href="<?php echo base_url();?>Infografias">
+                                        <a href="<?php echo base_url();?>Infografias?infografia=<?php echo $infografia-> url_amigable_infografia;?>">
                                             <img src="<?php echo base_url()."fotos_infografias/". $infografia-> foto0 ?>" alt="<?php echo $infografia -> foto0; ?>" style="width: 200px; max-width: 200px; margin-right: 30px;"/>
                                         </a>
                                     </li>
@@ -118,8 +118,8 @@
                                 </div>
                                 <div class="span2 visible-desktop">
                                     <?php foreach ($publicidad -> result() as $item) { ?>  
-                                        <?php if ($item -> tipo_publicitario == "Home2") { ?>   
-                                            <a href="<?php echo $item->enlace_publicitario;?>">
+                                        <?php if ($item -> tipo_publicitario == "Home Superior Derecho") { ?>   
+                                            <a href="<?php echo $item->enlace_publicitario;?>" target="_blank">
                                                 <img src="<?php echo base_url();?>fotos_productos/<?php echo $item->foto_publicitario;?>" class="img-responsive" alt="<?php echo $item->titulo_publicitario;?>">
                                             </a>  
                                         <?php } ?>
@@ -203,8 +203,8 @@
                             <div class="span2 visible-desktop">
                                 <div class="add2">
                                     <?php foreach ($publicidad -> result() as $item) { ?>  
-                                        <?php if ($item -> tipo_publicitario == "Home3") { ?>   
-                                            <a href="<?php echo $item->enlace_publicitario;?>">
+                                        <?php if ($item -> tipo_publicitario == "Home Central Vertical") { ?>   
+                                            <a href="<?php echo $item->enlace_publicitario;?>" target="_blank">
                                                 <img src="<?php echo base_url();?>fotos_productos/<?php echo $item->foto_publicitario;?>" class="img-responsive" alt="<?php echo $item->titulo_publicitario;?>">
                                             </a>  
                                         <?php } ?>
@@ -269,8 +269,8 @@
                                 </div>
                                 <div>
                                     <?php foreach ($publicidad -> result() as $item) { ?>  
-                                        <?php if ($item -> tipo_publicitario == "Home4") { ?>   
-                                            <a href="<?php echo $item->enlace_publicitario;?>">
+                                        <?php if ($item -> tipo_publicitario == "Home Central Inferior") { ?>   
+                                            <a href="<?php echo $item->enlace_publicitario;?>" target="_blank">
                                                 <img src="<?php echo base_url();?>fotos_productos/<?php echo $item->foto_publicitario;?>" class="img-responsive" alt="<?php echo $item->titulo_publicitario;?>">
                                             </a>  
                                         <?php } ?>
@@ -284,7 +284,13 @@
                             <div class="row">
                                 <div class="span2">
                                     <div class="new-ad">
-                                        <img src="images/new-ad2.jpg" alt="">
+                                        <?php foreach ($publicidad -> result() as $item) { ?>
+                                            <?php if ($item -> tipo_publicitario == "Home Vertical Inferior") { ?>
+                                                <a href="<?php echo $item-> enlace_publicitario ?>">
+                                                    <img src="<?php echo base_url()."fotos_productos/".$item -> foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario; ?>" target="_blank">
+                                                </a>
+                                            <?php } ?>
+                                        <?php } ?>
                                     </div>
                                 </div>
                                 <div class="span6">
@@ -397,7 +403,7 @@
                             <div class="widget widget-new-ad">
                             <?php foreach ($publicidad -> result() as $item) { ?>  
                                 <?php if (($item -> tipo_publicitario == "Home Columna Derecha") && ($item -> orden_publicitario) == 1) { ?>   
-                                    <a href="<?php echo $item->enlace_publicitario;?>">
+                                    <a href="<?php echo $item->enlace_publicitario;?>" target="_blank">
                                         <img src="<?php echo base_url();?>fotos_productos/<?php echo $item->foto_publicitario;?>" class="img-responsive" alt="<?php echo $item->titulo_publicitario;?>">
                                     </a>  
                                 <?php } ?>
@@ -406,7 +412,7 @@
                             <div class="widget widget-new-ad">
                             <?php foreach ($publicidad -> result() as $item) { ?>  
                                 <?php if (($item -> tipo_publicitario == "Home Columna Derecha") && ($item -> orden_publicitario) == 2) { ?>   
-                                    <a href="<?php echo $item->enlace_publicitario;?>">
+                                    <a href="<?php echo $item->enlace_publicitario;?>" target="_blank">
                                         <img src="<?php echo base_url();?>fotos_productos/<?php echo $item->foto_publicitario;?>" class="img-responsive" alt="<?php echo $item->titulo_publicitario;?>">
                                     </a>  
                                 <?php } ?>
@@ -427,7 +433,7 @@
                             <div class="widget widget-new-ad">
                             <?php foreach ($publicidad -> result() as $item) { ?>  
                                 <?php if (($item -> tipo_publicitario == "Home Columna Derecha") && ($item -> orden_publicitario) == 3) { ?>   
-                                    <a href="<?php echo $item->enlace_publicitario;?>">
+                                    <a href="<?php echo $item->enlace_publicitario;?>" target="_blank">
                                         <img src="<?php echo base_url();?>fotos_productos/<?php echo $item->foto_publicitario;?>" class="img-responsive" alt="<?php echo $item->titulo_publicitario;?>">
                                     </a>  
                                 <?php } ?>
@@ -453,7 +459,7 @@
                            <div class="widget widget-new-ad">
                             <?php foreach ($publicidad -> result() as $item) { ?>  
                                 <?php if (($item -> tipo_publicitario == "Home Columna Derecha") && ($item -> orden_publicitario) == 4) { ?>   
-                                    <a href="<?php echo $item->enlace_publicitario;?>">
+                                    <a href="<?php echo $item->enlace_publicitario;?>" target="_blank">
                                         <img src="<?php echo base_url();?>fotos_productos/<?php echo $item->foto_publicitario;?>" class="img-responsive" alt="<?php echo $item->titulo_publicitario;?>">
                                     </a>  
                                 <?php } ?>
@@ -507,9 +513,15 @@
                             <h2 class="h-style">Publicidad</h2>
                             <div class="flexslider">
                               <ul class="slides">
-                                <li><img src="images/footer-slider.jpg" alt=""></li>
-                                <li><img src="images/footer-slider2.jpg" alt=""></li>
-                                <li><img src="images/footer-slider3.jpg" alt=""></li>
+                                <?php foreach ($publicidad -> result() as $item) { ?>
+                                    <?php if ($item -> tipo_publicitario == "Footer central") { ?>
+                                        <li>
+                                            <a href="<?php echo $item-> enlace_publicitario ?>">
+                                                <img src="<?php echo base_url()."fotos_productos/".$item -> foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario; ?>" target="_blank">
+                                            </a>
+                                        </li>
+                                    <?php } ?>
+                                <?php } ?>
                               </ul>
                             </div>
                         </div>

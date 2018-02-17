@@ -366,12 +366,16 @@
     <!-- Ckeditor JS -->
   <script src="https://cdn.ckeditor.com/4.6.1/full-all/ckeditor.js"></script>
   <script type="text/javascript">
+
   jQuery(document).ready(function() {
     $(".confirmation").click(function(){
       return confirm('¿Está seguro de borrar este noticia?');
     });
     "use strict";
+
     Core.init();
+
+
       $('#datatable2').dataTable({
       "aoColumnDefs": [{
         'bSortable': false,
@@ -383,7 +387,9 @@
           "sNext": ""
         }
       },
+
       "order": [[ 0, "desc" ]],
+
       "iDisplayLength": 100,
       "aLengthMenu": [
         [5, 10, 25, 50, -1],

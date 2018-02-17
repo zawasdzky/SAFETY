@@ -238,11 +238,28 @@
             </div>
         </div>
     </div>
+     <!--FOOTER START-->
+    <footer>
+        <!--FOOTER TOP AREA STAT-->
+<!--             <div class="container">
+                <div class="row">
+                        <figure>
+                            <img alt="" src="<?php echo base_url();?>images/mega_banner_publicidad2.jpg">
+                        </figure>
+                        <br>
+                </div>
+            </div> -->
+        <!--FOOTER TOP AREA END-->
 
-    <section>
-        <?php $this->load->view('includes/footer');  ?>
-    </section>
-    
+        <div class="copy-rights">
+             <p>COPYRIGHT © 2017 safetyworkla.com</p>
+        </div>
+    </footer>
+    <!--FOOTER END-->
+</div>
+<!--WRAPPER END-->
+</body>
+</html>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];

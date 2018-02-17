@@ -67,3 +67,9 @@
 </body>
 </html>
 
+<?php if(isset($_GET['infografia'])){ $infografia = "#".$_GET['infografia']; ?>
+
+<script type="text/javascript">
+     $('<?php echo $infografia;?>').modal('show');   
+</script>
+<?php } ?>

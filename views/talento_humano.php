@@ -62,13 +62,13 @@
                 <div class="span4">
                     <div class="sidebar">
 
-                    	<div class="widget photos-widget gallery">
+                    	<div class="widget widget-new-ad">
                             <?php foreach ($publicidad -> result() as $item) { ?>
-                                <?php if ($item -> tipo_publicitario == "Columna Derecha") { ?>
+                                <?php if ($item -> tipo_publicitario == "Pauta Columna Derecha Talento Humano") { ?>
                                     <?php if (($item -> orden_publicitario == 1) || ($item -> orden_publicitario == 2)) { ?>
                                         <div class="widget">
                                             <a href="<?php echo $item-> enlace_publicitario ?>">
-                                                <img src="<?php echo base_url()."images/".$item -> foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario; ?>">
+                                                <img src="<?php echo base_url()."fotos_productos/".$item -> foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario; ?>">
                                             </a>
                                         </div>
                                     <?php } ?>
@@ -97,13 +97,13 @@
                         </div>
                         <!--LEGISLACION END-->
 
-                        <div class="widget photos-widget gallery">
+                        <div class="widget widget-new-ad">
                             <?php foreach ($publicidad -> result() as $item) { ?>
-                                <?php if ($item -> tipo_publicitario == "Columna Derecha") { ?>
+                                <?php if ($item -> tipo_publicitario == "Pauta Columna Derecha Talento Humano") { ?>
                                     <?php if (($item -> orden_publicitario == 3) || ($item -> orden_publicitario == 4)) { ?>
                                         <div class="widget">
                                             <a href="<?php echo $item-> enlace_publicitario ?>">
-                                                <img src="<?php echo base_url()."images/".$item -> foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario; ?>">
+                                                <img src="<?php echo base_url()."fotos_productos/".$item -> foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario; ?>">
                                             </a>
                                         </div>
                                     <?php } ?>

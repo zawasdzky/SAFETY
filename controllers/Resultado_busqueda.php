@@ -15,7 +15,9 @@ class Resultado_busqueda extends CI_Controller {
 		$data['color'] ="yellow"; 
 		$keyword = $this->input->post('keyword');
 		$this->load->view('includes/scripts');
-		$data['palabra'] = $keyword;
+		$data['publicidad'] = $this->Safety_work_model->get_publicidad(); 
+		$this->load->view('includes/head',$data);
+		$this->load->view('includes/header');
 		$data['frases'] = $this->Safety_work_model->get_frases_widget(); 	
 		$data['resultados_talento'] = $this->Safety_work_model->get_resultados_talento($keyword);
 		$data['resultados_eventos'] = $this->Safety_work_model->get_resultados_eventos($keyword); 
@@ -28,11 +30,6 @@ class Resultado_busqueda extends CI_Controller {
 		$data['resultados_sociales'] = $this->Safety_work_model->get_resultados_sociales($keyword); 
 		$data['resultados_productos'] = $this->Safety_work_model->get_resultados_productos($keyword); 
 		$data['resultados_profesionales'] = $this->Safety_work_model->get_resultados_profesionales($keyword); 
-
-		$this->load->view('includes/head',$data);
-		$this->load->view('includes/header');
-		$data['publicidad'] = $this->Safety_work_model->get_publicidad(); 
-
 		$data['legislaciones'] = $this->Safety_work_model->get_legislaciones_limit(); 
 		$data['eventos_widget'] = $this->Safety_work_model->get_eventos_widget(); 
 		$this->load->view('resultado_busqueda',$data);

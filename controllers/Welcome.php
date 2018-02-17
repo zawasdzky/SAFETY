@@ -13,13 +13,13 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
-	
+		
 		$this->load->view('includes/scripts');
+		$data['publicidad'] = $this->Safety_work_model->get_publicidad(); 
 		$data['frases'] = $this->Safety_work_model->get_frases_widget(); 
 		$data['color'] ="carrot";
 		$this->load->view('includes/head',$data); 	
 		$data['eventos_widget'] = $this->Safety_work_model->get_eventos_widget(); 
-		$data['publicidad'] = $this->Safety_work_model->get_publicidad(); 
 		$data['noticias'] = $this->Safety_work_model->get_noticias_home();
         $data['vida_estilo'] = $this->Safety_work_model->get_vida_estilo_home();
 		$data['talento_humano'] = $this->Safety_work_model->get_talento_humano_home(); 
