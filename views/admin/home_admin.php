@@ -1,49 +1,5 @@
     <!-- Start: Content-Wrapper -->
     <section id="content_wrapper">
-
-      <!-- Start: Topbar-Dropdown -->
-      <div id="topbar-dropmenu" class="alt">
-        <div class="topbar-menu row">
-          <div class="col-xs-4 col-sm-2">
-            <a href="#" class="metro-tile bg-primary light">
-              <span class="glyphicon glyphicon-inbox text-muted"></span>
-              <span class="metro-title">Messages</span>
-            </a>
-          </div>
-          <div class="col-xs-4 col-sm-2">
-            <a href="#" class="metro-tile bg-info light">
-              <span class="glyphicon glyphicon-user text-muted"></span>
-              <span class="metro-title">Users</span>
-            </a>
-          </div>
-          <div class="col-xs-4 col-sm-2">
-            <a href="#" class="metro-tile bg-success light">
-              <span class="glyphicon glyphicon-headphones text-muted"></span>
-              <span class="metro-title">Support</span>
-            </a>
-          </div>
-          <div class="col-xs-4 col-sm-2">
-            <a href="#" class="metro-tile bg-system light">
-              <span class="glyphicon glyphicon-facetime-video text-muted"></span>
-              <span class="metro-title">Videos</span>
-            </a>
-          </div>
-          <div class="col-xs-4 col-sm-2">
-            <a href="#" class="metro-tile bg-warning light">
-              <span class="fa fa-gears text-muted"></span>
-              <span class="metro-title">Settings</span>
-            </a>
-          </div>
-          <div class="col-xs-4 col-sm-2">
-            <a href="#" class="metro-tile bg-alert light">
-              <span class="glyphicon glyphicon-picture text-muted"></span>
-              <span class="metro-title">Pictures</span>
-            </a>
-          </div>
-        </div>
-      </div>
-      <!-- End: Topbar-Dropdown -->
-
       <!-- Start: Topbar -->
       <header id="topbar" class="hidden">
         <div class="topbar-left">
@@ -89,9 +45,21 @@
 
         <!-- Demo Text Content -->
         <div class="pl15 pr50">
-          <h4> Blank Page Example Content </h4>
+          <h4> Administración Safety  </h4>
           <hr class="alt short">
-          <p class="text-muted"> Lorem ipsum dolor sit amet,  is nisi ut aliquip ex ea commodo consectetur adipi sicing elit, sed do eiusmod tempor incididu ut labore et is nisi ut aliquip ex ea commodo dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exetation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <div class="col-sm-4 col-xl-3">
+              <div class="panel panel-tile text-center br-a br-grey">
+                <div class="panel-body" style="background-color: #1fd376; ">
+                  <h1 class="fs30 mt5 mbn" style="color: white;">0</h1>
+                  <h6 class="text-success" style="color: white;">Newsletter</h6>
+                </div>
+                <div class="panel-footer br-t p12">
+                  <span class="fs11">
+                    <a href="<?php echo base_url();?>admin/Newsletters"><i class="fa fa-arrow-up pr5"></i><b>Newsletters</b></a>
+                  </span>
+                </div>
+              </div>
+            </div>
         </div>
 
 

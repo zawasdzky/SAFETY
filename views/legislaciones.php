@@ -109,17 +109,21 @@
                             </div>
                           </div>
                         </div>
-                        <div class="widget photos-widget gallery">
-                        <?php foreach ($publicidad -> result() as $item) { ?>
-                            <?php if (($item -> tipo_publicitario == "Columna Izquierda") && ($item -> orden_publicitario < 3)): ?>
-                            <div class="widget">
-                            <figure>
-                                <a href="<?php echo $item -> enlace_publicitario; ?>"><img src="<?php echo base_url()."fotos_productos/".$item-> foto_publicitario;?>" alt="<?php echo $item -> nombre_publicitario; ?>"></a>
-                            </figure>   
-                            </div>                             
-                            <?php endif ?>
-                        <?php } ?>  
+                        <!-- PAUTAS -->
+                        <div class="widget widget-new-ad">
+                            <?php foreach ($publicidad -> result() as $item) { ?>
+                                <?php if ($item -> tipo_publicitario == "Pauta Columna Izquierda Legislacion") { ?>
+                                    <?php if (($item -> orden_publicitario == 1)) { ?>
+                                            <div class="widget">
+                                                <a href="<?php echo $item-> enlace_publicitario ?>">
+                                                    <img src="<?php echo base_url()."fotos_productos/".$item -> foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario; ?>" target="_blank">
+                                                </a>
+                                            </div>
+                                    <?php } ?>
+                                <?php } ?>
+                            <?php } ?>
                         </div>
+                        <!-- FIN PAUTAS -->
                         <!--FACEBOOK FEEDS WIDGET START-->
                         <div class="widget">
                             <div class="fb-page" data-href="https://www.facebook.com/RevistaSafetyWork/" data-tabs="timeline" data-height="650" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/RevistaSafetyWork/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/RevistaSafetyWork/">Revista Safety Work</a></blockquote>
@@ -127,13 +131,21 @@
                         </div> 
                         <!--FACEBOOK FEEDS WIDGET END-->
 
-                        <div class="widget photos-widget gallery">
-                            <!-- PAUTA -->
-                            <div class="widget">
-                                <img src="images/pauta_350_180.jpg" alt="">
-                            </div>
-                            <!-- FIN PAUTA -->
+                        <!-- PAUTAS -->
+                        <div class="widget widget-new-ad">
+                            <?php foreach ($publicidad -> result() as $item) { ?>
+                                <?php if ($item -> tipo_publicitario == "Pauta Columna Izquierda Legislacion") { ?>
+                                    <?php if (($item -> orden_publicitario == 2)) { ?>
+                                            <div class="widget">
+                                                <a href="<?php echo $item-> enlace_publicitario ?>">
+                                                    <img src="<?php echo base_url()."fotos_productos/".$item -> foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario; ?>" target="_blank">
+                                                </a>
+                                            </div>
+                                    <?php } ?>
+                                <?php } ?>
+                            <?php } ?>
                         </div>
+                        <!-- FIN PAUTAS -->
 
                         <div class="widget widget-newsletter">
                             <h2>SUSCRIBASE</h2>
@@ -142,14 +154,21 @@
                                 <button class="btn-style">Subscribe</button>
                             </div>
                         </div>
-                        <!--NEWLETTER WIDGET END-->
-                        <div class="widget photos-widget gallery">
-                            <!-- PAUTA -->
-                            <div class="widget">
-                                <img src="images/pauta_350_180.jpg" alt="">
-                            </div>
-                            <!-- FIN PAUTA -->
+                        <!-- PAUTAS -->
+                        <div class="widget widget-new-ad">
+                            <?php foreach ($publicidad -> result() as $item) { ?>
+                                <?php if ($item -> tipo_publicitario == "Pauta Columna Izquierda Legislacion") { ?>
+                                    <?php if (($item -> orden_publicitario == 3)) { ?>
+                                            <div class="widget">
+                                                <a href="<?php echo $item-> enlace_publicitario ?>">
+                                                    <img src="<?php echo base_url()."fotos_productos/".$item -> foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario; ?>" target="_blank">
+                                                </a>
+                                            </div>
+                                    <?php } ?>
+                                <?php } ?>
+                            <?php } ?>
                         </div>
+                        <!-- FIN PAUTAS -->
                     </div>
                 </div>
                 <?php $detalle = $legislaciones->row(); ?>

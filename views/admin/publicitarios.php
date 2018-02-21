@@ -76,7 +76,7 @@
                           </label>
                         </label>
                       </div>
-                      <div class="col-md-6 mb10">
+                      <div class="col-md-8 mb10">
                         <select name="tipo_publicitario" class="form-control">
                           <option value="">Tipo / Ubicación  </option>
                           <option value="Header Superior Derecho">Header Superior Derecho (456 x 47)</option>
@@ -94,10 +94,9 @@
                           <option value="Pauta Superior Derecha Vida y Estilo">Pauta Superior Derecha Vida y Estilo (152 x 152)</option>
                           <option value="Pauta Vertical Central Vida y Estilo">Pauta Vertical Central Vida y Estilo (153 x 695)</option>
                           <option value="Pauta Columna Derecha Vida y Estilo">Pauta Columna Derecha Vida y Estilo (350 x 250)</option>
-                          <option value="Pauta Columna Derecha Seguros">Pauta Superior Derecha Seguros (350 x 250)</option>
+                          <option value="Pauta Columna Derecha Seguros">Pauta Columna Derecha Seguros (350 x 250)</option>
                           <option value="Pauta Columna Derecha SST">Pauta Columna Derecha SST (350 x 250)</option>
                           <option value="Pauta Columna Izquierda SST">Pauta Columna Izquierda SST (350 x 250)</option>
-                          <option value="Pauta Columna Izquierda SST">Pauta Superior Derecha SST (350 x 250)</option>
                           <option value="Pauta Columna Izquierda Legislacion">Pauta Columna Izquierda Legislación (350 x 250)</option>
                           <option value="Pauta Superior Derecha Noticias">Pauta Superior Derecha Noticias (270 x 180)</option>
                           <option value="Pauta Columna Izquierda Noticias">Pauta Columna Izquierda Noticias (350 x 250)</option>
@@ -111,7 +110,7 @@
                           <option value="Columna Central">Columna Central Solutions</option>
                         </select>
                       </div>
-                      <div class="col-md-6 mb10">
+                      <div class="col-md-4 mb10">
                         <select name="sitio_publicitario" class="form-control">
                           <option value="">Sitio </option>
                           <option value="Safety_solutions">Safety Solutions</option>

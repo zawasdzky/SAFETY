@@ -139,6 +139,9 @@ class Safety_work_model extends CI_Model {
 	function get_categorias_articulos(){
 		return $this->db->query("SELECT * FROM `sw_categorias_solutions` WHERE `id_categoria` !='0' AND `tipo_categoria` = 'articulos' ORDER BY `nombre_categoria`");
 	}
+	function insert_newsletter($data){
+		$this->db->insert('newsletter_safety', $data);
+	}
 
 
 //BUSCADOR

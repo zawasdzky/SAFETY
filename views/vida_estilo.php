@@ -82,12 +82,23 @@
                                         <!--list item end-->
                                     </ul>
                                 </div>
-
+                                <div class="top-five">
+                                    <h2 class="h-style">Top 5 Artículos</h2>
+                                        <ul>
+                                            <?php foreach ($destacados_vida_estilo -> result() as $articulo) { ?>
+                                                <li class="hover-style">
+                                                         <a href="<?php echo base_url()."Vida_estilo/detalle_articulo_vida_estilo/".$articulo-> url_amigable_vida_estilo; ?>">
+                                                    <img src="<?php echo base_url()."fotos_vida_estilo/".$articulo-> foto0; ?>" alt="<?php echo $articulo-> titulo_vida_estilo; ?>" width="152">
+                                                    </a>
+                                                </li>
+                                            <?php }?>
+                                        </ul>
+                                </div>
                             </div>
                             <div class="span2 visible-desktop">
                                 <div class="right-now">
                                     <h2>Reflexionemos</h2>
-<!--                                     <p class="color">Morbi condimentum</p>
+                                        <!-- <p class="color">Morbi condimentum</p>
                                     <p>Morbi condimentum tempus Aenean in erat sed neque convallis metus. </p>
                                     <figure>
                                         <a href="<?php echo base_url()."Vida_estilo/detalle_articulo_vida_estilo/".$articulo-> url_amigable_vida_estilo; ?>"><img src="images/right-now-health.jpg" alt=""></a>
@@ -120,20 +131,6 @@
                             </div>
                         </div>
                     </section>
-                    <section>
-                        <div class="top-five">
-                            <h2 class="h-style">Top 5 Artículos</h2>
-                            <ul>
-                                <?php foreach ($destacados_vida_estilo -> result() as $articulo) { ?>
-                                <li class="hover-style">
-                                    <a href="<?php echo base_url()."Vida_estilo/detalle_articulo_vida_estilo/".$articulo-> url_amigable_vida_estilo; ?>">
-                                        <img src="<?php echo base_url()."fotos_vida_estilo/".$articulo-> foto0; ?>" alt="<?php echo $articulo-> titulo_vida_estilo; ?>" width="152">
-                                    </a>
-                                </li>
-                                <?php }?>
-                            </ul>
-                        </div>
-                    </section>
                 </div>
                 <div class="span4">
                     <div class="sidebar">
@@ -142,35 +139,33 @@
                             <ul>
                             <?php foreach ($publicidad -> result() as $item) { ?>
                                 <?php if ($item -> tipo_publicitario == "Pauta Superior Derecha Vida y Estilo") { ?>
-                                    <?php if (($item -> orden_publicitario < 4)) { ?>
-                                        <div class="widget">
+                                    <?php if (($item -> orden_publicitario <= 4)) { ?>
                                             <li>
                                                 <a href="<?php echo $item-> enlace_publicitario ?>">
                                                     <img src="<?php echo base_url()."fotos_productos/".$item -> foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario; ?>">
                                                 </a>
                                             </li>
-                                        </div>
                                     <?php } ?>
                                 <?php } ?>
                             <?php } ?>
                             </ul>
                         </div>
 
-                        <div class="widget widget-new-ad">
-                            <?php foreach ($publicidad -> result() as $item) { ?>
-                                <?php if ($item -> tipo_publicitario == "Pauta Columna Derecha Vida y Estilo") { ?>
-                                    <?php if (($item -> orden_publicitario == 1) || ($item -> orden_publicitario == 2)) { ?>
-                                        <div class="widget">
-                                            <a href="<?php echo $item-> enlace_publicitario ?>">
-                                                <img src="<?php echo base_url()."fotos_productos/".$item -> foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario; ?>">
-                                            </a>
-                                        </div>
-                                    <?php } ?>
+                        <!-- PAUTA COLUMAN DERECHA -->
+                        <?php foreach ($publicidad -> result() as $item) { ?>
+                            <?php if ($item -> tipo_publicitario == "Pauta Columna Derecha Vida y Estilo") { ?>
+                                <?php if (($item -> orden_publicitario == 1) || ($item -> orden_publicitario == 2)) { ?>
+                                <div class="widget widget-new-ad">
+                                    <div class="widget">
+                                        <a href="<?php echo $item-> enlace_publicitario ?>">
+                                            <img src="<?php echo base_url()."fotos_productos/".$item -> foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario; ?>">
+                                        </a>
+                                    </div>
+                                </div>
                                 <?php } ?>
                             <?php } ?>
-                        </div>
+                        <?php } ?>
 
-                        <!--PHOTOS WIDGET END-->
                         <!--TWITTER FEEDS WIDGET START-->
                         <div class="widget widget-twitter">
                             <header>
@@ -180,27 +175,21 @@
                             </header>
                                 <a class="twitter-timeline" data-lang="es" data-width="330" data-height="500" href="https://twitter.com/RevistaSafety?ref_src=twsrc%5Etfw">Tweets  RevistaSafety</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                         </div>
-                        <!--TWITTER FEEDS WIDGET END-->
 
-                         <!--RELATED POST WIDGET START-->
-                        <div class="widget widget-related-post">
-                            <h2>Related Post</h2>
-                            <ul>
-                                <li>
-                                    <p>Philosophy cannot be taught; it is the application of the sciences to truth</p>
-                                    <a href="<?php echo base_url()."Vida_estilo/detalle_articulo_vida_estilo/".$articulo-> url_amigable_vida_estilo; ?>" class="color">by Lord Wilmore</a>
-                                </li>
-                                <li>
-                                    <p>Now let the avenging god make way for me to punish the wrongdoer!</p>
-                                    <a href="<?php echo base_url()."Vida_estilo/detalle_articulo_vida_estilo/".$articulo-> url_amigable_vida_estilo; ?>" class="color">by Abbé Busoni</a>
-                                </li>
-                                <li>
-                                    <p>Philosophy cannot be taught; it is the application of the sciences to truth</p>
-                                    <a href="<?php echo base_url()."Vida_estilo/detalle_articulo_vida_estilo/".$articulo-> url_amigable_vida_estilo; ?>" class="color">by Lord Wilmore</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!--RELATED POST WIDGET START-->
+                        <!-- PAUTA COLUMAN DERECHA -->
+                        <?php foreach ($publicidad -> result() as $item) { ?>
+                            <?php if ($item -> tipo_publicitario == "Pauta Columna Derecha Vida y Estilo") { ?>
+                                <?php if (($item -> orden_publicitario == 3) || ($item -> orden_publicitario == 4)) { ?>
+                                <div class="widget widget-new-ad">
+                                    <div class="widget">
+                                        <a href="<?php echo $item-> enlace_publicitario ?>">
+                                            <img src="<?php echo base_url()."fotos_productos/".$item -> foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario; ?>">
+                                        </a>
+                                    </div>
+                                </div>
+                                <?php } ?>
+                            <?php } ?>
+                        <?php } ?>
 
                     </div>
                 </div>

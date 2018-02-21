@@ -3,26 +3,19 @@
             <div class="row">
                 <div class="span3">
                     <div class="sidebar">
-                        <!--TAGS WIDGET START-->
-                        <div class="widget">
-                            <img src="images/pauta.jpg" class="img-responsive">
+                        <!-- PAUTAS -->
+                        <div class="widget widget-new-ad">
+                            <?php foreach ($publicidad -> result() as $item) { ?>
+                                <?php if ($item -> tipo_publicitario == "Pauta Columna Izquierda SST") { ?>
+                                            <div class="widget">
+                                                <a href="<?php echo $item-> enlace_publicitario ?>">
+                                                    <img src="<?php echo base_url()."fotos_productos/".$item -> foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario; ?>" target="_blank">
+                                                </a>
+                                            </div>
+                                    <?php } ?>
+                            <?php } ?>
                         </div>
-                        <!--TAGS WIDGET END-->
-                        <!--TAGS WIDGET START-->
-                        <div class="widget">
-                            <img src="images/pauta.jpg" class="img-responsive">
-                        </div>
-                        <!--TAGS WIDGET END-->
-                        <!--TAGS WIDGET START-->
-                        <div class="widget">
-                            <img src="images/pauta.jpg" class="img-responsive">
-                        </div>
-                        <!--TAGS WIDGET END-->
-
-                        <div class="widget">
-                            <img src="images/pauta.jpg" class="img-responsive">
-                        </div>
-
+                        <!-- FIN PAUTAS -->
                     </div>
                 </div>
                 <div class="span6">
@@ -74,11 +67,21 @@
                 </div>
                 <div class="span3">
                     <div class="sidebar">
-                        <!--PHOTOS WIDGET START-->
-                        <div class="widget">
-                            <img src="images/pauta.jpg" class="img-responsive">
+                        <!-- PAUTAS -->
+                        <div class="widget widget-new-ad">
+                            <?php foreach ($publicidad -> result() as $item) { ?>
+                                <?php if ($item -> tipo_publicitario == "Pauta Columna Derecha SST") { ?>
+                                    <?php if (($item -> orden_publicitario <= 2)) { ?>
+                                            <div class="widget">
+                                                <a href="<?php echo $item-> enlace_publicitario ?>">
+                                                    <img src="<?php echo base_url()."fotos_productos/".$item -> foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario; ?>" target="_blank">
+                                                </a>
+                                            </div>
+                                    <?php } ?>
+                                <?php } ?>
+                            <?php } ?>
                         </div>
-                        <!--PHOTOS WIDGET END-->
+                        <!-- FIN PAUTAS -->
                         <!--TWITTER FEEDS WIDGET START-->
                         <div class="widget widget-twitter">
                             <header>
@@ -92,20 +95,21 @@
                         </div>
                         <!--TWITTER FEEDS WIDGET END-->
 
-                        <!--TABS WIDGET END-->
-                        <div class="widget">
-                            <img src="images/pauta.jpg" class="img-responsive">
+                        <!-- PAUTAS -->
+                        <div class="widget widget-new-ad">
+                            <?php foreach ($publicidad -> result() as $item) { ?>
+                                <?php if ($item -> tipo_publicitario == "Pauta Columna Derecha SST") { ?>
+                                    <?php if (($item -> orden_publicitario > 2 )) { ?>
+                                            <div class="widget">
+                                                <a href="<?php echo $item-> enlace_publicitario ?>">
+                                                    <img src="<?php echo base_url()."fotos_productos/".$item -> foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario; ?>" target="_blank">
+                                                </a>
+                                            </div>
+                                    <?php } ?>
+                                <?php } ?>
+                            <?php } ?>
                         </div>
-                        <!--NEW CATEGORIES WIDGET START-->
-                        <!--TABS WIDGET END-->
-                        <div class="widget">
-                            <img src="images/pauta.jpg" class="img-responsive">
-                        </div>
-                        <!--NEW CATEGORIES WIDGET START-->
-                        <!--TABS WIDGET END-->
-                        <div class="widget">
-                            <img src="images/pauta.jpg" class="img-responsive">
-                        </div>
+                        <!-- FIN PAUTAS -->
                         <!--POLL WIDGET START-->
                         <div class="widget poll-widget">
                             <h2>Encuesta</h2>

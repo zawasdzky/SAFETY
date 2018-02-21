@@ -10,7 +10,7 @@
 
               <li>
                 <a href="<?php echo base_url();?>admin/Varios">
-                  <span class="glyphicon glyphicon-home"></span>
+                  <span class="glyphicon glyphicon-th"></span>
                   <span class="sidebar-title">Varios</span>
                   <span class="caret"></span>
                 </a>

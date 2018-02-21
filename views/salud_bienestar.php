@@ -100,19 +100,19 @@
                 <div class="span4">
                     <div class="sidebar">
                     <!-- PAUTAS PUBLICITARIAS -->
-                        <div class="widget widget-new-ad">
                             <?php foreach ($publicidad -> result() as $item) { ?>
                                 <?php if ($item -> tipo_publicitario == "Pauta Columna Derecha Salud y Bienestar") { ?>
                                     <?php if ( ($item -> orden_publicitario < 4)) { ?>
-                                        <div class="widget">
+                                        <div class="widget widget-new-ad">
+                                            <div class="widget">
                                             <a href="<?php echo $item-> enlace_publicitario ?>">
                                                 <img src="<?php echo base_url()."fotos_productos/".$item -> foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario; ?>">
                                             </a>
                                         </div>
+                                        </div>
                                     <?php } ?>
                                 <?php } ?>
                             <?php } ?>
-                        </div>
                     <!-- FIN PAUTAS PUBLICITARIAS -->
                          <!--LEGISLACIONES START-->
                         <div class="widget widget-related-post">
@@ -151,7 +151,21 @@
                             </div>
                         </div>
                         <!--NEWLETTER WIDGET END-->
-
+                    <!-- PAUTAS PUBLICITARIAS -->
+                        <div class="widget widget-new-ad">
+                            <?php foreach ($publicidad -> result() as $item) { ?>
+                                <?php if ($item -> tipo_publicitario == "Pauta Columna Derecha Salud y Bienestar") { ?>
+                                    <?php if ( ($item -> orden_publicitario == 5)) { ?>
+                                        <div class="widget">
+                                            <a href="<?php echo $item-> enlace_publicitario ?>">
+                                                <img src="<?php echo base_url()."fotos_productos/".$item -> foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario; ?>">
+                                            </a>
+                                        </div>
+                                    <?php } ?>
+                                <?php } ?>
+                            <?php } ?>
+                        </div>
+                    <!-- FIN PAUTAS PUBLICITARIAS -->
                         <!--FACEBOOK FEEDS WIDGET START-->
                         <div class="widget">
                             <div class="fb-page" data-href="https://www.facebook.com/RevistaSafetyWork/" data-tabs="timeline" data-height="650" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/RevistaSafetyWork/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/RevistaSafetyWork/">Revista Safety Work</a></blockquote>

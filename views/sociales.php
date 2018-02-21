@@ -24,7 +24,7 @@
                     <div class="span3">
                         <div class="project-detail">
                             <?php foreach ($publicidad -> result() as $pauta) { ?>
-                                <?php if ( $pauta -> tipo_publicitario == "Pauta Sociales") { ?>
+                                <?php if ( $pauta -> tipo_publicitario == "Pauta Superior Derecha Sociales") { ?>
                                 <div class="news-thumb">
                                    <a href="<?php echo $pauta -> enlace_publicitario ?>">
                                     <img src="<?php echo base_url()."fotos_productos/".$pauta->foto_publicitario; ?>" alt="<?php echo $pauta -> nombre_publicitario ?>" >

@@ -24,7 +24,7 @@
                 </div>
                 <div class="span3">
                     <?php foreach ($publicidad -> result() as $pauta) { ?>
-                        <?php if ( $pauta -> tipo_publicitario == "Pauta Noticias") { ?>
+                        <?php if ( $pauta -> tipo_publicitario == "Pauta Superior Derecha Noticias") { ?>
                         <div class="news-thumb">
                            <a href="<?php echo $pauta -> enlace_publicitario ?>"><img src="<?php echo base_url()."fotos_productos/".$pauta->foto_publicitario; ?>" alt="<?php echo $pauta -> nombre_publicitario ?>"></a>
                         </div>
@@ -60,7 +60,7 @@
                             <div class="span3 sidebar hidden-phone">
                                 <!-- PAUTA -->
                                 <?php foreach ($publicidad ->result() as $item) { ?>
-                                    <?php if (($item -> tipo_publicitario == "Columna Izquierda") && ($item -> sitio_publicitario == "Safetywork")){ ?>
+                                    <?php if (($item -> tipo_publicitario == "Pauta Columna Izquierda Noticias") && ($item -> sitio_publicitario == "Safetywork")){ ?>
                                         <div class="widget">
                                             <a href="<?php echo $item -> enlace_publicitario ?>" target="_blank">
                                                 <img src="<?php echo base_url()."fotos_productos/".$item->foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario ?>" class="img-responsive" >
@@ -111,7 +111,7 @@
                 <div class="span3">
                     <div class="sidebar">
                         <?php foreach ($publicidad ->result() as $item) { ?>
-                            <?php if (($item -> tipo_publicitario == "Columna Derecha") && ($item -> sitio_publicitario == "Safetywork")){ ?>
+                            <?php if (($item -> tipo_publicitario == "Pauta Columna Derecha Noticias") && ($item -> sitio_publicitario == "Safetywork")){ ?>
                                 <div class="widget">
                                     <a href="<?php echo $item -> enlace_publicitario ?>" target="_blank">
                                         <img src="<?php echo base_url()."fotos_productos/".$item->foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario ?>" class="img-responsive" >

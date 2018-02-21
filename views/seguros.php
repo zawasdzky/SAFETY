@@ -51,20 +51,21 @@
 
                 <div class="span4">
                     <div class="sidebar">
-
-                    	<div class="widget photos-widget gallery">
-                            <!-- PAUTA -->
-                            <div class="widget">
-                                <img src="images/pauta.jpg" class="img-responsive">
-                            </div>
-                            <!-- FIN PAUTA -->
-                            <!-- PAUTA -->
-                            <div class="widget">
-                                <img src="images/pauta.jpg" class="img-responsive">
-                            </div>
-                            <!-- FIN PAUTA -->
-                        </div>
-
+                        <!-- PAUTAS -->
+                    	<div class="widget widget-new-ad">
+                            <?php foreach ($publicidad -> result() as $item) { ?>
+                                <?php if ($item -> tipo_publicitario == "Pauta Columna Derecha Seguros") { ?>
+                                    <?php if (($item -> orden_publicitario <= 2)) { ?>
+                                            <div class="widget">
+                                                <a href="<?php echo $item-> enlace_publicitario ?>">
+                                                    <img src="<?php echo base_url()."fotos_productos/".$item -> foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario; ?>" target="_blank">
+                                                </a>
+                                            </div>
+                                    <?php } ?>
+                                <?php } ?>
+                            <?php } ?>
+                        </div>3
+                        <!-- FIN PAUTAS -->
                     	<!--LEGISLACION-->
                     	<div class="widget widget-top3">
                             <h2>Últimos Productos </h2>
@@ -86,17 +87,20 @@
                         </div>
                         <!--LEGISLACION END-->
 
-                        <div class="widget photos-widget gallery">
-                            <!-- PAUTA -->
-                            <div class="widget">
-                                <img src="images/pauta.jpg" class="img-responsive">
-                            </div>
-                            <!-- FIN PAUTA -->
-                            <!-- PAUTA -->
-                            <div class="widget">
-                                <img src="images/pauta.jpg" class="img-responsive">
-                            </div>
-                            <!-- FIN PAUTA -->
+                        <div class="widget widget-new-ad">
+                            <!-- PAUTAS -->
+                            <?php foreach ($publicidad -> result() as $item) { ?>
+                                <?php if ($item -> tipo_publicitario == "Pauta Columna Derecha Seguros") { ?>
+                                    <?php if (($item -> orden_publicitario == 3) || ($item -> orden_publicitario == 4)) { ?>
+                                            <div class="widget">
+                                                <a href="<?php echo $item-> enlace_publicitario ?>">
+                                                    <img src="<?php echo base_url()."fotos_productos/".$item -> foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario; ?>" target="_blank">
+                                                </a>
+                                            </div>
+                                    <?php } ?>
+                                <?php } ?>
+                            <?php } ?>
+                            <!-- FIN PAUTAS -->
                         </div>
 
                          <!--RELATED POST WIDGET START-->

@@ -62,19 +62,33 @@
                 <div class="span4">
                     <div class="sidebar">
 
-                    	<div class="widget widget-new-ad">
                             <?php foreach ($publicidad -> result() as $item) { ?>
                                 <?php if ($item -> tipo_publicitario == "Pauta Columna Derecha Talento Humano") { ?>
-                                    <?php if (($item -> orden_publicitario == 1) || ($item -> orden_publicitario == 2)) { ?>
+                                    <?php if (($item -> orden_publicitario == 1)) { ?>
+                                    <div class="widget widget-new-ad">
                                         <div class="widget">
                                             <a href="<?php echo $item-> enlace_publicitario ?>">
                                                 <img src="<?php echo base_url()."fotos_productos/".$item -> foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario; ?>">
                                             </a>
                                         </div>
+                                    </div>
                                     <?php } ?>
                                 <?php } ?>
                             <?php } ?>
-                        </div>
+
+                            <?php foreach ($publicidad -> result() as $item) { ?>
+                                <?php if ($item -> tipo_publicitario == "Pauta Columna Derecha Talento Humano") { ?>
+                                    <?php if (($item -> orden_publicitario == 2)) { ?>
+                                    <div class="widget widget-new-ad">
+                                        <div class="widget">
+                                            <a href="<?php echo $item-> enlace_publicitario ?>">
+                                                <img src="<?php echo base_url()."fotos_productos/".$item -> foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario; ?>">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <?php } ?>
+                                <?php } ?>
+                            <?php } ?>
 
                     	<!--LEGISLACION-->
                     	<div class="widget widget-top3">
@@ -97,20 +111,19 @@
                         </div>
                         <!--LEGISLACION END-->
 
-                        <div class="widget widget-new-ad">
                             <?php foreach ($publicidad -> result() as $item) { ?>
                                 <?php if ($item -> tipo_publicitario == "Pauta Columna Derecha Talento Humano") { ?>
-                                    <?php if (($item -> orden_publicitario == 3) || ($item -> orden_publicitario == 4)) { ?>
+                                    <?php if (($item -> orden_publicitario == 3)) { ?>
+                                    <div class="widget widget-new-ad">
                                         <div class="widget">
                                             <a href="<?php echo $item-> enlace_publicitario ?>">
                                                 <img src="<?php echo base_url()."fotos_productos/".$item -> foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario; ?>">
                                             </a>
                                         </div>
+                                    </div>
                                     <?php } ?>
                                 <?php } ?>
                             <?php } ?>
-                        </div>
-
                          <!--RELATED POST WIDGET START-->
                         <div class="widget widget-related-post">
                         	<h2>Últimas Legislaciones</h2>
@@ -123,11 +136,25 @@
                             <?php } ?>
                             </ul>
                         </div>
+
+                            <?php foreach ($publicidad -> result() as $item) { ?>
+                                <?php if ($item -> tipo_publicitario == "Pauta Columna Derecha Talento Humano") { ?>
+                                    <?php if (($item -> orden_publicitario >= 4)) { ?>
+                                    <div class="widget widget-new-ad">
+                                        <div class="widget">
+                                            <a href="<?php echo $item-> enlace_publicitario ?>">
+                                                <img src="<?php echo base_url()."fotos_productos/".$item -> foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario; ?>">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <?php } ?>
+                                <?php } ?>
+                            <?php } ?>
                         <!--FACEBOOK FEEDS WIDGET START-->
-                        <div class="widget">
+<!--                         <div class="widget">
                             <div class="fb-page" data-href="https://www.facebook.com/RevistaSafetyWork/" data-tabs="timeline" data-height="650" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/RevistaSafetyWork/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/RevistaSafetyWork/">Revista Safety Work</a></blockquote>
                             </div>
-                        </div> 
+                        </div>  -->
                         <!--FACEBOOK FEEDS WIDGET END-->
                     </div>
                 </div>
@@ -137,3 +164,24 @@
     <section>
         <?php $this->load->view('includes/footer');  ?>
     </section>
+<script type="text/javascript">
+   $('#paginar').paginate({
+  // how many items per page
+  perPage:                5,      
+  // boolean: scroll to top of the container if a user clicks on a pagination link        
+  autoScroll:             true,           
+  // which elements to target
+  scope:                  '',         
+  // defines where the pagination will be displayed    
+  paginatePosition:       ['bottom'],     
+  // Pagination selectors
+ // containerTag:           'nav',
+  paginationTag:          'ul',
+  itemTag:                'li',
+  //linkTag:                'a',
+  // Determines whether or not the plugin makes use of hash locations
+  useHashLocation:        true,           
+  // Triggered when a pagination link is clicked
+  onPageClick:            function() {}   
+});
+</script>

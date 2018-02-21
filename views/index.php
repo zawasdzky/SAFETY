@@ -62,15 +62,16 @@
                 <div class="row">
                     <div class="span4">
                         <div class="tabs">
-                            <div class="tabs-widget">
+
                             <?php foreach ($publicidad -> result() as $item) { ?>  
                                 <?php if ($item -> tipo_publicitario == "Home Superior Izquierdo") { ?>   
+                                    <div class="tabs-widget">
                                     <a href="<?php echo $item->enlace_publicitario;?>" target="_blank">
                                         <img src="<?php echo base_url();?>fotos_productos/<?php echo $item->foto_publicitario;?>" class="img-responsive" alt="<?php echo $item->titulo_publicitario;?>">
                                     </a>  
+                                    </div>
                                 <?php } ?>
                             <?php } ?>
-                            </div>
                             <ul class="mycarousel jcarousel-skin-tango">
                                 <?php foreach ($infografias -> result() as $infografia) { ?>
                                     <li>
@@ -118,10 +119,12 @@
                                 </div>
                                 <div class="span2 visible-desktop">
                                     <?php foreach ($publicidad -> result() as $item) { ?>  
-                                        <?php if ($item -> tipo_publicitario == "Home Superior Derecho") { ?>   
+                                        <?php if ($item -> tipo_publicitario == "Home Superior Derecho") { ?>  
+                                        <div class="new-ad"> 
                                             <a href="<?php echo $item->enlace_publicitario;?>" target="_blank">
                                                 <img src="<?php echo base_url();?>fotos_productos/<?php echo $item->foto_publicitario;?>" class="img-responsive" alt="<?php echo $item->titulo_publicitario;?>">
                                             </a>  
+                                        </div>
                                         <?php } ?>
                                     <?php } ?>
                                 </div>
@@ -400,27 +403,27 @@
                     <div class="span4">
                         <div class="sidebar">
                             <!--SIDE BAR AD WIDGET START-->
-                            <div class="widget widget-new-ad">
                             <?php foreach ($publicidad -> result() as $item) { ?>  
                                 <?php if (($item -> tipo_publicitario == "Home Columna Derecha") && ($item -> orden_publicitario) == 1) { ?>   
+                                <div class="widget widget-new-ad">
                                     <a href="<?php echo $item->enlace_publicitario;?>" target="_blank">
                                         <img src="<?php echo base_url();?>fotos_productos/<?php echo $item->foto_publicitario;?>" class="img-responsive" alt="<?php echo $item->titulo_publicitario;?>">
                                     </a>  
+                                </div>
                                 <?php } ?>
                             <?php } ?>
-                            </div>
-                            <div class="widget widget-new-ad">
                             <?php foreach ($publicidad -> result() as $item) { ?>  
                                 <?php if (($item -> tipo_publicitario == "Home Columna Derecha") && ($item -> orden_publicitario) == 2) { ?>   
+                                <div class="widget widget-new-ad">
                                     <a href="<?php echo $item->enlace_publicitario;?>" target="_blank">
                                         <img src="<?php echo base_url();?>fotos_productos/<?php echo $item->foto_publicitario;?>" class="img-responsive" alt="<?php echo $item->titulo_publicitario;?>">
                                     </a>  
+                                </div>
                                 <?php } ?>
                             <?php } ?>
-                            </div>
                             <!--SIDE BAR AD WIDGET END-->
                             <!--HOT NEW WIDGET START-->
-                            <div class=" widget hot-news">
+<!--                             <div class=" widget hot-news">
                                 <h2>Artículo de opinión</h2>
                                 <figure>
                                     <a href="#"><img alt="" src="images/hot-news.png"></a>
@@ -429,7 +432,7 @@
                                     <p>Texto artículo de opinión..</p>
                                     <a href="#" class="color">Leer...</a>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="widget widget-new-ad">
                             <?php foreach ($publicidad -> result() as $item) { ?>  
                                 <?php if (($item -> tipo_publicitario == "Home Columna Derecha") && ($item -> orden_publicitario) == 3) { ?>   
@@ -473,8 +476,10 @@
                                 </figure>
                                 <div class="text">
                                     <h4>Email </h4>
-                                    <input type="text" class="input-block-level">
-                                    <button class="btn-style">Suscribirse</button>
+                                    <form action="<?php echo base_url();?>Newsletter/insert_newsletter" method="POST">
+                                        <input type="email" name="email" class="input-block-level" required="">
+                                        <button type="submit" class="btn-style" onclick="alert('Ha quedado insscrito en nuestra base de datos')">Suscribirse</button>
+                                    </form>
                                 </div>
                             </div>
                             <!-- END REVISTA EN LINEA  -->
@@ -528,7 +533,7 @@
                     </div>
                     <div class="span4">
                         <div class="widget widget-signin">
-                            <h2 class="h-style">Suscríbase</h2>
+                            <h2 class="h-style">Zona Admin</h2>
                             <ul>
                                 <li>
                                     <div class="input-icon user"></div>
@@ -538,7 +543,7 @@
                                     <div class="input-icon password"></div>
                                     <input type="password" class="input-block-level">
                                 </li>
-                                <li><button class="btn-style">Enviar</button></li>
+                                <li><button class="btn-style">Ingresar</button></li>
                             </ul>
                         </div>
                     </div>
