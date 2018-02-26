@@ -29,8 +29,16 @@ class Welcome extends CI_Controller {
 		$data['sociales'] = $this->Safety_work_model->get_sociales_home(); 
 		$data['seguros'] = $this->Safety_work_model->get_seguros_home(); 
 		$data['infografias'] = $this->Safety_work_model->get_infografias_home(); 
+		$data['infografias'] = $this->Safety_work_model->get_infografias_home(); 
+		$data['encuesta'] = $this->Safety_work_model->get_encuesta(); 		
 		$this->load->view('includes/header');
 		$this->load->view('index',$data);
+	}
+	public function respuesta_encuesta()
+	{
+		$id_respuesta = $this->input->post('id_respuesta');
+		$this->Safety_work_model->sumar_puntaje_pregunta($id_respuesta);
+		redirect($_SERVER['HTTP_REFERER']);
 	}
 
 }

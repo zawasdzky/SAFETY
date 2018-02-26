@@ -24,7 +24,7 @@
                 </div>
                 <div class="span3">
                     <?php foreach ($publicidad -> result() as $pauta) { ?>
-                        <?php if ( $pauta -> tipo_publicitario == "Pauta Superior Derecha Noticias") { ?>
+                        <?php if (( $pauta -> tipo_publicitario == "Pauta Superior Derecha Noticias") && ($pauta -> orden_publicitario <= 2)) { ?>
                         <div class="news-thumb">
                            <a href="<?php echo $pauta -> enlace_publicitario ?>"><img src="<?php echo base_url()."fotos_productos/".$pauta->foto_publicitario; ?>" alt="<?php echo $pauta -> nombre_publicitario ?>"></a>
                         </div>
@@ -60,7 +60,7 @@
                             <div class="span3 sidebar hidden-phone">
                                 <!-- PAUTA -->
                                 <?php foreach ($publicidad ->result() as $item) { ?>
-                                    <?php if (($item -> tipo_publicitario == "Pauta Columna Izquierda Noticias") && ($item -> sitio_publicitario == "Safetywork")){ ?>
+                                    <?php if ($item -> tipo_publicitario == "Pauta Columna Izquierda Noticias"){ ?>
                                         <div class="widget">
                                             <a href="<?php echo $item -> enlace_publicitario ?>" target="_blank">
                                                 <img src="<?php echo base_url()."fotos_productos/".$item->foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario ?>" class="img-responsive" >
@@ -121,12 +121,11 @@
                             <?php } ?>
                         <?php  } ?>
                     </div>
+                    <section>
                     <!--FACEBOOK FEEDS WIDGET START-->
-                    <div class="widget">
-                        <div class="fb-page" data-href="https://www.facebook.com/RevistaSafetyWork/" data-tabs="timeline" data-height="700" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/RevistaSafetyWork/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/RevistaSafetyWork/">Revista Safety Work</a></blockquote>
-                        </div>
-                    </div> 
-                    <!--FACEBOOK FEEDS WIDGET END-->
+                        <?php $this->load->view('includes/facebook_widget.php');  ?>
+                    <!--FACEBOOK FEEDS WIDGET END--> 
+                    </section>
                 </div>
             </div>
         </div>
@@ -135,11 +134,4 @@
     <section>
         <?php $this->load->view('includes/footer');  ?>
     </section>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.8&appId=1468516336501152";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+

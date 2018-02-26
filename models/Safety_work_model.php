@@ -143,6 +143,21 @@ class Safety_work_model extends CI_Model {
 		$this->db->insert('newsletter_safety', $data);
 	}
 
+	function get_encuesta(){
+		return $this->db->query("SELECT * 
+								FROM  `sw_encuestas_safety` 
+								LEFT JOIN  `sw_respuestas_encuesta` ON  `sw_encuestas_safety`.`id_encuesta` =  `sw_respuestas_encuesta`.`id_encuesta` 
+								WHERE  `sw_encuestas_safety`.`estado_encuesta` =  'Activa'
+								ORDER BY  `sw_respuestas_encuesta`.`orden_respuesta` ASC 
+								LIMIT 0 , 30
+								");
+	}
+
+	function sumar_puntaje_pregunta($id_respuesta){
+
+		$this->db->query("UPDATE `sw_respuestas_encuesta` SET `puntaje`= `puntaje`+1  WHERE `id_respuesta` = '$id_respuesta' "); 
+
+	}
 
 //BUSCADOR
 

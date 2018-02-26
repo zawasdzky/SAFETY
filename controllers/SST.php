@@ -24,6 +24,7 @@ class SST extends CI_Controller {
 		$data['legislaciones'] = $this->Safety_work_model->get_legislaciones_limit(); 
 		$data['eventos_solutions'] = $this->Safety_solutions_model->get_eventos_solutions(); 
 		$data['articulos_SST'] = $this->Safety_work_model->get_articulos_SST(); 
+		$data['encuesta'] = $this->Safety_work_model->get_encuesta(); 	
 		$this->load->view('articulos_SST',$data);
 	}
 

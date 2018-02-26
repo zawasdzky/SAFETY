@@ -11,7 +11,7 @@
                               <ul class="slides">
                                 <?php foreach ($sociales -> result() as $item) { ?>
                                     <li>
-                                        <img src="<?php echo base_url()."fotos_sociales/". $item-> foto1 ?>">
+                                        <img src="<?php echo base_url()."fotos_sociales/". $item-> foto1 ?>" width="770px" height="460px">
                                         <div class="caption">
                                             <h2><?php echo $item -> titulo_social ?></h2>
                                             <a href="<?php echo base_url()."Sociales/detalle_social/".$item-> url_amigable_social; ?>" class="anchor">Ver Más</a>
@@ -22,21 +22,28 @@
                         </div>
                     </div>
                     <div class="span3">
-                        <div class="project-detail">
-                            <?php foreach ($publicidad -> result() as $pauta) { ?>
-                                <?php if ( $pauta -> tipo_publicitario == "Pauta Superior Derecha Sociales") { ?>
-                                <div class="news-thumb">
-                                   <a href="<?php echo $pauta -> enlace_publicitario ?>">
-                                    <img src="<?php echo base_url()."fotos_productos/".$pauta->foto_publicitario; ?>" alt="<?php echo $pauta -> nombre_publicitario ?>" >
-                                </a>
+                        <?php foreach ($publicidad -> result() as $pauta) { ?>
+                            <?php if ( ($pauta -> tipo_publicitario == "Pauta Superior Derecha Sociales") && ($pauta -> orden_publicitario == 1) ) { ?>
+                                <div class="widget-new-ad">
+                                        <a href="<?php echo $pauta -> enlace_publicitario ?>" target="_blank">
+                                            <img src="<?php echo base_url()."fotos_productos/".$pauta->foto_publicitario; ?>" alt="<?php echo $pauta -> nombre_publicitario ?>">
+                                        </a>
                                 </div>
-                                <?php } ?>
-                            <?php  } ?>
-                        </div>
+                            <?php } ?>
+                        <?php  } ?>
+
+                        <?php foreach ($publicidad -> result() as $pauta) { ?>
+                            <?php if ( ($pauta -> tipo_publicitario == "Pauta Superior Derecha Sociales") && ($pauta -> orden_publicitario == 2) ) { ?>
+                                <div class="widget-new-ad">
+                                        <a href="<?php echo $pauta -> enlace_publicitario ?>" target="_blank">
+                                            <img src="<?php echo base_url()."fotos_productos/".$pauta->foto_publicitario; ?>" alt="<?php echo $pauta -> nombre_publicitario ?>" >
+                                        </a>
+                                </div>
+                            <?php } ?>
+                        <?php  } ?>
                     </div>
                 </div>
             </section>
-            <!--GALLERY DETAIL END-->
 
             <section>
                 <div class="image-gallery">
@@ -59,15 +66,6 @@
         <!--CONTAINER END-->
 
     </div>
-    <!--FOOTER START-->
-    <footer>
-
-        <div class="copy-rights">
-            <p>COPYRIGHT © 2013  By <a href="www.crunchpress.com" target="_blank">safetyworkla.com</a></p>
-        </div>
-    </footer>
-    <!--FOOTER END-->
-</div>
-<!--WRAPPER END-->
-</body>
-</html>
+    <section>
+        <?php $this->load->view('includes/footer');  ?>
+    </section>

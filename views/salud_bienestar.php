@@ -142,15 +142,11 @@
                             <?php } ?>
                         </div>
                     <!-- FIN PAUTAS PUBLICITARIAS -->
-                        <!--NEWLETTER WIDGET START-->
-                        <div class="widget widget-newsletter">
-                            <h2>SUSCRIBASE</h2>
-                            <div class="text">
-                                <input type="text" class="input-block-level" placeholder="Submit your Email-ID here">
-                                <button class="btn-style">Subscribe</button>
-                            </div>
-                        </div>
-                        <!--NEWLETTER WIDGET END-->
+                    <!-- REVISTA EN LINEA  -->
+                    <section>
+                        <?php $this->load->view('includes/inscripcion_revista');  ?>
+                    </section>
+                    <!-- END REVISTA EN LINEA  -->
                     <!-- PAUTAS PUBLICITARIAS -->
                         <div class="widget widget-new-ad">
                             <?php foreach ($publicidad -> result() as $item) { ?>
@@ -166,12 +162,11 @@
                             <?php } ?>
                         </div>
                     <!-- FIN PAUTAS PUBLICITARIAS -->
-                        <!--FACEBOOK FEEDS WIDGET START-->
-                        <div class="widget">
-                            <div class="fb-page" data-href="https://www.facebook.com/RevistaSafetyWork/" data-tabs="timeline" data-height="650" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/RevistaSafetyWork/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/RevistaSafetyWork/">Revista Safety Work</a></blockquote>
-                            </div>
-                        </div> 
-                        <!--FACEBOOK FEEDS WIDGET END-->
+                    <section>
+                    <!--FACEBOOK FEEDS WIDGET START-->
+                        <?php $this->load->view('includes/facebook_widget.php');  ?>
+                    <!--FACEBOOK FEEDS WIDGET END--> 
+                    </section>
                     </div>
                 </div>
             </div>
@@ -181,11 +176,3 @@
         <?php $this->load->view('includes/footer');  ?>
     </section>
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.8&appId=1468516336501152";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>

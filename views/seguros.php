@@ -1,8 +1,8 @@
     <div class="main-contant">
-    	<div class="container">
+        <div class="container">
             <div class="row">
                 <div class="span8">
-                	<section>
+                    <section>
                         <div class="news-slider">
                             <div class="flexslider">
                               <ul class="slides">
@@ -22,8 +22,8 @@
                             </div>
                         </div>
                     </section>
-                	<section>
-                    	<div class="health-news sports-news">
+                    <section>
+                        <div class="health-news sports-news">
                             <h2 class="h-style">Artículos Seguros</h2>
                             <ul>
                                 <!--LIST ITEM START-->
@@ -48,26 +48,40 @@
                     </section>
                     <!-- FIN WIDGET EVENTOS -->
                 </div>
-
                 <div class="span4">
                     <div class="sidebar">
                         <!-- PAUTAS -->
-                    	<div class="widget widget-new-ad">
                             <?php foreach ($publicidad -> result() as $item) { ?>
                                 <?php if ($item -> tipo_publicitario == "Pauta Columna Derecha Seguros") { ?>
-                                    <?php if (($item -> orden_publicitario <= 2)) { ?>
-                                            <div class="widget">
-                                                <a href="<?php echo $item-> enlace_publicitario ?>">
-                                                    <img src="<?php echo base_url()."fotos_productos/".$item -> foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario; ?>" target="_blank">
-                                                </a>
+                                    <?php if (($item -> orden_publicitario == 1)) { ?>
+                                            <div class="widget widget-new-ad">
+                                                <div class="widget">
+                                                    <a href="<?php echo $item-> enlace_publicitario ?>">
+                                                        <img src="<?php echo base_url()."fotos_productos/".$item -> foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario; ?>" target="_blank">
+                                                    </a>
+                                                </div>
                                             </div>
                                     <?php } ?>
                                 <?php } ?>
                             <?php } ?>
-                        </div>3
                         <!-- FIN PAUTAS -->
-                    	<!--LEGISLACION-->
-                    	<div class="widget widget-top3">
+                        <!-- PAUTAS -->
+                            <?php foreach ($publicidad -> result() as $item) { ?>
+                                <?php if ($item -> tipo_publicitario == "Pauta Columna Derecha Seguros") { ?>
+                                    <?php if (($item -> orden_publicitario == 2)) { ?>
+                                            <div class="widget widget-new-ad">
+                                                <div class="widget">
+                                                    <a href="<?php echo $item-> enlace_publicitario ?>">
+                                                        <img src="<?php echo base_url()."fotos_productos/".$item -> foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario; ?>" target="_blank">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                    <?php } ?>
+                                <?php } ?>
+                            <?php } ?>
+                        <!-- FIN PAUTAS -->                        
+                        <!--LEGISLACION-->
+                        <div class="widget widget-top3">
                             <h2>Últimos Productos </h2>
                             <ul>
                                 <?php foreach ($productos_solutions_limit -> result() as $producto) { ?>
@@ -86,41 +100,68 @@
                             </ul>
                         </div>
                         <!--LEGISLACION END-->
-
-                        <div class="widget widget-new-ad">
-                            <!-- PAUTAS -->
+                        <!-- PAUTAS -->
                             <?php foreach ($publicidad -> result() as $item) { ?>
                                 <?php if ($item -> tipo_publicitario == "Pauta Columna Derecha Seguros") { ?>
-                                    <?php if (($item -> orden_publicitario == 3) || ($item -> orden_publicitario == 4)) { ?>
-                                            <div class="widget">
-                                                <a href="<?php echo $item-> enlace_publicitario ?>">
-                                                    <img src="<?php echo base_url()."fotos_productos/".$item -> foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario; ?>" target="_blank">
-                                                </a>
+                                    <?php if (($item -> orden_publicitario == 3)) { ?>
+                                            <div class="widget widget-new-ad">
+                                                <div class="widget">
+                                                    <a href="<?php echo $item-> enlace_publicitario ?>">
+                                                        <img src="<?php echo base_url()."fotos_productos/".$item -> foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario; ?>" target="_blank">
+                                                    </a>
+                                                </div>
                                             </div>
                                     <?php } ?>
                                 <?php } ?>
                             <?php } ?>
-                            <!-- FIN PAUTAS -->
-                        </div>
-
+                        <!-- FIN PAUTAS -->
+                        <!-- PAUTAS -->
+                            <?php foreach ($publicidad -> result() as $item) { ?>
+                                <?php if ($item -> tipo_publicitario == "Pauta Columna Derecha Seguros") { ?>
+                                    <?php if (($item -> orden_publicitario == 4)) { ?>
+                                            <div class="widget widget-new-ad">
+                                                <div class="widget">
+                                                    <a href="<?php echo $item-> enlace_publicitario ?>">
+                                                        <img src="<?php echo base_url()."fotos_productos/".$item -> foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario; ?>" target="_blank">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                    <?php } ?>
+                                <?php } ?>
+                            <?php } ?>
+                        <!-- FIN PAUTAS -->
                          <!--RELATED POST WIDGET START-->
                         <div class="widget widget-related-post">
-                        	<h2>Últimas Legislaciones</h2>
+                            <h2>Últimas Legislaciones</h2>
                             <ul>
                              <?php foreach ($legislaciones -> result() as $legislacion) { ?>
-                            	<li>
+                                <li>
                                     <a href="<?php echo base_url();?>legislaciones/<?php echo $legislacion-> ficha_legislacion; ?>" class="color" ><?php echo $legislacion ->  titulo_legislacion; ?></a>
                                     <p> <?php echo $legislacion ->  categoria_legislacion; ?>: <small> <?php echo $legislacion ->  tipo_legislacion; ?></small></p>
                                 </li>
                             <?php } ?>
                             </ul>
                         </div>
+                        <!-- PAUTAS -->
+                            <?php foreach ($publicidad -> result() as $item) { ?>
+                                <?php if ($item -> tipo_publicitario == "Pauta Columna Derecha Seguros") { ?>
+                                    <?php if (($item -> orden_publicitario == 5)) { ?>
+                                            <div class="widget widget-new-ad">
+                                                <div class="widget">
+                                                    <a href="<?php echo $item-> enlace_publicitario ?>">
+                                                        <img src="<?php echo base_url()."fotos_productos/".$item -> foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario; ?>" target="_blank">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                    <?php } ?>
+                                <?php } ?>
+                            <?php } ?>
+                        <!-- FIN PAUTAS -->
+                        <section>
                         <!--FACEBOOK FEEDS WIDGET START-->
-                        <div class="widget">
-                            <div class="fb-page" data-href="https://www.facebook.com/RevistaSafetyWork/" data-tabs="timeline" data-height="650" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/RevistaSafetyWork/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/RevistaSafetyWork/">Revista Safety Work</a></blockquote>
-                            </div>
-                        </div> 
-                        <!--FACEBOOK FEEDS WIDGET END-->
+                            <?php $this->load->view('includes/facebook_widget.php');  ?>
+                        <!--FACEBOOK FEEDS WIDGET END--> 
+                        </section>
                     </div>
                 </div>
             </div>

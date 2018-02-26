@@ -9,9 +9,9 @@
           <li class="sidebar-label pt20">MENU WEB ADMIN</li>
 
               <li>
-                <a href="<?php echo base_url();?>admin/Varios">
-                  <span class="glyphicon glyphicon-th"></span>
-                  <span class="sidebar-title">Varios</span>
+                <a href="<?php echo base_url();?>admin">
+                  <span class="glyphicon glyphicon-home"></span>
+                  <span class="sidebar-title">Inicio</span>
                   <span class="caret"></span>
                 </a>
               </li>

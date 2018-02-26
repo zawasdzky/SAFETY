@@ -8,11 +8,18 @@
                 <a href="<?php echo base_url();?>"><img src="<?php echo base_url();?>images/logo.png" alt=""></a>
                 </div>
                 <div class="add">
+                    <?php $i=0; foreach ($publicidad -> result() as $item) {
+                        if ($item -> tipo_publicitario == "Header Superior Derecho") { $i++; }
+                     }
+                     ?>
+                    <?php $aleatorio = rand(1, $i);?>
                     <?php foreach ($publicidad -> result() as $item) { ?>  
-                        <?php if ($item -> tipo_publicitario == "Header Superior Derecho") { ?>   
-                            <a href="<?php echo $item->enlace_publicitario;?>" target="_blank">
-                                <img src="<?php echo base_url();?>fotos_productos/<?php echo $item->foto_publicitario;?>" class="img-responsive" alt="<?php echo $item->titulo_publicitario;?>">
-                            </a>  
+                        <?php if ($item -> tipo_publicitario == "Header Superior Derecho") { ?>
+                            <?php if ($item -> orden_publicitario == $aleatorio) { ?>   
+                                <a href="<?php echo $item->enlace_publicitario;?>" target="_blank">
+                                    <img src="<?php echo base_url();?>fotos_productos/<?php echo $item->foto_publicitario;?>" class="img-responsive" alt="<?php echo $item->titulo_publicitario;?>">
+                                </a>  
+                            <?php } ?>    
                         <?php } ?>
                     <?php } ?>
                 </div>

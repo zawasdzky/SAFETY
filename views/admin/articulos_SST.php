@@ -107,11 +107,25 @@
                                 <?php } ?>
                             <?php } ?>
                         <!-- FIN PAUTAS -->
-                            <!--ENCUESTAS-->
-                            <section>
-                                <?php $this->load->view('includes/encuesta');  ?>
-                            </section>
-                            <!--FIN ENCUESTAS-->
+                        <!--POLL WIDGET START-->
+                        <div class="widget poll-widget">
+                            <h2>Encuesta</h2>
+                            <div class="inner">
+                                <p>Pregunta de la encuesta</p>
+                                <input id="demo_box_1" class="css-checkbox" type="radio" checked="checked" name="poll" />
+                                <label for="demo_box_1" class="css-label">Si</label>
+                                
+                                <input id="demo_box_2" class="css-checkbox" type="radio" name="poll" />
+                                <label for="demo_box_2" class="css-label">No</label>
+                                
+                                
+                                <input id="demo_box_3" class="css-checkbox" type="radio" name="poll" />
+                                <label for="demo_box_3" class="css-label">No sé</label>
+                                <a href="#" class="pull-left">Ver resultado</a>
+                                <a href="#" class="pull-right">Votar</a>
+                            </div>
+                        </div>
+                        <!--POLL WIDGET END-->
                         <!--NEW CATEGORIES WIDGET START-->
                     </div>
                 </div>

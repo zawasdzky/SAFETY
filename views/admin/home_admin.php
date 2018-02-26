@@ -41,17 +41,15 @@
 
       <!-- Begin: Content -->
       <section id="content" class="animated fadeIn">
-
-
-        <!-- Demo Text Content -->
         <div class="pl15 pr50">
           <h4> Administración Safety  </h4>
           <hr class="alt short">
+
             <div class="col-sm-4 col-xl-3">
               <div class="panel panel-tile text-center br-a br-grey">
                 <div class="panel-body" style="background-color: #1fd376; ">
-                  <h1 class="fs30 mt5 mbn" style="color: white;">0</h1>
-                  <h6 class="text-success" style="color: white;">Newsletter</h6>
+                  <h1 class="fs30 mt5 mbn" style="color: white;"><i class="fa fa-envelope pr5"></i></h1>
+                  <h6 class="text-success" style="color: white;"></h6>
                 </div>
                 <div class="panel-footer br-t p12">
                   <span class="fs11">
@@ -60,9 +58,37 @@
                 </div>
               </div>
             </div>
+
+            <div class="col-sm-4 col-xl-3">
+              <div class="panel panel-tile text-center br-a br-grey">
+                <div class="panel-body" style="background-color: #f4ae1d; ">
+                  <h1 class="fs30 mt5 mbn" style="color: white;"><i class="fa fa-check-square-o pr5"></i></h1>
+                  <h6 class="text-success" style="color: white;"></h6>
+                </div>
+                <div class="panel-footer br-t p12">
+                  <span class="fs11">
+                    <a href="<?php echo base_url();?>admin/Encuestas"><i class="fa fa-arrow-up pr5"></i><b>Encuestas</b></a>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-4 col-xl-3">
+              <div class="panel panel-tile text-center br-a br-grey">
+                <div class="panel-body" style="background-color: #3BAFDA; ">
+                  <h1 class="fs30 mt5 mbn" style="color: white;"><i class="fa fa-text-height pr5"></i> - <i class="fa fa-video-camera pr5"></i></h1>
+                  <h6 class="text-success" style="color: white;"></h6>
+                </div>
+                <div class="panel-footer br-t p12">
+                  <span class="fs11">
+                    <a href="<?php echo base_url();?>admin/Varios"><i class="fa fa-arrow-up pr5"></i>  <b>Frases / Videos</b></a>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+
         </div>
-
-
       </section>
       <!-- End: Content -->
 

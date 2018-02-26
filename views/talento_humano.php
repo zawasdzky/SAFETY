@@ -150,12 +150,11 @@
                                     <?php } ?>
                                 <?php } ?>
                             <?php } ?>
-                        <!--FACEBOOK FEEDS WIDGET START-->
-<!--                         <div class="widget">
-                            <div class="fb-page" data-href="https://www.facebook.com/RevistaSafetyWork/" data-tabs="timeline" data-height="650" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/RevistaSafetyWork/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/RevistaSafetyWork/">Revista Safety Work</a></blockquote>
-                            </div>
-                        </div>  -->
-                        <!--FACEBOOK FEEDS WIDGET END-->
+                            <section>
+                            <!--FACEBOOK FEEDS WIDGET START-->
+                                <?php $this->load->view('includes/facebook_widget.php');  ?>
+                            <!--FACEBOOK FEEDS WIDGET END--> 
+                            </section>
                     </div>
                 </div>
             </div>
@@ -164,24 +163,3 @@
     <section>
         <?php $this->load->view('includes/footer');  ?>
     </section>
-<script type="text/javascript">
-   $('#paginar').paginate({
-  // how many items per page
-  perPage:                5,      
-  // boolean: scroll to top of the container if a user clicks on a pagination link        
-  autoScroll:             true,           
-  // which elements to target
-  scope:                  '',         
-  // defines where the pagination will be displayed    
-  paginatePosition:       ['bottom'],     
-  // Pagination selectors
- // containerTag:           'nav',
-  paginationTag:          'ul',
-  itemTag:                'li',
-  //linkTag:                'a',
-  // Determines whether or not the plugin makes use of hash locations
-  useHashLocation:        true,           
-  // Triggered when a pagination link is clicked
-  onPageClick:            function() {}   
-});
-</script>
