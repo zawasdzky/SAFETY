@@ -6,19 +6,29 @@ class Newsletter extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->helper('url');
-		$this->load->model('Newsletter_admin_model');
+		$this->load->model('Safety_work_model');
 	}
 
 	public function index()
 	{
-		$data['newsletters'] = $this->articulos_admin_model->get_newsletters();
-		$this->load->view('admin/newsletter', $data);
+		$data['hello'] ="hello_friend";
+	}
+
+	public function insert_newsletter()
+	{
+		$data = array(
+					'email' => $this->input->post('email')
+					 );
+		$this->Safety_work_model->insert_newsletter($data);
+		redirect(base_url());
 	}
 
 	public function borrar_newsletter($id_newsletter)
 	{
-		$this->Newsletter_admin_model->delete_newsletter($id_newsletter);
+		$this->Safety_work_model->delete_newsletter($id_newsletter);
 		redirect('/admin/newsletter');
 	}	
 
 }		
+
+

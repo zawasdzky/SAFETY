@@ -40,7 +40,12 @@ class Welcome extends CI_Controller {
 		$this->Safety_work_model->sumar_puntaje_pregunta($id_respuesta);
 		redirect($_SERVER['HTTP_REFERER']);
 	}
-
+	public function articulo_visitado()
+	{
+		$seccion = $this->input->post('seccion');
+		$articulo = $this->input->post('articulo');
+		$this->Safety_work_model->sumar_visita();
+	}
 }
 
 

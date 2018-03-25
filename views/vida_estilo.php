@@ -81,6 +81,17 @@
                                         <?php }?>
                                         <!--list item end-->
                                     </ul>
+                            <!-- PAUTA CENTRAL HORIZONTAL -->
+                            <div>
+                                <?php foreach ($publicidad -> result() as $item) { ?>  
+                                    <?php if ($item -> tipo_publicitario == "Pauta Central Horizontal Vida y Estilo") { ?>   
+                                        <a href="<?php echo $item->enlace_publicitario;?>" target="_blank">
+                                            <img src="<?php echo base_url();?>fotos_productos/<?php echo $item->foto_publicitario;?>" class="img-responsive" alt="<?php echo $item->titulo_publicitario;?>">
+                                        </a>  
+                                    <?php } ?>
+                                <?php } ?>
+                            </div>
+                            <!--FIN PAUTA CENTRAL HORIZONTAL -->                                    
                                 </div>
                                 <div class="top-five">
                                     <h2 class="h-style">Top 5 Artículos</h2>

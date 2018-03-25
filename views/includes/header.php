@@ -38,10 +38,17 @@
                   </button>
                   <div class="nav-collapse collapse">
                     <ul class="nav">
-                        <li style="width: 5%;" class="purple first"><a href="<?php echo base_url();?>">Inicio<br />&nbsp;&nbsp;</a></li>
-                        <li class="yellow"><a href="<?php echo base_url();?>Talento_humano">Talento<br />Humano</a></li>
-                        <li class="blue2"><a href="<?php echo base_url();?>Salud_bienestar">Salud y <br /> Bienestar</a></li>
-                        <li class="red"><a href="<?php echo base_url();?>Vida_estilo">Vida y estilo<br />&nbsp;&nbsp;</a>
+                        <li style="width: 5%; <?php if ($this->uri->segment(1)=='') { echo 'background-color:#4c30b8;';}?>" 
+                            class="purple first"><a href="<?php echo base_url();?>">Inicio<br />&nbsp;&nbsp;</a>
+                        </li>
+                        <li style="<?php if ($this->uri->segment(1)=='Talento_humano') { echo 'background-color:#edb000;';}?>" 
+                            class="yellow"><a href="<?php echo base_url();?>Talento_humano">Talento<br />Humano</a>
+                        </li>
+                        <li style="<?php if ($this->uri->segment(1)=='Salud_bienestar') { echo 'background-color:#5bd9ce;';}?>" class="blue2">
+                            <a href="<?php echo base_url();?>Salud_bienestar">Salud y <br /> Bienestar</a>
+                        </li>
+                        <li style="<?php if ($this->uri->segment(1)=='Vida_estilo') { echo 'background-color:#c40001;';}?>"  class="red">
+                            <a href="<?php echo base_url();?>Vida_estilo">Vida y estilo<br />&nbsp;&nbsp;</a>
                             <ul class="carrot">
                                     <li><a href="<?php echo base_url();?>Vida_estilo/articulos_vida_estilo/Kids">Safety Kids</a></li>
                                     <li><a href="<?php echo base_url();?>Vida_estilo/articulos_vida_estilo/Men">Safety Men</a></li>
@@ -49,9 +56,14 @@
                                     <li><a href="<?php echo base_url();?>Vida_estilo/articulos_vida_estilo/Reflexionemos">Reflexionemos</a></li>
                             </ul>
                         </li>
-                        <li class="yellow"><a href="<?php echo base_url();?>Seguros">Seguros<br />&nbsp;&nbsp;</a></li>
-                        <li style="width: 5%;" class="carrot"><a href="<?php echo base_url();?>SST">SST<br />&nbsp;&nbsp;</a></li>
-                        <li class="blue"><a href="<?php echo base_url();?>Legislacion">Legislación<br />&nbsp;&nbsp;</a>
+                        <li style="<?php if ($this->uri->segment(1)=='Seguros') { echo 'background-color:#edb000;';}?>" class="yellow">
+                            <a href="<?php echo base_url();?>Seguros">Seguros<br />&nbsp;&nbsp;</a>
+                        </li>
+                        <li style="width: 5%; <?php if ($this->uri->segment(1)=='SST') { echo 'background-color:#d92d47;';}?>" class="carrot">
+                            <a href="<?php echo base_url();?>SST">SST<br />&nbsp;&nbsp;</a>
+                        </li>
+                        <li class="blue" style="<?php if ($this->uri->segment(1)=='Legislacion') { echo 'background-color:#00ccf1;';}?>">
+                            <a href="<?php echo base_url();?>Legislacion">Legislación<br />&nbsp;&nbsp;</a>
                             <ul class="blue">
                                     <li><a href="<?php echo base_url();?>legislacion/legislaciones/Ambiental">Ambiental</a></li>
                                     <li><a href="<?php echo base_url();?>legislacion/legislaciones/Laboral">Laboral</a></li>
@@ -62,9 +74,15 @@
                                     <li><a href="<?php echo base_url();?>legislacion/legislaciones/Otros">Otros</a></li>
                             </ul>
                         </li>
-                        <li class="green"><a href="<?php echo base_url();?>Infografias">Infografías<br />&nbsp;&nbsp;</a></li>
-                        <li class="pink"><a href="<?php echo base_url();?>Noticias">Ultima Hora<br />&nbsp;&nbsp;</a></li>
-                        <li class="purple"><a href="<?php echo base_url();?>Sociales">Sociales<br />&nbsp;&nbsp;</a></li>
+                        <li style="<?php if ($this->uri->segment(1)=='Infografias') { echo 'background-color:#52c206;';}?>" class="green">
+                            <a href="<?php echo base_url();?>Infografias">Infografías<br />&nbsp;&nbsp;</a>
+                        </li>
+                        <li style="<?php if ($this->uri->segment(1)=='Noticias') { echo 'background-color:#c80059;';}?>" class="pink">
+                            <a href="<?php echo base_url();?>Noticias">Ultima Hora<br />&nbsp;&nbsp;</a>
+                        </li>
+                        <li style="<?php if ($this->uri->segment(1)=='Sociales') { echo 'background-color:#4c30b8;';}?>" class="purple">
+                            <a href="<?php echo base_url();?>Sociales">Sociales<br />&nbsp;&nbsp;</a>
+                        </li>
                         <li class="yellow last"><a href="<?php echo base_url();?>safety_solutions">Safety<br /> Solutions</a>
                             <ul class="yellow">
                                 <li><a href="<?php echo base_url();?>safety_solutions/productos">Productos</a></li>
@@ -80,8 +98,8 @@
         </div>
         <!--MAIN NAVIGATION END-->
     </header>
-    <!--HEADER END-->
-        <!--NEWS START-->
+<!-- BLQUE FRASES -->
+<!-- MOSTRAR FRASES DEPENDIENDO DE LA SECCION -->
     <?php 
         $seccion = $this->uri->segment(1); if ($seccion=="") {$seccion="Home";} // se determina si está en la seccion home
         $visible = "hidden";
@@ -91,7 +109,6 @@
                 } 
             } 
     ?>
-
     <div class="breaking-news">
         <div class="container">
             <div class="row">
@@ -110,7 +127,7 @@
                 <div class="span3">
                     <div class="search">
                         <form action="<?php echo base_url();?>Resultado_busqueda/" method="POST">
-                            <input type="text" class="input-block-level" name="keyword">
+                            <input type="text" class="input-block-level" name="keyword" required>
                             <button type="submit">Buscar</button>
                         </form>
                     </div>
@@ -118,4 +135,4 @@
             </div>
         </div>
     </div>
-    <!--NEWS END-->
+    <!--FIN BLOQUE FRASES-->

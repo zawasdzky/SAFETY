@@ -50,7 +50,8 @@ class Vida_estilo extends CI_Controller {
 		$data['color'] ="blue2"; 		
 		$this->load->view('includes/scripts');		
 		$data['publicidad'] = $this->Safety_work_model->get_publicidad(); 		
-		$data['frases'] = $this->Safety_work_model->get_frases_widget(); 
+		$data['frases'] = $this->Safety_work_model->get_frases_widget();
+		$this->Safety_work_model->sumar_visita_vida($url_amigable_vida_estilo);
 		$data['detalle_articulo_vida_estilo'] = $this->Safety_work_model->get_detalle_articulo_vida_estilo($url_amigable_vida_estilo); 
 		$this->load->view('includes/head',$data);
 		$this->load->view('includes/header');

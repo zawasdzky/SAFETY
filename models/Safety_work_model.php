@@ -152,13 +152,42 @@ class Safety_work_model extends CI_Model {
 								LIMIT 0 , 30
 								");
 	}
-
 	function sumar_puntaje_pregunta($id_respuesta){
 
 		$this->db->query("UPDATE `sw_respuestas_encuesta` SET `puntaje`= `puntaje`+1  WHERE `id_respuesta` = '$id_respuesta' "); 
-
 	}
+	function sumar_visita_talento($url_amigable_talento){
 
+		$this->db->query("UPDATE `sw_talento_humano_safety` SET `visitas`=`visitas`+1  WHERE `url_amigable_talento` = '$url_amigable_talento'"); 
+	}
+	function sumar_visita_salud($url_amigable_salud){
+
+		$this->db->query("UPDATE `sw_salud_bienestar_safety` SET `visitas`=`visitas`+1  WHERE `url_amigable_salud` = '$url_amigable_salud'"); 
+	}
+	function sumar_visita_vida($url_amigable_vida_estilo){
+
+		$this->db->query("UPDATE `sw_vida_estilo_safety` SET `visitas`=`visitas`+1  WHERE `url_amigable_vida_estilo` = '$url_amigable_vida_estilo'"); 
+	}
+	function sumar_visita_seguros($url_amigable_seguro){
+
+		$this->db->query("UPDATE `sw_seguros_safety` SET `visitas`=`visitas`+1  WHERE `url_amigable_seguro` = '$url_amigable_seguro'"); 
+	}
+	function sumar_visita_SST($url_amigable_SST){
+
+		$this->db->query("UPDATE `sw_SST_safety` SET `visitas`=`visitas`+1  WHERE `url_amigable_SST` = '$url_amigable_SST'"); 
+	}
+	function sumar_visita_legislaciones($url_amigable_legislacion){
+
+		$this->db->query("UPDATE `sw_legislaciones_safety` SET `visitas`=`visitas`+1  WHERE `url_amigable_legislacion` = '$url_amigable_legislacion'"); 
+	}
+	function sumar_visita_infografias($url_amigable_infografia){
+
+		$this->db->query("UPDATE `sw_infografias_safety` SET `visitas`=`visitas`+1  WHERE `url_amigable_infografia` = '$url_amigable_infografia'"); 
+	}
+	function sumar_visita_noticias($url_amigable_noticia){
+
+		$this->db->query("UPDATE `sw_noticias_safety` SET `visitas`=`visitas`+1  WHERE `url_amigable_noticia` = '$url_amigable_noticia'"); 
+	}
 //BUSCADOR
 
 	function get_resultados_talento($keyword){

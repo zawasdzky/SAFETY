@@ -26,7 +26,8 @@ class Infografias extends CI_Controller {
 	public function infografia($url_amigable_infografia)
 	{
 		$data['color'] ="green";
-		$data['publicidad'] = $this->Safety_work_model->get_publicidad(); 
+		$data['publicidad'] = $this->Safety_work_model->get_publicidad();
+		$this->Safety_work_model->sumar_visita_infografias($url_amigable_infografia);
 		$this->load->view('includes/head',$data);
 		$this->load->view('includes/header');
 		$data['detalle_infografia'] = $this->Safety_work_model->get_detalle_infografia($url_amigable_infografia); 

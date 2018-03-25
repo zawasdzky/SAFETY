@@ -44,7 +44,19 @@
                     </div>
                 </div>
             </section>
-
+            <!-- PAUTA CENTRAL HORIZONTAL -->
+            <section>
+                <div>
+                    <?php foreach ($publicidad -> result() as $item) { ?>  
+                        <?php if ($item -> tipo_publicitario == "Pauta Central Horizontal Sociales") { ?>   
+                            <a href="<?php echo $item->enlace_publicitario;?>" target="_blank">
+                                <img src="<?php echo base_url();?>fotos_productos/<?php echo $item->foto_publicitario;?>" class="img-responsive" alt="<?php echo $item->titulo_publicitario;?>">
+                            </a>  
+                        <?php } ?>
+                    <?php } ?>
+                </div>
+            </section>
+            <!--FIN PAUTA CENTRAL HORIZONTAL -->        
             <section>
                 <div class="image-gallery">
                     <h2 class="h-style">Otros Articulos</h2>

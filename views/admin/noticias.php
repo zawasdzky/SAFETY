@@ -313,18 +313,20 @@
                         <th>Autor</th>
                         <th>Estado</th>
                         <th>Destacado</th>
+                        <th>Visitas</th>
                         <th>Editar</th>
                       </tr>
                     </thead>
                     <tbody>
                         <?php foreach ($noticias ->result() as $noticia) { ?>
                         <tr>
-                          <td align="center"><?php echo $noticia -> orden_noticia ?></td>
-                          <td><img src="<?php echo base_url()."fotos_noticias/".$noticia -> foto0 ?>" width=50 ></td>
-                          <td><?php echo $noticia -> titulo_noticia ?></td>
-                          <td><?php echo $noticia -> nombre_noticia?></td>
-                          <td><?php echo $noticia -> estado_noticia ?></td>
-                          <td><?php echo $noticia -> destacado_noticia ?></td>
+                          <td align="center"><?php echo $noticia -> orden_noticia; ?></td>
+                          <td><img src="<?php echo base_url()."fotos_noticias/".$noticia -> foto0; ?>" width=50 ></td>
+                          <td><?php echo $noticia -> titulo_noticia; ?></td>
+                          <td><?php echo $noticia -> nombre_noticia; ?></td>
+                          <td><?php echo $noticia -> estado_noticia; ?></td>
+                          <td><?php echo $noticia -> destacado_noticia; ?></td>
+                          <td><?php echo $noticia -> visitas; ?></td>
                           <td>  
                             <a href="<?php echo base_url();?>admin/noticias/noticia_edit/<?php echo $noticia -> id_noticia ?>" type="button" class="btn btn-warning" > 
                             <span class="fa fa-pencil"></span> </a>

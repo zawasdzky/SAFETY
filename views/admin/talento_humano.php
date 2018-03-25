@@ -295,6 +295,7 @@
                         <th>Titulo</th>
                         <th>Estado</th>
                         <th>Destacado</th>
+                        <th>Visitas</th>
                         <th>Editar</th>
                       </tr>
                     </thead>
@@ -302,10 +303,11 @@
                         <?php foreach ($talento_humano ->result() as $talento) { ?>
                         <tr>
                           <td align="center"><?php echo $talento -> orden_talento ?></td>
-                          <td><img src="<?php echo base_url()."fotos_talento_humano/".$talento -> foto0 ?>" width=50 ></td>
-                          <td><?php echo $talento -> titulo_talento ?></td>
-                          <td><?php echo $talento -> estado_talento ?></td>
-                          <td><?php echo $talento -> destacado_talento ?></td>
+                          <td><img src="<?php echo base_url()."fotos_talento_humano/".$talento -> foto0; ?>" width=50 ></td>
+                          <td><?php echo $talento -> titulo_talento; ?></td>
+                          <td><?php echo $talento -> estado_talento; ?></td>
+                          <td><?php echo $talento -> destacado_talento; ?></td>
+                          <td><?php echo $talento -> visitas; ?></td>
                           <td>  
                             <a href="<?php echo base_url();?>admin/talento_humano/talento_edit/<?php echo $talento -> id_talento ?>" type="button" class="btn btn-warning" > 
                             <span class="fa fa-pencil"></span> </a>

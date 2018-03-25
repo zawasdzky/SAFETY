@@ -166,22 +166,24 @@
                         <th>Autor</th>
                         <th>Estado</th>
                         <th>Destacado</th>
+                        <th>Visitas</th>
                         <th>Editar</th>
                       </tr>
                     </thead>
                     <tbody>
                         <?php foreach ($infografias ->result() as $infografia) { ?>
                         <tr>
-                          <td align="center"><?php echo $infografia -> orden_infografia ?></td>
-                          <td><img src="<?php echo base_url()."fotos_infografias/".$infografia -> foto0 ?>" width=50 ></td>
-                          <td><?php echo $infografia -> titulo_infografia ?></td>
-                          <td><?php echo $infografia -> nombre_infografia?></td>
-                          <td><?php echo $infografia -> estado_infografia ?></td>
-                          <td><?php echo $infografia -> destacado_infografia ?></td>
+                          <td align="center"><?php echo $infografia -> orden_infografia; ?></td>
+                          <td><img src="<?php echo base_url()."fotos_infografias/".$infografia -> foto0; ?>" width=50 ></td>
+                          <td><?php echo $infografia -> titulo_infografia; ?></td>
+                          <td><?php echo $infografia -> nombre_infografia; ?></td>
+                          <td><?php echo $infografia -> estado_infografia; ?></td>
+                          <td><?php echo $infografia -> destacado_infografia; ?></td>
+                          <td><?php echo $infografia -> visitas; ?></td>
                           <td>  
-                            <a href="<?php echo base_url();?>admin/infografias/infografia_edit/<?php echo $infografia -> id_infografia ?>" type="button" class="btn btn-warning" > 
+                            <a href="<?php echo base_url();?>admin/infografias/infografia_edit/<?php echo $infografia -> id_infografia; ?>" type="button" class="btn btn-warning" > 
                             <span class="fa fa-pencil"></span> </a>
-                            <a href="<?php echo base_url();?>admin/infografias/borrar_infografia/<?php echo $infografia -> id_infografia ?>" type="button" class="btn btn-danger confirmation" > 
+                            <a href="<?php echo base_url();?>admin/infografias/borrar_infografia/<?php echo $infografia -> id_infografia; ?>" type="button" class="btn btn-danger confirmation" > 
                             <span class="fa fa-trash-o"></span> </a>
                           </td>
                         </tr>

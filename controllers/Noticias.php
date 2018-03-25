@@ -36,6 +36,7 @@ class Noticias extends CI_Controller {
 		$data['publicidad'] = $this->Safety_work_model->get_publicidad();	
 		$data['frases'] = $this->Safety_work_model->get_frases_widget(); 
 		$data['videos'] = $this->Safety_work_model->get_videos_widget();
+		$this->Safety_work_model->sumar_visita_noticias($url_amigable_noticia);
 		$this->load->view('includes/head',$data);
 		$this->load->view('includes/header');
 		$data['detalle_noticia'] = $this->Safety_work_model->get_detalle_noticia($url_amigable_noticia); 

@@ -96,6 +96,17 @@
                                         </li> 
                                         <?php  } ?>
                                     </ul>
+                                  <!-- PAUTA CENTRAL HORIZONTAL -->
+                                  <div>
+                                      <?php foreach ($publicidad -> result() as $item) { ?>  
+                                          <?php if ($item -> tipo_publicitario == "Pauta Central Horizontal Noticias") { ?>   
+                                              <a href="<?php echo $item->enlace_publicitario;?>" target="_blank">
+                                                  <img src="<?php echo base_url();?>fotos_productos/<?php echo $item->foto_publicitario;?>" class="img-responsive" alt="<?php echo $item->titulo_publicitario;?>">
+                                              </a>  
+                                          <?php } ?>
+                                      <?php } ?>
+                                  </div>
+                                  <!--FIN PAUTA CENTRAL HORIZONTAL -->                                            
                                 </div>
                             </div>
                         </div>
@@ -134,4 +145,24 @@
     <section>
         <?php $this->load->view('includes/footer');  ?>
     </section>
-
+<script type="text/javascript">
+   $('#paginar').paginate({
+  // how many items per page
+  perPage:                5,      
+  // boolean: scroll to top of the container if a user clicks on a pagination link        
+  autoScroll:             true,           
+  // which elements to target
+  scope:                  '',         
+  // defines where the pagination will be displayed    
+  paginatePosition:       ['bottom'],     
+  // Pagination selectors
+ // containerTag:           'nav',
+  paginationTag:          'ul',
+  itemTag:                'li',
+  //linkTag:                'a',
+  // Determines whether or not the plugin makes use of hash locations
+  useHashLocation:        true,           
+  // Triggered when a pagination link is clicked
+  onPageClick:            function() {}   
+});
+</script>   

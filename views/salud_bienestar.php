@@ -4,38 +4,38 @@
             <div class="row">
                 <div class="span8">
                     <section>
-                        <article class="page-slider">
-                        <div class=" slider flexslider">
-                          <ul class="slides">
-                        <?php foreach ($salud_bienestar -> result() as $item) { ?>
-                            <li>
-                                <figure>
-                                    <a href="<?php echo base_url()."Salud_bienestar/detalle_salud_bienestar/".$item-> url_amigable_salud; ?>">
-                                        <img src="<?php echo base_url()."fotos_salud_bienestar/".$item-> foto1; ?>" alt="<?php echo $item-> titulo_salud;  ?>">
-                                    </a>
-                                    <div class="caption">
-                                        <h2><?php echo $item -> titulo_salud ?></h2>
-                                    </div>
-                                </figure>
-                            </li>
+                        <!--
+                            <article class="page-slider">
+                            <div class=" slider flexslider">
+                              <ul class="slides">
+                            <?php foreach ($salud_bienestar -> result() as $item) { ?>
+                                <li>
+                                    <figure>
+                                        <a href="<?php echo base_url()."Salud_bienestar/detalle_salud_bienestar/".$item-> url_amigable_salud; ?>">
+                                            <img src="<?php echo base_url()."fotos_salud_bienestar/".$item-> foto1; ?>" alt="<?php echo $item-> titulo_salud;  ?>">
+                                        </a>
+                                        <div class="caption">
+                                            <h2><?php echo $item -> titulo_salud ?></h2>
+                                        </div>
+                                    </figure>
+                                </li>
+                                <?php } ?>
+                              </ul>
+                            </div>
+                            <div id="carousel" class="flexslider">
+                              <ul class="slides">
+                            <?php foreach ($salud_bienestar -> result() as $item) { ?>
+                                <li><img src="<?php echo base_url()."fotos_salud_bienestar/".$item-> foto1; ?>" alt="<?php echo $item-> titulo_salud;  ?>"></li>
                             <?php } ?>
-                            <!-- items mirrored twice, total of 12 -->
-                          </ul>
-                        </div>
-                        <div id="carousel" class="flexslider">
-                          <ul class="slides">
-                        <?php foreach ($salud_bienestar -> result() as $item) { ?>
-                            <li><img src="<?php echo base_url()."fotos_salud_bienestar/".$item-> foto1; ?>" alt="<?php echo $item-> titulo_salud;  ?>"></li>
-                        <?php } ?>
-                            <!-- items mirrored twice, total of 12 -->
-                          </ul>
-                        </div>
-                        </article>
+                              </ul>
+                            </div>
+                            </article>
+                        -->
                     </section>
-                    <!-- FOTOS  -->
+
                     <section>
                         <div class="featured-post">
-                            <ul>
+                            <ul id="paginar">
                                 <?php foreach ($salud_bienestar -> result() as $item) { ?>
                                     <li>
                                         <div class="thumb">
@@ -48,21 +48,30 @@
                                         </div>
                                     </li>
                                 <?php } ?>
-                                <!--LIST ITEM END-->
                             </ul>
+                            <!-- PAUTA CENTRAL HORIZONTAL -->
+                            <div>
+                                <?php foreach ($publicidad -> result() as $item) { ?>  
+                                    <?php if ($item -> tipo_publicitario == "Pauta Central Horizontal Salud y Bienestar") { ?>   
+                                        <a href="<?php echo $item->enlace_publicitario;?>" target="_blank">
+                                            <img src="<?php echo base_url();?>fotos_productos/<?php echo $item->foto_publicitario;?>" class="img-responsive" alt="<?php echo $item->titulo_publicitario;?>">
+                                        </a>  
+                                    <?php } ?>
+                                <?php } ?>
+                            </div>
+                            <!--FIN PAUTA CENTRAL HORIZONTAL  -->                            
                         </div>
                     </section>
+                    
                     <section>
                         <?php $this->load->view('includes/eventos');  ?>
                     </section>
-
-                    <!--GALLERY SECTION START-->
-                    <section>
+                    <section style="margin-top: 50px;">
                         <div class="row">
                             <div class="span6 span-8">
                                 <div class="health-recent-posts">
-                                    <h2 class="h-style">Artículos Aleatorios</h2>
-                                    <ul class="row">
+                                    <h2 class="h-style">Mas Leídos</h2>
+                                    <ul class="row" id="paginar2">
                                     <?php foreach ($salud_bienestar -> result() as $item) { ?>
                                         <li class="span3">
                                             <div class="thumb hover-style">
@@ -72,7 +81,6 @@
                                             </div>
                                             <div class="text">
                                                 <p><?php echo $item ->  titulo_salud; ?></p>
-                                                <p class="color"><?php echo $item ->  fecha_publicacion_salud; ?></p>
                                             </div>
                                         </li>
                                     <?php } ?>
@@ -175,4 +183,43 @@
     <section>
         <?php $this->load->view('includes/footer');  ?>
     </section>
-
+<script type="text/javascript">
+   $('#paginar').paginate({
+  // how many items per page
+  perPage:                9,      
+  // boolean: scroll to top of the container if a user clicks on a pagination link        
+  autoScroll:             true,           
+  // which elements to target
+  scope:                  '',         
+  // defines where the pagination will be displayed    
+  paginatePosition:       ['bottom'],     
+  // Pagination selectors
+ // containerTag:           'nav',
+  paginationTag:          'ul',
+  itemTag:                'li',
+  //linkTag:                'a',
+  // Determines whether or not the plugin makes use of hash locations
+  useHashLocation:        true,           
+  // Triggered when a pagination link is clicked
+  onPageClick:            function() {}   
+});
+   $('#paginar2').paginate({
+  // how many items per page
+  perPage:                4,      
+  // boolean: scroll to top of the container if a user clicks on a pagination link        
+  autoScroll:             true,           
+  // which elements to target
+  scope:                  '',         
+  // defines where the pagination will be displayed    
+  paginatePosition:       ['bottom'],     
+  // Pagination selectors
+ // containerTag:           'nav',
+  paginationTag:          'ul',
+  itemTag:                'li',
+  //linkTag:                'a',
+  // Determines whether or not the plugin makes use of hash locations
+  useHashLocation:        true,           
+  // Triggered when a pagination link is clicked
+  onPageClick:            function() {}   
+});   
+</script>    

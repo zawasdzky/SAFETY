@@ -34,6 +34,7 @@ class Salud_bienestar extends CI_Controller {
 		$this->load->view('includes/scripts');
 		$data['publicidad'] = $this->Safety_work_model->get_publicidad(); 
 		$data['frases'] = $this->Safety_work_model->get_frases_widget(); 
+		$this->Safety_work_model->sumar_visita_salud($url_amigable_salud);		
 		$this->load->view('includes/head',$data);
 		$this->load->view('includes/header');
 		$data['detalle_articulo_salud_bienestar'] = $this->Safety_work_model->get_detalle_salud_bienestar($url_amigable_salud); 

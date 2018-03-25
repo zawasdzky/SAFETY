@@ -1,3 +1,4 @@
+<br />
 <div class="widget poll-widget">
     <h2>Encuesta</h2>
     <div class="inner">

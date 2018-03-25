@@ -309,18 +309,20 @@
                         <th>Autor</th>
                         <th>Estado</th>
                         <th>Destacado</th>
+                        <th>Visitas</th>
                         <th>Editar</th>
                       </tr>
                     </thead>
                     <tbody>
                         <?php foreach ($SST ->result() as $SST) { ?>
                         <tr>
-                          <td align="center"><?php echo $SST -> orden_SST ?></td>
-                          <td><img src="<?php echo base_url()."fotos_SST/".$SST -> foto0 ?>" width=50 ></td>
-                          <td><?php echo $SST -> titulo_SST ?></td>
-                          <td><?php echo $SST -> subtitulo_SST?></td>
-                          <td><?php echo $SST -> estado_SST ?></td>
-                          <td><?php echo $SST -> destacado_SST ?></td>
+                          <td align="center"><?php echo $SST -> orden_SST; ?></td>
+                          <td><img src="<?php echo base_url()."fotos_SST/".$SST -> foto0; ?>" width=50 ></td>
+                          <td><?php echo $SST -> titulo_SST; ?></td>
+                          <td><?php echo $SST -> subtitulo_SST; ?></td>
+                          <td><?php echo $SST -> estado_SST; ?></td>
+                          <td><?php echo $SST -> destacado_SST; ?></td>
+                          <td><?php echo $SST -> visitas; ?></td>
                           <td>  
                             <a href="<?php echo base_url();?>admin/SST/SST_edit/<?php echo $SST -> id_SST ?>" type="button" class="btn btn-warning" > 
                             <span class="fa fa-pencil"></span> </a>

@@ -33,6 +33,7 @@ class Seguros extends CI_Controller {
 		$this->load->view('includes/scripts');
 		$data['frases'] = $this->Safety_work_model->get_frases_widget(); 
 		$data['publicidad'] = $this->Safety_work_model->get_publicidad(); 
+		$this->Safety_work_model->sumar_visita_seguros($url_amigable_seguro);		
 		$this->load->view('includes/head',$data);
 		$this->load->view('includes/header');
 		$data['productos_solutions_limit'] = $this->Safety_solutions_model->get_productos_limit(); 

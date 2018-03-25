@@ -295,21 +295,23 @@
                         <th>Titulo</th>
                         <th>Estado</th>
                         <th>Destacado</th>
+                        <th>Visitas</th>
                         <th>Editar</th>
                       </tr>
                     </thead>
                     <tbody>
                         <?php foreach ($salud_bienestar ->result() as $salud) { ?>
                         <tr>
-                          <td align="center"><?php echo $salud -> orden_salud ?></td>
-                          <td><img src="<?php echo base_url()."fotos_salud_bienestar/".$salud -> foto0 ?>" width=50 ></td>
-                          <td><?php echo $salud -> titulo_salud ?></td>
-                          <td><?php echo $salud -> estado_salud ?></td>
-                          <td><?php echo $salud -> destacado_salud ?></td>
+                          <td align="center"><?php echo $salud -> orden_salud; ?></td>
+                          <td><img src="<?php echo base_url()."fotos_salud_bienestar/".$salud -> foto0; ?>" width=50 ></td>
+                          <td><?php echo $salud -> titulo_salud; ?></td>
+                          <td><?php echo $salud -> estado_salud; ?></td>
+                          <td><?php echo $salud -> destacado_salud; ?></td>
+                          <td><?php echo $salud -> visitas; ?></td>
                           <td>  
-                            <a href="<?php echo base_url();?>admin/salud_bienestar/salud_edit/<?php echo $salud -> id_salud ?>" type="button" class="btn btn-warning" > 
+                            <a href="<?php echo base_url();?>admin/salud_bienestar/salud_edit/<?php echo $salud -> id_salud; ?>" type="button" class="btn btn-warning" > 
                             <span class="fa fa-pencil"></span> </a>
-                            <a href="<?php echo base_url();?>admin/salud_bienestar/borrar_salud/<?php echo $salud -> id_salud ?>" type="button" class="btn btn-danger confirmation" > 
+                            <a href="<?php echo base_url();?>admin/salud_bienestar/borrar_salud/<?php echo $salud -> id_salud; ?>" type="button" class="btn btn-danger confirmation" > 
                             <span class="fa fa-trash-o"></span> </a>
                           </td>
                         </tr>

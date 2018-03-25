@@ -296,6 +296,7 @@
                         <th>Autor</th>
                         <th>Estado</th>
                         <th>Destacado</th>
+                        <th>Visitas</th>
                         <th>Editar</th>
                       </tr>
                     </thead>
@@ -303,15 +304,16 @@
                         <?php foreach ($seguros ->result() as $seguro) { ?>
                         <tr>
                           <td align="center"><?php echo $seguro -> orden_seguro ?></td>
-                          <td><img src="<?php echo base_url()."fotos_seguros/".$seguro -> foto0 ?>" width=50 ></td>
-                          <td><?php echo $seguro -> titulo_seguro ?></td>
-                          <td><?php echo $seguro -> subtitulo_seguro?></td>
-                          <td><?php echo $seguro -> estado_seguro ?></td>
-                          <td><?php echo $seguro -> destacado_seguro ?></td>
+                          <td><img src="<?php echo base_url()."fotos_seguros/".$seguro -> foto0; ?>" width=50 ></td>
+                          <td><?php echo $seguro -> titulo_seguro; ?></td>
+                          <td><?php echo $seguro -> subtitulo_seguro; ?></td>
+                          <td><?php echo $seguro -> estado_seguro; ?></td>
+                          <td><?php echo $seguro -> destacado_seguro; ?></td>
+                          <td><?php echo $seguro -> visitas; ?></td>
                           <td>  
-                            <a href="<?php echo base_url();?>admin/seguros/seguro_edit/<?php echo $seguro -> id_seguro ?>" type="button" class="btn btn-warning" > 
+                            <a href="<?php echo base_url();?>admin/seguros/seguro_edit/<?php echo $seguro -> id_seguro; ?>" type="button" class="btn btn-warning" > 
                             <span class="fa fa-pencil"></span> </a>
-                            <a href="<?php echo base_url();?>admin/seguros/borrar_seguro/<?php echo $seguro -> id_seguro ?>" type="button" class="btn btn-danger confirmation" > 
+                            <a href="<?php echo base_url();?>admin/seguros/borrar_seguro/<?php echo $seguro -> id_seguro; ?>" type="button" class="btn btn-danger confirmation" > 
                             <span class="fa fa-trash-o"></span> </a>
                           </td>
                         </tr>

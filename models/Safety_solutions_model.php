@@ -43,7 +43,7 @@ class Safety_solutions_model extends CI_Model {
 	}
 	function get_productos_limit()
 	{
-		return  $this->db->query("SELECT * FROM `sw_productos_solutions`  ORDER BY  `sw_productos_solutions`.`id_producto` DESC  LIMIT 0 , 5"); 
+		return  $this->db->query("SELECT * FROM `sw_productos_solutions`  ORDER BY  `sw_productos_solutions`.`id_producto` DESC  LIMIT 0 , 8"); 
 	}
 	function get_eventos_solutions()
 	{

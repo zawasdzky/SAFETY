@@ -228,6 +228,9 @@
             </div>
         </div>
     </div>
+    <section>
+        <?php $this->load->view('includes/footer');  ?>
+    </section>
 <script async src="https://static.addtoany.com/menu/page.js"></script>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
