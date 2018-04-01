@@ -27,8 +27,8 @@
         </div>
         <!--LOGO END-->
         <!--MAIN NAVIGATION START-->
-        <div class="navigation">
-            <div class="navbar navbar-inverse">
+        <div class="navigation" id="menu_header">
+            <div class="navbar navbar-inverse hidden-phone hidden-tablet">
               <div class="navbar-inner" >
                 <div class="container">
                   <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button">
@@ -38,7 +38,7 @@
                   </button>
                   <div class="nav-collapse collapse">
                     <ul class="nav">
-                        <li style="width: 5%; <?php if ($this->uri->segment(1)=='') { echo 'background-color:#4c30b8;';}?>" 
+                        <li style="width: 5%; text-align: center; <?php if ($this->uri->segment(1)=='') { echo 'background-color:#4c30b8;';}?>" 
                             class="purple first"><a href="<?php echo base_url();?>">Inicio<br />&nbsp;&nbsp;</a>
                         </li>
                         <li style="<?php if ($this->uri->segment(1)=='Talento_humano') { echo 'background-color:#edb000;';}?>" 
@@ -49,7 +49,7 @@
                         </li>
                         <li style="<?php if ($this->uri->segment(1)=='Vida_estilo') { echo 'background-color:#c40001;';}?>"  class="red">
                             <a href="<?php echo base_url();?>Vida_estilo">Vida y estilo<br />&nbsp;&nbsp;</a>
-                            <ul class="carrot">
+                            <ul class="carrot dropdown">
                                     <li><a href="<?php echo base_url();?>Vida_estilo/articulos_vida_estilo/Kids">Safety Kids</a></li>
                                     <li><a href="<?php echo base_url();?>Vida_estilo/articulos_vida_estilo/Men">Safety Men</a></li>
                                     <li><a href="<?php echo base_url();?>Vida_estilo/articulos_vida_estilo/Women">Safety Women</a></li>
@@ -59,12 +59,12 @@
                         <li style="<?php if ($this->uri->segment(1)=='Seguros') { echo 'background-color:#edb000;';}?>" class="yellow">
                             <a href="<?php echo base_url();?>Seguros">Seguros<br />&nbsp;&nbsp;</a>
                         </li>
-                        <li style="width: 5%; <?php if ($this->uri->segment(1)=='SST') { echo 'background-color:#d92d47;';}?>" class="carrot">
+                        <li style="width: 5%;  text-align: center; <?php if ($this->uri->segment(1)=='SST') { echo 'background-color:#d92d47;';}?>" class="carrot">
                             <a href="<?php echo base_url();?>SST">SST<br />&nbsp;&nbsp;</a>
                         </li>
                         <li class="blue" style="<?php if ($this->uri->segment(1)=='Legislacion') { echo 'background-color:#00ccf1;';}?>">
                             <a href="<?php echo base_url();?>Legislacion">Legislación<br />&nbsp;&nbsp;</a>
-                            <ul class="blue">
+                            <ul class="blue dropdown">
                                     <li><a href="<?php echo base_url();?>legislacion/legislaciones/Ambiental">Ambiental</a></li>
                                     <li><a href="<?php echo base_url();?>legislacion/legislaciones/Laboral">Laboral</a></li>
                                     <li><a href="<?php echo base_url();?>legislacion/legislaciones/Minera">Minera</a></li>
@@ -84,7 +84,7 @@
                             <a href="<?php echo base_url();?>Sociales">Sociales<br />&nbsp;&nbsp;</a>
                         </li>
                         <li class="yellow last"><a href="<?php echo base_url();?>safety_solutions">Safety<br /> Solutions</a>
-                            <ul class="yellow">
+                            <ul class="yellow dropdown">
                                 <li><a href="<?php echo base_url();?>safety_solutions/productos">Productos</a></li>
                                 <li><a href="<?php echo base_url();?>safety_solutions">Servicios</a></li>
                                 <li><a href="<?php echo base_url();?>safety_solutions">Profesionales</a></li>
@@ -94,6 +94,34 @@
                   </div>
                 </div>
               </div>
+            </div>  
+            <!-- NAVEGACIÓN MOVILES -->
+            <div class="navbar navbar-inverse hidden-desktop" >
+              <div class="navbar-inner">
+                <div class="container">
+                  <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </a>
+                  <a class="brand" href="#">Menú</a>
+                  <div class="nav-collapse collapse navbar-inverse-collapse">
+                    <ul class="nav">
+                      <li class="active" style=" border-left-style: solid; border-left-color: #4c30b8;" ><a href="<?php echo base_url();?>">Inicio</a></li>
+                      <li class="active" style=" border-left-style: solid; border-left-color: #edb000;" ><a href="<?php echo base_url();?>Talento_humano">Talento humano</a></li>
+                      <li class="active" style=" border-left-style: solid; border-left-color: #5bd9ce;" ><a href="<?php echo base_url();?>Salud_bienestar">Salud y Bienestar</a></li>
+                      <li class="active" style=" border-left-style: solid; border-left-color: #c40001;" ><a href="<?php echo base_url();?>Vida_estilo">Vida y Estilo</a></li>
+                      <li class="active" style=" border-left-style: solid; border-left-color: #edb000;" ><a href="<?php echo base_url();?>Seguros">Seguros</a></li>
+                      <li class="active" style=" border-left-style: solid; border-left-color: #d92d47;" ><a href="<?php echo base_url();?>SST">SST</a></li>
+                      <li class="active" style=" border-left-style: solid; border-left-color: #00ccf1;" ><a href="<?php echo base_url();?>Legislacion">Legislaciones</a></li>
+                      <li class="active" style=" border-left-style: solid; border-left-color: #52c206;" ><a href="<?php echo base_url();?>Infografias">Infografías</a></li>
+                      <li class="active" style=" border-left-style: solid; border-left-color: #c80059;" ><a href="<?php echo base_url();?>Noticias">Ultima Hora</a></li>
+                      <li class="active" style=" border-left-style: solid; border-left-color: #4c30b8;" ><a href="<?php echo base_url();?>Sociales">Sociales</a></li>
+                      <li class="active" style=" border-left-style: solid; border-left-color: #edb000;" ><a href="<?php echo base_url();?>safety_solutions">Safety Solutions</a></li>
+                    </ul>
+                  </div><!-- /.nav-collapse -->
+                </div>
+              </div><!-- /navbar-inner -->
             </div>
         </div>
         <!--MAIN NAVIGATION END-->
@@ -109,10 +137,10 @@
                 } 
             } 
     ?>
-    <div class="breaking-news">
+    <div class="breaking-news ">
         <div class="container">
             <div class="row">
-                <div class="span9" style="visibility: <?php echo $visible; ?>;">
+                <div class="span9 hidden-phone hidden-tablet" style="visibility: <?php echo $visible; ?>;">
                     <h3>Frases</h3>
                     <div id="b-news">
                       <ul>
@@ -136,3 +164,17 @@
         </div>
     </div>
     <!--FIN BLOQUE FRASES-->
+
+<script type="text/javascript">
+     $(window).scroll(function() {
+
+    if ($(this).scrollTop()>100)
+     {
+        $('#menu_header').addClass( "menu_header_fix" );
+     }
+    else
+     {
+        $('#menu_header').removeClass( "menu_header_fix" );  
+     }
+ });
+</script>
