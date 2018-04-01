@@ -115,3 +115,6 @@
             </div>
         </div>
     </div>
+    <section>
+        <?php $this->load->view('includes/footer');  ?>
+    </section>
