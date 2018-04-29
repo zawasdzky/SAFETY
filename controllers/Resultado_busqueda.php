@@ -14,11 +14,12 @@ class Resultado_busqueda extends CI_Controller {
 	{
 		$data['color'] ="yellow"; 
 		$keyword = $this->input->post('keyword');
+		$data['palabra'] = $keyword; 
 		$this->load->view('includes/scripts');
 		$data['publicidad'] = $this->Safety_work_model->get_publicidad(); 
+		$data['frases'] = $this->Safety_work_model->get_frases_widget(); 			
 		$this->load->view('includes/head',$data);
 		$this->load->view('includes/header');
-		$data['frases'] = $this->Safety_work_model->get_frases_widget(); 	
 		$data['resultados_talento'] = $this->Safety_work_model->get_resultados_talento($keyword);
 		$data['resultados_eventos'] = $this->Safety_work_model->get_resultados_eventos($keyword); 
 		$data['resultados_salud'] = $this->Safety_work_model->get_resultados_salud($keyword); 

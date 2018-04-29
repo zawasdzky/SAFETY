@@ -24,20 +24,24 @@
                     </section>
                     <!--FASHION SECTION END-->
                     <!--LATEST REVIEWS START-->
-                    <section class="news-article health-article">
-                        <h2 class="h-style">Artículos Kids</h2>
-                        <ul>
-                            <?php foreach ($articulos_vida_estilo -> result() as $articulo) { ?>
-                                <?php if ( $articulo -> tipo_vida_estilo == "Kids") { ?>
+                    <section>
+                        <div class="recent-posts">
+                            <h2 class="h-style">Artículos Kids</h2>
+                            <ul>
+                                <!--list item start-->
+                                <?php $i=0; foreach ($articulos_vida_estilo -> result() as $articulo) { ?>
+                                <?php if ( $articulo -> tipo_vida_estilo == "Kids" && $i<9) { ?>
                                 <li>
-                                    <figure class="hover-style"><a href="<?php echo base_url()."Vida_estilo/detalle_articulo_vida_estilo/".$articulo-> url_amigable_vida_estilo; ?>"><img src="<?php echo base_url()."fotos_vida_estilo/".$articulo-> foto0; ?>" alt="<?php echo $articulo-> titulo_vida_estilo;  ?>"></a></figure>
-                                    <div class="text">
-                                        <p><?php echo $articulo-> titulo_vida_estilo;  ?></p>
-                                    </div>
+                                    <a href="<?php echo base_url()."Vida_estilo/detalle_articulo_vida_estilo/".$articulo-> url_amigable_vida_estilo; ?>"><img src="<?php echo base_url()."fotos_vida_estilo/".$articulo-> foto0; ?>" alt="<?php echo $articulo-> titulo_vida_estilo;  ?>" width="230">
+                                        <div class="caption">
+                                            <p><?php echo $articulo-> titulo_vida_estilo;  ?></p>
+                                        </div>
+                                    </a>
                                 </li>
+                                    <?php $i++;}?>
                                 <?php }?>
-                            <?php }?>
-                        </ul>
+                            </ul>                                  
+                        </div>
                     </section>
                     <!--LATEST REVIEWS END-->
                     <section>
@@ -48,8 +52,8 @@
                                     <h2 class="h-style">Artículos Men</h2>
                                     <ul class="row">
                                         <!--list item start-->
-                                        <?php foreach ($articulos_vida_estilo -> result() as $articulo) { ?>
-                                        <?php if ( $articulo -> tipo_vida_estilo == "Men") { ?>
+                                        <?php $i=0;foreach ($articulos_vida_estilo -> result() as $articulo) { ?>
+                                        <?php  if ( $articulo -> tipo_vida_estilo == "Men" && $i<6 ) { ?>
                                             <li class="span3">
                                                 <div class="tech-section">
                                                     <h4 class="color"><?php echo $articulo-> titulo_vida_estilo;  ?></h4>
@@ -58,7 +62,7 @@
 
                                                 </div>
                                             </li>
-                                            <?php }?>
+                                            <?php $i++; }?>
                                         <?php }?>
                                         <!--list item start-->
                                     </ul>
@@ -68,16 +72,16 @@
                                     <h2 class="h-style">Artículos Women</h2>
                                     <ul>
                                         <!--list item start-->
-                                        <?php foreach ($articulos_vida_estilo -> result() as $articulo) { ?>
-                                        <?php if ( $articulo -> tipo_vida_estilo == "Women") { ?>
+                                        <?php $i=0; foreach ($articulos_vida_estilo -> result() as $articulo) { ?>
+                                        <?php if ( $articulo -> tipo_vida_estilo == "Women" && $i<6) { ?>
                                         <li>
-                                            <a href="<?php echo base_url()."Vida_estilo/detalle_articulo_vida_estilo/".$articulo-> url_amigable_vida_estilo; ?>"><img src="<?php echo base_url()."fotos_vida_estilo/".$articulo-> foto0; ?>" alt="<?php echo $articulo-> titulo_vida_estilo;  ?>" width="180">
+                                            <a href="<?php echo base_url()."Vida_estilo/detalle_articulo_vida_estilo/".$articulo-> url_amigable_vida_estilo; ?>"><img src="<?php echo base_url()."fotos_vida_estilo/".$articulo-> foto0; ?>" alt="<?php echo $articulo-> titulo_vida_estilo;  ?>" width="255">
                                                 <div class="caption">
                                                     <p><?php echo $articulo-> titulo_vida_estilo;  ?></p>
                                                 </div>
                                             </a>
                                         </li>
-                                            <?php }?>
+                                            <?php $i++;}?>
                                         <?php }?>
                                         <!--list item end-->
                                     </ul>
@@ -93,15 +97,17 @@
                             </div>
                             <!--FIN PAUTA CENTRAL HORIZONTAL -->                                    
                                 </div>
-                                <div class="top-five">
+                                <div class="recent-posts">
                                     <h2 class="h-style">Top 5 Artículos</h2>
                                         <ul>
                                             <?php foreach ($destacados_vida_estilo -> result() as $articulo) { ?>
-                                                <li class="hover-style">
-                                                         <a href="<?php echo base_url()."Vida_estilo/detalle_articulo_vida_estilo/".$articulo-> url_amigable_vida_estilo; ?>">
-                                                    <img src="<?php echo base_url()."fotos_vida_estilo/".$articulo-> foto0; ?>" alt="<?php echo $articulo-> titulo_vida_estilo; ?>" width="152">
-                                                    </a>
-                                                </li>
+                                            <li>
+                                                <a href="<?php echo base_url()."Vida_estilo/detalle_articulo_vida_estilo/".$articulo-> url_amigable_vida_estilo; ?>"><img src="<?php echo base_url()."fotos_vida_estilo/".$articulo-> foto0; ?>" alt="<?php echo $articulo-> titulo_vida_estilo;  ?>" width="255">
+                                                    <div class="caption">
+                                                        <p><?php echo $articulo-> titulo_vida_estilo;  ?></p>
+                                                    </div>
+                                                </a>
+                                            </li>
                                             <?php }?>
                                         </ul>
                                 </div>
@@ -165,7 +171,21 @@
                         <!-- PAUTA COLUMAN DERECHA -->
                         <?php foreach ($publicidad -> result() as $item) { ?>
                             <?php if ($item -> tipo_publicitario == "Pauta Columna Derecha Vida y Estilo") { ?>
-                                <?php if (($item -> orden_publicitario == 1) || ($item -> orden_publicitario == 2)) { ?>
+                                <?php if (($item -> orden_publicitario == 1) ) { ?>
+                                <div class="widget widget-new-ad">
+                                    <div class="widget">
+                                        <a href="<?php echo $item-> enlace_publicitario ?>">
+                                            <img src="<?php echo base_url()."fotos_productos/".$item -> foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario; ?>">
+                                        </a>
+                                    </div>
+                                </div>
+                                <?php } ?>
+                            <?php } ?>
+                        <?php } ?>
+
+                        <?php foreach ($publicidad -> result() as $item) { ?>
+                            <?php if ($item -> tipo_publicitario == "Pauta Columna Derecha Vida y Estilo") { ?>
+                                <?php if (($item -> orden_publicitario == 2)) { ?>
                                 <div class="widget widget-new-ad">
                                     <div class="widget">
                                         <a href="<?php echo $item-> enlace_publicitario ?>">
@@ -190,7 +210,7 @@
                         <!-- PAUTA COLUMAN DERECHA -->
                         <?php foreach ($publicidad -> result() as $item) { ?>
                             <?php if ($item -> tipo_publicitario == "Pauta Columna Derecha Vida y Estilo") { ?>
-                                <?php if (($item -> orden_publicitario == 3) || ($item -> orden_publicitario == 4)) { ?>
+                                <?php if ($item -> orden_publicitario == 3) { ?>
                                 <div class="widget widget-new-ad">
                                     <div class="widget">
                                         <a href="<?php echo $item-> enlace_publicitario ?>">
@@ -201,6 +221,33 @@
                                 <?php } ?>
                             <?php } ?>
                         <?php } ?>
+
+                        <?php foreach ($publicidad -> result() as $item) { ?>
+                            <?php if ($item -> tipo_publicitario == "Pauta Columna Derecha Vida y Estilo") { ?>
+                                <?php if ($item -> orden_publicitario == 4) { ?>
+                                <div class="widget widget-new-ad">
+                                    <div class="widget">
+                                        <a href="<?php echo $item-> enlace_publicitario ?>">
+                                            <img src="<?php echo base_url()."fotos_productos/".$item -> foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario; ?>">
+                                        </a>
+                                    </div>
+                                </div>
+                                <?php } ?>
+                            <?php } ?>
+                        <?php } ?>  
+                        <?php foreach ($publicidad -> result() as $item) { ?>
+                            <?php if ($item -> tipo_publicitario == "Pauta Columna Derecha Vida y Estilo") { ?>
+                                <?php if ($item -> orden_publicitario == 5) { ?>
+                                <div class="widget widget-new-ad">
+                                    <div class="widget">
+                                        <a href="<?php echo $item-> enlace_publicitario ?>">
+                                            <img src="<?php echo base_url()."fotos_productos/".$item -> foto_publicitario; ?>" alt="<?php echo $item -> nombre_publicitario; ?>">
+                                        </a>
+                                    </div>
+                                </div>
+                                <?php } ?>
+                            <?php } ?>
+                        <?php } ?>  
 
                     </div>
                 </div>

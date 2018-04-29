@@ -8,6 +8,7 @@ class Safety_solutions extends CI_Controller {
 		parent::__construct();
 		$this->load->helper('url');
 		$this->load->model('Safety_solutions_model');
+		$this->load->model('Safety_work_model');		
 		$data['color'] ="carrot";
 		$data['menu_marcas'] = $this->Safety_solutions_model->get_marcas_index();
 		$data['menu_categorias'] = $this->Safety_solutions_model->get_categorias_productos();
@@ -18,6 +19,7 @@ class Safety_solutions extends CI_Controller {
 
 	public function index()
 	{
+		$data['publicidad'] = $this->Safety_work_model->get_publicidad();	
 		$data['novedades_slider'] = $this->Safety_solutions_model->get_slider_novedades_solutions();
 		$data['novedades_pauta'] = $this->Safety_solutions_model->get_novedades_pauta_solutions();
 		$data['publicidad_col_izq'] = $this->Safety_solutions_model->get_publicidad_col_izq_solutions();
@@ -33,14 +35,16 @@ class Safety_solutions extends CI_Controller {
 	public function marcas ($id_marca= FALSE )// se usa para prevenir que el argumento esté vacio
 	{
 		if ($id_marca === FALSE) { $id_marca=1;}
+		$data['publicidad'] = $this->Safety_work_model->get_publicidad();		
 		$data['marcas'] = $this->Safety_solutions_model->get_marcas($id_marca); 
 		$data['eventos_widget'] = $this->Safety_solutions_model->get_eventos_widget(); 
 		$this->load->view('marcas',$data);
 		$this->load->view('includes/scripts');
-		$this->load->view('includes/pop_up_pauta');
+		$this->load->view('includes/pop_up_pauta');	
 	}
 	public function productos()
 	{
+		$data['publicidad'] = $this->Safety_work_model->get_publicidad();			
 		$data['publicidad_col_izq'] = $this->Safety_solutions_model->get_publicidad_col_izq_solutions();
 		$data['publicidad_col_der'] = $this->Safety_solutions_model->get_publicidad_col_der_solutions();
 		$data['productos'] = $this->Safety_solutions_model->get_productos(); 
@@ -53,6 +57,7 @@ class Safety_solutions extends CI_Controller {
 
 	public function profesionales_categoria($id_categoria)// muestra los pofesionales en caegoria
 	{
+		$data['publicidad'] = $this->Safety_work_model->get_publicidad();	
 		$data['publicidad_col_izq'] = $this->Safety_solutions_model->get_publicidad_col_izq_solutions();
 		$data['profesionales'] = $this->Safety_solutions_model->get_profesionales_categoria($id_categoria); 
 		$data['eventos_widget'] = $this->Safety_solutions_model->get_eventos_widget();  
@@ -64,6 +69,7 @@ class Safety_solutions extends CI_Controller {
 
 	public function productos_marca($id_marca)
 	{
+		$data['publicidad'] = $this->Safety_work_model->get_publicidad();	
 		$data['productos'] = $this->Safety_solutions_model->get_productos_marca($id_marca); 
 		$data['eventos_widget'] = $this->Safety_solutions_model->get_eventos_widget();  
 		$this->load->view('productos_marca',$data);
@@ -74,6 +80,7 @@ class Safety_solutions extends CI_Controller {
 
 		public function productos_categoria($id_categoria)
 	{
+		$data['publicidad'] = $this->Safety_work_model->get_publicidad();	
 		$data['productos'] = $this->Safety_solutions_model->get_productos_categoria($id_categoria); 
 		$data['eventos_widget'] = $this->Safety_solutions_model->get_eventos_widget();  
 		$this->load->view('productos_categoria',$data);
@@ -84,6 +91,7 @@ class Safety_solutions extends CI_Controller {
 	
 	public function detalle_profesional($id_profesional)
 	{
+		$data['publicidad'] = $this->Safety_work_model->get_publicidad();	
 		$data['publicidad_col_izq'] = $this->Safety_solutions_model->get_publicidad_col_izq_solutions();
 		$data['detalle_profesional'] = $this->Safety_solutions_model->get_detalle_profesional($id_profesional); 
 		$this->load->view('detalle_profesional',$data);
@@ -94,6 +102,7 @@ class Safety_solutions extends CI_Controller {
 
 	public function detalle_producto($url_amigable)
 	{
+		$data['publicidad'] = $this->Safety_work_model->get_publicidad();	
 		$data['detalle_producto'] = $this->Safety_solutions_model->get_detalle_producto($url_amigable); 
 		$this->load->view('detalle_producto',$data);
 		$this->load->view('includes/scripts');
@@ -105,6 +114,7 @@ class Safety_solutions extends CI_Controller {
 	{
 		$this->load->view('includes/scripts');
 		$keyword =  $this->input->post('keyword');
+		$data['publicidad'] = $this->Safety_work_model->get_publicidad();	
 		$data['resultado_productos'] = $this->Safety_solutions_model->get_resultados_productos($keyword);
 		$data['resultado_profesionales'] = $this->Safety_solutions_model->get_resultados_profesionales($keyword); 
 		$data['eventos_widget'] = $this->Safety_solutions_model->get_eventos_widget(); 

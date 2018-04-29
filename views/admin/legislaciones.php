@@ -106,9 +106,9 @@
                           </label>
                         </div>
                         <div class="col-md-3 mb10">
-                          <label for="fecha_publicacion_legislacion" class="field prepend-icon">
-                          <input type="date" name="fecha_publicacion_legislacion" id="fecha_publicacion_legislacion" class="event-name gui-input br-light light" required>
-                          <label for="fecha_publicacion_legislacion" class="field-icon">
+                          <label for="fecha_legislacion" class="field prepend-icon">
+                          <input type="date" name="fecha_legislacion" id="fecha_legislacion" class="event-name gui-input br-light light" required>
+                          <label for="fecha_legislacion" class="field-icon">
                             <i class="fa fa-calendar"></i>
                           </label>
                           </label>
@@ -184,7 +184,7 @@
                   <table class="table table-striped table-hover" id="datatable2" cellspacing="0" width="100%">
                     <thead>
                       <tr>
-                        <th>ID</th>
+                        <th>Fecha Legislación</th>
                         <th>Titulo</th>
                         <th>Tipo</th>
                         <th>Estado</th>
@@ -196,7 +196,7 @@
                     <tbody>
                         <?php foreach ($legislaciones ->result() as $legislacion) { ?>
                         <tr>
-                          <td><?php echo $legislacion -> id_legislacion; ?></td>
+                          <td><?php echo $legislacion -> fecha_legislacion; ?></td>
                           <td><?php echo $legislacion -> titulo_legislacion; ?></td>
                           <td><?php echo $legislacion -> tipo_legislacion; ?></td>
                           <td><?php echo $legislacion -> estado_legislacion; ?></td>

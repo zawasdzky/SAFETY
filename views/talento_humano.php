@@ -25,7 +25,7 @@
                     </div>
                     </section>
                     <!-- ARTICULOS -->
-                	<section>
+                	<section id="contenido_central">
                     	<div class="health-news sports-news">
                             <h2 class="h-style">Talento Humano</h2>
                             <ul id="paginar">

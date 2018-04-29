@@ -12,6 +12,7 @@ class Infografias extends CI_Controller {
 
 	public function index()
 	{
+		$this->load->view('includes/scripts');
 		$data['color'] ="green"; 
 		$data['frases'] = $this->Safety_work_model->get_frases_widget(); 
 		$data['videos'] = $this->Safety_work_model->get_videos_widget();
@@ -19,7 +20,6 @@ class Infografias extends CI_Controller {
 		$this->load->view('includes/head',$data);
 		$this->load->view('includes/header');
 		$data['infografias'] = $this->Safety_work_model->get_infografias(); 
-		$this->load->view('includes/scripts');
 		$this->load->view('infografias',$data);
 	}
 

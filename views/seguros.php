@@ -25,7 +25,7 @@
                     <section>
                         <div class="health-news sports-news">
                             <h2 class="h-style">Artículos Seguros</h2>
-                            <ul>
+                            <ul id="paginar">
                                 <!--LIST ITEM START-->
                                 <?php foreach ($seguros -> result() as $item) { ?>
                                 <li>
@@ -43,7 +43,7 @@
                             <!-- PAUTA CENTRAL HORIZONTAL -->
                             <div>
                                 <?php foreach ($publicidad -> result() as $item) { ?>  
-                                    <?php if ($item -> tipo_publicitario == "Pauta Central Horizontal seguros") { ?>   
+                                    <?php if ($item -> tipo_publicitario == "Pauta Central Horizontal Seguros") { ?>   
                                         <a href="<?php echo $item->enlace_publicitario;?>" target="_blank">
                                             <img src="<?php echo base_url();?>fotos_productos/<?php echo $item->foto_publicitario;?>" class="img-responsive" alt="<?php echo $item->titulo_publicitario;?>">
                                         </a>  

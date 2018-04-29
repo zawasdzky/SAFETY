@@ -220,11 +220,11 @@
               <table class="table table-striped table-hover" id="datatable2" cellspacing="0" width="100%">
                 <thead>
                   <tr>
-                    <th>ID</th>
+                    <th>Orden</th>
                     <th>Foto</th>
                     <th>Nombre</th>
                     <th>Tipo</th>
-                    <th>Orden</th>
+                    <th>Fecha</th>
                     <th>Ciudad</th>
                     <th>Editar / Borrar</th>
                   </tr>
@@ -232,11 +232,11 @@
                 <tbody>
                     <?php foreach ($eventos_solutions ->result() as $item) { ?>
                     <tr>
-                      <td><?php echo $item -> id_evento ?></td>
+                      <td align="center"><?php echo $item -> orden_evento ?></td>
                       <td><img src="<?php echo base_url()."fotos_eventos/".$item -> foto0?>" width=50 ></td>
                       <td><?php echo $item -> nombre_evento ?></td>
                       <td><?php echo $item -> tipo_evento ?></td>
-                      <td><?php echo $item -> orden_evento ?></td>
+                      <td><?php echo $item -> fecha_inicio_evento ?></td>
                       <td><?php echo $item -> ciudad_evento ?></td>
                       <td>  
                             <a href="<?php echo base_url();?>admin/eventos/evento_edit/<?php echo $item -> id_evento ?>" type="button" class="btn btn-warning" > 

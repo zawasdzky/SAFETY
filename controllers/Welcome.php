@@ -13,7 +13,6 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
-		
 		$this->load->view('includes/scripts');
 		$data['publicidad'] = $this->Safety_work_model->get_publicidad(); 
 		$data['frases'] = $this->Safety_work_model->get_frases_widget(); 
@@ -21,7 +20,7 @@ class Welcome extends CI_Controller {
 		$this->load->view('includes/head',$data); 	
 		$data['eventos_widget'] = $this->Safety_work_model->get_eventos_widget(); 
 		$data['noticias'] = $this->Safety_work_model->get_noticias_home();
-        $data['vida_estilo'] = $this->Safety_work_model->get_vida_estilo_home();
+                $data['vida_estilo'] = $this->Safety_work_model->get_vida_estilo_home();
 		$data['talento_humano'] = $this->Safety_work_model->get_talento_humano_home(); 
 		$data['salud_bienestar'] = $this->Safety_work_model->get_salud_bienestar_home(); 
 		$data['SST'] = $this->Safety_work_model->get_SST_home(); 
@@ -40,12 +39,7 @@ class Welcome extends CI_Controller {
 		$this->Safety_work_model->sumar_puntaje_pregunta($id_respuesta);
 		redirect($_SERVER['HTTP_REFERER']);
 	}
-	public function articulo_visitado()
-	{
-		$seccion = $this->input->post('seccion');
-		$articulo = $this->input->post('articulo');
-		$this->Safety_work_model->sumar_visita();
-	}
+
 }
 
 

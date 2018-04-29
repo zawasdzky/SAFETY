@@ -7,7 +7,7 @@ class Safety_solutions_model extends CI_Model {
 		$this->load->database();
 	}
 	function get_eventos_widget(){
-		return  $this->db->query("SELECT *  FROM  `sw_eventos_solutions` LIMIT 0 , 5"); 
+		return  $this->db->query("SELECT * FROM  `sw_eventos_solutions`  ORDER BY  `sw_eventos_solutions`.`orden_evento` ASC LIMIT 0 , 5"); 
 	}
 
 	function get_slider_novedades_solutions()

@@ -11,7 +11,7 @@ class Safety_work_model extends CI_Model {
 		return $this->db->query("SELECT * FROM `sw_varios_safety` WHERE `sw_varios_safety`.`tipo_varios` = 'frase' ORDER BY `sw_varios_safety`.`orden_varios` DESC "); 
 	}
 	function get_eventos_widget(){
-		return $this->db->query("SELECT * FROM `sw_eventos_solutions` LIMIT 0 , 5"); 
+		return $this->db->query("SELECT *  FROM  `sw_eventos_solutions`  ORDER BY  `sw_eventos_solutions`.`orden_evento` ASC  LIMIT 0 , 5"); 
 	}
 	function get_videos_widget(){
 		return $this->db->query("SELECT * FROM `sw_varios_safety` WHERE `sw_varios_safety`.`tipo_varios` = 'video' ORDER BY `sw_varios_safety`.`orden_varios` DESC LIMIT 0 , 4"); 
@@ -68,7 +68,7 @@ class Safety_work_model extends CI_Model {
 		return $this->db->query("SELECT * FROM `sw_vida_estilo_safety` WHERE `estado_vida_estilo` = 'activo' ORDER BY `sw_vida_estilo_safety`.`orden_vida_estilo` DESC"); 
 	}	
 	function get_articulos_vida_estilo_tipo($tipo){
-		return $this->db->query("SELECT * FROM `sw_vida_estilo_safety` WHERE `tipo_vida_estilo` = '$tipo'"); 
+		return $this->db->query("SELECT * FROM `sw_vida_estilo_safety` WHERE `tipo_vida_estilo` = '$tipo' ORDER BY  `sw_vida_estilo_safety`.`id_vida_estilo` DESC "); 
 	}
 	function get_detalle_articulo_vida_estilo($url_amigable_vida_estilo){
 		return $this->db->query("SELECT * FROM `sw_vida_estilo_safety` WHERE `url_amigable_vida_estilo` = '$url_amigable_vida_estilo'"); 
@@ -96,16 +96,16 @@ class Safety_work_model extends CI_Model {
 		return $this->db->query("SELECT * FROM `sw_noticias_safety` WHERE `url_amigable_noticia` = '$url_amigable_noticia' ");
 	}
 	function get_legislaciones(){
-		return $this->db->query("SELECT * FROM `sw_legislaciones_safety` WHERE `estado_legislacion` = 'activo' ORDER BY `sw_legislaciones_safety`.`fecha_publicacion` DESC "); 
+		return $this->db->query("SELECT * FROM `sw_legislaciones_safety` WHERE `estado_legislacion` = 'activo' ORDER BY `sw_legislaciones_safety`.`fecha_legislacion` DESC "); 
 	}
 	function get_legislaciones_tipo($tipo_legislacion){
-		return $this->db->query("SELECT * FROM `sw_legislaciones_safety` WHERE `tipo_legislacion` = '$tipo_legislacion' ORDER BY `sw_legislaciones_safety`.`fecha_publicacion` DESC "); 
+		return $this->db->query("SELECT * FROM `sw_legislaciones_safety` WHERE `tipo_legislacion` = '$tipo_legislacion' ORDER BY `sw_legislaciones_safety`.`fecha_legislacion` DESC "); 
 	}
 	function get_legislaciones_limit(){
-		return $this->db->query("SELECT * FROM `sw_legislaciones_safety` ORDER BY `fecha_publicacion` DESC LIMIT 0 , 5"); 
+		return $this->db->query("SELECT * FROM `sw_legislaciones_safety` ORDER BY `fecha_legislacion` DESC LIMIT 0 , 5"); 
 	}
 	function get_legislaciones_filtro($tipo_legislacion,$categoria_legislacion){
-		return $this->db->query("SELECT * FROM `sw_legislaciones_safety` WHERE `tipo_legislacion` = '$tipo_legislacion' AND `categoria_legislacion` ='$categoria_legislacion' ORDER BY `sw_legislaciones_safety`.`fecha_publicacion` DESC "); 
+		return $this->db->query("SELECT * FROM `sw_legislaciones_safety` WHERE `tipo_legislacion` = '$tipo_legislacion' AND `categoria_legislacion` ='$categoria_legislacion' ORDER BY `sw_legislaciones_safety`.`fecha_legislacion` DESC "); 
 	}
 	function get_detalle_legislacion($url_amigable_legislacion){
 		return $this->db->query("SELECT * FROM `sw_legislaciones_safety` WHERE `url_amigable_legislacion` = '$url_amigable_legislacion' ");

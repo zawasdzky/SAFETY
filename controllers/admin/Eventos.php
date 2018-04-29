@@ -12,9 +12,9 @@ class eventos extends CI_Controller {
 		//libreria y paranetros para cargar  fotos
         $config['upload_path']          = './fotos_eventos/';
         $config['allowed_types']        = 'gif|jpg|png|pdf';
-        $config['max_size']             = 2000;
-        $config['max_width']            = 2000;
-        $config['max_height']           = 2000;
+        $config['max_size']             = 1000;
+        $config['max_width']            = 1000;
+        $config['max_height']           = 1000;
         $config['overwrite'] 	        = TRUE;
         $this->load->library('upload', $config);	
 	}
@@ -49,7 +49,7 @@ class eventos extends CI_Controller {
 					'foto2' =>  $foto2,
 					'foto3' =>  $foto3,
 					'foto4' =>  $foto4,
-					'foto5' =>  $foto6
+					'foto5' =>  $foto5
 					  );
 		$this->eventos_admin_model->insert_evento($data);
 		redirect('/admin/eventos');

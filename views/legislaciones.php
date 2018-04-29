@@ -7,11 +7,11 @@
                           <div class="accordion" id="accordion2">
                             <div class="accordion-group">
                               <div class="accordion-heading">
-                                <a class="accordion-toggle collapsed acordeon-azul" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne" style="">
+                                <a class="accordion-toggle collapsed acordeon-azul" data-toggle="collapse" data-parent="#accordion2" href="#collapse1" style="">
                                   Laboral
                                 </a>
                               </div>
-                              <div id="collapseOne" class="accordion-body collapse" ;">
+                              <div id="collapse1" class="accordion-body collapse">
                                 <div class="accordion-inner">  
                                     <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Laboral/ley"> Leyes</a><br>  
                                     <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Laboral/Resolucion"> Resoluciones</a><br>  
@@ -24,11 +24,11 @@
                             </div>
                             <div class="accordion-group">
                               <div class="accordion-heading">
-                                <a class="accordion-toggle collapsed acordeon-azul" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                                <a class="accordion-toggle collapsed acordeon-azul" data-toggle="collapse" data-parent="#accordion2" href="#collapse2">
                                   Petrolera
                                 </a>
                               </div>
-                              <div id="collapseTwo" class="accordion-body collapse" ;">
+                              <div id="collapse2" class="accordion-body collapse">
                                 <div class="accordion-inner">
                                     <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Petrolera/ley"> Leyes</a><br>  
                                     <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Petrolera/Resolucion"> Resoluciones</a><br>  
@@ -41,11 +41,11 @@
                             </div>
                             <div class="accordion-group">
                               <div class="accordion-heading">
-                                <a class="accordion-toggle collapsed acordeon-azul" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+                                <a class="accordion-toggle collapsed acordeon-azul" data-toggle="collapse" data-parent="#accordion2" href="#collapse3">
                                   Minera
                                 </a>
                               </div>
-                              <div id="collapseThree" class="accordion-body collapse" ;">
+                              <div id="collapse3" class="accordion-body collapse">
                                 <div class="accordion-inner">
                                     <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Minera/ley"> Leyes</a><br>  
                                     <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Minera/Resolucion"> Resoluciones</a><br>  
@@ -58,11 +58,11 @@
                             </div>
                             <div class="accordion-group">
                               <div class="accordion-heading">
-                                <a class="accordion-toggle collapsed acordeon-azul" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+                                <a class="accordion-toggle collapsed acordeon-azul" data-toggle="collapse" data-parent="#accordion2" href="#collapse4">
                                   Ambiental
                                 </a>
                               </div>
-                              <div id="collapseThree" class="accordion-body collapse" ;">
+                              <div id="collapse4" class="accordion-body collapse">
                                 <div class="accordion-inner">
                                     <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Ambiental/ley"> Leyes</a><br>  
                                     <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Ambiental/Resolucion"> Resoluciones</a><br>  
@@ -75,11 +75,11 @@
                             </div>
                             <div class="accordion-group">
                               <div class="accordion-heading">
-                                <a class="accordion-toggle collapsed acordeon-azul" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+                                <a class="accordion-toggle collapsed acordeon-azul" data-toggle="collapse" data-parent="#accordion2" href="#collapse5">
                                   Salud
                                 </a>
                               </div>
-                              <div id="collapseThree" class="accordion-body collapse" ;">
+                              <div id="collapse5" class="accordion-body collapse">
                                 <div class="accordion-inner">
                                     <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Salud/ley"> Leyes</a><br>  
                                     <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Salud/Resolucion"> Resoluciones</a><br>  
@@ -92,11 +92,11 @@
                             </div>
                             <div class="accordion-group">
                               <div class="accordion-heading">
-                                <a class="accordion-toggle collapsed acordeon-azul" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+                                <a class="accordion-toggle collapsed acordeon-azul" data-toggle="collapse" data-parent="#accordion2" href="#collapse6">
                                   Transporte
                                 </a>
                               </div>
-                              <div id="collapseThree" class="accordion-body collapse" ;">
+                              <div id="collapse6" class="accordion-body collapse">
                                 <div class="accordion-inner">
                                     <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Transporte/ley"> Leyes</a><br>  
                                     <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Transporte/Resolucion"> Resoluciones</a><br>  
@@ -220,6 +220,17 @@
                                 <?php  } ?>  
                                  </li>                        
                             </ul>
+                            <!-- PAUTA CENTRAL HORIZONTAL -->
+                            <div>
+                                <?php foreach ($publicidad -> result() as $item) { ?>  
+                                    <?php if ($item -> tipo_publicitario == "Pauta Central Horizontal Legislacion") { ?>   
+                                        <a href="<?php echo $item->enlace_publicitario;?>" target="_blank">
+                                            <img src="<?php echo base_url();?>fotos_productos/<?php echo $item->foto_publicitario;?>" class="img-responsive" alt="<?php echo $item->titulo_publicitario;?>">
+                                        </a>  
+                                    <?php } ?>
+                                <?php } ?>
+                            </div>
+                            <!--FIN PAUTA CENTRAL HORIZONTAL -->   
                         </div>
                     </section>
 
@@ -239,4 +250,27 @@
   js = d.createElement(s); js.id = id;
   js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.8&appId=1468516336501152";
   fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+}(document, 'script', 'facebook-jssdk'));
+</script>
+
+<script type="text/javascript">
+   $('#paginar').paginate({
+  // how many items per page
+  perPage:                8,      
+  // boolean: scroll to top of the container if a user clicks on a pagination link        
+  autoScroll:             true,           
+  // which elements to target
+  scope:                  '',         
+  // defines where the pagination will be displayed    
+  paginatePosition:       ['bottom'],     
+  // Pagination selectors
+ // containerTag:           'nav',
+  paginationTag:          'ul',
+  itemTag:                'li',
+  //linkTag:                'a',
+  // Determines whether or not the plugin makes use of hash locations
+  useHashLocation:        true,           
+  // Triggered when a pagination link is clicked
+  onPageClick:            function() {}   
+});
+</script>

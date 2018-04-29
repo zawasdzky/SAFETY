@@ -75,7 +75,7 @@
 
             <div class="col-md-3 mb10">
               <label for="estado_legislacion"> Categoría Legislación </label>
-                <select id="tipo" name="tipo_legislacion" class="form-control">
+                <select id="tipo" name="categoria_legislacion" class="form-control">
                   <option value="<?php echo $detalle-> categoria_legislacion; ?>"><?php echo $detalle-> categoria_legislacion; ?></option>
                   <option value="<?php echo $detalle-> categoria_legislacion; ?>"> ---- Cambiar a:----</option>
                   <option value="Circular">Circular</option>

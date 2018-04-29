@@ -5,14 +5,13 @@
             <!-- Nav tabs -->
             <ul class="nav nav-tabs">
                 <?php  
-
-                $i=1; $clase="active"; $estilo="";
-                foreach ($eventos_widget -> result() as $item) { 
-                if($i != 1){$clase="";}
-                if($i == 2){$estilo="background-color: #52c206;";}
-                if($i == 3){$estilo="background-color: #c40001;";}
-                if($i == 4){$estilo="background-color: #00ccf1;";}
-                if($i == 5){$estilo="background-color: #4c30b8;";}
+                    $i=1; $clase="active"; $estilo="";
+                    foreach ($eventos_widget -> result() as $item) { 
+                    if($i != 1){$clase="";}
+                    if($i == 2){$estilo="background-color: #52c206;";}
+                    if($i == 3){$estilo="background-color: #c40001;";}
+                    if($i == 4){$estilo="background-color: #00ccf1;";}
+                    if($i == 5){$estilo="background-color: #4c30b8;";}
                 ?>                                
                     <li class="<?php echo $clase; ?>" style="<?php echo $estilo; ?>">
                         <a href="#<?php echo "tab".$i; ?>" data-toggle="tab">
@@ -23,7 +22,11 @@
             <!-- Tab panes -->
             <div class="tab-content">
                 <?php $i=1;  foreach ($eventos_widget ->result() as $item) { 
-                if($i == 1){$clase="tab-pane fade active in";}else{$clase="tab-pane fade";}
+                if($i == 1){$clase="tab-pane fade active in"; $estilo="background-color: #d92d47;"; }else{$clase="tab-pane fade";}
+                if($i == 2){$estilo="background-color: #52c206;";}
+                if($i == 3){$estilo="background-color: #c40001;";}
+                if($i == 4){$estilo="background-color: #00ccf1;";}
+                if($i == 5){$estilo="background-color: #4c30b8;";}
                 ?>
                     <div class="<?php echo $clase; ?>" id="<?php echo "tab".$i; ?>">
                         <div class="special-offer">
@@ -49,7 +52,7 @@
                             </div>
                         </div>
                         <div class="event-listing">
-                            <div class="caption">
+                            <div class="caption" style="<?php echo $estilo; ?>">
                                 <div class="row-fluid">
                                     <div class="span6">
                                         <h2><?php echo $item-> ciudad_evento; ?> </h2>
@@ -71,7 +74,7 @@
                                         $meses_restantes =  $mes_evento - $mes_hoy; 
                                         $dias_restantes =  $dia_evento; 
                                         $Horas_restantes =  (12 + $hora_evento);
-                                        $fecha_evento = $mes_evento."-".$dia_evento."-".$anio_evento." ".$hora_evento.":".$minutos_inicio.":00";
+                                        $fecha_evento = $mes_evento."/".$dia_evento."/".$anio_evento." ".$hora_evento.":".$minutos_inicio.":00";
                                         $fecha_evento = (string)$fecha_evento;
                                     ?>
                                     <div class="span4">

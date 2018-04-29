@@ -23,8 +23,6 @@ class Encuestas extends CI_Controller {
 					'estado_encuesta' => $this->input->post('estado_encuesta')
 					 );
 		$this->encuestas_admin_model->insert_encuesta($data);
-
-		
 		redirect('/admin/encuestas');
 	}
 

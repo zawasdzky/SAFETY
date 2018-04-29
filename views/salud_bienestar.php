@@ -66,6 +66,25 @@
                     <section>
                         <?php $this->load->view('includes/eventos');  ?>
                     </section>
+
+                    <!-- SOCIALES -->
+                    <section>
+                        <div class="image-gallery">
+                            <h2 class="h-style">Sociales</h2>
+                            <ul class="mycarousel jcarousel-skin-tango gallery">
+                                <?php foreach ($sociales-> result() as $item) { ?>
+                                    <li>
+                                         <img src="<?php echo base_url()."fotos_sociales/". $item-> foto0 ?>">
+                                        <div class="caption" style="">
+                                            <a href="<?php echo base_url()."Sociales/detalle_social/".$item-> url_amigable_social; ?>"><i class="fa fa-link"></i></a>
+                                            <h4><?php echo $item-> titulo_social; ?></h4>
+                                        </div>
+                                    </li>
+                                <?php } ?>
+                           </ul>
+                        </div>          
+                    </section>
+
                     <section style="margin-top: 50px;">
                         <div class="row">
                             <div class="span6 span-8">
