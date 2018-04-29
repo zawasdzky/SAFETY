@@ -61,28 +61,39 @@
             <section>
                 <div class="row">
                     <div class="span4">
-                        <div class="tabs">
 
-                            <?php foreach ($publicidad -> result() as $item) { ?>  
-                                <?php if ($item -> tipo_publicitario == "Home Superior Izquierdo") { ?>   
-                                    <div class="tabs-widget">
-                                    <a href="<?php echo $item->enlace_publicitario;?>" target="_blank">
-                                        <img src="<?php echo base_url();?>fotos_productos/<?php echo $item->foto_publicitario;?>" class="img-responsive" alt="<?php echo $item->titulo_publicitario;?>">
-                                    </a>  
-                                    </div>
+                        <div class="widget-slider">
+                            <div class="flexslider">
+                              <ul class="slides">
+                                <?php foreach ($publicidad -> result() as $item) { ?>
+                                     <?php if ($item -> tipo_publicitario == "Home Superior Izquierdo") { ?>   
+                                        <li>
+                                        <a href="<?php echo $item->enlace_publicitario;?>" target="_blank">
+                                            <img src="<?php echo base_url();?>fotos_productos/<?php echo $item->foto_publicitario;?>" class="img-responsive" alt="<?php echo $item->titulo_publicitario;?>">
+                                        </a> 
+                                        </li>
+                                    <?php } ?>
                                 <?php } ?>
-                            <?php } ?>
-                            <ul class="mycarousel jcarousel-skin-tango">
-                                <?php foreach ($infografias -> result() as $infografia) { ?>
-                                    <li>
-                                        <a href="<?php echo base_url();?>Infografias?infografia=<?php echo $infografia-> url_amigable_infografia;?>">
-                                            <img src="<?php echo base_url()."fotos_infografias/". $infografia-> foto0 ?>" alt="<?php echo $infografia -> foto0; ?>" style="width: 200px; max-width: 200px; margin-right: 30px;"/>
-                                        </a>
-                                    </li>
-                                <?php } ?>    
-                           </ul>
-                           <a href="#" class="read-more">Infografías</a>
+                              </ul>
+                            </div>
                         </div>
+
+
+                <div class="image-gallery">
+                    <h3>Infografías</h3>
+                    <ul class="mycarousel jcarousel-skin-tango gallery">
+                        <?php foreach ($infografias -> result() as $infografia) { ?>
+                            <li>
+                                <a href="<?php echo base_url();?>Infografias?infografia=<?php echo $infografia-> url_amigable_infografia;?>">
+                                    <img src="<?php echo base_url()."fotos_infografias/". $infografia-> foto0 ?>" alt="<?php echo $infografia -> foto0; ?>" style="width: 200px; max-width: 200px; margin-right: 30px;"/>
+                                </a>                             
+                            </li>
+                        <?php } ?>
+                   </ul>
+                </div> 
+
+
+
                     </div>
                     <div class="span8">
                     <!-- INICIO WIDGET EVENTOS -->
@@ -94,17 +105,17 @@
                             <div class="row">
                                 <div class="span6 span-8">
                                     <div class="latest-news">
-                                        <h2 class="h-style">Legislación</h2>
+                                        <h2 class="h-style">Legislaciónes</h2>
                                         <ul class="headlines">
                                             <?php foreach ($legislaciones-> result() as $legislacion) { ?>
                                                 <li>
                                                     <figure>
-                                                        <a href="<?php echo base_url();?>legislaciones/<?php echo $legislacion-> ficha_legislacion; ?>" download>
-                                                            <img src="<?php echo base_url();?>/assets/images/adobe-pdf-icon.jpg" alt="<?php echo $legislacion-> titulo_legislacion; ?>">
+                                                        <a href="<?php echo $legislacion-> url_descarga_legislacion; ?>" target="_blank">
+                                                            <img src="<?php echo base_url();?>/assets/images/adobe-pdf-icon.jpg" alt="<?php echo $legislacion-> titulo_legislacion; ?>" width="102">
                                                         </a>
                                                     </figure>
                                                     <div class="text">
-                                                        <h5><?php echo $legislacion-> titulo_legislacion; ?></h5>
+                                                        <h5><a href="<?php echo $legislacion-> url_descarga_legislacion; ?>" target="_blank"> <span class="color"><?php echo $legislacion-> titulo_legislacion; ?></span></a></h5>
                                                         <p><?php echo $legislacion-> descripcion_legislacion;?></p>
                                                         <div class="headline-review">
                                                             <a href="#"><i class="fa fa-calendar"></i><?php echo $legislacion-> fecha_legislacion; ?></a>

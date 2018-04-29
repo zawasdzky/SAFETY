@@ -26,17 +26,24 @@ class Legislacion extends CI_Controller {
 
 	public function legislaciones($tipo_legislacion = NULL, $categoria_legislacion = NULL)
 	{
+
+
 		if ($categoria_legislacion == NULL) {
 			$data['legislaciones'] = $this->Safety_work_model->get_legislaciones_tipo($tipo_legislacion); 
+			$data['tipo'] = $tipo_legislacion;
+			$data['categoria'] = $categoria_legislacion;
 		}
 		if ($tipo_legislacion == NULL && $categoria_legislacion == NULL) {
 			$data['legislaciones'] = $this->Safety_work_model->get_legislaciones(); 
-			$data['titulo'] = "LEGISLACIONES";
+			$data['tipo'] = $tipo_legislacion;
+			$data['categoria'] = $categoria_legislacion;
 		}
 		if ($tipo_legislacion != NULL && $categoria_legislacion != NULL) {
 			$data['legislaciones'] = $this->Safety_work_model->get_legislaciones_filtro($tipo_legislacion,$categoria_legislacion); 
-
+			$data['tipo'] = $tipo_legislacion;
+			$data['categoria'] = $categoria_legislacion;
 		}
+
 		$this->load->view('includes/scripts');
 		$data['frases'] = $this->Safety_work_model->get_frases_widget(); 
 		$data['color'] ="yellow";  

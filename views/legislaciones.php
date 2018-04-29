@@ -13,12 +13,12 @@
                               </div>
                               <div id="collapse1" class="accordion-body collapse">
                                 <div class="accordion-inner">  
-                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Laboral/ley"> Leyes</a><br>  
-                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Laboral/Resolucion"> Resoluciones</a><br>  
-                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Laboral/Decreto"> Decretos</a><br>  
-                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Laboral/Circular"> Circulares</a><br>  
-                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Laboral/Concepto"> Conceptos</a><br>  
-                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Laboral/Oficio"> Oficios</a><br>  
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Laboral/Leyes"> Leyes</a><br>  
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Laboral/Resoluciones"> Resoluciones</a><br>  
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Laboral/Decretos"> Decretos</a><br>  
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Laboral/Circulares"> Circulares</a><br>  
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Laboral/Conceptos"> Conceptos</a><br>  
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Laboral/Oficios"> Oficios</a><br>  
                                 </div>
                               </div>
                             </div>
@@ -30,12 +30,12 @@
                               </div>
                               <div id="collapse2" class="accordion-body collapse">
                                 <div class="accordion-inner">
-                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Petrolera/ley"> Leyes</a><br>  
-                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Petrolera/Resolucion"> Resoluciones</a><br>  
-                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Petrolera/Decreto"> Decretos</a><br>  
-                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Petrolera/Circular"> Circulares</a><br>  
-                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Petrolera/Concepto"> Conceptos</a><br>  
-                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Petrolera/Oficio"> Oficios</a><br> 
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Petrolera/Leyes"> Leyes</a><br>  
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Petrolera/Resoluciones"> Resoluciones</a><br>  
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Petrolera/Decretos"> Decretos</a><br>  
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Petrolera/Circulares"> Circulares</a><br>  
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Petrolera/Conceptos"> Conceptos</a><br>  
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Petrolera/Oficios"> Oficios</a><br> 
                                 </div>
                               </div>
                             </div>
@@ -47,12 +47,12 @@
                               </div>
                               <div id="collapse3" class="accordion-body collapse">
                                 <div class="accordion-inner">
-                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Minera/ley"> Leyes</a><br>  
-                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Minera/Resolucion"> Resoluciones</a><br>  
-                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Minera/Decreto"> Decretos</a><br>  
-                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Minera/Circular"> Circulares</a><br>  
-                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Minera/Concepto"> Conceptos</a><br>  
-                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Minera/Oficio"> Oficios</a><br> 
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Minera/Leyes"> Leyes</a><br>  
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Minera/Resoluciones"> Resoluciones</a><br>  
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Minera/Decretos"> Decretos</a><br>  
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Minera/Circulares"> Circulares</a><br>  
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Minera/Conceptos"> Conceptos</a><br>  
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Minera/Oficios"> Oficios</a><br> 
                                 </div>
                               </div>
                             </div>
@@ -64,11 +64,11 @@
                               </div>
                               <div id="collapse4" class="accordion-body collapse">
                                 <div class="accordion-inner">
-                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Ambiental/ley"> Leyes</a><br>  
-                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Ambiental/Resolucion"> Resoluciones</a><br>  
-                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Ambiental/Decreto"> Decretos</a><br>  
-                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Ambiental/Circular"> Circulares</a><br>  
-                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Ambiental/Concepto"> Conceptos</a><br>  
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Ambiental/Leyes"> Leyes</a><br>  
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Ambiental/Resoluciones"> Resoluciones</a><br>  
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Ambiental/Decretos"> Decretos</a><br>  
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Ambiental/Circulares"> Circulares</a><br>  
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Ambiental/Conceptos"> Conceptos</a><br>  
                                     <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Ambiental/Oficios"> Oficios</a><br> 
                                 </div>
                               </div>
@@ -81,12 +81,12 @@
                               </div>
                               <div id="collapse5" class="accordion-body collapse">
                                 <div class="accordion-inner">
-                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Salud/ley"> Leyes</a><br>  
-                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Salud/Resolucion"> Resoluciones</a><br>  
-                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Salud/Decreto"> Decretos</a><br>  
-                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Salud/Circular"> Circulares</a><br>  
-                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Salud/Concepto"> Conceptos</a><br>  
-                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Salud/Oficio"> Oficios</a><br> 
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Salud/Leyes"> Leyes</a><br>  
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Salud/Resoluciones"> Resoluciones</a><br>  
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Salud/Decretos"> Decretos</a><br>  
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Salud/Circulares"> Circulares</a><br>  
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Salud/Conceptos"> Conceptos</a><br>  
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Salud/Oficios"> Oficios</a><br> 
                                 </div>
                               </div>
                             </div>
@@ -98,12 +98,29 @@
                               </div>
                               <div id="collapse6" class="accordion-body collapse">
                                 <div class="accordion-inner">
-                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Transporte/ley"> Leyes</a><br>  
-                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Transporte/Resolucion"> Resoluciones</a><br>  
-                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Transporte/Decreto"> Decretos</a><br>  
-                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Transporte/Circular"> Circulares</a><br>  
-                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Transporte/Concepto"> Conceptos</a><br>  
-                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Transporte/Oficio"> Oficios</a><br> 
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Transporte/Leyes"> Leyes</a><br>  
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Transporte/Resoluciones"> Resoluciones</a><br>  
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Transporte/Decretos"> Decretos</a><br>  
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Transporte/Circulares"> Circulares</a><br>  
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Transporte/Conceptos"> Conceptos</a><br>  
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Transporte/Oficios"> Oficios</a><br> 
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordion-group">
+                              <div class="accordion-heading">
+                                <a class="accordion-toggle collapsed acordeon-azul" data-toggle="collapse" data-parent="#accordion2" href="#collapse7">
+                                  Otros
+                                </a>
+                              </div>
+                              <div id="collapse7" class="accordion-body collapse">
+                                <div class="accordion-inner">
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Otros/Leyes"> Leyes</a><br>  
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Otros/Resoluciones"> Resoluciones</a><br>  
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Otros/Decretos"> Decretos</a><br>  
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Otros/Circulares"> Circulares</a><br>  
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Otros/Conceptos"> Conceptos</a><br>  
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i><a href="<?php echo base_url();?>legislacion/legislaciones/Otros/Oficios"> Oficios</a><br> 
                                 </div>
                               </div>
                             </div>
@@ -130,7 +147,6 @@
                             </div>
                         </div> 
                         <!--FACEBOOK FEEDS WIDGET END-->
-
                         <!-- PAUTAS -->
                         <div class="widget widget-new-ad">
                             <?php foreach ($publicidad -> result() as $item) { ?>
@@ -146,7 +162,6 @@
                             <?php } ?>
                         </div>
                         <!-- FIN PAUTAS -->
-
                         <div class="widget widget-newsletter">
                             <h2>SUSCRIBASE</h2>
                             <div class="text">
@@ -174,20 +189,9 @@
                 <?php $detalle = $legislaciones->row(); ?>
                 <div class="span8">
                     <section>
+                       <h2 class="h-style">Legislaciones  </h2>
                         <div class="health-news sports-news">
-                            <h2 class="h-style"> <?php if (isset($titulo)) { echo $titulo; }else{ echo "Legislación ". $detalle -> tipo_legislacion ; } ?> </h2>
-                           <h3> 
-                            <?php 
-                                      if ( !isset($titulo)) {
-                                      if ( $detalle -> categoria_legislacion == "Ley") { echo "Leyes";}
-                                      if ( $detalle -> categoria_legislacion == "Decreto") { echo "Decretos";}
-                                      if ( $detalle -> categoria_legislacion == "Circular") { echo "Circulares";}
-                                      if ( $detalle -> categoria_legislacion == "Resolucion") { echo "Resoluciones";}
-                                      if ( $detalle -> categoria_legislacion == "Salud") { echo "Salud";}
-                                      if ( $detalle -> categoria_legislacion == "Oficio") { echo "Oficios";}
-                                    }
-                            ?>
-                           </h3>
+                           <h3> <?php  if (isset($tipo) && isset($categoria)) { echo  $tipo." / ". $categoria; }?>  </h3>
                             <ul id="paginar">
                                 <?php foreach ($legislaciones -> result() as $item) { ?>
                                 <!--LIST ITEM START-->
@@ -195,14 +199,13 @@
                                     <div>
                                         <h2><?php echo $item -> titulo_legislacion; ?></h2>
                                         <p><?php echo $item -> descripcion_legislacion; ?></p>
-                                    <?php if (!empty($item->ficha_legislacion)): ?>
-                                        <a href="<?php echo base_url();?>legislaciones/<?php echo $item->ficha_legislacion; ?>">
-                                          <p style="color: red;"> <img src="http://www.freeiconspng.com/uploads/pdf-icon-png-pdf-zum-download-2.png" width="15 "> <?php echo $item -> ficha_legislacion; ?></p>
-                                        </a>
 
+                                        <a href="<?php echo $item -> url_descarga_legislacion; ?>" target="_blank">
+                                          <p style="color: red;"> <img src="http://www.freeiconspng.com/uploads/pdf-icon-png-pdf-zum-download-2.png" width="15 "> <?php echo $item -> titulo_legislacion; ?></p>
+                                        </a>
                                         <div class="pull-right col-md-12"" style="margin-right: 20px;">
 
-                                            <a href="<?php echo base_url();?>legislacion/legislacioneses/<?php echo $item->ficha_legislacion; ?>" class="btn btn-default" download> <i class="fa fa-download" style="color:#1F4A67" ></i> Descargar </a>
+                                            <a href="<?php echo $item -> url_descarga_legislacion; ?>" class="btn btn-default" target="_blank"> <i class="fa fa-eye" style="color:#1F4A67" ></i> Ver Legislación </a>
 
                                                 <a href="https://www.addtoany.com/share" class="a2a_dd btn btn-default" > <i class="fa fa-share-alt" style="color:#1F4A67"></i> Compartir </a>
                                                 <script>
@@ -214,8 +217,6 @@
                                                     a2a_config.num_services = 4;
                                                 </script>
                                         </div> 
-
-                                <?php endif ?>
                                     </div>
                                 <?php  } ?>  
                                  </li>                        

@@ -43,11 +43,6 @@
               <input type="text" name="keywords_legislacion" id="keywords_legislacion" class="form-control" value="<?php echo $detalle-> keywords_legislacion; ?>">
             </div>
 
-            <div class="col-md-3 mb10">
-              <label for="url_amigable" class="field prepend-icon"> URL Amigable (sin espacios...) </label>
-              <input type="text" name="url_amigable_legislacion" id="url_amigable_legislacion" class="form-control" value="<?php echo $detalle-> url_amigable_legislacion; ?>">
-            </div>
-
             <div class="col-md-2 mb10">          
               <label for="estado_legislacion"> Estado </label>
               <select id="estado_legislacion" name="estado_legislacion" class="form-control">
@@ -57,7 +52,7 @@
               </select>
             </div>
 
-            <div class="col-md-3 mb10">
+            <div class="col-md-2 mb10">
               <label for="estado_legislacion"> Tipo Legislación </label>
                 <select id="tipo" name="tipo_legislacion" class="form-control">
                   <option value="<?php echo $detalle-> tipo_legislacion; ?>"><?php echo $detalle-> tipo_legislacion; ?></option>
@@ -73,32 +68,40 @@
                 </select>
             </div>
 
-            <div class="col-md-3 mb10">
+            <div class="col-md-2 mb10">
               <label for="estado_legislacion"> Categoría Legislación </label>
                 <select id="tipo" name="categoria_legislacion" class="form-control">
                   <option value="<?php echo $detalle-> categoria_legislacion; ?>"><?php echo $detalle-> categoria_legislacion; ?></option>
                   <option value="<?php echo $detalle-> categoria_legislacion; ?>"> ---- Cambiar a:----</option>
-                  <option value="Circular">Circular</option>
-                  <option value="Concepto">Concepto</option>
-                  <option value="Decreto">Decreto</option>
-                  <option value="Ley">Ley</option>
-                  <option value="Salud">Salud</option>
-                  <option value="Resolucion">Resolución</option>
-                  <option value="Oficio">Oficio</option>
+                  <option value="Circulares">Circular</option>
+                  <option value="Conceptos">Concepto</option>
+                  <option value="Decretos">Decreto</option>
+                  <option value="Leyes">Ley</option>
+                  <option value="Resoluciones">Resolución</option>
+                  <option value="Oficios">Oficio</option>
                 </select>
             </div>
+
+            <div class="col-md-3 mb10">
+              <label for="fecha_legislacion"> Fecha Legislación </label>
+              <input type="date" name="fecha_legislacion" class="form-control"  id="fecha_legislacion" value="<?php echo $detalle-> fecha_legislacion; ?>">
+            </div> 
+
+            <div class="col-md-8 mb10">
+              <label for="url_descarga_legislacion" class="field prepend-icon">Url Descarga Externa</label>
+              <input type="text" name="url_descarga_legislacion" id="url_descarga_legislacion" class="form-control" value="<?php echo $detalle-> url_descarga_legislacion; ?>" required>
+            </div>
+           
 
             <div class="col-md-12 mb10"> 
               <label>Descripción</label>
                   <textarea name="descripcion_legislacion" class="form-control"><?php echo $detalle-> descripcion_legislacion; ?></textarea>
             </div> 
+<!--              
             <div class="col-md-12 mb10""> <hr> </div> 
-
+   
             <div class="col-md-12 mb10">
-                <div class="col-md-2 mb10">
-                  <label for="fecha_legislacion"> Fecha Expedición </label>
-                  <input type="date" name="fecha_legislacion" class="form-control"  id="fecha_legislacion" value="<?php echo $detalle-> fecha_legislacion; ?>">
-                </div>
+            
                 <div class="col-md-6 mb10">
                 <?php if ($detalle-> ficha_legislacion) {  ?>
                   <label> PDF descargable</label><br>
@@ -109,7 +112,7 @@
                     <label> Ficha / PDF del legislacion</label>
                     <input type="file" name="ficha_legislacion"> 
                   <?php } ?>
-                </div> 
+                </div>  
  
                 <div class="col-md-2">
                 <?php if ($detalle-> foto0) { ?>
@@ -155,7 +158,7 @@
                 <?php } ?>
                 </div> 
             </div>
-
+-->
             <div class="mb10 row"> <br> </div>
 
             <div class="col-md-12 pl15 text-right">
